@@ -520,3 +520,18 @@ img {
   font-size: 160px;
   font-weight: 700;
 }
+
+summary {
+  border: 1px solid #D2D2D2;
+  border-radius: 10px;
+  padding: 10px;
+}
+.azure-icon { 
+  float: left;
+  height: 30px;
+  margin-right: 10px;
+}
+
+figure {
+  margin-top: 10px;
+}

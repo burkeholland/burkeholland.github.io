@@ -27,8 +27,9 @@ This is common in database queries, too. I mean, the desire to just get one resu
       <pubDate>Wed, 05 Jun 2019 19:21:49 -0600</pubDate>
       
       <guid>https://burkeholland.github.io/posts/thank-u-nuxt/</guid>
-      <description>summary { border: 1px solid #D2D2D2; border-radius: 10px; padding: 10px; } .azure-icon { float: left; height: 30px; margin-right: 10px; } figure { margin-top: 10px; }   Summary: Nuxt apps with &amp;ldquo;server-side rendering&amp;rdquo; require a Node server, so you need to deploy them to Azure App Service. If you are using Nuxt apps in SPA mode, you can (and should) deploy them to Azure Storage.
-Check out the links below for more details&amp;hellip; Deploy to Azure App Service Deploy a static website to Azure</description>
+      <description>Summary: Nuxt apps with &amp;ldquo;server-side rendering&amp;rdquo; require a Node server, so you need to deploy them to Azure App Service. If you are using Nuxt apps in SPA mode, you can (and should) deploy them to Azure Storage.
+Check out the links below for more details&amp;hellip; Deploy to Azure App Service Deploy a static website to Azure 
+Ariana Grande once said, &amp;ldquo;One taught me patience. And one taught me pain&amp;rdquo;.</description>
     </item>
     
   </channel>
