@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Burke Holland</title>
+    <link>localhost:8080/tags/</link>
+    <description>Recent content in Tags on Burke Holland</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Nov 2019 05:27:23 +0600</lastBuildDate>
+    
+	<atom:link href="localhost:8080/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>blog</title>
+      <link>localhost:8080/tags/blog/</link>
+      <pubDate>Sun, 17 Nov 2019 05:27:23 +0600</pubDate>
+      
+      <guid>localhost:8080/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cosmosdb</title>
+      <link>localhost:8080/tags/cosmosdb/</link>
+      <pubDate>Sun, 17 Nov 2019 05:27:23 +0600</pubDate>
+      
+      <guid>localhost:8080/tags/cosmosdb/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

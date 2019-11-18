@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>localhost:8080/categories/blog/</loc>
+    <lastmod>2019-11-17T05:27:23+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:8080/tags/blog/</loc>
+    <lastmod>2019-11-17T05:27:23+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:8080/</loc>
+    <lastmod>2019-11-17T05:27:23+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:8080/categories/</loc>
+    <lastmod>2019-11-17T05:27:23+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:8080/tags/cosmosdb/</loc>
+    <lastmod>2019-11-17T05:27:23+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:8080/categories/cosmosdb/</loc>
+    <lastmod>2019-11-17T05:27:23+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:8080/posts/</loc>
+    <lastmod>2019-11-17T05:27:23+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:8080/posts/select-one-cosmos/</loc>
+    <lastmod>2019-11-17T05:27:23+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>localhost:8080/tags/</loc>
+    <lastmod>2019-11-17T05:27:23+06:00</lastmod>
+  </url>
+  
+</urlset>
