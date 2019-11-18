@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cosmosdb on Burke Holland</title>
-    <link>localhost:8080/categories/cosmosdb/</link>
+    <link>https://burkeholland.github.io/categories/cosmosdb/</link>
     <description>Recent content in cosmosdb on Burke Holland</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 17 Nov 2019 05:27:23 +0600</lastBuildDate>
     
-	<atom:link href="localhost:8080/categories/cosmosdb/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://burkeholland.github.io/categories/cosmosdb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Selecting one from Cosmos DB</title>
-      <link>localhost:8080/posts/select-one-cosmos/</link>
+      <link>https://burkeholland.github.io/posts/select-one-cosmos/</link>
       <pubDate>Sun, 17 Nov 2019 05:27:23 +0600</pubDate>
       
-      <guid>localhost:8080/posts/select-one-cosmos/</guid>
+      <guid>https://burkeholland.github.io/posts/select-one-cosmos/</guid>
       <description>Sometimes, in life, you just want one of something. Not two. Never two. Just one. Like a toothbrush. Or a flu shot. Or a pug. Dear god, trust me, you do not want more than one pug. It&amp;rsquo;s like a choir of snoring with flatulance on backup vocals.
 This is common in database queries, too. I mean, the desire to just get one result. Not the flatulance. Although it might be.</description>
     </item>

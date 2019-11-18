@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Burke Holland</title>
-    <link>localhost:8080/categories/</link>
+    <link>https://burkeholland.github.io/categories/</link>
     <description>Recent content in Categories on Burke Holland</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 17 Nov 2019 05:27:23 +0600</lastBuildDate>
     
-	<atom:link href="localhost:8080/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://burkeholland.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>blog</title>
-      <link>localhost:8080/categories/blog/</link>
+      <link>https://burkeholland.github.io/categories/blog/</link>
       <pubDate>Sun, 17 Nov 2019 05:27:23 +0600</pubDate>
       
-      <guid>localhost:8080/categories/blog/</guid>
+      <guid>https://burkeholland.github.io/categories/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cosmosdb</title>
-      <link>localhost:8080/categories/cosmosdb/</link>
+      <link>https://burkeholland.github.io/categories/cosmosdb/</link>
       <pubDate>Sun, 17 Nov 2019 05:27:23 +0600</pubDate>
       
-      <guid>localhost:8080/categories/cosmosdb/</guid>
+      <guid>https://burkeholland.github.io/categories/cosmosdb/</guid>
       <description></description>
     </item>
     

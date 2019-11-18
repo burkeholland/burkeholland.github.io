@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Burke Holland</title>
-    <link>localhost:8080/tags/</link>
+    <link>https://burkeholland.github.io/tags/</link>
     <description>Recent content in Tags on Burke Holland</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 17 Nov 2019 05:27:23 +0600</lastBuildDate>
     
-	<atom:link href="localhost:8080/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://burkeholland.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>blog</title>
-      <link>localhost:8080/tags/blog/</link>
+      <link>https://burkeholland.github.io/tags/blog/</link>
       <pubDate>Sun, 17 Nov 2019 05:27:23 +0600</pubDate>
       
-      <guid>localhost:8080/tags/blog/</guid>
+      <guid>https://burkeholland.github.io/tags/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cosmosdb</title>
-      <link>localhost:8080/tags/cosmosdb/</link>
+      <link>https://burkeholland.github.io/tags/cosmosdb/</link>
       <pubDate>Sun, 17 Nov 2019 05:27:23 +0600</pubDate>
       
-      <guid>localhost:8080/tags/cosmosdb/</guid>
+      <guid>https://burkeholland.github.io/tags/cosmosdb/</guid>
       <description></description>
     </item>
     
