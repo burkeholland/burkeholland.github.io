@@ -32,5 +32,15 @@ Check out the links below for more details&amp;hellip; Deploy to Azure App Servi
 Ariana Grande once said, &amp;ldquo;One taught me patience. And one taught me pain&amp;rdquo;.</description>
     </item>
     
+    <item>
+      <title>This is how to easily deploy a static site to Azure</title>
+      <link>https://burkeholland.github.io/posts/static-site-azure/</link>
+      <pubDate>Thu, 30 May 2019 06:48:24 -0600</pubDate>
+      
+      <guid>https://burkeholland.github.io/posts/static-site-azure/</guid>
+      <description>Over the weekend I bought my first new vehicle ever: A red moped. That was the only thing available at my price point.
+What a glorious thing it is! The wind whips over your body at a stunning 35 mph and you are alone with your thoughts. You ponder the finer points of the universe: existential questions like, “Do I look stupid on this thing”, “How many bugs can you eat before you die” and “How many ways can I deploy a static site to Azure”?</description>
+    </item>
+    
   </channel>
 </rss>

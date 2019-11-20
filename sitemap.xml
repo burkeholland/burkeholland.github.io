@@ -3,12 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://burkeholland.github.io/categories/blog/</loc>
+    <loc>https://burkeholland.github.io/tags/blog/</loc>
     <lastmod>2019-11-17T05:27:23+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://burkeholland.github.io/tags/blog/</loc>
+    <loc>https://burkeholland.github.io/categories/blog/</loc>
     <lastmod>2019-11-17T05:27:23+06:00</lastmod>
   </url>
   
@@ -50,6 +50,11 @@
   <url>
     <loc>https://burkeholland.github.io/posts/thank-u-nuxt/</loc>
     <lastmod>2019-06-05T19:21:49-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://burkeholland.github.io/posts/static-site-azure/</loc>
+    <lastmod>2019-05-30T06:48:24-06:00</lastmod>
   </url>
   
 </urlset>
