@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Selecting one from Cosmos DB</title>
-      <link>https://burkeholland.github.io/posts/select-one-cosmos/</link>
+      <title>Selecting one from a JavaScript array</title>
+      <link>https://burkeholland.github.io/posts/select-one-javascript/</link>
       <pubDate>Sun, 17 Nov 2019 05:27:23 +0600</pubDate>
       
-      <guid>https://burkeholland.github.io/posts/select-one-cosmos/</guid>
+      <guid>https://burkeholland.github.io/posts/select-one-javascript/</guid>
       <description>Sometimes, in life, you just want one of something. Not two. Never two. Just one. Like a toothbrush. Or a flu shot. Or a pug. Dear god, trust me, you do not want more than one pug. It&amp;rsquo;s like a choir of snoring with flatulance on backup vocals.
 This is common in database queries, too. I mean, the desire to just get one result. Not the flatulance. Although it might be.</description>
     </item>
