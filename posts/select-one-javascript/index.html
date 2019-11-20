@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <title>Selecting one from a JavaScript array - Burke Holland</title>
+    <title>Selecting the first item from an array - Burke Holland</title>
     
     <meta name="description" content="Sometimes, in life, you just want one of something. Not two. Never two. Just one. Like a toothbrush. Or a flu shot. Or a pug. Dear god, trust me, you do not want more than one pug. It&rsquo;s like a choir of snoring with flatulance on backup vocals.
 This is common in database queries, too. I mean, the desire to just get one result. Not the flatulance. Although it might be.">
@@ -83,7 +83,7 @@ This is common in database queries, too. I mean, the desire to just get one resu
 
 <article class="post-single">
   <header class="post-header">
-    <h1 class="post-title">Selecting one from a JavaScript array</h1>
+    <h1 class="post-title">Selecting the first item from an array</h1>
     <div class="post-meta">November 17, 2019</div>
   </header>
   <div class="post-content">
@@ -141,8 +141,7 @@ getProduct(&quot;Hammer&quot;, &quot;Acme&quot;).then(product =&gt; {
 <pre><code>return result.resources[0] || {};
 </code></pre>
 
-<p>But…&rdquo;yuck”. I don&rsquo;t know what it is about array notation, but it always feels like I&rsquo;
-m doing it wrong. Like I’m cheating by using the array index. I think this is because I’m explicitly asking for something that, much like god, may or may not exist. If it does exist, everything is fine. If it doesn&rsquo;t, the only way to find out is the hard way.</p>
+<p>But…&rdquo;yuck”. I don&rsquo;t know what it is about array notation, but it always feels like I&rsquo;m doing it wrong. Like I’m cheating by using the array index. I think this is because I’m explicitly asking for something that, much like god, may or may not exist. If it does exist, everything is fine. If it doesn&rsquo;t, the only way to find out is the hard way.</p>
 
 <p>Array notation isn’t bad per say, but I generally try and stay away from it because it’s the best way to smash your face on “undefined is not a function” if you use it with objects.</p>
 
@@ -160,7 +159,7 @@ m doing it wrong. Like I’m cheating by using the array index. I think this is 
 <pre><code>return result.resources.find(x =&gt; x) || {};
 </code></pre>
 
-<p>Cosmos DB enginner and JavaScript trickster Steve Faulkner pointed out that you could also just destructure the array. But we can’t do that in a return statement for reasons that the JavaScript gods have not seen fit to reveal. So we would need two lines. Also, we can’t do a default value on the destructuring, so we would have to do it on the return.</p>
+<p>Cosmos DB enginner and JavaScript trickster <a href="https://twitter.com/southpolesteve">Steve Faulkner</a> pointed out that you could also just destructure the array. But we can’t do that in a return statement for reasons that the JavaScript gods have not seen fit to reveal. So we would need two lines. Also, we can’t do a default value on the destructuring, so we would have to do it on the return.</p>
 
 <pre><code>const [item] = result.resources;
 return item || {};
