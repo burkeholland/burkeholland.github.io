@@ -56,7 +56,7 @@
 }
 html {
   -webkit-tap-highlight-color: transparent;
-  height: 100vh + 60;
+  height: calc(100vh + 60px);
 }
 body {
   margin: 0;
