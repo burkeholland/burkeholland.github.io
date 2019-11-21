@@ -23,12 +23,12 @@
   </url>
   
   <url>
-    <loc>https://burkeholland.github.io/categories/cosmosdb/</loc>
+    <loc>https://burkeholland.github.io/tags/cosmosdb/</loc>
     <lastmod>2019-11-17T05:27:23+06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://burkeholland.github.io/tags/cosmosdb/</loc>
+    <loc>https://burkeholland.github.io/categories/cosmosdb/</loc>
     <lastmod>2019-11-17T05:27:23+06:00</lastmod>
   </url>
   
@@ -55,6 +55,11 @@
   <url>
     <loc>https://burkeholland.github.io/posts/static-site-azure/</loc>
     <lastmod>2019-05-30T06:48:24-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://burkeholland.github.io/posts/the-urlist/</loc>
+    <lastmod>2019-05-14T09:30:34-06:00</lastmod>
   </url>
   
 </urlset>

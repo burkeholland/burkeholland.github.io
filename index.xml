@@ -42,5 +42,15 @@ Ariana Grande once said, &amp;ldquo;One taught me patience. And one taught me pa
 What a glorious thing it is! The wind whips over your body at a stunning 35 mph and you are alone with your thoughts. You ponder the finer points of the universe: existential questions like, “Do I look stupid on this thing”, “How many bugs can you eat before you die” and “How many ways can I deploy a static site to Azure”?</description>
     </item>
     
+    <item>
+      <title>The Urlist — An application study in Serverless and Azure</title>
+      <link>https://burkeholland.github.io/posts/the-urlist/</link>
+      <pubDate>Tue, 14 May 2019 09:30:34 -0600</pubDate>
+      
+      <guid>https://burkeholland.github.io/posts/the-urlist/</guid>
+      <description>Today we are pleased to announce that we (Burke Holland and Cecil Phillip) are releasing a project called “The Urlist”. You can access it starting today at theurlist.com. The Urlist - Share the internet *Group links together in a list and get a custom URL to share them. Edit your lists at any time.*www.theurlist.com
+The Urlist is an application that lets you create lists of url’s that you can share with others.</description>
+    </item>
+    
   </channel>
 </rss>
