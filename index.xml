@@ -53,5 +53,17 @@ The Urlist is an application that lets you create lists of url’s that you can 
 This project was born out of a realization that I was ending my presentations with a slide full of links to additional resources.</description>
     </item>
     
+    <item>
+      <title>GitLens with Eric Amodio</title>
+      <link>https://burkeholland.github.io/posts/git-lens-eric/</link>
+      <pubDate>Fri, 07 Dec 2018 10:11:27 -0600</pubDate>
+      
+      <guid>https://burkeholland.github.io/posts/git-lens-eric/</guid>
+      <description>There are only two kinds of people in the world: those who are utterly confused by Git, and those who refuse to admit it.
+ 
+Well, ok, there are probably some people who understand it, but I’m definitely not one of them.
+As a result, people like me (which is most of us — zero evidence to prove that so just accept it as fact and let it wash over you) tend to learn the base amount of Git that we need to get by (clone, pull, add, commit) and the rest we try really hard to avoid because we have zero confidence that we’ll be able to do it without breaking literally everything.</description>
+    </item>
+    
   </channel>
 </rss>
