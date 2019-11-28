@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Burke Holland</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Nov 2019 05:27:23 +0600</lastBuildDate>
+    <lastBuildDate>Wed, 27 Nov 2019 10:51:28 -0600</lastBuildDate>
     
 	<atom:link href="https://burkeholland.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GSAP, Webpack and invalid tweens</title>
+      <link>https://burkeholland.github.io/posts/invalid-tween/</link>
+      <pubDate>Wed, 27 Nov 2019 10:51:28 -0600</pubDate>
+      
+      <guid>https://burkeholland.github.io/posts/invalid-tween/</guid>
+      <description>Before I forget, I wanted to document for posterity how I lost about 4 hours yesterday to gsap/webpack issue.
+I was working on a Vue project (CLI) with some gsap powered animations that I did not write. Not having written them, I can confess that I have no idea what they are or what they do. Any time I see the word &amp;ldquo;Tween&amp;rdquo;, I get flashbacks to actual Flash timelines and this very visceral feeling that I do not know, nor will I ever, know what I&amp;rsquo;m doing.</description>
+    </item>
     
     <item>
       <title>Selecting the first item from an array</title>

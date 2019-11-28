@@ -3,17 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://burkeholland.github.io/</loc>
+    <lastmod>2019-11-27T10:51:28-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://burkeholland.github.io/posts/invalid-tween/</loc>
+    <lastmod>2019-11-27T10:51:28-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://burkeholland.github.io/posts/</loc>
+    <lastmod>2019-11-27T10:51:28-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://burkeholland.github.io/tags/blog/</loc>
     <lastmod>2019-11-17T05:27:23+06:00</lastmod>
   </url>
   
   <url>
     <loc>https://burkeholland.github.io/categories/blog/</loc>
-    <lastmod>2019-11-17T05:27:23+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://burkeholland.github.io/</loc>
     <lastmod>2019-11-17T05:27:23+06:00</lastmod>
   </url>
   
@@ -29,11 +39,6 @@
   
   <url>
     <loc>https://burkeholland.github.io/tags/cosmosdb/</loc>
-    <lastmod>2019-11-17T05:27:23+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://burkeholland.github.io/posts/</loc>
     <lastmod>2019-11-17T05:27:23+06:00</lastmod>
   </url>
   
