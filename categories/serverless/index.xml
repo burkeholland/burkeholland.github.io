@@ -1,25 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>blog on Burke Holland</title>
-    <link>https://burkeholland.github.io/categories/blog/</link>
-    <description>Recent content in blog on Burke Holland</description>
+    <title>serverless on Burke Holland</title>
+    <link>https://burkeholland.github.io/categories/serverless/</link>
+    <description>Recent content in serverless on Burke Holland</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Nov 2019 05:27:23 +0600</lastBuildDate>
     
-	<atom:link href="https://burkeholland.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://burkeholland.github.io/categories/serverless/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Selecting the first item from an array</title>
-      <link>https://burkeholland.github.io/posts/select-one-javascript/</link>
-      <pubDate>Sun, 17 Nov 2019 05:27:23 +0600</pubDate>
-      
-      <guid>https://burkeholland.github.io/posts/select-one-javascript/</guid>
-      <description>Sometimes, in life, you just want one of something. Not two. Never two. Just one. Like a toothbrush. Or a flu shot. Or a pug. Dear god, trust me, you do not want more than one pug. It&amp;rsquo;s like a choir of snoring with flatulance on backup vocals.
-This is common in database queries, too. I mean, the desire to just get one result. Not the flatulance. Although it might be.</description>
-    </item>
     
     <item>
       <title>The 3 Laws of Serverless</title>
