@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Burke Holland</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Nov 2019 10:51:28 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jan 2020 15:58:22 -0600</lastBuildDate>
     
 	<atom:link href="https://burkeholland.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The 3 Laws of Serverless</title>
+      <link>https://burkeholland.github.io/posts/laws-of-serverless/</link>
+      <pubDate>Mon, 13 Jan 2020 15:58:22 -0600</pubDate>
+      
+      <guid>https://burkeholland.github.io/posts/laws-of-serverless/</guid>
+      <description>A wise man once said this about Serverless&amp;hellip;
+So wise! So profound. So obnoxiously vain to use your own quote.
+&amp;ldquo;Serverless&amp;rdquo;, is a buzzword. We can&amp;rsquo;t seem to agree on what it actaully means, so it ends up meaning nothing at all. It&amp;rsquo; like &amp;ldquo;cloud&amp;rdquo; or &amp;ldquo;dynamic&amp;rdquo; or &amp;ldquo;synergy&amp;rdquo;. You just wait for the right time in a meeting to drop it, walk to the board and draw a Venn Diagram, and then just sit back and wait for your well-deserved promotion.</description>
+    </item>
     
     <item>
       <title>GSAP, Webpack and invalid tweens</title>
@@ -73,17 +84,6 @@ This project was born out of a realization that I was ending my presentations wi
  
 Well, ok, there are probably some people who understand it, but I’m definitely not one of them.
 As a result, people like me (which is most of us — zero evidence to prove that so just accept it as fact and let it wash over you) tend to learn the base amount of Git that we need to get by (clone, pull, add, commit) and the rest we try really hard to avoid because we have zero confidence that we’ll be able to do it without breaking literally everything.</description>
-    </item>
-    
-    <item>
-      <title>The 3 Laws of Serverless</title>
-      <link>https://burkeholland.github.io/posts/laws-of-serverless/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://burkeholland.github.io/posts/laws-of-serverless/</guid>
-      <description>A wise man once said this about Serverless&amp;hellip;
-So wise! So profound. So obnoxiously vain to use your own quote.
-&amp;ldquo;Serverless&amp;rdquo;, is a buzzword. We can&amp;rsquo;t seem to agree on what it actaully means, so it ends up meaning nothing at all. It&amp;rsquo; like &amp;ldquo;cloud&amp;rdquo; or &amp;ldquo;dynamic&amp;rdquo; or &amp;ldquo;synergy&amp;rdquo;. You just wait for the right time in a meeting to drop it, walk to the board and draw a Venn Diagram, and then just sit back and wait for your well-deserved promotion.</description>
     </item>
     
   </channel>

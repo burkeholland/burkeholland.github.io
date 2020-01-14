@@ -3,17 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://burkeholland.github.io/</loc>
-    <lastmod>2019-11-27T10:51:28-06:00</lastmod>
+    <loc>https://burkeholland.github.io/tags/azurefunctions/</loc>
+    <lastmod>2020-01-13T15:58:22-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://burkeholland.github.io/posts/invalid-tween/</loc>
-    <lastmod>2019-11-27T10:51:28-06:00</lastmod>
+    <loc>https://burkeholland.github.io/categories/blog/</loc>
+    <lastmod>2020-01-13T15:58:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://burkeholland.github.io/</loc>
+    <lastmod>2020-01-13T15:58:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://burkeholland.github.io/categories/</loc>
+    <lastmod>2020-01-13T15:58:22-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://burkeholland.github.io/posts/</loc>
+    <lastmod>2020-01-13T15:58:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://burkeholland.github.io/tags/serverless/</loc>
+    <lastmod>2020-01-13T15:58:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://burkeholland.github.io/categories/serverless/</loc>
+    <lastmod>2020-01-13T15:58:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://burkeholland.github.io/tags/</loc>
+    <lastmod>2020-01-13T15:58:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://burkeholland.github.io/posts/laws-of-serverless/</loc>
+    <lastmod>2020-01-13T15:58:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://burkeholland.github.io/posts/invalid-tween/</loc>
     <lastmod>2019-11-27T10:51:28-06:00</lastmod>
   </url>
   
@@ -23,12 +58,7 @@
   </url>
   
   <url>
-    <loc>https://burkeholland.github.io/categories/blog/</loc>
-    <lastmod>2019-11-17T05:27:23+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://burkeholland.github.io/categories/</loc>
+    <loc>https://burkeholland.github.io/categories/cosmosdb/</loc>
     <lastmod>2019-11-17T05:27:23+06:00</lastmod>
   </url>
   
@@ -38,17 +68,7 @@
   </url>
   
   <url>
-    <loc>https://burkeholland.github.io/categories/cosmosdb/</loc>
-    <lastmod>2019-11-17T05:27:23+06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://burkeholland.github.io/posts/select-one-javascript/</loc>
-    <lastmod>2019-11-17T05:27:23+06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://burkeholland.github.io/tags/</loc>
     <lastmod>2019-11-17T05:27:23+06:00</lastmod>
   </url>
   
@@ -70,22 +90,6 @@
   <url>
     <loc>https://burkeholland.github.io/posts/git-lens-eric/</loc>
     <lastmod>2018-12-07T10:11:27-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://burkeholland.github.io/tags/azurefunctions/</loc>
-  </url>
-  
-  <url>
-    <loc>https://burkeholland.github.io/tags/serverless/</loc>
-  </url>
-  
-  <url>
-    <loc>https://burkeholland.github.io/categories/serverless/</loc>
-  </url>
-  
-  <url>
-    <loc>https://burkeholland.github.io/posts/laws-of-serverless/</loc>
   </url>
   
 </urlset>
