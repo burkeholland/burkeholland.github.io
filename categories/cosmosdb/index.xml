@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cosmosdb on Burke Holland</title>
     <link>https://burkeholland.github.io/categories/cosmosdb/</link>
@@ -8,18 +8,128 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 17 Nov 2019 05:27:23 +0600</lastBuildDate>
     
-	<atom:link href="https://burkeholland.github.io/categories/cosmosdb/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://burkeholland.github.io/categories/cosmosdb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Selecting the first item from an array</title>
-      <link>https://burkeholland.github.io/posts/select-one-javascript/</link>
-      <pubDate>Sun, 17 Nov 2019 05:27:23 +0600</pubDate>
+<title>Selecting the first item from an array</title>
+<link>https://burkeholland.github.io/posts/select-one-javascript/</link>
+<pubDate>Sun, 17 Nov 2019 05:27:23 +0600</pubDate>
       
       <guid>https://burkeholland.github.io/posts/select-one-javascript/</guid>
-      <description>Sometimes, in life, you just want one of something. Not two. Never two. Just one. Like a toothbrush. Or a flu shot. Or a pug. Dear god, trust me, you do not want more than one pug. It&amp;rsquo;s like a choir of snoring with flatulance on backup vocals.
-This is common in database queries, too. I mean, the desire to just get one result. Not the flatulance. Although it might be.</description>
-    </item>
+<description>
+
+&lt;p&gt;Sometimes, in life, you just want one of something. Not two. Never two. Just one. Like a toothbrush. Or a flu shot. Or a pug. Dear god, trust me, you do not want more than one pug. It&amp;rsquo;s like a choir of snoring with flatulance on backup vocals.&lt;/p&gt;
+
+&lt;p&gt;This is common in database queries, too. I mean, the desire to just get one result. Not the flatulance. Although it &lt;em&gt;might&lt;/em&gt; be. I&amp;rsquo;ve got no data on that and writing queries can be super stressful.&lt;/p&gt;
+
+&lt;p&gt;Applications that act as a form over some sort of data often require the retreiving of just one item so that you can edit that item. Which, according to science, is like 110% of all applications ever.&lt;/p&gt;
+
+&lt;p&gt;I recently built a small application with &lt;a href=&#34;https://www.npmjs.com/package/@azure/cosmos&#34;&gt;Cosmos DB&lt;/a&gt;, and I quickly ran into a situation where I needed to select one item. Specifically, I have a database structure that looks like this…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+    productId: 1,
+    productName: &amp;quot;Hammer&amp;quot;,
+    productDescription: &amp;quot;a tool consisting of a weighted \&amp;quot;head\&amp;quot; fixed to a long handle that is swung to deliver a swift and brutal impact to the thumb.&amp;quot;
+    brand: {
+        brandId: 10,
+        brandName: &amp;quot;Acme&amp;quot;,
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If we wanted to get just the Acme thumb smash…..er…..hammer, then we could write a select statement that looks like the following…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SELECT *
+FROM products p
+WHERE p.name = &amp;quot;Hammer&amp;quot; AND p.brand.name = &amp;quot;Acme&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Executing this query in Cosmos DB looks something like this…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;async function getProduct(productName: string, brandName: string) {
+  const query = `SELECT TOP 1 *
+               FROM products p
+               WHERE p.productName = &amp;quot;${productName}&amp;quot;
+               AND p.brand.brandName = &amp;quot;${brandName}&amp;quot;`;
+  const result = await collection.items.query(query).fetchNext();
+  return result.resources[0];
+}
+
+getProduct(&amp;quot;Hammer&amp;quot;, &amp;quot;Acme&amp;quot;).then(product =&amp;gt; {
+  console.log(JSON.stringify(product));
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note that “SELECT Top 1 _” is preferred over “SELECT _&amp;rdquo; so you don’t return more data than you intend. And &amp;ldquo;SELECT p.ANYTHING_AT_ALL&amp;rdquo; is preferrable to &amp;ldquo;SELECT *&amp;rdquo; because your document structure may not always be the same in a NoSQL database because that&amp;rsquo;s the world we live in now.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Assuming that the brand name and product name together constitute a unique key, we should only ever get one result back. The Cosmos DB JavaScript SDK always returns an array for queries, even if there is only one item inside. To get that item, we can just grab the zero-index item from the &lt;code&gt;resources&lt;/code&gt; object, which is what’s going on in that gorgeous code block above composed by yours truly.&lt;/p&gt;
+
+&lt;p&gt;The problem is that this returns &lt;code&gt;undefined&lt;/code&gt; if there is no result. We could check for that and return en empty object easily enough…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;return result.resources[0] || {};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But…&amp;rdquo;yuck”. I don&amp;rsquo;t know what it is about array notation, but it always feels like I&amp;rsquo;m doing it wrong. Like I’m cheating by using the array index. I think this is because I’m explicitly asking for something that, much like god, may or may not exist. If it does exist, everything is fine. If it doesn&amp;rsquo;t, the only way to find out is the hard way.&lt;/p&gt;
+
+&lt;p&gt;Array notation isn’t bad per say, but I generally try and stay away from it because it’s the best way to smash your face on “undefined is not a function” if you use it with objects.&lt;/p&gt;
+
+&lt;p&gt;To feel less dirty, we could instead use the array “shift” method. This gives us the first object in the array or &lt;code&gt;undefined&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;return result.resources.shift() || {};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But that also alters the original array, which we might not want. Like if we were going to use that same response again for another operation. I know you think you won&amp;rsquo;t. You always think you won&amp;rsquo;t. But then, eventually, you do and by the time you do you&amp;rsquo;ve forgotten all about this whole scenario because at least a year has passed, you&amp;rsquo;ve had a child, you&amp;rsquo;ve moved twice because you don&amp;rsquo;t get along with your neighbors and your wife has acquired two pugs.&lt;/p&gt;
+
+&lt;p&gt;It’s generally not a good idea to go around modifying collections unless you specifically want to do that. Insert esoteric HN article about immutability.&lt;/p&gt;
+
+&lt;p&gt;Instead we could use &lt;code&gt;find&lt;/code&gt;, which will leave the original &lt;code&gt;resources&lt;/code&gt; array intact…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;return result.resources.find(x =&amp;gt; x) || {};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Cosmos DB enginner and JavaScript trickster &lt;a href=&#34;https://twitter.com/southpolesteve&#34;&gt;Steve Faulkner&lt;/a&gt; pointed out that you could also just destructure the array. But we can’t do that in a return statement for reasons that the JavaScript gods have not seen fit to reveal. So we would need two lines. Also, we can’t do a default value on the destructuring, so we would have to do it on the return.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;const [item] = result.resources;
+return item || {};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;He also pointed out to me that the common denominator in all my failed neighbor relationships might be me.&lt;/p&gt;
+
+&lt;p&gt;At this point, we just have to ask, “Which of these is best”? We don&amp;rsquo;t have to ask that, but we probably should given this is a blog post and it needs a conclusion.&lt;/p&gt;
+
+&lt;p&gt;In my opinion, as much as I hate to admit it, it’s the line we started with. While array notation might seem dirty, in this instance, it simply makes the most sense and most clearly articulates what the code does.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;return result.resources[0] || {};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It&amp;rsquo;s also not a problem to use array notation here because we are in fact working with an array. The whole reason I was trying to avoid that situation in the first place is because I was looking for a solution to a problem that JavaScript just doesn&amp;rsquo;t have.&lt;/p&gt;
+
+&lt;h2 id=&#34;a-solution-without-a-problem&#34;&gt;A solution without a problem&lt;/h2&gt;
+
+&lt;p&gt;If you have used C# before, you will be familiar with LINQ. You will also be very familiar with LINQ&amp;rsquo;s &lt;code&gt;firstOrDefault&lt;/code&gt; or &lt;code&gt;singleOrDefault&lt;/code&gt; methods. These methods return either the first result from the query, or an empty object of the query return type. LINQ doesn&amp;rsquo;t exist for JavaScript (that&amp;rsquo;s a &lt;a href=&#34;https://github.com/mihaifm/linq&#34;&gt;lie&lt;/a&gt;) and there is a reason for that: We don&amp;rsquo;t need it.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;firstOrDefault&lt;/code&gt; and &lt;code&gt;singleOrDefault&lt;/code&gt; methods are needed for C# because it is a typed language. You can&amp;rsquo;t just return an object. You either have to get a result, or you need to get a null object of a certain type. In JavaScript, we don&amp;rsquo;t care about types (very much). So it&amp;rsquo;s easy enough for us to check and see if something is simply there and then return an empty object if it is not. We don&amp;rsquo;t even have to do that much. We can just use the result type later in our code if it&amp;rsquo;s defined at all.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;const product = await db.getProduct(&amp;quot;Hammer&amp;quot;, &amp;quot;Acme&amp;quot;);
+if (product) {
+  product.description = ...
+}
+else {
+  console.log(&amp;quot;Unable to find a(n) %s %s&amp;quot;, &amp;quot;Acme&amp;quot;, &amp;quot;Hammer&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The moral of this story is that sometimes your first instinct is the right one. Or, it&amp;rsquo;s not. Either way, you won&amp;rsquo;t know until you write a blog post.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-nodejs&#34;&gt;Connect to and query data from Azure Cosmos DB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ardalis.com/javascript-es6-linq-equivalents&#34;&gt;Nifty article from Steve Smith on mapping JavaScript array methods to LINQ methods&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
   </channel>
 </rss>

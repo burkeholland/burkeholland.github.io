@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>blog on Burke Holland</title>
     <link>https://burkeholland.github.io/categories/blog/</link>
@@ -8,29 +8,249 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 13 Jan 2020 15:58:22 -0600</lastBuildDate>
     
-	<atom:link href="https://burkeholland.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://burkeholland.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>The 3 Laws of Serverless</title>
-      <link>https://burkeholland.github.io/posts/laws-of-serverless/</link>
-      <pubDate>Mon, 13 Jan 2020 15:58:22 -0600</pubDate>
+<title>The 3 Laws of Serverless</title>
+<link>https://burkeholland.github.io/posts/laws-of-serverless/</link>
+<pubDate>Mon, 13 Jan 2020 15:58:22 -0600</pubDate>
       
       <guid>https://burkeholland.github.io/posts/laws-of-serverless/</guid>
-      <description>A wise man once said this about Serverless&amp;hellip;
-So wise! So profound. So obnoxiously vain to use your own quote.
-&amp;ldquo;Serverless&amp;rdquo;, is a buzzword. We can&amp;rsquo;t seem to agree on what it actaully means, so it ends up meaning nothing at all. Much like &amp;ldquo;cloud&amp;rdquo; or &amp;ldquo;dynamic&amp;rdquo; or &amp;ldquo;synergy&amp;rdquo;. You just wait for the right time in a meeting to drop it, walk to the board and draw a Venn Diagram, and then just sit back and wait for your well-deserved promotion.</description>
-    </item>
+<description>
+
+&lt;p&gt;A wise man once said this about Serverless&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/serverless-quote.png&#34; alt=&#34;Quote: It&#39;s not important to understand what serverless means. It&#39;s only important that you know the word an you are not afraid to use it in a blog post.&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So wise! So profound. So obnoxiously vain to use your own quote.&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Serverless&amp;rdquo;, is a buzzword. We can&amp;rsquo;t seem to agree on what it actaully means, so it ends up meaning nothing at all. Much like &amp;ldquo;cloud&amp;rdquo; or &amp;ldquo;dynamic&amp;rdquo; or &amp;ldquo;synergy&amp;rdquo;. You just wait for the right time in a meeting to drop it, walk to the board and draw a Venn Diagram, and then just sit back and wait for your well-deserved promotion.&lt;/p&gt;
+
+&lt;p&gt;A lot of very smart people have &lt;em&gt;tried&lt;/em&gt; to define the word in a meaningful way. Here&amp;rsquo;s one that you might have seen before..&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Build applications without thinking about servers&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I actually think this is pretty good at answering the &amp;ldquo;Wait! How can there be no server!!?!?!&amp;rdquo; question. But I think this definition falls a tad on the naive side.&lt;/p&gt;
+
+&lt;p&gt;Nobody really thinks about servers when they are writing their code. I mean, I doubt any developer has ever thrown up their hands and said &amp;ldquo;Whoa, whoa, whoa. Wait just a minute. We&amp;rsquo;re not declaring any variables in this joint until I know what server we&amp;rsquo;re going to be running this on.&amp;rdquo; Or maybe you do. I have never ever done that. I always do it AFTER I&amp;rsquo;ve written the application. Come to think of it, maybe that explains a lot.&lt;/p&gt;
+
+&lt;p&gt;But besides, isn&amp;rsquo;t that the whole point of a Platform as a Service (PaaS)? Don&amp;rsquo;t services like Azure and Heroku and a host of others already enable you to deploy your code without knowing anything about the physical server where it&amp;rsquo;s running? Haven&amp;rsquo;t we solved this problem?&lt;/p&gt;
+
+&lt;p&gt;And if all of that is true, it seems to me that nearly everything in the cloud that is an &amp;ldquo;as a Service&amp;rdquo; product would be Serverless. Which means it would be easier to assume that everything is &amp;ldquo;Serverless&amp;rdquo; and just try to identify when something is not. I don&amp;rsquo;t even know what we could call that. Serverfull? Server as a Service? I know! VIRTUAL MACHINES.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t think you can explain Serverless in one sentence. This is because Serverless isn&amp;rsquo;t a single concept. It&amp;rsquo;s really 3 concepts that are used together to create a new type of cloud service. So don&amp;rsquo;t feel bad if your pug doesn&amp;rsquo;t get it when you try to break it down. It&amp;rsquo;s not your fault and a pug is a dog. I&amp;rsquo;m relatively sure that mine forgets nearly everything every 24 hours. Every day I tell it to get off the couch and it acts like it&amp;rsquo;s never heard this information before.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at the 3 properties that a technology must exhibit to be considered Serverless. These are the &amp;ldquo;Laws of Serverless&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;law-of-furthest-abstraction&#34;&gt;Law of Furthest Abstraction&lt;/h2&gt;
+
+&lt;p&gt;The &amp;ldquo;Law of Furthest Abstraction&amp;rdquo; says that you have no knowledge of the underlying system where your code runs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/law-furthest-abstraction.png&#34; alt=&#34;A clipart picture of a person with the top of their head open to receive knowledge.&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is different from a PaaS. A PaaS hides the operating system, but you still need to know about the runtime and you still need to have some system knowledge.&lt;/p&gt;
+
+&lt;p&gt;For instance, Azure&amp;rsquo;s PaaS is called &amp;ldquo;&lt;a href=&#34;https://azure.microsoft.com/try/app-service/?WT.mc_id=personal-blog-buhollan&#34;&gt;App Service&lt;/a&gt;&amp;rdquo;. When you create an App Service instance, you need to tell it what sort of App Service Plan you want to use. That service plan defines how much memory and CPU your instance will receive. For instance, here&amp;rsquo;s what the B (Basic) tier App Service Plans look like&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/b-service-plans.png&#34; alt=&#34;A listing of B tier service plans and resources granted with each one&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This means App Service is not Serverless.&lt;/p&gt;
+
+&lt;p&gt;A service in Azure that &lt;strong&gt;is&lt;/strong&gt; Serverless would be &lt;a href=&#34;https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-vs-code?WT.mc_id=personal-blog-buhollan&#34;&gt;Azure Functions&lt;/a&gt;. Azure Functions has no concept of App Service Plans. You run your code in Azure Functions and it will receive all the computing power that it needs when it needs it. It&amp;rsquo;s up to Azure Functions to figure that out.&lt;/p&gt;
+
+&lt;p&gt;How does that even work?!?&lt;/p&gt;
+
+&lt;p&gt;It works becdause of the second law of Serverless: The Law of Inherent Scale.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-law-of-inherent-scale&#34;&gt;The Law of Inherent Scale&lt;/h2&gt;
+
+&lt;p&gt;The Law of Inherent Scale says that scaling is an intrinsic attribute of the technology; so much so that it just happens automatically.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/law-inherent-scale.png&#34; alt=&#34;An icon of a column chart getting larger as it goes to the right and an arrow following along the top of the columns&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With Azure Functions, scaling just occurs. And remember, scaling is both out and back. It&amp;rsquo;s not enough to be able to scale out, the service needs to also be able to scale back; &lt;strong&gt;all the way to zero&lt;/strong&gt;. That last part is important as you&amp;rsquo;ll see when we get to the third and final law.&lt;/p&gt;
+
+&lt;p&gt;The way that Azure Functions accomplishes this is by adding servers as your demand spikes, and removing them as the demand subsides. This includes putting your app back on cold disk if it hasn&amp;rsquo;t been called for a period of time. It then has to rehydrate the application when the next invocation occurs.&lt;/p&gt;
+
+&lt;p&gt;You can actually watch this happen in realtime by simulating some load on an Azure Functions instance. Watch the GIF below and you can see the number of servers increase as the CPU gets pegged.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/function-scaling-demo.gif&#34; alt=&#34;Azure App Insights showing increased traffic and the number of servers increasing as load on the server reaches 100%&#34; /&gt;.&lt;/p&gt;
+
+&lt;p&gt;What about a PaaS though? Don&amp;rsquo;t most PaaS&amp;rsquo;s scale?&lt;/p&gt;
+
+&lt;p&gt;Yes, They do.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at Azure App Service again as an example. App Service can scale out in one of two ways. One way is for you to manually add another App Service instance (B tier for example). This would not be considered &amp;ldquo;inherent scale&amp;rdquo; since it does not happen automatically.&lt;/p&gt;
+
+&lt;p&gt;The second way is something called &amp;ldquo;Auto scaling&amp;rdquo;. This is where Azure will automatically add new App Service instances for you as the load increases. That &lt;strong&gt;is&lt;/strong&gt; inherent scale. However, you have to scale in chunks - or rather by adding full App Service Plan instances. In other words, you have to add another full B instance to scale out, even if you don&amp;rsquo;t need the entire amount of that compute. This means that you are paying for compute whether you use it or not. This brings us to the third and final Serverless Law - the &amp;ldquo;Law of Least Consumption&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;law-of-least-consumption&#34;&gt;Law of Least Consumption&lt;/h2&gt;
+
+&lt;p&gt;The Law of Least Consumption says that you only pay for what you use. Coincidentally, this also everyone&amp;rsquo;s most favorite law. Money talks. But it doesn&amp;rsquo;t buy happiness. But it does buy jetski&amp;rsquo;s and I&amp;rsquo;ve never seen an unhappy person on a jetski.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/law-least-consumption.png&#34; alt=&#34;An icon of a water faucet with the water running&#34; /&gt;.&lt;/p&gt;
+
+&lt;p&gt;Think about it like this: in your house, or your parents house, or apartment or wherever you happen to live, you probably have running water. But that water doesn&amp;rsquo;t run all the time. It only runs when you need it. You turn the faucet on to get water, and off when you aren&amp;rsquo;t using it. By the way, you can now get a faucet that is &lt;a href=&#34;https://www.cnet.com/news/delta-to-make-faucets-that-work-with-amazon-alexa/&#34;&gt;controlled by Alexa&lt;/a&gt;. Which is just what we need - robots in charge of the water supply.&lt;/p&gt;
+
+&lt;p&gt;Azure Functions is like a water faucet for compute. You only get charged for what you use. That occurs in a few different ways&amp;hellip;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Code storage&lt;/strong&gt; - you pay for the disk space that your code actually occupies on the server&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Executions&lt;/strong&gt; - you pay per execution of your function&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Execution time&lt;/strong&gt; - you pay for the amount of compute that your function uses.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You also receive 1 million free executions a month. That combined with the miniscule cost of storage means that if your Azure Functions don&amp;rsquo;t get called, you don&amp;rsquo;t pay anything. This makes a lot of a sense as a customer. Just think of all the compute that we have paid for and wasted all these years! You could be retired already! But probably not because you&amp;rsquo;d blow all that extra money on jetski&amp;rsquo;s.&lt;/p&gt;
+
+&lt;p&gt;The cloud can (and should) save us money by being able to target compute by need and not just allocating it in &amp;ldquo;use it or lose it&amp;rdquo; buckets.&lt;/p&gt;
+
+&lt;h2 id=&#34;applying-the-serverless-laws&#34;&gt;Applying the Serverless Laws&lt;/h2&gt;
+
+&lt;p&gt;Now that I have established an irrefutable framework to determine if something is Serverless, we can apply these laws to any technology to determine if it is or is NOT Serverless.&lt;/p&gt;
+
+&lt;h3 id=&#34;azure-services-that-are-serverless&#34;&gt;Azure Services that are Serverless&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/javascript/tutorial-vscode-static-website-node-01&#34;&gt;Azure Static Sites&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/free/serverless/?WT.mc_id=personal-blog-buhollan&#34;&gt;Logic Apps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/azure/cosmos-db/introduction?WT.mc_id=personal-blog-buhollan&#34;&gt;Cosmos DB&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note - Cosmos DB isn&amp;rsquo;t quite Serverless just yet, but it&amp;rsquo;s close. It conforms to law 1, but up until recently, you&amp;rsquo;ve had to buy database bandwidth in chunks which means it did not conform to laws 2 and 3. However, as of Ignite, the team announced &amp;ldquo;Auto Pilot&amp;rdquo;. This is a feature which automatically adds throughput as the load requires it, but you still have to pay for a basic allocation. Once Cosmos DB allows you to start from absolute zero, it will comply with all 3 laws and can be considered &amp;ldquo;Serverless&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/azure/sql-database/sql-database-serverless?WT.mc_id=personal-blog-buhollan&#34;&gt;SQL Server&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Believe it or not, SQL Server has a &amp;ldquo;Serverless&amp;rdquo; offering.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The next time someone casually throws out a &amp;ldquo;Serverless&amp;rdquo;, see if satisfies the 3 Laws of Serverless. If it does, you can save yourself a &amp;ldquo;well, actually&amp;rdquo;. If it doesn&amp;rsquo;t, just nod and smile. And try to pay attention to the Venn Diagram.&lt;/p&gt;
+</description>
+</item>
     
     <item>
-      <title>Selecting the first item from an array</title>
-      <link>https://burkeholland.github.io/posts/select-one-javascript/</link>
-      <pubDate>Sun, 17 Nov 2019 05:27:23 +0600</pubDate>
+<title>Selecting the first item from an array</title>
+<link>https://burkeholland.github.io/posts/select-one-javascript/</link>
+<pubDate>Sun, 17 Nov 2019 05:27:23 +0600</pubDate>
       
       <guid>https://burkeholland.github.io/posts/select-one-javascript/</guid>
-      <description>Sometimes, in life, you just want one of something. Not two. Never two. Just one. Like a toothbrush. Or a flu shot. Or a pug. Dear god, trust me, you do not want more than one pug. It&amp;rsquo;s like a choir of snoring with flatulance on backup vocals.
-This is common in database queries, too. I mean, the desire to just get one result. Not the flatulance. Although it might be.</description>
-    </item>
+<description>
+
+&lt;p&gt;Sometimes, in life, you just want one of something. Not two. Never two. Just one. Like a toothbrush. Or a flu shot. Or a pug. Dear god, trust me, you do not want more than one pug. It&amp;rsquo;s like a choir of snoring with flatulance on backup vocals.&lt;/p&gt;
+
+&lt;p&gt;This is common in database queries, too. I mean, the desire to just get one result. Not the flatulance. Although it &lt;em&gt;might&lt;/em&gt; be. I&amp;rsquo;ve got no data on that and writing queries can be super stressful.&lt;/p&gt;
+
+&lt;p&gt;Applications that act as a form over some sort of data often require the retreiving of just one item so that you can edit that item. Which, according to science, is like 110% of all applications ever.&lt;/p&gt;
+
+&lt;p&gt;I recently built a small application with &lt;a href=&#34;https://www.npmjs.com/package/@azure/cosmos&#34;&gt;Cosmos DB&lt;/a&gt;, and I quickly ran into a situation where I needed to select one item. Specifically, I have a database structure that looks like this…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+    productId: 1,
+    productName: &amp;quot;Hammer&amp;quot;,
+    productDescription: &amp;quot;a tool consisting of a weighted \&amp;quot;head\&amp;quot; fixed to a long handle that is swung to deliver a swift and brutal impact to the thumb.&amp;quot;
+    brand: {
+        brandId: 10,
+        brandName: &amp;quot;Acme&amp;quot;,
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If we wanted to get just the Acme thumb smash…..er…..hammer, then we could write a select statement that looks like the following…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SELECT *
+FROM products p
+WHERE p.name = &amp;quot;Hammer&amp;quot; AND p.brand.name = &amp;quot;Acme&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Executing this query in Cosmos DB looks something like this…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;async function getProduct(productName: string, brandName: string) {
+  const query = `SELECT TOP 1 *
+               FROM products p
+               WHERE p.productName = &amp;quot;${productName}&amp;quot;
+               AND p.brand.brandName = &amp;quot;${brandName}&amp;quot;`;
+  const result = await collection.items.query(query).fetchNext();
+  return result.resources[0];
+}
+
+getProduct(&amp;quot;Hammer&amp;quot;, &amp;quot;Acme&amp;quot;).then(product =&amp;gt; {
+  console.log(JSON.stringify(product));
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note that “SELECT Top 1 _” is preferred over “SELECT _&amp;rdquo; so you don’t return more data than you intend. And &amp;ldquo;SELECT p.ANYTHING_AT_ALL&amp;rdquo; is preferrable to &amp;ldquo;SELECT *&amp;rdquo; because your document structure may not always be the same in a NoSQL database because that&amp;rsquo;s the world we live in now.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Assuming that the brand name and product name together constitute a unique key, we should only ever get one result back. The Cosmos DB JavaScript SDK always returns an array for queries, even if there is only one item inside. To get that item, we can just grab the zero-index item from the &lt;code&gt;resources&lt;/code&gt; object, which is what’s going on in that gorgeous code block above composed by yours truly.&lt;/p&gt;
+
+&lt;p&gt;The problem is that this returns &lt;code&gt;undefined&lt;/code&gt; if there is no result. We could check for that and return en empty object easily enough…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;return result.resources[0] || {};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But…&amp;rdquo;yuck”. I don&amp;rsquo;t know what it is about array notation, but it always feels like I&amp;rsquo;m doing it wrong. Like I’m cheating by using the array index. I think this is because I’m explicitly asking for something that, much like god, may or may not exist. If it does exist, everything is fine. If it doesn&amp;rsquo;t, the only way to find out is the hard way.&lt;/p&gt;
+
+&lt;p&gt;Array notation isn’t bad per say, but I generally try and stay away from it because it’s the best way to smash your face on “undefined is not a function” if you use it with objects.&lt;/p&gt;
+
+&lt;p&gt;To feel less dirty, we could instead use the array “shift” method. This gives us the first object in the array or &lt;code&gt;undefined&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;return result.resources.shift() || {};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But that also alters the original array, which we might not want. Like if we were going to use that same response again for another operation. I know you think you won&amp;rsquo;t. You always think you won&amp;rsquo;t. But then, eventually, you do and by the time you do you&amp;rsquo;ve forgotten all about this whole scenario because at least a year has passed, you&amp;rsquo;ve had a child, you&amp;rsquo;ve moved twice because you don&amp;rsquo;t get along with your neighbors and your wife has acquired two pugs.&lt;/p&gt;
+
+&lt;p&gt;It’s generally not a good idea to go around modifying collections unless you specifically want to do that. Insert esoteric HN article about immutability.&lt;/p&gt;
+
+&lt;p&gt;Instead we could use &lt;code&gt;find&lt;/code&gt;, which will leave the original &lt;code&gt;resources&lt;/code&gt; array intact…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;return result.resources.find(x =&amp;gt; x) || {};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Cosmos DB enginner and JavaScript trickster &lt;a href=&#34;https://twitter.com/southpolesteve&#34;&gt;Steve Faulkner&lt;/a&gt; pointed out that you could also just destructure the array. But we can’t do that in a return statement for reasons that the JavaScript gods have not seen fit to reveal. So we would need two lines. Also, we can’t do a default value on the destructuring, so we would have to do it on the return.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;const [item] = result.resources;
+return item || {};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;He also pointed out to me that the common denominator in all my failed neighbor relationships might be me.&lt;/p&gt;
+
+&lt;p&gt;At this point, we just have to ask, “Which of these is best”? We don&amp;rsquo;t have to ask that, but we probably should given this is a blog post and it needs a conclusion.&lt;/p&gt;
+
+&lt;p&gt;In my opinion, as much as I hate to admit it, it’s the line we started with. While array notation might seem dirty, in this instance, it simply makes the most sense and most clearly articulates what the code does.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;return result.resources[0] || {};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It&amp;rsquo;s also not a problem to use array notation here because we are in fact working with an array. The whole reason I was trying to avoid that situation in the first place is because I was looking for a solution to a problem that JavaScript just doesn&amp;rsquo;t have.&lt;/p&gt;
+
+&lt;h2 id=&#34;a-solution-without-a-problem&#34;&gt;A solution without a problem&lt;/h2&gt;
+
+&lt;p&gt;If you have used C# before, you will be familiar with LINQ. You will also be very familiar with LINQ&amp;rsquo;s &lt;code&gt;firstOrDefault&lt;/code&gt; or &lt;code&gt;singleOrDefault&lt;/code&gt; methods. These methods return either the first result from the query, or an empty object of the query return type. LINQ doesn&amp;rsquo;t exist for JavaScript (that&amp;rsquo;s a &lt;a href=&#34;https://github.com/mihaifm/linq&#34;&gt;lie&lt;/a&gt;) and there is a reason for that: We don&amp;rsquo;t need it.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;firstOrDefault&lt;/code&gt; and &lt;code&gt;singleOrDefault&lt;/code&gt; methods are needed for C# because it is a typed language. You can&amp;rsquo;t just return an object. You either have to get a result, or you need to get a null object of a certain type. In JavaScript, we don&amp;rsquo;t care about types (very much). So it&amp;rsquo;s easy enough for us to check and see if something is simply there and then return an empty object if it is not. We don&amp;rsquo;t even have to do that much. We can just use the result type later in our code if it&amp;rsquo;s defined at all.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;const product = await db.getProduct(&amp;quot;Hammer&amp;quot;, &amp;quot;Acme&amp;quot;);
+if (product) {
+  product.description = ...
+}
+else {
+  console.log(&amp;quot;Unable to find a(n) %s %s&amp;quot;, &amp;quot;Acme&amp;quot;, &amp;quot;Hammer&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The moral of this story is that sometimes your first instinct is the right one. Or, it&amp;rsquo;s not. Either way, you won&amp;rsquo;t know until you write a blog post.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-nodejs&#34;&gt;Connect to and query data from Azure Cosmos DB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ardalis.com/javascript-es6-linq-equivalents&#34;&gt;Nifty article from Steve Smith on mapping JavaScript array methods to LINQ methods&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
   </channel>
 </rss>

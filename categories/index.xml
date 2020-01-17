@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Burke Holland</title>
     <link>https://burkeholland.github.io/categories/</link>
@@ -8,35 +8,35 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 13 Jan 2020 15:58:22 -0600</lastBuildDate>
     
-	<atom:link href="https://burkeholland.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://burkeholland.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>blog</title>
-      <link>https://burkeholland.github.io/categories/blog/</link>
-      <pubDate>Mon, 13 Jan 2020 15:58:22 -0600</pubDate>
+<title>blog</title>
+<link>https://burkeholland.github.io/categories/blog/</link>
+<pubDate>Mon, 13 Jan 2020 15:58:22 -0600</pubDate>
       
       <guid>https://burkeholland.github.io/categories/blog/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>serverless</title>
-      <link>https://burkeholland.github.io/categories/serverless/</link>
-      <pubDate>Mon, 13 Jan 2020 15:58:22 -0600</pubDate>
+<title>serverless</title>
+<link>https://burkeholland.github.io/categories/serverless/</link>
+<pubDate>Mon, 13 Jan 2020 15:58:22 -0600</pubDate>
       
       <guid>https://burkeholland.github.io/categories/serverless/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
     <item>
-      <title>cosmosdb</title>
-      <link>https://burkeholland.github.io/categories/cosmosdb/</link>
-      <pubDate>Sun, 17 Nov 2019 05:27:23 +0600</pubDate>
+<title>cosmosdb</title>
+<link>https://burkeholland.github.io/categories/cosmosdb/</link>
+<pubDate>Sun, 17 Nov 2019 05:27:23 +0600</pubDate>
       
       <guid>https://burkeholland.github.io/categories/cosmosdb/</guid>
-      <description></description>
-    </item>
+<description></description>
+</item>
     
   </channel>
 </rss>

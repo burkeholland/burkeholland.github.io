@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>azurefunctions on Burke Holland</title>
     <link>https://burkeholland.github.io/tags/azurefunctions/</link>
@@ -8,19 +8,129 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 13 Jan 2020 15:58:22 -0600</lastBuildDate>
     
-	<atom:link href="https://burkeholland.github.io/tags/azurefunctions/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://burkeholland.github.io/tags/azurefunctions/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>The 3 Laws of Serverless</title>
-      <link>https://burkeholland.github.io/posts/laws-of-serverless/</link>
-      <pubDate>Mon, 13 Jan 2020 15:58:22 -0600</pubDate>
+<title>The 3 Laws of Serverless</title>
+<link>https://burkeholland.github.io/posts/laws-of-serverless/</link>
+<pubDate>Mon, 13 Jan 2020 15:58:22 -0600</pubDate>
       
       <guid>https://burkeholland.github.io/posts/laws-of-serverless/</guid>
-      <description>A wise man once said this about Serverless&amp;hellip;
-So wise! So profound. So obnoxiously vain to use your own quote.
-&amp;ldquo;Serverless&amp;rdquo;, is a buzzword. We can&amp;rsquo;t seem to agree on what it actaully means, so it ends up meaning nothing at all. Much like &amp;ldquo;cloud&amp;rdquo; or &amp;ldquo;dynamic&amp;rdquo; or &amp;ldquo;synergy&amp;rdquo;. You just wait for the right time in a meeting to drop it, walk to the board and draw a Venn Diagram, and then just sit back and wait for your well-deserved promotion.</description>
-    </item>
+<description>
+
+&lt;p&gt;A wise man once said this about Serverless&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/serverless-quote.png&#34; alt=&#34;Quote: It&#39;s not important to understand what serverless means. It&#39;s only important that you know the word an you are not afraid to use it in a blog post.&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So wise! So profound. So obnoxiously vain to use your own quote.&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Serverless&amp;rdquo;, is a buzzword. We can&amp;rsquo;t seem to agree on what it actaully means, so it ends up meaning nothing at all. Much like &amp;ldquo;cloud&amp;rdquo; or &amp;ldquo;dynamic&amp;rdquo; or &amp;ldquo;synergy&amp;rdquo;. You just wait for the right time in a meeting to drop it, walk to the board and draw a Venn Diagram, and then just sit back and wait for your well-deserved promotion.&lt;/p&gt;
+
+&lt;p&gt;A lot of very smart people have &lt;em&gt;tried&lt;/em&gt; to define the word in a meaningful way. Here&amp;rsquo;s one that you might have seen before..&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Build applications without thinking about servers&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I actually think this is pretty good at answering the &amp;ldquo;Wait! How can there be no server!!?!?!&amp;rdquo; question. But I think this definition falls a tad on the naive side.&lt;/p&gt;
+
+&lt;p&gt;Nobody really thinks about servers when they are writing their code. I mean, I doubt any developer has ever thrown up their hands and said &amp;ldquo;Whoa, whoa, whoa. Wait just a minute. We&amp;rsquo;re not declaring any variables in this joint until I know what server we&amp;rsquo;re going to be running this on.&amp;rdquo; Or maybe you do. I have never ever done that. I always do it AFTER I&amp;rsquo;ve written the application. Come to think of it, maybe that explains a lot.&lt;/p&gt;
+
+&lt;p&gt;But besides, isn&amp;rsquo;t that the whole point of a Platform as a Service (PaaS)? Don&amp;rsquo;t services like Azure and Heroku and a host of others already enable you to deploy your code without knowing anything about the physical server where it&amp;rsquo;s running? Haven&amp;rsquo;t we solved this problem?&lt;/p&gt;
+
+&lt;p&gt;And if all of that is true, it seems to me that nearly everything in the cloud that is an &amp;ldquo;as a Service&amp;rdquo; product would be Serverless. Which means it would be easier to assume that everything is &amp;ldquo;Serverless&amp;rdquo; and just try to identify when something is not. I don&amp;rsquo;t even know what we could call that. Serverfull? Server as a Service? I know! VIRTUAL MACHINES.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t think you can explain Serverless in one sentence. This is because Serverless isn&amp;rsquo;t a single concept. It&amp;rsquo;s really 3 concepts that are used together to create a new type of cloud service. So don&amp;rsquo;t feel bad if your pug doesn&amp;rsquo;t get it when you try to break it down. It&amp;rsquo;s not your fault and a pug is a dog. I&amp;rsquo;m relatively sure that mine forgets nearly everything every 24 hours. Every day I tell it to get off the couch and it acts like it&amp;rsquo;s never heard this information before.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at the 3 properties that a technology must exhibit to be considered Serverless. These are the &amp;ldquo;Laws of Serverless&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;law-of-furthest-abstraction&#34;&gt;Law of Furthest Abstraction&lt;/h2&gt;
+
+&lt;p&gt;The &amp;ldquo;Law of Furthest Abstraction&amp;rdquo; says that you have no knowledge of the underlying system where your code runs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/law-furthest-abstraction.png&#34; alt=&#34;A clipart picture of a person with the top of their head open to receive knowledge.&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is different from a PaaS. A PaaS hides the operating system, but you still need to know about the runtime and you still need to have some system knowledge.&lt;/p&gt;
+
+&lt;p&gt;For instance, Azure&amp;rsquo;s PaaS is called &amp;ldquo;&lt;a href=&#34;https://azure.microsoft.com/try/app-service/?WT.mc_id=personal-blog-buhollan&#34;&gt;App Service&lt;/a&gt;&amp;rdquo;. When you create an App Service instance, you need to tell it what sort of App Service Plan you want to use. That service plan defines how much memory and CPU your instance will receive. For instance, here&amp;rsquo;s what the B (Basic) tier App Service Plans look like&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/b-service-plans.png&#34; alt=&#34;A listing of B tier service plans and resources granted with each one&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This means App Service is not Serverless.&lt;/p&gt;
+
+&lt;p&gt;A service in Azure that &lt;strong&gt;is&lt;/strong&gt; Serverless would be &lt;a href=&#34;https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-vs-code?WT.mc_id=personal-blog-buhollan&#34;&gt;Azure Functions&lt;/a&gt;. Azure Functions has no concept of App Service Plans. You run your code in Azure Functions and it will receive all the computing power that it needs when it needs it. It&amp;rsquo;s up to Azure Functions to figure that out.&lt;/p&gt;
+
+&lt;p&gt;How does that even work?!?&lt;/p&gt;
+
+&lt;p&gt;It works becdause of the second law of Serverless: The Law of Inherent Scale.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-law-of-inherent-scale&#34;&gt;The Law of Inherent Scale&lt;/h2&gt;
+
+&lt;p&gt;The Law of Inherent Scale says that scaling is an intrinsic attribute of the technology; so much so that it just happens automatically.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/law-inherent-scale.png&#34; alt=&#34;An icon of a column chart getting larger as it goes to the right and an arrow following along the top of the columns&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With Azure Functions, scaling just occurs. And remember, scaling is both out and back. It&amp;rsquo;s not enough to be able to scale out, the service needs to also be able to scale back; &lt;strong&gt;all the way to zero&lt;/strong&gt;. That last part is important as you&amp;rsquo;ll see when we get to the third and final law.&lt;/p&gt;
+
+&lt;p&gt;The way that Azure Functions accomplishes this is by adding servers as your demand spikes, and removing them as the demand subsides. This includes putting your app back on cold disk if it hasn&amp;rsquo;t been called for a period of time. It then has to rehydrate the application when the next invocation occurs.&lt;/p&gt;
+
+&lt;p&gt;You can actually watch this happen in realtime by simulating some load on an Azure Functions instance. Watch the GIF below and you can see the number of servers increase as the CPU gets pegged.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/function-scaling-demo.gif&#34; alt=&#34;Azure App Insights showing increased traffic and the number of servers increasing as load on the server reaches 100%&#34; /&gt;.&lt;/p&gt;
+
+&lt;p&gt;What about a PaaS though? Don&amp;rsquo;t most PaaS&amp;rsquo;s scale?&lt;/p&gt;
+
+&lt;p&gt;Yes, They do.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at Azure App Service again as an example. App Service can scale out in one of two ways. One way is for you to manually add another App Service instance (B tier for example). This would not be considered &amp;ldquo;inherent scale&amp;rdquo; since it does not happen automatically.&lt;/p&gt;
+
+&lt;p&gt;The second way is something called &amp;ldquo;Auto scaling&amp;rdquo;. This is where Azure will automatically add new App Service instances for you as the load increases. That &lt;strong&gt;is&lt;/strong&gt; inherent scale. However, you have to scale in chunks - or rather by adding full App Service Plan instances. In other words, you have to add another full B instance to scale out, even if you don&amp;rsquo;t need the entire amount of that compute. This means that you are paying for compute whether you use it or not. This brings us to the third and final Serverless Law - the &amp;ldquo;Law of Least Consumption&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;law-of-least-consumption&#34;&gt;Law of Least Consumption&lt;/h2&gt;
+
+&lt;p&gt;The Law of Least Consumption says that you only pay for what you use. Coincidentally, this also everyone&amp;rsquo;s most favorite law. Money talks. But it doesn&amp;rsquo;t buy happiness. But it does buy jetski&amp;rsquo;s and I&amp;rsquo;ve never seen an unhappy person on a jetski.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/law-least-consumption.png&#34; alt=&#34;An icon of a water faucet with the water running&#34; /&gt;.&lt;/p&gt;
+
+&lt;p&gt;Think about it like this: in your house, or your parents house, or apartment or wherever you happen to live, you probably have running water. But that water doesn&amp;rsquo;t run all the time. It only runs when you need it. You turn the faucet on to get water, and off when you aren&amp;rsquo;t using it. By the way, you can now get a faucet that is &lt;a href=&#34;https://www.cnet.com/news/delta-to-make-faucets-that-work-with-amazon-alexa/&#34;&gt;controlled by Alexa&lt;/a&gt;. Which is just what we need - robots in charge of the water supply.&lt;/p&gt;
+
+&lt;p&gt;Azure Functions is like a water faucet for compute. You only get charged for what you use. That occurs in a few different ways&amp;hellip;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Code storage&lt;/strong&gt; - you pay for the disk space that your code actually occupies on the server&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Executions&lt;/strong&gt; - you pay per execution of your function&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Execution time&lt;/strong&gt; - you pay for the amount of compute that your function uses.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You also receive 1 million free executions a month. That combined with the miniscule cost of storage means that if your Azure Functions don&amp;rsquo;t get called, you don&amp;rsquo;t pay anything. This makes a lot of a sense as a customer. Just think of all the compute that we have paid for and wasted all these years! You could be retired already! But probably not because you&amp;rsquo;d blow all that extra money on jetski&amp;rsquo;s.&lt;/p&gt;
+
+&lt;p&gt;The cloud can (and should) save us money by being able to target compute by need and not just allocating it in &amp;ldquo;use it or lose it&amp;rdquo; buckets.&lt;/p&gt;
+
+&lt;h2 id=&#34;applying-the-serverless-laws&#34;&gt;Applying the Serverless Laws&lt;/h2&gt;
+
+&lt;p&gt;Now that I have established an irrefutable framework to determine if something is Serverless, we can apply these laws to any technology to determine if it is or is NOT Serverless.&lt;/p&gt;
+
+&lt;h3 id=&#34;azure-services-that-are-serverless&#34;&gt;Azure Services that are Serverless&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/javascript/tutorial-vscode-static-website-node-01&#34;&gt;Azure Static Sites&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/free/serverless/?WT.mc_id=personal-blog-buhollan&#34;&gt;Logic Apps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/azure/cosmos-db/introduction?WT.mc_id=personal-blog-buhollan&#34;&gt;Cosmos DB&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Note - Cosmos DB isn&amp;rsquo;t quite Serverless just yet, but it&amp;rsquo;s close. It conforms to law 1, but up until recently, you&amp;rsquo;ve had to buy database bandwidth in chunks which means it did not conform to laws 2 and 3. However, as of Ignite, the team announced &amp;ldquo;Auto Pilot&amp;rdquo;. This is a feature which automatically adds throughput as the load requires it, but you still have to pay for a basic allocation. Once Cosmos DB allows you to start from absolute zero, it will comply with all 3 laws and can be considered &amp;ldquo;Serverless&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/azure/sql-database/sql-database-serverless?WT.mc_id=personal-blog-buhollan&#34;&gt;SQL Server&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Believe it or not, SQL Server has a &amp;ldquo;Serverless&amp;rdquo; offering.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The next time someone casually throws out a &amp;ldquo;Serverless&amp;rdquo;, see if satisfies the 3 Laws of Serverless. If it does, you can save yourself a &amp;ldquo;well, actually&amp;rdquo;. If it doesn&amp;rsquo;t, just nod and smile. And try to pay attention to the Venn Diagram.&lt;/p&gt;
+</description>
+</item>
     
   </channel>
 </rss>
