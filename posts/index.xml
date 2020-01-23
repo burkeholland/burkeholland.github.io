@@ -19,7 +19,7 @@
       <guid>https://burkeholland.github.io/posts/cosmos-crud/</guid>
 <description>
 
-&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/azure/cosmos-db/sql-api-nodejs-application?WT.mc_id=personal-blog-buhollan&#34;&gt;CosmosDB JavaScript SDK&lt;/a&gt; is clean - I like it. But I feel like I always end up forgetting how to CRUD.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/azure/cosmos-db/sql-api-nodejs-application?WT.mc_id=personal-blog-buhollan&#34;&gt;Cosmos DB JavaScript SDK&lt;/a&gt; is clean - I like it. But I feel like I always end up forgetting how to CRUD.&lt;/p&gt;
 
 &lt;p&gt;For the uninitiated in database street-slang, CRUD means Create, Read, Update And Delete. Feel free to use that if you find yourself in a turf war or dance-off.&lt;/p&gt;
 
@@ -57,7 +57,7 @@
 &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Note that CosmosDB auto-creates an id if you don&amp;rsquo;t pass one in. It will be a GUID.&lt;/p&gt;
+&lt;p&gt;Note that Cosmos DB auto-creates an id if you don&amp;rsquo;t pass one in. It will be a GUID.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&#34;reading-all-items&#34;&gt;Reading all items&lt;/h2&gt;
