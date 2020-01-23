@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Cosmos CRUD - Burke Holland</title>
+    
+    <meta name="description" content="CosmosDB JavaScript SDK is clean - I like it. But I feel like I always end up forgetting how to CRUD.
+For the uninitiated in database street-slang, CRUD means Create, Read, Update And Delete. Feel free to use that if you find yourself in a turf war or dance-off.
+Well, I take that back. I can &ldquo;read&rdquo; everything purty gud. Actually, I can &ldquo;create&rdquo; as well. It&rsquo;s the retrieving of one item that always throw me off.">
+    <meta name="author" content="">
+    
+    <link href="https://burkeholland.github.io/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://burkeholland.github.io/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://burkeholland.github.io/apple-touch-icon.png">
+    <link rel="icon" href="https://burkeholland.github.io/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.59.1" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://burkeholland.github.io/index.xml" title="Burke Holland">
+    
+    
+    
+    <script>
+      function setTheme() {
+        const time = new Date();
+
+        const prev = localStorage.getItem('date');
+        const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
+
+        const now = time.getTime();
+        let sunrise;
+        let sunset;
+
+        function setBodyClass() {
+          if (now > sunrise && now < sunset) return;
+          document.body.classList.add('dark');
+        }
+
+        if (date !== prev) {
+          fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
+            .then(res => res.json())
+            .then(data => {
+              sunrise = data.sunrise.split(':').map(Number);
+              sunset = data.sunset.split(':').map(Number);
+            })
+            .catch(() => {
+              sunrise = [7, 0];
+              sunset = [19, 0];
+            })
+            .finally(() => {
+              sunrise = time.setHours(sunrise[0], sunrise[1], 0);
+              sunset = time.setHours(sunset[0], sunset[1], 0);
+              setBodyClass();
+              localStorage.setItem('sunrise', sunrise);
+              localStorage.setItem('sunset', sunset);
+            });
+          localStorage.setItem('date', date);
+        } else {
+          sunrise = Number(localStorage.getItem('sunrise'));
+          sunset = Number(localStorage.getItem('sunset'));
+          setBodyClass();
+        }
+      }
+    </script>
+  </head>
+  <body class="single">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        
+        <p class="logo"><a href="https://burkeholland.github.io">&lt; Back</a></p>
+        
+        
+      </nav>
+    </header>
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Cosmos CRUD</h1>
+    <div class="post-meta">January 23, 2020</div>
+  </header>
+  <div class="post-content">
+
+<p><a href="https://docs.microsoft.com/azure/cosmos-db/sql-api-nodejs-application?WT.mc_id=personal-blog-buhollan">CosmosDB JavaScript SDK</a> is clean - I like it. But I feel like I always end up forgetting how to CRUD.</p>
+
+<p>For the uninitiated in database street-slang, CRUD means Create, Read, Update And Delete. Feel free to use that if you find yourself in a turf war or dance-off.</p>
+
+<p>Well, I take that back. I can &ldquo;read&rdquo; everything purty gud. Actually, I can &ldquo;create&rdquo; as well. It&rsquo;s the retrieving of one item that always throw me off. This is because of partition keys. Partition keys always hang me up (because I am but a simple man) and, well, I need a reminder for how they do and don&rsquo;t affect retrieving an item, so that&rsquo;s what I&rsquo;m going to document in this here article.</p>
+
+<p>Assume that we&rsquo;re working with the following document structure with a partition key on &ldquo;/brand/name&rdquo;.</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Artificial Tree&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;price&#34;</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span>
+  <span class="nt">&#34;brand&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Drillco&#34;</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;stockUnits&#34;</span><span class="p">:</span> <span class="mi">654</span><span class="p">,</span>
+  <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;66d7134f-ee03-4cab-b448-ab3bb5098a6f&#34;</span>
+<span class="p">}</span></code></pre></div>
+<p>Assume that all of the following examples have the following connection information&hellip;</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span> <span class="nx">CosmosClient</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;@azure/cosmos&#34;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CosmosClient</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">CONNECTION_STRING</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">database</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">database</span><span class="p">(</span><span class="s2">&#34;tailwind&#34;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">database</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="s2">&#34;products&#34;</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="creating-an-item">Creating an item</h2>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">async</span> <span class="nx">create</span><span class="p">(</span><span class="nx">product</span><span class="o">:</span> <span class="nx">Product</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">{</span> <span class="nx">resource</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">container</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">productToCreate</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">resource</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">product</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">create</span><span class="p">({</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;Hammer&#34;</span><span class="p">,</span>
+  <span class="nx">price</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">brand</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="nx">ACME</span>
+  <span class="p">},</span>
+  <span class="nx">stockUnits</span><span class="o">:</span> <span class="mi">1500</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Note that CosmosDB auto-creates an id if you don&rsquo;t pass one in. It will be a GUID.</p>
+</blockquote>
+
+<h2 id="reading-all-items">Reading all items</h2>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">async</span> <span class="nx">readAll</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">iterator</span> <span class="o">=</span> <span class="nx">container</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">readAll</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="p">{</span> <span class="nx">resources</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">iterator</span><span class="p">.</span><span class="nx">fetchAll</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nx">resources</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">products</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">readAll</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="reading-one-item">Reading one item</h2>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">async</span> <span class="nx">read</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">brand</span><span class="o">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">iterator</span> <span class="o">=</span> <span class="nx">container</span><span class="p">.</span><span class="nx">item</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">brand</span><span class="p">).</span><span class="nx">read</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nx">resources</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">product</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">read</span><span class="p">(</span><span class="s2">&#34;66d7134f-ee03-4cab-b448-ab3bb5098a6f&#34;</span><span class="p">,</span> <span class="s2">&#34;Drillco&#34;</span><span class="p">);</span>
+</code></pre></div>
+<p>Sometimes you don&rsquo;t have a partition key. In that case, you&rsquo;ll want to pass <code>undefined</code> as the second parameter.</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">async</span> <span class="nx">read</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">iterator</span> <span class="o">=</span> <span class="nx">container</span><span class="p">.</span><span class="nx">item</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">).</span><span class="nx">read</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nx">resources</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">product</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">read</span><span class="p">(</span><span class="s2">&#34;66d7134f-ee03-4cab-b448-ab3bb5098a6f&#34;</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="update-an-item">Update an item</h2>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">async</span> <span class="nx">update</span><span class="p">(</span><span class="nx">product</span><span class="o">:</span> <span class="nx">Product</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">// just like with reading one item, if your collection doesn&#39;t have a partition key,
+</span><span class="c1"></span>  <span class="c1">// pass &#34;undefined&#34; as the second parameter - container.item(product.id, undefined);
+</span><span class="c1"></span>  <span class="kd">let</span> <span class="nx">itemToUpdate</span> <span class="o">=</span> <span class="nx">container</span><span class="p">.</span><span class="nx">item</span><span class="p">(</span><span class="nx">product</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">product</span><span class="p">.</span><span class="nx">brand</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="p">{</span> <span class="nx">resource</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">itemToUpdate</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">product</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">resource</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">product</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">update</span><span class="p">({</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;Artificial Tree Updated&#34;</span><span class="p">,</span>
+  <span class="nx">price</span><span class="o">:</span> <span class="mi">250</span><span class="p">,</span>
+  <span class="nx">brand</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&#34;name&#34;</span><span class="o">:</span> <span class="s2">&#34;Drillco&#34;</span>
+  <span class="p">},</span>
+  <span class="nx">stockUnits</span><span class="o">:</span> <span class="mi">654</span><span class="p">,</span>
+  <span class="nx">id</span><span class="o">:</span> <span class="s2">&#34;66d7134f-ee03-4cab-b448-ab3bb5098a6f&#34;</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Note that you <strong>have</strong> to include the id on the object that you pass in to the <code>replace</code> function. Even though you already specified it when you retrieved the item to update.</p>
+</blockquote>
+
+<h2 id="delete-an-item">Delete an item</h2>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">async</span> <span class="nx">destroy</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">brand</span><span class="o">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// just like with reading one item, if your collection doesn&#39;t have a partition key,
+</span><span class="c1"></span>  <span class="c1">// pass &#34;undefined&#34; as the second parameter - container.item(product.id, undefined).delete();
+</span><span class="c1"></span>  <span class="nx">await</span> <span class="nx">container</span><span class="p">.</span><span class="nx">item</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">brand</span><span class="p">).</span><span class="k">delete</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nx">await</span> <span class="nx">destroy</span><span class="p">(</span><span class="s2">&#34;66d7134f-ee03-4cab-b448-ab3bb5098a6f&#34;</span><span class="p">,</span> <span class="s2">&#34;Drillco&#34;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="partition-key-values-vs-names">Partition key values vs names</h2>
+
+<p>The main takeaway from this article (besides my poor use of grammer and analogy) should be that CosmosDB wants a partition key VALUE, not name. When I was first working with the SDK, I would try to pass in the partition key name (/brand/name). This would throw an error telling me that an object with id of <em>whatever</em> didn&rsquo;t exist. That&rsquo;s because I needed to pass in the <em>value</em> of the partition key, not the name. This is why you need to pass in <em>undefined</em> if you do <strong>not</strong> have a partition key defined for your collection.</p>
+
+<p>There is a pretty good tutorial you can go through <a href="https://docs.microsoft.com/azure/cosmos-db/sql-api-nodejs-application?WT.mc_id=personal-blog-buhollan">here</a> that covers this in more detail and shows it in a Node/Express context.</p>
+
+<p>I hope this helps. Good luck out there.</p>
+</div>
+  
+  
+  
+  
+  
+</article>
+
+</main>
+<footer class="footer">
+  <span>&copy; 2020 <a href="https://burkeholland.github.io/resume/">Burke Holland</a></span>
+</footer>
+<script src="https://burkeholland.github.io/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>
+
