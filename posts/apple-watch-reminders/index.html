@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>How to create a Reminder on Apple Watch without creating a Reminder - Burke Holland</title>
+    
+    <meta name="description" content="I have an Apple Watch (not cellular), and I love it. Not just because it lets everyone know that I&rsquo;m better than them, but also for it&rsquo;s ability to sync and store all of my audio to be used offline. I can download my music (including Apple Music), podcasts and now even Audible books to my Watch and take it all with me when I exercise. This means I don&rsquo;t have to strap my iPhone to arm like giant medievil shield.">
+    <meta name="author" content="">
+    
+    <link href="https://burkeholland.github.io/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://burkeholland.github.io/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://burkeholland.github.io/apple-touch-icon.png">
+    <link rel="icon" href="https://burkeholland.github.io/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.59.1" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://burkeholland.github.io/index.xml" title="Burke Holland">
+    
+    
+    
+    <script>
+      function setTheme() {
+        const time = new Date();
+
+        const prev = localStorage.getItem('date');
+        const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
+
+        const now = time.getTime();
+        let sunrise;
+        let sunset;
+
+        function setBodyClass() {
+          if (now > sunrise && now < sunset) return;
+          document.body.classList.add('dark');
+        }
+
+        if (date !== prev) {
+          fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
+            .then(res => res.json())
+            .then(data => {
+              sunrise = data.sunrise.split(':').map(Number);
+              sunset = data.sunset.split(':').map(Number);
+            })
+            .catch(() => {
+              sunrise = [7, 0];
+              sunset = [19, 0];
+            })
+            .finally(() => {
+              sunrise = time.setHours(sunrise[0], sunrise[1], 0);
+              sunset = time.setHours(sunset[0], sunset[1], 0);
+              setBodyClass();
+              localStorage.setItem('sunrise', sunrise);
+              localStorage.setItem('sunset', sunset);
+            });
+          localStorage.setItem('date', date);
+        } else {
+          sunrise = Number(localStorage.getItem('sunrise'));
+          sunset = Number(localStorage.getItem('sunset'));
+          setBodyClass();
+        }
+      }
+    </script>
+  </head>
+  <body class="single">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        
+        <p class="logo"><a href="https://burkeholland.github.io">&lt; Back</a></p>
+        
+        
+      </nav>
+    </header>
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">How to create a Reminder on Apple Watch without creating a Reminder</h1>
+    <div class="post-meta">January 29, 2020</div>
+  </header>
+  <div class="post-content">
+
+<p>I have an Apple Watch (<strong>not</strong> cellular), and I love it. Not just because it lets everyone know that I&rsquo;m better than them, but also for it&rsquo;s ability to sync and store all of my audio to be used offline. I can download my music (including Apple Music), podcasts and <a href="https://www.audible.com/ep/apple">now even Audible books</a> to my Watch and take it all with me when I exercise. This means I don&rsquo;t have to strap my iPhone to arm like giant medievil shield. I can&rsquo;t understate how much I enjoy this feature of the watch. If all the thing could do was play my music, podcasts and audio books without requiring a connection, it would still be worth the price.</p>
+
+<p>The one other thing that I use the Watch for with some frequency, is reminders.</p>
+
+<p>Apple Reminders are how I function in life. I don&rsquo;t know how everyone else out there gets by, but I always feel like I have a thousand things that I need to get done. And if I don&rsquo;t do them, nobody will. These are work things, yes. But they are also personal items: pay off the credit card. Pick up medication. Remind one of the kids about an upcoming assignment that there is a 100% chance they have not yet completed.</p>
+
+<p>I create these reminders with Siri via the Apple Watch. Now, I&rsquo;d like to gloss over that last sentence because I have so much to say about how much I don&rsquo;t enjoy that. Or the fact that it only works about 50% of the time. The rest of the time it just ignores me, cuts me off, or creates a cryptic reminder that is a pretty far cry from what I actually said. Like this one&hellip;</p>
+
+<p><img src="/media/reminder-bs.png" alt="Apple Reminder that says &quot;Finish the BS of a proposal&quot;" /></p>
+
+<p>I mean, all my proposals are technically BS, but I have no idea what this is supposed to mean. Here&rsquo;s another one&hellip;</p>
+
+<p><img src="/media/reminder-warts.png" alt="Apple Reminder that says &quot;Paint the warts&quot;" /></p>
+
+<p>Again. I&rsquo;m nearly certain that is not what I said. Now I have to decode that like some sort of Saturday morning NPR gameshow.</p>
+
+<p>And look - my memory is bad and getting worse. When I say I use Reminders a lot, I mean it. I use it for everything. For example&hellip;</p>
+
+<p><img src="/media/reminder-gate-check.png" alt="Apple Reminder that says &quot;You gate checked your bag&quot;" /></p>
+
+<p>I would (and have) walked off the plane and nearly made it to an Uber before I remembered that I don&rsquo;t have my bag. It&rsquo;s that bad y&rsquo;all. You have no idea what it was like trying to get through school as a child. Or if you have ADD, maybe you do. I have three kids and one of them struggles with it just like I did. He can barely remember to leave the house with pants on, let alone what homework he needs to do, what paper is where or what test is when. So I set an Apple Reminder for myself to remind him. Apple Reminders are how I function in life.</p>
+
+<p>The thing is, you can&rsquo;t create a reminder from your Apple Watch if the phone isn&rsquo;t nearby. I always have my phone on me or at least nearby. Unless I&rsquo;m out jogging.</p>
+
+<h2 id="jogging-the-memory">Jogging the memory</h2>
+
+<p>For some reason, jogging my body also jogs my brain. I tend to remember something important that I need to do when I&rsquo;m 2.5 miles from the house and my phone. This is a panicky moment for me. I have an important thing I need to do, and there is no way I will remember by the end of my run. I know myself too well. But I can&rsquo;t create a reminder because Siri won&rsquo;t work without the phone. This has happened to me so often that I came up with a way to use my phone to create a Reminder quickly (while I&rsquo;m running) and offline, without actually creating a reminder.</p>
+
+<p>It&rsquo;s simple - just change the Watch face.</p>
+
+<p>By default, my Watch face is the &ldquo;Infograph Modular&rdquo;. For those who don&rsquo;t know all of the Apple Watch faces by name, that&rsquo;s this one&hellip;</p>
+
+<p><center>
+<img src="/media/infograph-modular.png" alt="Infograph Modular Apple Watch face" />
+</center></p>
+
+<p>If I swipe right (swipe-right joke redacted) two times, I get the Mickey Mouse face&hellip;</p>
+
+<p><center>
+<img src="/media/mickey-mouse.png" alt="Mickey Mouse Apple Watch face" />
+</center></p>
+
+<p>Now, at some point after I get home and finish my run, I will look at my watch and see Mickey. That will remind me of the thing I need to do. It works. Every time. I can instantly recall what I was thinking of at the time I made Mickey front-and-center in my life. Then I complete the task and change the face back.</p>
+
+<p>Now here&rsquo;s what&rsquo;s fascinating - this <em>doesn&rsquo;t</em> work if I switch to some other face besides Mickey. It will work in so much as it reminds me that I needed to do something, but at least 50% of the time I can&rsquo;t remember what that something is!</p>
+
+<p>I have completely unscientific idea as to why my brain is able to associate Mickey with another idea, and use that as a marker for recall with almost 100% accuracy. The difference between the Mickey face and all the other faces is that Mickey illicits an emtional response from me. It&rsquo;s slight, but it&rsquo;s there. I <em>think</em> it&rsquo;s nastalgia. That seems most likely since Disney was such a core part of my childhood. Even as an adult, the thought of going to Disney World gets me excited, and I&rsquo;m really not that into Disney anymore as a 41 year-old. I think it&rsquo;s that emotional trigger coupled with the idea that makes the recall so effective. That&rsquo;s what makes it stick. It&rsquo;s not that I&rsquo;m associating Mickey with &ldquo;pay off the credit card&rdquo; (although I&rsquo;m sure a LOT of people do), but that I&rsquo;m associating &ldquo;Pay off the credit card&rdquo; with the emotional response that is triggered when I <em>see</em> Mickey.</p>
+
+<p>So I don&rsquo;t know what this post is actually about. It&rsquo;s either 1) How dissapointing Siri is 2) How to remember to do something by changing your Apple Watch face or 3) Why the brain is able to hold certain associations better than others. It was supposed to be #2, so let&rsquo;s go with that. If you have an Apple Watch, now you know how to create a reminder without actually creating a reminder.</p>
+</div>
+  
+  
+  
+  
+  
+</article>
+
+</main>
+<footer class="footer">
+  <span>&copy; 2020 <a href="https://burkeholland.github.io/resume/">Burke Holland</a></span>
+</footer>
+<script src="https://burkeholland.github.io/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>
+
