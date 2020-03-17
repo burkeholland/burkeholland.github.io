@@ -6,10 +6,81 @@
     <description>Recent content in Posts on Burke Holland</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jan 2020 07:53:12 -0600</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2020 18:14:00 -0500</lastBuildDate>
     
         <atom:link href="https://burkeholland.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>Trimming expenses on The Urlist with Cosmos DB Free Tier</title>
+<link>https://burkeholland.github.io/posts/cosmos-free-tier/</link>
+<pubDate>Tue, 17 Mar 2020 18:14:00 -0500</pubDate>
+      
+      <guid>https://burkeholland.github.io/posts/cosmos-free-tier/</guid>
+<description>
+
+&lt;p&gt;&lt;summary&gt;
+Summary: We migrated &lt;a href=&#34;https://www.theurlist.com&#34;&gt;theurlist.com&lt;/a&gt; to the new Cosmos DB Free Tier and shaved ~35$ per month off of our Azure bill. Cosmos DB Free Tier gives you 400 RU/s for free every month. This should be more than enough for most small projects.&lt;/p&gt;
+
+&lt;p&gt;&lt;figure&gt;&lt;img class=&#34;azure-icon&#34; src=&#34;https://burkeholland.github.io/media/Icon-databases-121-Azure-Cosmos-DB.svg&#34;&gt;&lt;a href=&#34;https://devblogs.microsoft.com/cosmosdb/build-apps-for-free-with-azure-cosmos-db-free-tier/?WT.mc_id=personal-blog-buhollan&#34;&gt;About Cosmos DB Free Tier&lt;/a&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img class=&#34;azure-icon&#34; src=&#34;https://burkeholland.github.io/media/Icon-databases-126-Data-Factory.svg&#34;&gt;&lt;a href=&#34;https://ms-adf.azure.com?WT.mc_id=personal-blog-buhollan&#34;&gt;Azure Data Factory&lt;/a&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img class=&#34;azure-icon&#34; src=&#34;https://burkeholland.github.io/media/Icon-databases-121-Azure-Cosmos-DB.svg&#34;&gt;&lt;a href=&#34;https://docs.microsoft.com/azure/cosmos-db/import-data?WT.mc_id=personal-blog-buhollan&#34;&gt;Cosmos DB Data Migration Tool&lt;/a&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img class=&#34;azure-icon&#34; src=&#34;https://burkeholland.github.io/media/Icon-databases-121-Azure-Cosmos-DB.svg&#34;&gt;&lt;a href=&#34;https://docs.microsoft.com/azure/cosmos-db/create-sql-api-nodejs?WT.mc_id=personal-blog-buhollan&#34;&gt;Quickstart: Node.js and Azure Cosmos DB&lt;/a&gt;&lt;/figure&gt;
+&lt;/summary&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.theurlist.com&#34;&gt;theurlist.com&lt;/a&gt; is a project that I wrote with my colleague &lt;a href=&#34;https://twitter.com/cecilphillip&#34;&gt;Cecil Phillip&lt;/a&gt; last year. We wanted to see if we could build a site on Azure that was two things&amp;hellip;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Serverless&lt;/li&gt;
+&lt;li&gt;Cheap&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now you would think that &amp;ldquo;cheap&amp;rdquo; would go hand-in-hand with &amp;ldquo;Serverless&amp;rdquo;, and that&amp;rsquo;s true. But there are portions of theurlist.com that are not strictly &amp;ldquo;Serverless&amp;rdquo; by definition because those pieces didn&amp;rsquo;t exist in Azure at the time. One of those is our database - Azure Cosmos DB.&lt;/p&gt;
+
+&lt;p&gt;Azure Cosmos DB is the NoSQL data store that backs everything that theurlist.com does. Cosmos DB does not yet allow you to pay by request, or only for what you use. You need to buy something called &amp;ldquo;Request Units per Second&amp;rdquo; up front in batches. The lowest amount you can buy is 400, and that costs ~24\$ per month.&lt;/p&gt;
+
+&lt;p&gt;The database for theurlist.com is dead simple. It&amp;rsquo;s one database with one collection.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/linkylinkdb.png&#34; alt=&#34;Cosmos DB instance in Data Explorer&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The database is called &amp;ldquo;linkylinkdb&amp;rdquo;. The original working name for this project was &amp;ldquo;Linky Link&amp;rdquo;. Although &lt;a href=&#34;http://linkylink.com/&#34;&gt;linkylink.com&lt;/a&gt; was already registered and is the home page of a dog named &amp;ldquo;Lincoln&amp;rdquo; where you can see a slide show of him in various poses. It&amp;rsquo;s probably a better use of the URL if we&amp;rsquo;re being honest.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Monthly traffic to theurlist.com is around 60K visits. This equates to around 2 ru/s in Cosmos DB. TWO. We are currently paying for 400. That&amp;rsquo;s 200 times more throughput than we need and we&amp;rsquo;re paying for it. And sometimes we don&amp;rsquo;t even use that. In fact, in the last 7 days, we haven&amp;rsquo;t even averaged 1.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/cosmos-db-rus.png&#34; alt=&#34;The average number of Cosmos DB RU/s displayed in Azure portal&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Our 400 RU cost each month, combined with with us occasionally upping the RU/s to do load testing demos tipped our total Cosmos DB bill to around 32\$ per month.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/cosmos-db-old-cost.png&#34; alt=&#34;Cosmos DB cost summary&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Most of that we simply aren&amp;rsquo;t using, but we have to pay for it anyway. Which, doesn&amp;rsquo;t feel great. In our endless persuit of running a cost-effective app on Azure, we were excited to learn about the launch of the new Cosmos DB Free Tier.&lt;/p&gt;
+
+&lt;h2 id=&#34;migrating-to-the-cosmos-db-free-tier&#34;&gt;Migrating to the Cosmos DB Free Tier&lt;/h2&gt;
+
+&lt;p&gt;Cosmos DB has officially launched a &lt;a href=&#34;https://devblogs.microsoft.com/cosmosdb/build-apps-for-free-with-azure-cosmos-db-free-tier/?WT.mc_id=personal-blog-buhollan&#34;&gt;free tier&lt;/a&gt;. But what exactly does that mean?&lt;/p&gt;
+
+&lt;p&gt;Free Tier allows you to have one Cosmos DB account where you apply a &amp;ldquo;Free Tier&amp;rdquo; discount. This gives you the first 400 RU/s free every month. They are deducted from the bill. For theurlist.com, this is perfect. We aren&amp;rsquo;t anywhere &lt;em&gt;near&lt;/em&gt; 400 RU/s. And based on my calculations, if 60K views equates to 2 RU/s, we could go up to 12 MILLION requests per month before we get to 400 RU/s. That&amp;rsquo;s a LOT of traffic.&lt;/p&gt;
+
+&lt;p&gt;Last week, we migrated our database to the Cosmos DB free tier. We filmed the whole thing so you can see how to move your Cosmos DB database if you&amp;rsquo;ve got a small project like we do. There are two options you can use in terms of tools to do this.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://ms-adf.azure.com?WT.mc_id=personal-blog-buhollan&#34;&gt;Azure Data Factory&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ms-adf.azure.com?WT.mc_id=personal-blog-buhollan&#34;&gt;Cosmos DB Migration Tool&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The Cosmos DB Migration tool is Windows only, so we opted for the Azure Data Factory, which is browser-based.&lt;/p&gt;
+
+&lt;p&gt;The downside of the Azure Data Factory is that we had to create the database and collection before we could migrate the data. If you have a lot of databases or collections, and or you have lots of triggers and stored procedures, you&amp;rsquo;re better off using the Cosmos DB Migration Tool.&lt;/p&gt;
+
+&lt;p&gt;We decided to record the process in case you are looking to migrate your own Cosmos DB database to the Free Tier. Enjoy!&lt;/p&gt;
+
+&lt;div style=&#34;text-align: center;&#34;&gt;
+&lt;iframe width=&#34;720&#34; height=&#34;405&#34; src=&#34;https://www.youtube.com/embed/kEuEvPtgaK0&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</description>
+</item>
     
     <item>
 <title>How to create a Reminder on Apple Watch without creating a Reminder</title>
@@ -507,9 +578,10 @@ else {
 &lt;p&gt;&lt;summary&gt;
 Summary: Nuxt apps with &amp;ldquo;server-side rendering&amp;rdquo; require a Node server, so you need to deploy them to Azure App Service. If you are using Nuxt apps in SPA mode, you can (and should) deploy them to Azure Storage.&lt;/p&gt;
 
-&lt;p&gt;Check out the links below for more details&amp;hellip;
-&lt;figure&gt;&lt;img class=&#34;azure-icon&#34; src=&#34;https://cds-icons.azurewebsites.net/downloads/All_Icons/Compute/Icon-compute-35-App-Services.svg&#34;&gt;&lt;a href=&#34;https://code.visualstudio.com/tutorials/app-service-extension/getting-started?WT.mc_id=personal-blog-buhollan&#34;&gt;Deploy to Azure App Service&lt;/a&gt;&lt;/figure&gt;
-&lt;figure&gt;&lt;img class=&#34;azure-icon&#34; src=&#34;https://cds-icons.azurewebsites.net/downloads/All_Icons/Storage/Icon-storage-86-Storage-Accounts.svg&#34;&gt;&lt;a href=&#34;https://code.visualstudio.com/tutorials/static-website/getting-started?WT.mc_id=personal-blog-buhollan&#34;&gt;Deploy a static website to Azure&lt;/a&gt;&lt;/figure&gt;
+&lt;p&gt;Check out the links below for more details&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;figure&gt;&lt;img class=&#34;azure-icon&#34; src=&#34;https://burkeholland.github.io/media/Icon-compute-35-App-Services.svg&#34;&gt;&lt;a href=&#34;https://code.visualstudio.com/tutorials/app-service-extension/getting-started?WT.mc_id=personal-blog-buhollan&#34;&gt;Deploy to Azure App Service&lt;/a&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img class=&#34;azure-icon&#34; src=&#34;https://burkeholland.github.io/media/Icon-storage-86-Storage-Accounts.svg&#34;&gt;&lt;a href=&#34;https://code.visualstudio.com/tutorials/static-website/getting-started?WT.mc_id=personal-blog-buhollan&#34;&gt;Deploy a static website to Azure&lt;/a&gt;&lt;/figure&gt;
 &lt;/summary&gt;&lt;/p&gt;
 
 &lt;p&gt;Ariana Grande once said, &amp;ldquo;One taught me patience. And one taught me pain&amp;rdquo;. She was talking about her ex&amp;rsquo;s. I&amp;rsquo;m here today to talk to you about Nuxt&amp;rsquo;s.&lt;/p&gt;
