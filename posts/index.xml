@@ -22,11 +22,11 @@
 &lt;p&gt;&lt;summary&gt;
 Summary: We migrated &lt;a href=&#34;https://www.theurlist.com&#34;&gt;theurlist.com&lt;/a&gt; to the new Cosmos DB Free Tier and shaved ~35$ per month off of our Azure bill. Cosmos DB Free Tier gives you 400 RU/s for free every month. This should be more than enough for most small projects.&lt;/p&gt;
 
-&lt;p&gt;&lt;figure&gt;&lt;img class=&#34;azure-icon&#34; src=&#34;https://burkeholland.github.io/media/Icon-databases-121-Azure-Cosmos-DB.svg&#34;&gt;&lt;a href=&#34;https://devblogs.microsoft.com/cosmosdb/build-apps-for-free-with-azure-cosmos-db-free-tier/?WT.mc_id=personal-blog-buhollan&#34;&gt;About Cosmos DB Free Tier&lt;/a&gt;&lt;/figure&gt;
-&lt;figure&gt;&lt;img class=&#34;azure-icon&#34; src=&#34;https://burkeholland.github.io/media/Icon-databases-126-Data-Factory.svg&#34;&gt;&lt;a href=&#34;https://ms-adf.azure.com?WT.mc_id=personal-blog-buhollan&#34;&gt;Azure Data Factory&lt;/a&gt;&lt;/figure&gt;
-&lt;figure&gt;&lt;img class=&#34;azure-icon&#34; src=&#34;https://burkeholland.github.io/media/Icon-databases-121-Azure-Cosmos-DB.svg&#34;&gt;&lt;a href=&#34;https://docs.microsoft.com/azure/cosmos-db/import-data?WT.mc_id=personal-blog-buhollan&#34;&gt;Cosmos DB Data Migration Tool&lt;/a&gt;&lt;/figure&gt;
-&lt;figure&gt;&lt;img class=&#34;azure-icon&#34; src=&#34;https://burkeholland.github.io/media/Icon-databases-121-Azure-Cosmos-DB.svg&#34;&gt;&lt;a href=&#34;https://docs.microsoft.com/azure/cosmos-db/create-sql-api-nodejs?WT.mc_id=personal-blog-buhollan&#34;&gt;Quickstart: Node.js and Azure Cosmos DB&lt;/a&gt;&lt;/figure&gt;
-&lt;/summary&gt;&lt;/p&gt;
+&lt;div class=&#34;cta-container&#34;&gt;
+&lt;a class=&#34;cta&#34; href=&#34;https://devblogs.microsoft.com/cosmosdb/build-apps-for-free-with-azure-cosmos-db-free-tier/?WT.mc_id=personal-blog-buhollan&#34;&gt;Get Azure Cosmos DB Free Tier&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;/summary&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.theurlist.com&#34;&gt;theurlist.com&lt;/a&gt; is a project that I wrote with my colleague &lt;a href=&#34;https://twitter.com/cecilphillip&#34;&gt;Cecil Phillip&lt;/a&gt; last year. We wanted to see if we could build a site on Azure that was two things&amp;hellip;&lt;/p&gt;
 

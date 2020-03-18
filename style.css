@@ -536,3 +536,15 @@ summary {
 figure {
   margin-top: 10px;
 }
+
+.cta-container {
+  text-align: center;
+}
+
+.cta {
+  display: inline;
+  background-color: #2ab773;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
