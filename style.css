@@ -548,3 +548,7 @@ figure {
   border-radius: 10px;
   color: white;
 }
+
+img {
+  margin: auto;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Burke Holland</title>
+    
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <link href="https://burkeholland.github.io/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://burkeholland.github.io/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://burkeholland.github.io/apple-touch-icon.png">
+    <link rel="icon" href="https://burkeholland.github.io/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.59.1" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://burkeholland.github.io/index.xml" title="Burke Holland">
+    
+    
+    
+    <script>
+      function setTheme() {
+        const time = new Date();
+
+        const prev = localStorage.getItem('date');
+        const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
+
+        const now = time.getTime();
+        let sunrise;
+        let sunset;
+
+        function setBodyClass() {
+          if (now > sunrise && now < sunset) return;
+          document.body.classList.add('dark');
+        }
+
+        if (date !== prev) {
+          fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
+            .then(res => res.json())
+            .then(data => {
+              sunrise = data.sunrise.split(':').map(Number);
+              sunset = data.sunset.split(':').map(Number);
+            })
+            .catch(() => {
+              sunrise = [7, 0];
+              sunset = [19, 0];
+            })
+            .finally(() => {
+              sunrise = time.setHours(sunrise[0], sunrise[1], 0);
+              sunset = time.setHours(sunset[0], sunset[1], 0);
+              setBodyClass();
+              localStorage.setItem('sunrise', sunrise);
+              localStorage.setItem('sunset', sunset);
+            });
+          localStorage.setItem('date', date);
+        } else {
+          sunrise = Number(localStorage.getItem('sunrise'));
+          sunset = Number(localStorage.getItem('sunset'));
+          setBodyClass();
+        }
+      }
+    </script>
+  </head>
+  <body class="list home">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        
+        
+        
+      </nav>
+    </header>
+    <main class="main">
+
+
+
+
+
+
+
+
+
+
+
+
+<article class="post-entry">
+  <header class="entry-header">
+    <h2>GitLens with Eric Amodio</h2>
+  </header>
+  <section class="entry-content">
+   <p>There are only two kinds of people in the world: those who are utterly confused by Git, and those who refuse to admit it.
+ 
+Well, ok, there are probably some people who understand it, but I’m definitely not one of them.
+As a result, people like me (which is most of us — zero evidence to prove that so just accept it as fact and let it wash over you) tend to learn the base amount of Git that we need to get by (clone, pull, add, commit) and the rest we try really hard to avoid because we have zero confidence that we’ll be able to do it without breaking literally everything....</p>
+  </section>
+  <footer class="entry-footer">
+    <time>December 7, 2018</time>
+  </footer>
+  <a class="entry-link" href="https://burkeholland.github.io/posts/git-lens-eric/"></a>
+</article>
+
+
+
+
+<footer class="page-footer">
+  <nav class="pagination">
+    
+    <a class="prev" href="/">← Prev Page</a>
+    
+    
+  </nav>
+</footer>
+
+
+</main>
+<footer class="footer">
+  <span>&copy; 2020 <a href="https://burkeholland.github.io/resume/">Burke Holland</a></span>
+</footer>
+<script src="https://burkeholland.github.io/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>
+

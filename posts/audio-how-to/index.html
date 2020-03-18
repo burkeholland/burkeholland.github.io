@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Professional quality audio with the Blue Yeti, GarageBand and Screenflow - Burke Holland</title>
+    
+    <meta name="description" content="One of the best things you can do to improve the quality of your screencasts, is improve the quality of your audio. I&rsquo;m assuming that unless your name is &ldquo;Dr. Dre&rdquo;, you probabaly do not have a professional sound studio in your basement full of high-end equipment and expensive software. And if you&rsquo;re like me, you don&rsquo;t even have a basement.
+What do have is a Blue Yeti microphone, GarageBand and a copy of Screenflow that I can barely afford.">
+    <meta name="author" content="">
+    
+    <link href="https://burkeholland.github.io/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://burkeholland.github.io/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://burkeholland.github.io/apple-touch-icon.png">
+    <link rel="icon" href="https://burkeholland.github.io/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.59.1" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://burkeholland.github.io/index.xml" title="Burke Holland">
+    
+    
+    
+    <script>
+      function setTheme() {
+        const time = new Date();
+
+        const prev = localStorage.getItem('date');
+        const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
+
+        const now = time.getTime();
+        let sunrise;
+        let sunset;
+
+        function setBodyClass() {
+          if (now > sunrise && now < sunset) return;
+          document.body.classList.add('dark');
+        }
+
+        if (date !== prev) {
+          fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
+            .then(res => res.json())
+            .then(data => {
+              sunrise = data.sunrise.split(':').map(Number);
+              sunset = data.sunset.split(':').map(Number);
+            })
+            .catch(() => {
+              sunrise = [7, 0];
+              sunset = [19, 0];
+            })
+            .finally(() => {
+              sunrise = time.setHours(sunrise[0], sunrise[1], 0);
+              sunset = time.setHours(sunset[0], sunset[1], 0);
+              setBodyClass();
+              localStorage.setItem('sunrise', sunrise);
+              localStorage.setItem('sunset', sunset);
+            });
+          localStorage.setItem('date', date);
+        } else {
+          sunrise = Number(localStorage.getItem('sunrise'));
+          sunset = Number(localStorage.getItem('sunset'));
+          setBodyClass();
+        }
+      }
+    </script>
+  </head>
+  <body class="single">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        
+        <p class="logo"><a href="https://burkeholland.github.io">&lt; Back</a></p>
+        
+        
+      </nav>
+    </header>
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Professional quality audio with the Blue Yeti, GarageBand and Screenflow</h1>
+    <div class="post-meta">March 18, 2020</div>
+  </header>
+  <div class="post-content">
+
+<p>One of the best things you can do to improve the quality of your screencasts, is improve the quality of your audio. I&rsquo;m assuming that unless your name is &ldquo;Dr. Dre&rdquo;, you probabaly do not have a professional sound studio in your basement full of high-end equipment and expensive software. And if you&rsquo;re like me, you don&rsquo;t even have a basement.</p>
+
+<p>What <em>do</em> have is a Blue Yeti microphone, GarageBand and a copy of Screenflow that I can barely afford. I&rsquo;ve struggled for a long time to get my audio to sound &ldquo;good&rdquo;. I&rsquo;ve gone back and forth on what the bar for that is. When I first got started, everything I recorded sounded like I was at the bottom of an empty can of tomato soup. With the help of some friends, some Googling and the wisdom of my wife (who has no professional audio training, but a legit amount of commmon sense) I&rsquo;ve seriously improved my station. In this post, I&rsquo;ll share with you the tips and tricks that you can use to immediately improve your audio quality.</p>
+
+<h2 id="the-room">The Room</h2>
+
+<p>First off, let&rsquo;s talk about your recording space. You are going to want to work and record in the same area. I used to unplug and go into my closet and record. You don&rsquo;t need to do this. But you do need to do some basic things to your work area.</p>
+
+<p>When I first started recording in my office, everything was so echo&rsquo;y. It sounded like I was in a bathtub. My wife pointed out to me that the bare walls, window and floor were not helping. She instituted 3 things in my office that made a whole world of difference.</p>
+
+<ol>
+<li><p>She got an area rug. If you have hardwood, tile or laminate floors, an area rug is going to be essential. Sound <strong>loves</strong> to bounce off anything it can, and it <em>really</em> likes hard, flat surfaces. An area rug will work wonders.</p></li>
+
+<li><p>She hung curtains next to the window. My drapes don&rsquo;t even close. They are just there to soak up the sound.</p></li>
+</ol>
+
+<p><img src="/media/office-curtains.jpg" alt="" /></p>
+
+<ol>
+<li>She hung things on the walls. Pictures, guitars, sock monkeys. You get the idea.</li>
+</ol>
+
+<p><img src="/media/office-walls.jpg" alt="" /></p>
+
+<p>These 3 things were enough to dampen the sound in the room so that it is fit for recording. You don&rsquo;t actually need a bunch of sound panels or a special box you made out of plywood that sits weirdly in your garage. Just a rug, some drapes and a few wall treatments will do the trick.</p>
+
+<p>Next, let&rsquo;s talk about the equipment.</p>
+
+<h2 id="the-equipment">The Equipment</h2>
+
+<p>At the risk of looking extremely self-absorbed, here is a picture of my current recording setup&hellip;</p>
+
+<p><img src="/media/my-setup.jpg" alt="" /></p>
+
+<p>My setup will run you about 250$ total. Here are the essential components:</p>
+
+<h3 id="blue-yeti-microphone-https-www-amazon-com-blue-yeti-usb-microphone-blackout-dp-b00n1ypxw2-ref-sr-1-2-keywords-blue-yeti-qid-1584566560-sr-8-2-130"><a href="https://www.amazon.com/Blue-Yeti-USB-Microphone-Blackout/dp/B00N1YPXW2/ref=sr_1_2?keywords=blue+yeti&amp;qid=1584566560&amp;sr=8-2">Blue Yeti Microphone</a> (130$)</h3>
+
+<p>This is probably the most popular mic on the market. Some people will say the RODE is better, but don&rsquo;t listen to them. Listen to me. I&rsquo;m writing the blog post.</p>
+
+<h3 id="rode-psa-1-swivel-mount-boom-arm-https-www-amazon-com-gp-product-b001d7uybo-ref-ppx-yo-dt-b-search-asin-title-ie-utf8-psc-1-100"><a href="https://www.amazon.com/gp/product/B001D7UYBO/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;psc=1">RODE PSA 1 Swivel Mount Boom Arm</a> (100$)</h3>
+
+<p>If you plan to record audio and the screen at the same time, you have got to get the mic off of your work surface. If you don&rsquo;t, the mic is going to pick up the concussion from your typing and it&rsquo;s going to sound less like a keyboard and more like a death metal drum solo.</p>
+
+<h3 id="foam-windscreen-https-www-amazon-com-gp-product-b01bxay8k8-ref-ppx-yo-dt-b-search-asin-title-ie-utf8-psc-1-13"><a href="https://www.amazon.com/gp/product/B01BXAY8K8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;psc=1">Foam Windscreen</a> (13$)</h3>
+
+<p>You&rsquo;ll see people with fancy windscreens and pop filters. That&rsquo;s the big circle that you usually see between the mic and Taylor Swift when she&rsquo;s in the recording studio. I <em>almost</em> bought one of these until my colleague <a href="https://twitter.com/spboyer">Shayne Boyer</a> pointed out that you can buy a 13$ Windscreen and it works brilliantly.</p>
+
+<p>OK - that&rsquo;s the equipment. Let&rsquo;s talk about the mic configuration for a moment. There are a few key things you need to know about it.</p>
+
+<h2 id="mic-configuration">Mic Configuration</h2>
+
+<p>The Blue Yeti is a condensor mic. This means that it&rsquo;s super sensitive. If you don&rsquo;t adjust it correctly, it&rsquo;s going to pick up everything. And I do mean everything. If someone next door sneezes, your ears won&rsquo;t pick it up, but I swear you will hear it on the video.</p>
+
+<p>You can fix this, you just need to get the settings right. On the mic, there is a side that has a &ldquo;Gain&rdquo; and a &ldquo;Pattern&rdquo; option.</p>
+
+<p><img src="/media/pattern-gain.jpg" alt="" /></p>
+
+<p>The &ldquo;Gain&rdquo; is how sensitive you want the mic to be. Since you only want it recording your voice, you want to turn the gain all the way down. That seems completely counter-intuitive, but I promise, this is where you want it.</p>
+
+<p>The &ldquo;Pattern&rdquo; controls where on the mic the audio is picked up. All you have to know here is to pick the upside-down ♡ setting. This setting means that the microphone will pick up audio from the front-side only. That&rsquo;s the side you are speaking into, so that&rsquo;s what you want.</p>
+
+<p><img src="/media/yeti-front.jpg" alt="" /></p>
+
+<p>When you talk into the mic, you want it upright like you see it in the picture above. Talk into it from the front side, not the very top. The Blue Yeti site shows it like this&hellip;</p>
+
+<p><img src="/media/do-dont.jpg" alt="" /></p>
+
+<p>OK - you&rsquo;re setup to record. The next step is to configure the recording software. When I record screencasts, I record audio first, then I record the video and edit it to go with the audio. This is so that I can record the audio with GarageBand and edit it before I add in the video.</p>
+
+<h2 id="working-with-garageband">Working with GarageBand</h2>
+
+<p>If you don&rsquo;t have a Mac, I&rsquo;m sorry. Feel free to skip over this section, and frankly, the rest of this post. I have no idea how to do this on Windows, although I&rsquo;m sure there are some great alternatives.</p>
+
+<p>For you Mac people, Garage Band is really all you need.</p>
+
+<p>I record a Narration vocal and I created a custom audio setting using <a href="https://twitter.com/nraboy">Nic Raboy&rsquo;s</a> excellent setup from <a href="https://www.thepolyglotdeveloper.com/2016/02/create-podcast-episode-garageband-mac/">an article on this same topic</a>.</p>
+
+<p><img src="/media/garageband-settings.jpg" alt="" /></p>
+
+<p>Now, change the way GarageBand is showing your track. By default, it shows &ldquo;Beats and Project&rdquo;, which displays your audio over time as &ldquo;Bars&rdquo;. This isn&rsquo;t super helpful for seeing how long your track really is. To fix this, you want to change this so it displays your track as &ldquo;Time&rdquo;. This is a hard menu to find, but it&rsquo;s that tiny arrow next to the &ldquo;key&rdquo; display.</p>
+
+<p><img src="/media/garageband-key-display.jpg" alt="" /></p>
+
+<p>Select &ldquo;Time&rdquo; from the menu that pops up.</p>
+
+<p><img src="/media/garageband-time.jpg" alt="" /></p>
+
+<p>After you record your audio, you&rsquo;ll want to edit out your breathing, as well as pops and clicks and other mouth sounds you would rather not expose your listeners to. To do that, select the &ldquo;Show Editor&rdquo; option from the view menu.</p>
+
+<p><img src="/media/garageband-show-editor.jpg" alt="" /></p>
+
+<p>This will open up an editor in the bottom area that allows you to zoom in and edit out parts of the track. You&rsquo;ll be able to see your breathing just by looking at the track. It&rsquo;s the flat part in between sections. To remove that area, click and drag to highlight the region you want to remove, and then press &ldquo;Delete&rdquo;.</p>
+
+<p><img src="/media/garageband-click-and-drag.jpg" alt="" /></p>
+
+<p>If you want to move your sections of audio closer together as you cut out the breathing, use the upper track portion. To do the fine grain editing itself, use the editor portion below.</p>
+
+<p>OK! All your heavy breathing is now out of the picture and your audio sounds good. Export from GarageBand using the &ldquo;Share/Export Song To Disk&rdquo; option.</p>
+
+<p>The last step is to pull it into Screenflow and apply some final tweaks.</p>
+
+<h2 id="screenflow-audio-tweaks">Screenflow Audio Tweaks</h2>
+
+<p>Again, this is Mac specific. I do feel bad about the lack of cross-platform-icity in this article. That&rsquo;s got to count for something.</p>
+
+<p>In Screenflow, I pull in the audio and then I record my screen to match the audio. This can be a bit tedious, but usually results in a higher quality video. One of the last things I do is tweak the audio in Screenflow.</p>
+
+<p>I select the entire audio segment and I apply two options&hellip;</p>
+
+<ol>
+<li>Smooth Volume Levels</li>
+<li>Remove Background Noise (50%)</li>
+</ol>
+
+<p><img src="/media/screenflow-audio.jpg" alt="" /></p>
+
+<h2 id="and-cut">And&hellip;..CUT</h2>
+
+<p>That&rsquo;s it! Hopefully there are some tips in here that you find helpful. Don&rsquo;t be too hard on yourself over your audio. You are never going to get it perfect, but these simple steps should get you about 90% of the way there. The rest is all found in Dr. Dre&rsquo;s basement.</p>
+</div>
+  
+  
+  
+  
+  
+</article>
+
+</main>
+<footer class="footer">
+  <span>&copy; 2020 <a href="https://burkeholland.github.io/resume/">Burke Holland</a></span>
+</footer>
+<script src="https://burkeholland.github.io/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>
+
