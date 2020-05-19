@@ -6,10 +6,97 @@
     <description>Recent content in Posts on Burke Holland</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Mar 2020 08:44:47 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2020 15:47:46 -0500</lastBuildDate>
     
         <atom:link href="https://burkeholland.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>How to configure a root domain in an Azure Static Web App</title>
+<link>https://burkeholland.github.io/posts/static-app-root-domain/</link>
+<pubDate>Wed, 06 May 2020 15:47:46 -0500</pubDate>
+      
+      <guid>https://burkeholland.github.io/posts/static-app-root-domain/</guid>
+<description>
+
+&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/static-web-apps/?WT.mc_id=staticwebapps-docs-cxa&#34;&gt;Azure Static Web Apps&lt;/a&gt; is a new Azure service for hosting static web applications. One of the thing that you&amp;rsquo;ve got to love about Azure is how they name things. It&amp;rsquo;s very literal. Want Storage? You need Azure Storage. Want a Serverless function? Azure Functions. Need to host a static web app? &lt;strong&gt;AZURE STATIC WEB APPS&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Static Web Apps is currently in preview, which means not all features that need to be there are quite there yet. One of those features is support for root domains. You can have &lt;a href=&#34;https://www.mystaticsite.com&#34;&gt;https://www.mystaticsite.com&lt;/a&gt;, but you cannot have &lt;a href=&#34;https://mystaticsite.com&#34;&gt;https://mystaticsite.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;OR CAN YOU? If you click on both of those links, you&amp;rsquo;ll see that they both work. You can get a root domain for your Azure Static Web App with a little bit of DNS trickery and the help of Cloudflare. In this article, I&amp;rsquo;ll show you how to get a root domain configured for your Static Web App while we&amp;rsquo;re waiting for official root domain support to arrive.&lt;/p&gt;
+
+&lt;h3 id=&#34;setting-up-cloudflare&#34;&gt;Setting up Cloudflare&lt;/h3&gt;
+
+&lt;p&gt;Cloudflare is a service that is often placed in front of web sites to provide additional features and security, such as protection against denial of service attacks. It does a whole lot more than that, and can function as a powerful DNS and page rules engine for your Static Web App, including allowing you to get root domain support for your site.&lt;/p&gt;
+
+&lt;p&gt;Sign up for a &lt;a href=&#34;https://cloudflare.com&#34;&gt;Cloudflare acccount&lt;/a&gt;. They have a free tier, and everything we&amp;rsquo;re doing here is covered under that free offering.&lt;/p&gt;
+
+&lt;p&gt;Enter your site url as the name.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/cloudflare-new-site.png&#34; alt=&#34;cloudflare new site screen&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Select the Free tier. I put a few extra arrows so you know for sure which one it is.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/free-account.png&#34; alt=&#34;cloudflare tier selection screen&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now Cloudflare is going to try and query your site to see if it can determine what your current DNS records are. This is so you don&amp;rsquo;t have to copy them all over manually from your current DNS provider. Because you are about to make Cloudflare your DNS provider. Click the &amp;ldquo;continue&amp;rdquo; button at the bottom of this screen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/cloudflare-continue.png&#34; alt=&#34;cloudflare DNS preview screen&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now Cloudflare is going to give you two new name servers that it wants you to use. This requires logging in to your DNS provider and changing the name server. Every provider is different (like snowflakes and Nickelback songs). For this example, we&amp;rsquo;ll use mine, which is &amp;ldquo;Namecheap&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Go to your domain registrar and log in to you can manage your domain. There is usually a &amp;ldquo;Manage&amp;rdquo; button or option that you need to click on.&lt;/p&gt;
+
+&lt;p&gt;From your domain dashboard, find the &amp;ldquo;nameservers&amp;rdquo; section. By default, this will be your domain registrars default DNS. You&amp;rsquo;ll need to change it to custom DNS and enter the nameservers that point to Cloudflare.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/custom-dns.png&#34; alt=&#34;cloudflare custom nameserver settings&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Make sure to save your changes. I always make this mistake because the &amp;ldquo;save&amp;rdquo; button in Namecheap is so very, very small and not at all like a save button. I mean, is it just me or is this the smallest save button ever made?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/tiny-save.png&#34; alt=&#34;namecheap tiny save button&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What I&amp;rsquo;m trying to say is don&amp;rsquo;t forget to save and &amp;ldquo;saving&amp;rdquo; might require you to be a highly trained Army sniper.&lt;/p&gt;
+
+&lt;h4 id=&#34;configuring-cnames&#34;&gt;Configuring CNAMES&lt;/h4&gt;
+
+&lt;p&gt;What you&amp;rsquo;ve just done is said that Cloudflare is now managing your DNS. From here on out, all DNS changes we make will be in Cloudflare.&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;ll need two CNAMEs in Cloudflare DNS. One of them is going to be the &amp;ldquo;www&amp;rdquo; which points to the auto-generated domain name that Azure Static Web Apps gives you. The other is going to be a CNAME that points the root domain at the www. This works because Cloudflare supports something called &amp;ldquo;&lt;a href=&#34;https://support.cloudflare.com/hc/en-us/articles/200169056-Understand-and-configure-CNAME-Flattening&#34;&gt;CNAME flattening&lt;/a&gt;&amp;rdquo;. Simply put, it&amp;rsquo;s going to &amp;ldquo;flatten&amp;rdquo; any request to mystaticsite.com over to www.mystaticsite.com.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/two-cnames.png&#34; alt=&#34;cloudflare dns dashboard showing two custom CNAME&#39;s&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;IMPORTANT - DON&amp;rsquo;T SKIP THIS&lt;/strong&gt;: Those orange cloud icons on the right-hand side under &amp;ldquo;proxy status&amp;rdquo; are important. For the &amp;ldquo;www&amp;rdquo; CNAME, we only want Cloudlfare to act as DNS, so &lt;strong&gt;click on the orange cloud&lt;/strong&gt; to toggle it to grey (DNS only). For the root domain CNAME, we want to proxy all requests through Cloudflare, so leave that one orange.&lt;/p&gt;
+
+&lt;p&gt;At this point, your root domain will work. Kind of. If you navigate to mystaticsite.com (or whatever your domain name is), you will get back the www and you will get your site. Awesome!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/kinda-working.png&#34; alt=&#34;site kind of working with cloudflare configuration&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;However, if you try and navigate to mystaticsite.com/some/path, the url won&amp;rsquo;t resolve. That&amp;rsquo;s because Cloudflare doesn&amp;rsquo;t recognize the path you just passed in as matching the root CNAME. In order to handle this, we need to setup a page redirect rule.&lt;/p&gt;
+
+&lt;p&gt;Click on the &amp;ldquo;Page Rules&amp;rdquo; icon in the Cloudflare navigation bar.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/page-rules-icon.png&#34; alt=&#34;cloudflare page rules icon&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Create a new page rule. Make sure you select the type as &amp;ldquo;Forwarding URL&amp;rdquo;. You&amp;rsquo;ll then need to add in the url you want to match and specify where you want that URL redirected to. The syntax is important. The URL matcher * says match yourdomain.com/any/path and redirect it to www.yourdomain.com. The \$1 appends anything after the .com to the redirect, so you would have www.yourdomain.com/any/path.
+s
+&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/page-rules-screen.png&#34; alt=&#34;cloudflare page rules configuration screen&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And now - you can select any path you like on your root domain and you will get back the right page in your app.&lt;/p&gt;
+
+&lt;h2 id=&#34;when-will-root-domains-be-officially-supported&#34;&gt;When will root domains be officially supported?&lt;/h2&gt;
+
+&lt;p&gt;Hopefully sooner than later. Rest easy knowing that the team is keenly aware that root domain support is an essential feature. The change required to support it is bigger than just Static Web Apps, and there is already a plan in place to make that change. It&amp;rsquo;s a priority for the service, so no need to worry that it will stay like this forever.&lt;/p&gt;
+
+&lt;h2 id=&#34;more-azure-static-apps-resources&#34;&gt;More Azure Static Apps Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/static-web-apps/?WT.mc_id=staticwebapps-docs-cxa&#34;&gt;Static Web Apps Docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/learn/modules/publish-app-service-static-web-app-api/?WT.mc_id=staticwebapps-frameworks-cxa&#34;&gt;Create and publishing an Angular, React, Svelte or Vue JavaScript app and API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/learn/modules/create-deploy-static-webapp-gatsby-app-service/?WT.mc_id=staticwebapps-sitegen-cxa&#34;&gt;Creating and publishing an app with Gatsby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Azure/static-web-apps&#34;&gt;Give us your feedback!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
     
     <item>
 <title>Professional quality audio with the Blue Yeti, GarageBand and Screenflow</title>
