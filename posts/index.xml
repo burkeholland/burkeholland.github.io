@@ -19,15 +19,19 @@
       <guid>https://burkeholland.github.io/posts/static-app-root-domain/</guid>
 <description>
 
-&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/static-web-apps/?WT.mc_id=staticwebapps-docs-cxa&#34;&gt;Azure Static Web Apps&lt;/a&gt; is a new Azure service for hosting static web applications. One of the thing that you&amp;rsquo;ve got to love about Azure is how they name things. It&amp;rsquo;s very literal. Want Storage? You need Azure Storage. Want a Serverless function? Azure Functions. Need to host a static web app? &lt;strong&gt;AZURE STATIC WEB APPS&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/static-web-apps/?WT.mc_id=staticwebapps-docs-cxa&#34;&gt;Azure Static Web Apps&lt;/a&gt; is a new Azure service for hosting static web applications. Azure is very literal when they name things. Want Storage? You need Azure Storage. Want a Serverless function? Azure Functions. Need to host a static web app? &lt;strong&gt;AZURE STATIC WEB APPS&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;Static Web Apps is currently in preview, which means not all features that need to be there are quite there yet. One of those features is support for root domains. You can have &lt;a href=&#34;https://www.mystaticsite.com&#34;&gt;https://www.mystaticsite.com&lt;/a&gt;, but you cannot have &lt;a href=&#34;https://mystaticsite.com&#34;&gt;https://mystaticsite.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Static Web Apps is currently in preview, which means not all features that need to be there are quite there yet. One of the features that is currently &lt;a href=&#34;https://www.grammarly.com/blog/afk-meaning/&#34;&gt;AFK&lt;/a&gt; is support for root domains. You can have &lt;a href=&#34;https://www.mystaticsite.com&#34;&gt;https://www.mystaticsite.com&lt;/a&gt;, but you cannot have &lt;a href=&#34;https://mystaticsite.com&#34;&gt;https://mystaticsite.com&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;OR CAN YOU? If you click on both of those links, you&amp;rsquo;ll see that they both work. You can get a root domain for your Azure Static Web App with a little bit of DNS trickery and the help of Cloudflare. In this article, I&amp;rsquo;ll show you how to get a root domain configured for your Static Web App while we&amp;rsquo;re waiting for official root domain support to arrive.&lt;/p&gt;
+&lt;p&gt;OR CAN YOU?&lt;/p&gt;
+
+&lt;p&gt;If you click on those links, you&amp;rsquo;ll see that they both work. While root domains aren&amp;rsquo;t officially supported in Azure Static Web Apps, you can make it work with a little bit of DNS trickery and the help of Cloudflare. In this article, I&amp;rsquo;ll show you how to get a root domain configured for your Static Web App while we&amp;rsquo;re waiting for official root domain support to arrive.&lt;/p&gt;
 
 &lt;h3 id=&#34;setting-up-cloudflare&#34;&gt;Setting up Cloudflare&lt;/h3&gt;
 
-&lt;p&gt;Cloudflare is a service that is often placed in front of web sites to provide additional features and security, such as protection against denial of service attacks. It does a whole lot more than that, and can function as a powerful DNS and page rules engine for your Static Web App, including allowing you to get root domain support for your site.&lt;/p&gt;
+&lt;p&gt;Cloudflare is a service that is often placed in front of web sites to provide additional features and security, such as protection against denial of service attacks. Cloudflare has a powerful DNS and page rules engine that you can use to get root domain support for your site.&lt;/p&gt;
+
+&lt;p&gt;First, you need to setup Cloudlfare and make it your DNS provider.&lt;/p&gt;
 
 &lt;p&gt;Sign up for a &lt;a href=&#34;https://cloudflare.com&#34;&gt;Cloudflare acccount&lt;/a&gt;. They have a free tier, and everything we&amp;rsquo;re doing here is covered under that free offering.&lt;/p&gt;
 
@@ -39,19 +43,19 @@
 
 &lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/free-account.png&#34; alt=&#34;cloudflare tier selection screen&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Now Cloudflare is going to try and query your site to see if it can determine what your current DNS records are. This is so you don&amp;rsquo;t have to copy them all over manually from your current DNS provider. Because you are about to make Cloudflare your DNS provider. Click the &amp;ldquo;continue&amp;rdquo; button at the bottom of this screen.&lt;/p&gt;
+&lt;p&gt;Since Cloudflare is going to be your new DNS provider, it tries to query your site to see if it can determine what your current DNS records are. This is so you don&amp;rsquo;t have to copy them all over manually from whatever you current DNS provider is. Click the &amp;ldquo;continue&amp;rdquo; button at the bottom of this screen.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/cloudflare-continue.png&#34; alt=&#34;cloudflare DNS preview screen&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Now Cloudflare is going to give you two new name servers that it wants you to use. This requires logging in to your DNS provider and changing the name server. Every provider is different (like snowflakes and Nickelback songs). For this example, we&amp;rsquo;ll use mine, which is &amp;ldquo;Namecheap&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Now Cloudflare is going to give you two new nameservers that it wants you to use instead of your current nameservers. This requires logging in to your DNS provider and changing the nameserver. Every provider is different (like snowflakes and Nickelback songs). For this example, we&amp;rsquo;ll use mine, which is &amp;ldquo;Namecheap&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;Go to your domain registrar and log in to you can manage your domain. There is usually a &amp;ldquo;Manage&amp;rdquo; button or option that you need to click on.&lt;/p&gt;
+&lt;p&gt;Go to your domain registrar and log in. Go to wherever it is in your dashboard that allows you to manage your domain. There is usually a &amp;ldquo;Manage&amp;rdquo; button or option that you need to click on.&lt;/p&gt;
 
-&lt;p&gt;From your domain dashboard, find the &amp;ldquo;nameservers&amp;rdquo; section. By default, this will be your domain registrars default DNS. You&amp;rsquo;ll need to change it to custom DNS and enter the nameservers that point to Cloudflare.&lt;/p&gt;
+&lt;p&gt;From your domain dashboard, find the &amp;ldquo;nameservers&amp;rdquo; section. By default, this will be your domain registrars default DNS. You&amp;rsquo;ll need to change it to custom DNS and enter the nameservers that Cloudflare gave you.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/custom-dns.png&#34; alt=&#34;cloudflare custom nameserver settings&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Make sure to save your changes. I always make this mistake because the &amp;ldquo;save&amp;rdquo; button in Namecheap is so very, very small and not at all like a save button. I mean, is it just me or is this the smallest save button ever made?&lt;/p&gt;
+&lt;p&gt;Make sure to save your changes. I always make this mistake because the &amp;ldquo;save&amp;rdquo; button in Namecheap is so very, very small and not at all like a save button. I mean, is it just me or is this the smallest save button you have ever seen?&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/tiny-save.png&#34; alt=&#34;namecheap tiny save button&#34; /&gt;&lt;/p&gt;
 
@@ -67,7 +71,7 @@
 
 &lt;p&gt;&lt;strong&gt;IMPORTANT - DON&amp;rsquo;T SKIP THIS&lt;/strong&gt;: Those orange cloud icons on the right-hand side under &amp;ldquo;proxy status&amp;rdquo; are important. For the &amp;ldquo;www&amp;rdquo; CNAME, we only want Cloudlfare to act as DNS, so &lt;strong&gt;click on the orange cloud&lt;/strong&gt; to toggle it to grey (DNS only). For the root domain CNAME, we want to proxy all requests through Cloudflare, so leave that one orange.&lt;/p&gt;
 
-&lt;p&gt;At this point, your root domain will work. Kind of. If you navigate to mystaticsite.com (or whatever your domain name is), you will get back the www and you will get your site. Awesome!&lt;/p&gt;
+&lt;p&gt;At this point, your root domain will work. Kind of. If you navigate to mystaticsite.com (or whatever your domain name is), you will get back the www.mystaticsite.com and your site will load. Awesome!&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/kinda-working.png&#34; alt=&#34;site kind of working with cloudflare configuration&#34; /&gt;&lt;/p&gt;
 
@@ -77,9 +81,9 @@
 
 &lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/page-rules-icon.png&#34; alt=&#34;cloudflare page rules icon&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Create a new page rule. Make sure you select the type as &amp;ldquo;Forwarding URL&amp;rdquo;. You&amp;rsquo;ll then need to add in the url you want to match and specify where you want that URL redirected to. The syntax is important. The URL matcher * says match yourdomain.com/any/path and redirect it to www.yourdomain.com. The \$1 appends anything after the .com to the redirect, so you would have www.yourdomain.com/any/path.
-s
-&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/page-rules-screen.png&#34; alt=&#34;cloudflare page rules configuration screen&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Create a new page rule. Make sure you select the type as &amp;ldquo;Forwarding URL&amp;rdquo;. You&amp;rsquo;ll then need to add in the url you want to match and specify where you want that URL redirected to. The syntax is important. The URL matcher &amp;ldquo;*&amp;rdquo; says match yourdomain.com/any/path and redirect it to www.yourdomain.com. The $1 appends anything after the .com to the redirect. So if you went to yourdomain.com/any/path you will get redirected to www.yourdomain.com/any/path.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://burkeholland.github.io/media/static-site-root-domain/page-rules-screen.png&#34; alt=&#34;cloudflare page rules configuration screen&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;And now - you can select any path you like on your root domain and you will get back the right page in your app.&lt;/p&gt;
 
