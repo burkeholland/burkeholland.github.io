@@ -29,14 +29,14 @@
 
 &lt;p&gt;Swapp assumes that you have a &lt;code&gt;local.settings.json&lt;/code&gt; file in the directory where you run the &amp;ldquo;swapp&amp;rdquo; command. To upload all of your application settings in one go, run &lt;code&gt;npx swapp upload&lt;/code&gt; from the same directory where your &lt;code&gt;local.settings.json&lt;/code&gt; file is. You will need to select your subscription, enter your resource group and application name. Then swapp will do it&amp;rsquo;s thing&amp;hellip;&lt;/p&gt;
 
-&lt;p&gt;&lt;video width=&#34;100%&#34; autoplay controls loop src=&#34;https://burkeholland.github.io/media/swapp/upload-demo.mp4&#34;&gt;&lt;/video&gt;
+&lt;p&gt;&lt;video width=&#34;100%&#34; controls loop src=&#34;https://burkeholland.github.io/media/swapp/upload-demo.mp4&#34;&gt;&lt;/video&gt;
 &lt;br&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;listing-app-settings&#34;&gt;Listing app settings&lt;/h2&gt;
 
 &lt;p&gt;Sometimes you just wanna know what app settings your app currently has in Azure. Perhaps you just want to check and make sure the app settings you just uploaded are actually there. To do that, run &lt;code&gt;npx swapp list&lt;/code&gt;. This command can be run from any directory.&lt;/p&gt;
 
-&lt;p&gt;&lt;video width=&#34;100%&#34; autoplay controls loop src=&#34;https://burkeholland.github.io/media/swapp/list-demo.mp4&#34;&gt;&lt;/video&gt;
+&lt;p&gt;&lt;video width=&#34;100%&#34; controls loop src=&#34;https://burkeholland.github.io/media/swapp/list-demo.mp4&#34;&gt;&lt;/video&gt;
 &lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;For more information on app settings in Azure Static Web Apps, see &lt;a href=&#34;https://docs.microsoft.com/azure/static-web-apps/application-settings?WT.mc_id=staticwebapps-personal-buhollan&#34;&gt;this article&lt;/a&gt;. Also, the &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps&amp;amp;WT.mc_id=staticwebapps-personal-buhollan&#34;&gt;VS Code extension for Static Web Apps&lt;/a&gt; will upload your app setttings automatically as well.&lt;/p&gt;
