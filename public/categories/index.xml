@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Burke Knows Words</title>
-    <link>http://burkeholland.dev/categories/</link>
+    <link>http://burkeholland.github.io/categories/</link>
     <description>Recent content in Categories on Burke Knows Words</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://burkeholland.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="http://burkeholland.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
