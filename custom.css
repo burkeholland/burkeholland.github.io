@@ -39,4 +39,18 @@ summary {
     height: 30px;
     margin-right: 10px;
 }
+
+.quote {
+    margin: 0px 0px 40px 0px;
+    background: #eee;
+    padding: 1em;
+    border-radius: 1em;
+  }
+  .quote figcaption,
+  .quote blockquote {
+    margin: 1em;
+  }
  
+  strong {
+      font-weight: bold;
+  }

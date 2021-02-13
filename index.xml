@@ -1,4 +1,63 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Burke Knows Words</title><link>https://burkeholland.github.io/</link><description>Recent content on Burke Knows Words</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 08 Feb 2021 14:52:29 -0600</lastBuildDate><atom:link href="https://burkeholland.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Using Azure Logic Apps to auto-print sales orders</title><link>https://burkeholland.github.io/posts/low-code-value/</link><pubDate>Mon, 08 Feb 2021 14:52:29 -0600</pubDate><guid>https://burkeholland.github.io/posts/low-code-value/</guid><description>&lt;p>No / Low Code tools (NoLow - I just coined that) have been the holy grail of software since I got into programming. I remain optimistic, but skeptical in regards to the idea that some day anyone will be able to build apps.&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Burke Knows Words</title><link>https://burkeholland.github.io/</link><description>Recent content on Burke Knows Words</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 11 Feb 2021 08:59:07 -0600</lastBuildDate><atom:link href="https://burkeholland.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Beginner's series to Dev Containers free video course</title><link>https://burkeholland.github.io/posts/beginners-series-remote-containers/</link><pubDate>Thu, 11 Feb 2021 08:59:07 -0600</pubDate><guid>https://burkeholland.github.io/posts/beginners-series-remote-containers/</guid><description>&lt;figure class="quote">
+&lt;blockquote>
+"Knowledge isn't free. You have to pay attention."
+&lt;/blockquote>
+&lt;figcaption>
+&amp;mdash; Richard Feynman
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Ok, but all &amp;ldquo;play on words&amp;rdquo; aside, knowledge &lt;strong>is&lt;/strong> free. That&amp;rsquo;s the key contribution of the internet, isn&amp;rsquo;t it? That all knowledge is now essentially free? And this is kind of a recent development. It used to cost quite a bit to learn the skills that will make you successful. I mean, there is still a &lt;a href="https://nces.ed.gov/programs/coe/indicator_cud.asp#:~:text=In%202017%E2%80%9318%2C%20total%20revenues,at%20private%20for%2Dprofit%20institutions.">700 billion dollar industry&lt;/a> built on selling you knowledge.&lt;/p>
+&lt;p>Even better, you can learn what you &lt;em>need&lt;/em> instead of things that you &lt;em>might&lt;/em> need. It&amp;rsquo;s been several decades and I have not once used &amp;ldquo;&lt;a href="https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:forms-of-linear-equations/x2f8bb11595b61c86:intro-to-slope-intercept-form/a/introduction-to-slope-intercept-form">Slope Intercept Form&lt;/a>&amp;rdquo;. NOT. ONCE. Well, that&amp;rsquo;s a lie, I had to use it to help my kid with his homework at which point I Googled it. Like an adult.&lt;/p>
+&lt;p>But this post is not a shot at Algebra (I love you math people - really I do), this is about MORE free knowledge. Specficially, an 8 part video series on how to use &amp;ldquo;Development Containers&amp;rdquo;.&lt;/p>
+&lt;blockquote>
+&lt;p>If you prefer reading to videos (you do you) you can get this whole series as &lt;a href="https://docs.microsoft.com/en-us/learn/modules/use-docker-container-dev-env-vs-code/">step-by-step tutorial on Microsoft Learn&lt;/a>.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="development-containers">Development Containers&lt;/h2>
+&lt;p>Development Containers (or Dev Containers) are just Docker containers. But we add a little &lt;a href="https://code.visualstudio.com/download?WT.mc_id=devcloud-11496-buhollan">VS Code&lt;/a> magic in the form of the &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers&amp;amp;WT.mc_id=devcloud-11496-buhollan">Remote - Containers extension&lt;/a> that allows you to develop &lt;em>inside&lt;/em> of the container right from the editor.&lt;/p>
+&lt;p>Now why would you do this? Because once you define a container definition for a project, you can check it in to source as a config file. Then any developer could immediately spin up the right dev environment with &lt;em>zero&lt;/em> configuration. No Python install. No copy/paste cryptic terminal commands from Stack Overflow.&lt;/p>
+&lt;p>So how does this work? I&amp;rsquo;m glad you asked! Or didn&amp;rsquo;t ask! Either way, queue up episode 1&amp;hellip;&lt;/p>
+&lt;h3 id="episode-1">Episode 1:&lt;/h3>
+&lt;p>Start your learning with developing in a Docker container in Visual Studio Code. Learn what it means to configure a container-based development environment, why you might want to develop in a container in VS Code, and what lies ahead in the rest of this video series.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/61M2takIKl8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;h3 id="episode-2">Episode 2:&lt;/h3>
+&lt;p>How to install the Remote - Containers extension in Visual Studio Code and see how it works.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/ACIwcUXfNBI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;h3 id="episode-3">Episode 3:&lt;/h3>
+&lt;p>How to add a dev container to your project in Visual Studio Code using the Remote - Containers extension.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/yucjVHwFO0Y" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;h3 id="episode-4">Episode 4:&lt;/h3>
+&lt;p>How to run your configured project in a dev container.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/ELdZxGtqu6w" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;h3 id="episode-5">Episode 5:&lt;/h3>
+&lt;p>How to forward a port from your container to your host machine so that you can access the app in the browser.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/3iTZFxfzGl8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;h3 id="episode-6">Episode 6:&lt;/h3>
+&lt;p>How to customize your dev container configuration.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/YtiAUoh2U9A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;h3 id="episode-7">Episode 7:&lt;/h3>
+&lt;p>How to install additional software in your Development container.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/dfj7WxfC_9M" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;h3 id="episode-8">Episode 8:&lt;/h3>
+&lt;p>Wrap-up and where to go to learn more about Remote Development.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/oKXkZaAn-IA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;h2 id="enjoy-your-free-knowledge">Enjoy your free knowledge&lt;/h2>
+&lt;p>We hope you enjoy this series on Development Containers. You can check out the &lt;a href="https://www.youtube.com/watch?v=61M2takIKl8&amp;amp;list=PLj6YeMhvp2S5G_X6ZyMc8gfXPMFPg3O31">full playlist on YouTube&lt;/a> or &lt;a href="https://dev.azure.com/devrel/Cloud%20Advocacy/_boards/board/t/Developer%20Cloud/Work%20Items?WT.mc_id=devcloud-11496-buhollan">Microsoft Developer Studios&lt;/a>.&lt;/p></description></item><item><title>Using Azure Logic Apps to auto-print sales orders</title><link>https://burkeholland.github.io/posts/low-code-value/</link><pubDate>Mon, 08 Feb 2021 14:52:29 -0600</pubDate><guid>https://burkeholland.github.io/posts/low-code-value/</guid><description>&lt;p>No / Low Code tools (NoLow - I just coined that) have been the holy grail of software since I got into programming. I remain optimistic, but skeptical in regards to the idea that some day anyone will be able to build apps.&lt;/p>
 &lt;p>Optimistic because we really need to get humans out of the business of writing code wherever we can. Less code means less bugs. Skeptical because in the 15 years I&amp;rsquo;ve been a developer, I&amp;rsquo;ve watched so many of these tools come and go. The problem isn&amp;rsquo;t that we haven&amp;rsquo;t made the right tools, it&amp;rsquo;s that you still need to have significant level of technical knowledge about &lt;em>how&lt;/em> a problem can be solved. And that&amp;rsquo;s not something you can abstract away with a nicer UI.&lt;/p>
 &lt;p>I think the strongest case for the success of NoLow at the moment has more to do with what it offers current developers than it&amp;rsquo;s ability to turn non-coders into application developers.&lt;/p>
 &lt;h2 id="a-nolow-real-world-use-case">A NoLow real world use case&lt;/h2>
