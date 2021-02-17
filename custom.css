@@ -45,6 +45,7 @@ summary {
     background: #eee;
     padding: 1em;
     border-radius: 1em;
+    color: #333;
   }
   .quote figcaption,
   .quote blockquote {
