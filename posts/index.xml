@@ -1,4 +1,53 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Burke Knows Words</title><link>https://burkeholland.github.io/</link><description>Recent content in Posts on Burke Knows Words</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 16 Feb 2021 13:53:57 -0600</lastBuildDate><atom:link href="https://burkeholland.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>How to switch themes in VS Code based on the time of day</title><link>https://burkeholland.github.io/posts/vscode/auto-switch-themes/</link><pubDate>Tue, 16 Feb 2021 13:53:57 -0600</pubDate><guid>https://burkeholland.github.io/posts/vscode/auto-switch-themes/</guid><description>&lt;p>It&amp;rsquo;s a good idea to switch between dark and light mode depending on what time of day it is. During the day when your body is more awake, it might make more sense to use a light theme where reading comprehension is better. At night, your eyes become more tired and bright screen light can be harder on your tired eyes.&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Burke Knows Words</title><link>https://burkeholland.github.io/</link><description>Recent content in Posts on Burke Knows Words</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 22 Feb 2021 10:03:14 -0600</lastBuildDate><atom:link href="https://burkeholland.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Google trends shows Python interest surging</title><link>https://burkeholland.github.io/posts/python-interest-surging/</link><pubDate>Mon, 22 Feb 2021 10:03:14 -0600</pubDate><guid>https://burkeholland.github.io/posts/python-interest-surging/</guid><description>&lt;p>While looking at Google Trends the other day for &lt;a href="https://trends.google.com/trends/explore?q=visual%20studio%20code&amp;amp;geo=US">&amp;ldquo;visual studio code&amp;rdquo;&lt;/a>, I noticed that one of the rising trends was &amp;ldquo;visual studio code format json&amp;rdquo;. Today, it&amp;rsquo;s gone, but still in the top related queries along with &amp;ldquo;how to format code&amp;rdquo;.&lt;/p>
+&lt;p>This got me curious as to what it is that people search for the most along with &amp;ldquo;visual studio code&amp;rdquo; or &amp;ldquo;vs code&amp;rdquo; in the last 12 months.&lt;/p>
+&lt;h2 id="top-related-searches">Top Related Searches&lt;/h2>
+&lt;p>It varries slightly depending on whether you search for &amp;ldquo;visual studio code&amp;rdquo; or &amp;ldquo;vs code&amp;rdquo;, but not nearly as much as you might think&amp;hellip;&lt;/p>
+&lt;h3 id="visual-studio-code">&amp;ldquo;visual studio code&amp;rdquo;&lt;/h3>
+&lt;ol>
+&lt;li>visual studio vs visual studio code&lt;/li>
+&lt;li>vs code&lt;/li>
+&lt;li>vs code vs visual studio&lt;/li>
+&lt;li>download visual studio code&lt;/li>
+&lt;li>visual studio code python&lt;/li>
+&lt;/ol>
+&lt;h3 id="vs-code">&amp;ldquo;vs code&amp;rdquo;&lt;/h3>
+&lt;ol>
+&lt;li>vs code vs visual studio&lt;/li>
+&lt;li>visual studio code vs visual studio&lt;/li>
+&lt;li>visual studio&lt;/li>
+&lt;li>visual studio code&lt;/li>
+&lt;li>python&lt;/li>
+&lt;/ol>
+&lt;p>In both cases, what struck me is that Python shows up in the top 5. What&amp;rsquo;s even more interesting is that if you expand the time range to 2 years, Python drops off the list completely. So in the past 12 months, Python has gone from &amp;ldquo;not on the list&amp;rdquo; to &amp;ldquo;in the top 5&amp;rdquo;. That&amp;rsquo;s quite the movement.&lt;/p>
+&lt;h3 id="why-python">Why Python?&lt;/h3>
+&lt;p>One of the reasons could be the overall meteoric rise of Python. In December, Stack Overflow reported that it was the &lt;a href="https://insights.stackoverflow.com/survey/2020#most-popular-technologies">4th most popular technology&lt;/a> on their site, beating out Java by 4 percentage points. This was &lt;a href="https://insights.stackoverflow.com/survey/2019#technology">also true in 2019&lt;/a>, but only by a razor thin margin when compared to Java. In 2018, &lt;a href="https://insights.stackoverflow.com/survey/2018#technology">it was number 7&lt;/a> overall with Java enjoying a 7 point lead.&lt;/p>
+&lt;p>Stack Overflow is only one measurement and certainly pulls only from the &amp;ldquo;Stack Overflow&amp;rdquo; demographic. The TIOBE index attempts to rate based on an aggregation of the &amp;ldquo;number of skilled engineers world-wide, courses and third party vendors.&amp;rdquo; According to &lt;a href="https://www.tiobe.com/tiobe-index/">TIOBE&amp;rsquo;s February 2021 numbers&lt;/a>, Python is number 3, beaten only Java with the leader being C? Which, I was onboard until &amp;ldquo;C&amp;rdquo;. That seems hard to believe.&lt;/p>
+&lt;p>So Python is popular, but why is &lt;em>that&lt;/em>?&lt;/p>
+&lt;p>There are a lot of potential reasons. Certainly one is that Python is a popular language for students.&lt;/p>
+&lt;p>This is because it&amp;rsquo;s syntatically easier to write than it&amp;rsquo;s C-based counterparts. It is also dynamic, which means that it doesn&amp;rsquo;t require a compilation step. And possibly most important of all - it skirts around the painfully abstract &amp;ldquo;object-oriented&amp;rdquo; programming model. I spent far more energy trying to understand classes and inheritance than I ever did using them.&lt;/p>
+&lt;p>There is also the rise in popularity of data science as a profession. Although I remain skeptical of this. I still don&amp;rsquo;t know anyone who works as a &amp;ldquo;data scientist&amp;rdquo;. I&amp;rsquo;m not saying the job doesn&amp;rsquo;t exist - I know that it does. And a lot of other people must expect that it does too, because &amp;ldquo;Data scientist or machine learning specialist&amp;rdquo; is the &lt;a href="https://insights.stackoverflow.com/survey/2020#work-whos-actively-looking-for-a-job">#2 on people &amp;ldquo;actively looking for a job&amp;rdquo;&lt;/a> on the same Stack Overflow survey I referenced earlier. But it only occupies &lt;a href="https://insights.stackoverflow.com/survey/2020#developer-roles">8% of the total available roles&lt;/a>. I&amp;rsquo;m just saying that perhaps the hype is a lot bigger than the demand.&lt;/p>
+&lt;h2 id="python-is-big">Python is big&lt;/h2>
+&lt;p>All arguments on what people are doing with Python aside, it&amp;rsquo;s certainly popular even by Google Trends standards. That&amp;rsquo;s a measurement that is quite hard to deny. So if you are looking to do Python with Visual Studio Code, here is a list of resources that I hope you find helpful&amp;hellip;&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://code.visualstudio.com/learntocode?WT.mc_id=devcloud-17278-buhollan">Python Coding Pack&lt;/a> - A complete install of VS Code that also installs Python, the Python extension and configures your enviornment. Recommended for folks who just want to get up and running with a single install.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://code.visualstudio.com/docs/python/python-tutorial?WT.mc_id=devcloud-17278-buhollan">Python in VS Code Tutorial&lt;/a> - Official VS Code docs on using Python in VS Code complete with &amp;ldquo;Hello World&amp;rdquo; tutorial.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://channel9.msdn.com/Series/Intro-to-Python-Development?WT.mc_id=python-c9-niner&amp;amp;WT.mc_id=devcloud-17278-buhollan">Python for Beginners Video Series&lt;/a> - Don&amp;rsquo;t know Python? No problem! This free video series starts from the beginning.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python&amp;amp;WT.mc_id=devcloud-17278-buhollann">Python Extension for VS Code&lt;/a> - IntelliSense, linting, debugging, formatting AND support for Jupyter Notebooks&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter&amp;amp;WT.mc_id=devcloud-17278-buhollan">Jupyter Notebooks Extension for VS Code&lt;/a> - Support for Jupyter Notebooks. This extension is included when you install the Python extension so you should do that instead.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://docs.microsoft.com/learn/modules/use-docker-container-dev-env-vs-code/?WT.mc_id=devcloud-17278-buhollan">Use a Docker Container as a Development Enviornment with VS Code&lt;/a> - How to spin up a Python dev env using a Docker container. All examples are in Python.&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>How to switch themes in VS Code based on the time of day</title><link>https://burkeholland.github.io/posts/vscode/auto-switch-themes/</link><pubDate>Tue, 16 Feb 2021 13:53:57 -0600</pubDate><guid>https://burkeholland.github.io/posts/vscode/auto-switch-themes/</guid><description>&lt;p>It&amp;rsquo;s a good idea to switch between dark and light mode depending on what time of day it is. During the day when your body is more awake, it might make more sense to use a light theme where reading comprehension is better. At night, your eyes become more tired and bright screen light can be harder on your tired eyes.&lt;/p>
 &lt;p>Visual Studio Code doesn&amp;rsquo;t do this out-of-the-box, but just like Steve Jobs once said, &amp;ldquo;There&amp;rsquo;s an extension for that&amp;rdquo;.&lt;/p>
 &lt;h2 id="theme-switcher-extension">Theme Switcher Extension&lt;/h2>
 &lt;p>The &lt;a href="https://marketplace.visualstudio.com/items?itemName=savioserra.theme-switcher&amp;amp;WT.mc_id=devcloud-8766-buhollan">Theme Switcher Extension&lt;/a> for VS Code will let you define times of the day at which to apply a different theme.&lt;/p>
