@@ -12,7 +12,7 @@ Now, there are two ways to go about this. You can do it from the client, or you 
 <link href=https://burkeholland.github.io/custom.css rel=stylesheet>
 <link rel=apple-touch-icon href=https://burkeholland.github.io/apple-touch-icon.png>
 <link rel=icon href=https://burkeholland.github.io/favicon.ico>
-<meta name=generator content="Hugo 0.86.0">
+<meta name=generator content="Hugo 0.87.0">
 <script>function setTheme(){if(window.matchMedia('(prefers-color-scheme: dark)').matches){document.body.classList.add('dark');return}const c=new Date,g=localStorage.getItem('date'),d=String(c.getMonth()+1)+'.'+String(c.getDate()),e=c.getTime();let a,b;function f(){if(e>a&&e<b)return;document.body.classList.add('dark')}d!==g?(fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215').then(a=>a.json()).then(c=>{a=c.sunrise.split(':').map(Number),b=c.sunset.split(':').map(Number)}).catch(()=>{a=[7,0],b=[19,0]}).finally(()=>{a=c.setHours(a[0],a[1],0),b=c.setHours(b[0],b[1],0),f(),localStorage.setItem('sunrise',a),localStorage.setItem('sunset',b)}),localStorage.setItem('date',d)):(a=Number(localStorage.getItem('sunrise')),b=Number(localStorage.getItem('sunset')),f())}</script>
 </head>
 <body class=single>
