@@ -1,0 +1,115 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<title>How to add your dotfiles to GitHub Codespaces - Burke Knows Words</title>
+<meta name=description content="One of the first things you are gonna realize after you get started with Codespaces, is that you desperately want your own custom environment setup that you enjoy locally to somehow magically be in Codespaces as well. You can do that using a &ldquo;dotfiles&rdquo; repo, and in this post, we&rsquo;re going to look at how to setup a dotfiles repo, and what quirks you need to be aware of to use it with Codespaces.">
+<meta name=author content>
+<link href=https://burkeholland.github.io/an-old-hope.min.css rel=stylesheet>
+<link href=https://burkeholland.github.io/style.css rel=stylesheet>
+<link href=https://burkeholland.github.io/custom.css rel=stylesheet>
+<link rel=apple-touch-icon href=https://burkeholland.github.io/apple-touch-icon.png>
+<link rel=icon href=https://burkeholland.github.io/favicon.ico>
+<meta name=generator content="Hugo 0.88.1">
+<script>function setTheme(){if(window.matchMedia('(prefers-color-scheme: dark)').matches){document.body.classList.add('dark');return}const c=new Date,g=localStorage.getItem('date'),d=String(c.getMonth()+1)+'.'+String(c.getDate()),e=c.getTime();let a,b;function f(){if(e>a&&e<b)return;document.body.classList.add('dark')}d!==g?(fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215').then(a=>a.json()).then(c=>{a=c.sunrise.split(':').map(Number),b=c.sunset.split(':').map(Number)}).catch(()=>{a=[7,0],b=[19,0]}).finally(()=>{a=c.setHours(a[0],a[1],0),b=c.setHours(b[0],b[1],0),f(),localStorage.setItem('sunrise',a),localStorage.setItem('sunset',b)}),localStorage.setItem('date',d)):(a=Number(localStorage.getItem('sunrise')),b=Number(localStorage.getItem('sunset')),f())}</script>
+</head>
+<body class=single>
+<script>setTheme()</script>
+<header class=header>
+<nav class=nav>
+<p class=logo><a href=https://burkeholland.github.io/>Burke Knows Words</a></p>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<h1 class=post-title>How to add your dotfiles to GitHub Codespaces</h1>
+<div class=post-meta>October 29, 2021</div>
+</header>
+<div class=post-content><p>One of the first things you are gonna realize after you get started with Codespaces, is that you desperately want your own custom environment setup that you enjoy locally to somehow magically be in Codespaces as well. You can do that using a &ldquo;dotfiles&rdquo; repo, and in this post, we&rsquo;re going to look at how to setup a dotfiles repo, and what quirks you need to be aware of to use it with Codespaces.</p>
+<h2 id=whats-a-dotfile>What&rsquo;s a dotfile?</h2>
+<p>A &ldquo;dotfile&rdquo; is any configuration files that start with a dot. You can view your dotfiles by going to your home directory on your machine (<code>cd ~</code>) and running <code>ls -al</code>. For instance, the <code>.zshrc</code> file allows you tweak how your shell (terminal) looks and works. Behold, the glory of my terminal in Codespaces - powered by my .zshrc file&mldr;</p>
+<p><img src=/media/terminal-glory.jpg alt="codespaces terminal running zsh"></p>
+<p>For this post, we&rsquo;re only going to focus on the <code>.zshrc</code> file as that&rsquo;s where all of my terminal configuration can be found. But this post isn&rsquo;t about oh-my-zsh and how it&rsquo;s the best shell and that&rsquo;s not up for debate. This process will work for any dotfiles.</p>
+<p>People like things that come in steps, so here you go&mldr;</p>
+<h2 id=step-1-setup-a-dotfiles-github-repo>Step 1. Setup a dotfiles GitHub repo</h2>
+<p>It&rsquo;s common practice to put your dotfiles in a GitHub repo. There are plenty of blog posts that will tell you all about how to setup the repo, create symlinks, keep everything in sync with cron jobs or something - I don&rsquo;t know. I didn&rsquo;t actually read them. It&rsquo;s the internet and I&rsquo;m too busy to do my own research.</p>
+<p>All you need to know for now is that you need to create a GitHub repo called &ldquo;dotfiles&rdquo;. Convention over configuration and all of that, but no surprise there because GitHub is a Rails app after all.</p>
+<p>So create the &ldquo;dotfiles&rdquo; repo on GitHub and then on to step 2.</p>
+<h2 id=step-2-add-your-dotfiles>Step 2. Add your dotfiles</h2>
+<p>Copy just the <code>.zshrc</code> file into your &ldquo;dotfiles&rdquo; project. That&rsquo;s all there is for step 2. A paragraph has at last 3 sentences.</p>
+<h2 id=step-3-update-your-zshrc-file>Step 3. Update your .zshrc file</h2>
+<p>Your <code>.zshrc</code> file needs a little updating. You need to find anywhere that references your home path directly and replace it with the HOME environment variable. This is because Codespaces don&rsquo;t run under your account so the directory structure is doing to be a bit different.</p>
+<p><strong>BEFORE</strong></p>
+<pre tabindex=0><code># Path to your oh-my-zsh installation.
+export ZSH=&quot;/home/burkeholland/.oh-my-zsh&quot;
+</code></pre><p><strong>AFTER</strong></p>
+<pre tabindex=0><code># Path to your oh-my-zsh installation.
+export ZSH=&quot;${HOME}/.oh-my-zsh&quot;
+</code></pre><p>Now you can add whatever you like - themes, plugins, stuff you copied and pasted from StackOverflow and you don&rsquo;t remember what it does. You know - all the stuff you normally do in your <code>.zshrc</code> file. To keep it simple, I&rsquo;m just going to do a theme and plugins, but we&rsquo;ll throw a wrench in here and use plugins that need to be installed separately and then cover how to do that. So here&rsquo;s our completed sample <code>.zshrc</code> file. Don&rsquo;t forget to source <code>oh-my-zsh.sh</code>!</p>
+<pre tabindex=0><code># Path to your oh-my-zsh installation.
+export ZSH=&quot;$HOME/.oh-my-zsh&quot;
+ZSH_THEME=&quot;cloud&quot;
+
+# zsh-nvm and zsh-autosuggestions must be installed separately
+plugins=(git zsh-nvm zsh-autosuggestions)
+
+source $ZSH/oh-my-zsh.sh
+</code></pre><h3 id=step-4-add-a-shell-script-to-load-your-dotfiles>Step 4. Add a shell script to load your dotfiles</h3>
+<p>Now if our <code>.zshrc</code> file wasn&rsquo;t trying to load plugins that don&rsquo;t exist, we could just use it as is. As long as it&rsquo;s in the root of the repo, Codespaces will copy this (and any other dotfile) to the $HOME directory in your Codespace. Which is where you want them. But we threw some chaos into the situation by including plugins that need to be installed separately, and I did that so we can examine what happens when you need to run a script to properly &ldquo;install&rdquo; your dotfiles - which is frequently the case because you&rsquo;ll end up trying to do all manner of crazy things to your Codespace and by God, I want you to realize all your hopes and dreams.</p>
+<p>You can add a script file to your dotfiles repo that will be executed when the dotfiles are loaded into your Codespaces. You do have to give it the proper name, but GitHub gives you <a href=https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-codespaces-for-your-account#dotfiles>several to choose from</a>. For this example, we&rsquo;ll just use <code>install.sh</code>. When Codespaces detects a script file in your dotfiles repo, it copies the whole thing to &ldquo;/workspaces/.codespaces/.persistedshare/dotfiles&rdquo; and expects you to do all of the copying of dotfiles to the correct place.</p>
+<p>In the script file, you&rsquo;ll need to first make it executable by adding &ldquo;#!/bin/bash&rdquo;. Not all Linux distros include &ldquo;bash&rdquo;, so if &ldquo;bash&rdquo; isn&rsquo;t present in your Codespace, you can use &ldquo;#!/bin/sh&rdquo;.</p>
+<p>I like to wrap up all my logic in a function and call that function. This script file is only handling the <code>.zshrc</code>, but it could handle all sorts of other dotfiles install logic in the future, so having separate functions will make me look like a &ldquo;real&rdquo; developer. In this function, we&rsquo;re going to install the 2 plugins: zsh-autosuggestions and zsh-nvm.</p>
+<pre tabindex=0><code>#!/bin/sh
+
+zshrc() {
+    echo &quot;===========================================================&quot;
+    echo &quot;             cloning zsh-autosuggestions                   &quot;
+    echo &quot;-----------------------------------------------------------&quot;                    
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    echo &quot;===========================================================&quot;
+    echo &quot;                 cloning zsh-zsh-nvm                       &quot;
+    echo &quot;-----------------------------------------------------------&quot;                 
+    git clone https://github.com/lukechilds/zsh-nvm ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-nvm
+    echo &quot;===========================================================&quot;
+    echo &quot;                  Import zshrc                             &quot;
+    echo &quot;-----------------------------------------------------------&quot;
+    cat .zshrc &gt; $HOME/.zshrc
+}
+
+zshrc
+</code></pre><p>&ldquo;Adding&rdquo; these plugins is just cloning them into the custom plugins directory. Just pay attention to the destination and make sure you are using the $ZSH_CUSTOM variable so they end up in the right place.</p>
+<p>The last thing we do in that script is overwrite the <code>.zshrc</code> file in the HOME directory with the contents of the one from our dotfiles repo. Remember, when when Codespaces detects a script file in your dotfiles repo, it copies the whole thing to &ldquo;/workspaces/.codespaces/.persistedshare/dotfiles&rdquo;. So it&rsquo;s on YOU to copy those dotfiles to the right place with your script file.</p>
+<h3 id=step-5-mark-the-install-script-as-executable-with-git>Step 5. Mark the install script as executable with git</h3>
+<p>Now you need to tell <em>git</em> that this file is executable. I figured this out just last week after getting &ldquo;file is not executable&rdquo; over and over and Googling my fingers off. You need to <em>add</em> the &ldquo;install.sh&rdquo; as executable. If you&rsquo;ve already added it, remove it with <code>git rm --cached install.sh</code>.</p>
+<pre tabindex=0><code>git add install.sh --chmod=+x 
+</code></pre><p>You can also mark the file as executable with <code>git update-index --chmod=+x install.sh</code>, but if you do that, every time you change the script file the executable bit will get flipped off and you&rsquo;ll have to run that command again and you will forget and get stuck in a cycle of &ldquo;file is not executable&rdquo; and you will subconsciously blame me and I don&rsquo;t need that on my conscience.</p>
+<blockquote>
+<p>NOTE: After you add the install.sh with the +x (executable) bit turned on and commit, git may still show that index file as having changes. Reject those changes because you&rsquo;ll just be flipping the bit back. It&rsquo;s tedious. I know.</p>
+</blockquote>
+<p>Now commit all your files and push them to your repo.</p>
+<h2 id=step-5-link-your-dotfiles-repo-to-codespaces>Step 5: Link your dotfiles repo to Codespaces</h2>
+<p>Navigate to <a href=https://github.com/settings/codespaces>https://github.com/settings/codespaces</a> and select your dotfiles repo at the top. This will link your dotfiles repo to any new Codespace that you have.</p>
+<p><img src=/media/codespaces-dotfiles.png alt="dotfiles configuration screen in Codespaces"></p>
+<p>If you already have a Codespace, doing a rebuild should pull in your dotfiles. If you change your dotfiles, rebuilding your Codespace will pull in those changes as well.</p>
+<h2 id=step-6-make-sure-the-right-shell-is-being-loaded>Step 6: Make sure the right shell is being loaded</h2>
+<p>By default, Codespaces load &ldquo;oh-my-bash&rdquo;, which is kind of like &ldquo;oh-my-zsh&rdquo;, but not at all &ldquo;oh-my-zsh&rdquo;. You need to tell your Codespace to load zsh as your terminal. To do that, add the following to your &ldquo;devcontainer.json&rdquo; file.</p>
+<blockquote>
+<p>If you don&rsquo;t have a &ldquo;devcontainer.json&rdquo; file, see <a href=https://docs.github.com/en/codespaces/customizing-your-codespace/configuring-codespaces-for-your-project#using-a-predefined-container-configuration>this article</a> for how to add one to your Codespace.</p>
+</blockquote>
+<h2 id=take-your-custom-environment-with-you>Take your custom environment with you</h2>
+<p>Having your dotfiles automatically installed basically lets you configure every Codespace automatically so you always get the environment that you know and love. It&rsquo;s also only specific to you, so someone who forks your repo won&rsquo;t get your terminal. Even though they would be better off if they did and we both know it.</p>
+</div>
+</article></main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://burkeholland.github.io/>Burke Knows Words</a></span>
+<span>&#183;</span>
+<span>Powered by <a href=https://gohugo.io/ rel=noopener target=_blank>Hugo️️</a>️</span>
+<span>&#183;</span>
+<span>Theme️ <a href=https://github.com/nanxiaobei/hugo-paper rel=noopener target=_blank>Paper</a></span>
+</footer>
+<script src=https://burkeholland.github.io/highlight.min.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>

@@ -11,7 +11,7 @@
 <link href=https://burkeholland.github.io/custom.css rel=stylesheet>
 <link rel=apple-touch-icon href=https://burkeholland.github.io/apple-touch-icon.png>
 <link rel=icon href=https://burkeholland.github.io/favicon.ico>
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <link rel=alternate type=application/rss+xml href=https://burkeholland.github.io/categories/index.xml title="Burke Knows Words">
 <script>function setTheme(){if(window.matchMedia('(prefers-color-scheme: dark)').matches){document.body.classList.add('dark');return}const c=new Date,g=localStorage.getItem('date'),d=String(c.getMonth()+1)+'.'+String(c.getDate()),e=c.getTime();let a,b;function f(){if(e>a&&e<b)return;document.body.classList.add('dark')}d!==g?(fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215').then(a=>a.json()).then(c=>{a=c.sunrise.split(':').map(Number),b=c.sunset.split(':').map(Number)}).catch(()=>{a=[7,0],b=[19,0]}).finally(()=>{a=c.setHours(a[0],a[1],0),b=c.setHours(b[0],b[1],0),f(),localStorage.setItem('sunrise',a),localStorage.setItem('sunset',b)}),localStorage.setItem('date',d)):(a=Number(localStorage.getItem('sunrise')),b=Number(localStorage.getItem('sunset')),f())}</script>
 </head>
@@ -23,6 +23,18 @@
 </nav>
 </header>
 <main class=main>
+<article class=post-entry>
+<header class=entry-header>
+<h2>How to add your dotfiles to GitHub Codespaces</h2>
+</header>
+<section class=entry-content>
+<p>One of the first things you are gonna realize after you get started with Codespaces, is that you desperately want your own custom environment setup that you enjoy locally to somehow magically be in Codespaces as well. You can do that using a “dotfiles” repo, and in this post, we’re going to look at how to setup a dotfiles repo, and what quirks you need to be aware of to use it with Codespaces....</p>
+</section>
+<footer class=entry-footer>
+<time>October 29, 2021</time>
+</footer>
+<a class=entry-link href=https://burkeholland.github.io/posts/codespaces-dotfiles/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>Converting Cosmos DB Timestamps to JavaScript Dates</h2>
@@ -139,20 +151,6 @@ What I do have is a Blue Yeti microphone, GarageBand and a copy of Screenflow th
 <time>March 18, 2020</time>
 </footer>
 <a class=entry-link href=https://burkeholland.github.io/posts/audio-how-to/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Trimming expenses on The Urlist with Azure Cosmos DB Free Tier</h2>
-</header>
-<section class=entry-content>
-<p>Summary: We migrated theurlist.com to the new Cosmos DB Free Tier and shaved ~35$ per month off of our Azure bill. Cosmos DB Free Tier gives you 400 RU/s for free every month. This should be more than enough for most small projects.
-Get Azure Cosmos DB Free Tier
-theurlist.com is a project that I wrote with my colleague Cecil Phillip last year. We wanted to see if we could build a site on Azure that was two things…...</p>
-</section>
-<footer class=entry-footer>
-<time>March 17, 2020</time>
-</footer>
-<a class=entry-link href=https://burkeholland.github.io/posts/cosmos-free-tier/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
