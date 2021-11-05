@@ -11,7 +11,7 @@
 <link href=https://burkeholland.github.io/custom.css rel=stylesheet>
 <link rel=apple-touch-icon href=https://burkeholland.github.io/apple-touch-icon.png>
 <link rel=icon href=https://burkeholland.github.io/favicon.ico>
-<meta name=generator content="Hugo 0.88.1">
+<meta name=generator content="Hugo 0.89.0">
 <script>function setTheme(){if(window.matchMedia('(prefers-color-scheme: dark)').matches){document.body.classList.add('dark');return}const c=new Date,g=localStorage.getItem('date'),d=String(c.getMonth()+1)+'.'+String(c.getDate()),e=c.getTime();let a,b;function f(){if(e>a&&e<b)return;document.body.classList.add('dark')}d!==g?(fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215').then(a=>a.json()).then(c=>{a=c.sunrise.split(':').map(Number),b=c.sunset.split(':').map(Number)}).catch(()=>{a=[7,0],b=[19,0]}).finally(()=>{a=c.setHours(a[0],a[1],0),b=c.setHours(b[0],b[1],0),f(),localStorage.setItem('sunrise',a),localStorage.setItem('sunset',b)}),localStorage.setItem('date',d)):(a=Number(localStorage.getItem('sunrise')),b=Number(localStorage.getItem('sunset')),f())}</script>
 </head>
 <body class=single>
@@ -94,14 +94,11 @@ zshrc
 <p><img src=/media/codespaces-dotfiles.png alt="dotfiles configuration screen in Codespaces"></p>
 <p>If you already have a Codespace, doing a rebuild should pull in your dotfiles. If you change your dotfiles, rebuilding your Codespace will pull in those changes as well.</p>
 <h2 id=step-6-make-sure-the-right-shell-is-being-loaded>Step 6: Make sure the right shell is being loaded</h2>
-<p>By default, Codespaces load &ldquo;oh-my-bash&rdquo;, which is kind of like &ldquo;oh-my-zsh&rdquo;, but not at all &ldquo;oh-my-zsh&rdquo;. You need to tell your Codespace to load zsh as your terminal. To do that, add the following to your &ldquo;devcontainer.json&rdquo; file&mldr;</p>
-<pre tabindex=0><code>&quot;settings&quot;: {
-    &quot;terminal.integrated.shell.linux&quot;: &quot;/bin/zsh&quot;
-}
+<p>By default, Codespaces load &ldquo;oh-my-bash&rdquo;, which is kind of like &ldquo;oh-my-zsh&rdquo;, but not at all &ldquo;oh-my-zsh&rdquo;. You need to tell your Codespace to load zsh as your terminal. Thanks to @brettsky on Twitter for pointing out that the easiest way to that is to add the following to your VS Code settings (<kbd>Cmd/Ctrl</kbd> + <kbd>,</kbd>)&mldr;</p>
+<pre tabindex=0><code>&quot;terminal.integrated.defaultProfile.linux&quot;: &quot;zsh&quot;
 </code></pre><blockquote>
-<p>If you don&rsquo;t have a &ldquo;devcontainer.json&rdquo; file, see <a href=https://docs.github.com/en/codespaces/customizing-your-codespace/configuring-codespaces-for-your-project#using-a-predefined-container-configuration>this article</a> for how to add one to your Codespace.</p>
+<p>If you don&rsquo;t do this, your zsh shell just won&rsquo;t be loaded and it will look like your dotfiles are doing nothing.</p>
 </blockquote>
-<p>Note that this will set &ldquo;zsh&rdquo; as the default shell for everyone who uses the container because the &ldquo;devcontainer.json&rdquo; does go in source control. But let&rsquo;s be honest, they should be thanking you for making that change.</p>
 <h2 id=take-your-custom-environment-with-you>Take your custom environment with you</h2>
 <p>Having your dotfiles automatically installed basically lets you configure every Codespace automatically so you always get the environment that you know and love. It&rsquo;s also only specific to you, so someone who forks your repo won&rsquo;t get your terminal. Even though they would be better off if they did and we both know it.</p>
 </div>
