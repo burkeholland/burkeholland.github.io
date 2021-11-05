@@ -61,7 +61,7 @@ zshrc
 &lt;p>&lt;img src="https://burkeholland.github.io/media/codespaces-dotfiles.png" alt="dotfiles configuration screen in Codespaces">&lt;/p>
 &lt;p>If you already have a Codespace, doing a rebuild should pull in your dotfiles. If you change your dotfiles, rebuilding your Codespace will pull in those changes as well.&lt;/p>
 &lt;h2 id="step-6-make-sure-the-right-shell-is-being-loaded">Step 6: Make sure the right shell is being loaded&lt;/h2>
-&lt;p>By default, Codespaces load &amp;ldquo;oh-my-bash&amp;rdquo;, which is kind of like &amp;ldquo;oh-my-zsh&amp;rdquo;, but not at all &amp;ldquo;oh-my-zsh&amp;rdquo;. You need to tell your Codespace to load zsh as your terminal. Thanks to @brettsky on Twitter for pointing out that the easiest way to that is to add the following to your VS Code settings (&lt;kbd>Cmd/Ctrl&lt;/kbd> + &lt;kbd>,&lt;/kbd>)&amp;hellip;&lt;/p>
+&lt;p>By default, Codespaces load &amp;ldquo;oh-my-bash&amp;rdquo;, which is kind of like &amp;ldquo;oh-my-zsh&amp;rdquo;, but not at all &amp;ldquo;oh-my-zsh&amp;rdquo;. You need to tell your Codespace to load zsh as your terminal. Thanks to &lt;a href="https://twitter.com/brettsky">@brettsky on Twitter&lt;/a> for pointing out that the easiest way to that is to add the following to your VS Code settings (&lt;kbd>Cmd/Ctrl&lt;/kbd> + &lt;kbd>,&lt;/kbd>)&amp;hellip;&lt;/p>
 &lt;pre tabindex="0">&lt;code>&amp;quot;terminal.integrated.defaultProfile.linux&amp;quot;: &amp;quot;zsh&amp;quot;
 &lt;/code>&lt;/pre>&lt;blockquote>
 &lt;p>If you don&amp;rsquo;t do this, your zsh shell just won&amp;rsquo;t be loaded and it will look like your dotfiles are doing nothing.&lt;/p>
