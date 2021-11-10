@@ -13,45 +13,46 @@
 &lt;h2 id="step-3-update-your-zshrc-file">Step 3. Update your .zshrc file&lt;/h2>
 &lt;p>Your &amp;ldquo;.zshrc&amp;rdquo; file needs a little updating. You need to find anywhere that references your home path directly and replace it with the HOME environment variable. This is because Codespaces don&amp;rsquo;t run under your account so the directory structure is doing to be a bit different.&lt;/p>
 &lt;p>&lt;strong>BEFORE&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code># Path to your oh-my-zsh installation.
-export ZSH=&amp;quot;/home/burkeholland/.oh-my-zsh&amp;quot;
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>AFTER&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code># Path to your oh-my-zsh installation.
-export ZSH=&amp;quot;${HOME}/.oh-my-zsh&amp;quot;
-&lt;/code>&lt;/pre>&lt;p>Now you can add whatever you like - themes, plugins, stuff you copied and pasted from StackOverflow and you don&amp;rsquo;t remember what it does. You know - all the stuff you normally do in your &amp;ldquo;.zshrc&amp;rdquo; file. To keep it simple, I&amp;rsquo;m just going to do a theme and plugins, but we&amp;rsquo;ll throw a wrench in here and use plugins that need to be installed separately and then cover how to do that. So here&amp;rsquo;s our completed sample &amp;ldquo;.zshrc&amp;rdquo; file. Don&amp;rsquo;t forget to source &lt;code>oh-my-zsh.sh&lt;/code>!&lt;/p>
-&lt;pre tabindex="0">&lt;code># Path to your oh-my-zsh installation.
-export ZSH=&amp;quot;$HOME/.oh-my-zsh&amp;quot;
-ZSH_THEME=&amp;quot;cloud&amp;quot;
-# zsh-nvm and zsh-autosuggestions must be installed separately
-plugins=(git zsh-nvm zsh-autosuggestions)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e"># Path to your oh-my-zsh installation.&lt;/span>
+export ZSH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/home/burkeholland/.oh-my-zsh&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>AFTER&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e"># Path to your oh-my-zsh installation.&lt;/span>
+export ZSH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>HOME&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">/.oh-my-zsh&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now you can add whatever you like - themes, plugins, stuff you copied and pasted from StackOverflow and you don&amp;rsquo;t remember what it does. You know - all the stuff you normally do in your &amp;ldquo;.zshrc&amp;rdquo; file. To keep it simple, I&amp;rsquo;m just going to do a theme and plugins, but we&amp;rsquo;ll throw a wrench in here and use plugins that need to be installed separately and then cover how to do that. So here&amp;rsquo;s our completed sample &amp;ldquo;.zshrc&amp;rdquo; file. Don&amp;rsquo;t forget to source &lt;code>oh-my-zsh.sh&lt;/code>!&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e"># Path to your oh-my-zsh installation.&lt;/span>
+export ZSH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>$HOME&lt;span style="color:#e6db74">/.oh-my-zsh&amp;#34;&lt;/span>
+ZSH_THEME&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;cloud&amp;#34;&lt;/span>
+&lt;span style="color:#75715e"># zsh-nvm and zsh-autosuggestions must be installed separately&lt;/span>
+plugins&lt;span style="color:#f92672">=(&lt;/span>git zsh-nvm zsh-autosuggestions&lt;span style="color:#f92672">)&lt;/span>
 source $ZSH/oh-my-zsh.sh
-&lt;/code>&lt;/pre>&lt;h3 id="step-4-add-a-shell-script-to-load-your-dotfiles">Step 4. Add a shell script to load your dotfiles&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-4-add-a-shell-script-to-load-your-dotfiles">Step 4. Add a shell script to load your dotfiles&lt;/h3>
 &lt;p>Now if our &amp;ldquo;.zshrc&amp;rdquo; file wasn&amp;rsquo;t trying to load plugins that don&amp;rsquo;t exist, we could just use it as is. As long as it&amp;rsquo;s in the root of the repo, Codespaces will copy this (and any other dotfile) to the $HOME directory in your Codespace. Which is where you want them. But we threw some chaos into the situation by including plugins that need to be installed separately, and I did that so we can examine what happens when you need to run a script to properly &amp;ldquo;install&amp;rdquo; your dotfiles - which is frequently the case because you&amp;rsquo;ll end up trying to do all manner of crazy things to your Codespace and by God, I want you to realize all your hopes and dreams.&lt;/p>
 &lt;p>You can add a script file to your dotfiles repo that will be executed when the dotfiles are loaded into your Codespaces. You do have to give it the proper name, but GitHub gives you &lt;a href="https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-codespaces-for-your-account#dotfiles">several to choose from&lt;/a>. For this example, we&amp;rsquo;ll just use &lt;code>install.sh&lt;/code>. When Codespaces detects a script file in your dotfiles repo, it clones the dotfiles repo to &amp;ldquo;/workspaces/.codespaces/.persistedshare/dotfiles&amp;rdquo; and then executes your script file. It expects your script file to do all of the copying of dotfiles to the correct place.&lt;/p>
 &lt;p>In the script file, you&amp;rsquo;ll need to first make it executable by adding &lt;code>#!/bin/bash&lt;/code>. Not all Linux distros include &amp;ldquo;bash&amp;rdquo;, so if &amp;ldquo;bash&amp;rdquo; isn&amp;rsquo;t present in your Codespace, you can use &lt;code>#!/bin/sh&lt;/code>.&lt;/p>
 &lt;p>I like to wrap up all my logic in a function and call that function. This script file is only handling the &amp;ldquo;.zshrc&amp;rdquo;, but it could handle all sorts of other dotfiles install logic in the future, so having separate functions will make me look like a &amp;ldquo;real&amp;rdquo; developer. In this function, we&amp;rsquo;re going to install the 2 plugins: zsh-autosuggestions and zsh-nvm.&lt;/p>
-&lt;pre tabindex="0">&lt;code>#!/bin/sh
-zshrc() {
-echo &amp;quot;===========================================================&amp;quot;
-echo &amp;quot; cloning zsh-autosuggestions &amp;quot;
-echo &amp;quot;-----------------------------------------------------------&amp;quot;
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-echo &amp;quot;===========================================================&amp;quot;
-echo &amp;quot; cloning zsh-zsh-nvm &amp;quot;
-echo &amp;quot;-----------------------------------------------------------&amp;quot;
-git clone https://github.com/lukechilds/zsh-nvm ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-nvm
-echo &amp;quot;===========================================================&amp;quot;
-echo &amp;quot; Import zshrc &amp;quot;
-echo &amp;quot;-----------------------------------------------------------&amp;quot;
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e">#!/bin/sh
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+zshrc&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+echo &lt;span style="color:#e6db74">&amp;#34;===========================================================&amp;#34;&lt;/span>
+echo &lt;span style="color:#e6db74">&amp;#34; cloning zsh-autosuggestions &amp;#34;&lt;/span>
+echo &lt;span style="color:#e6db74">&amp;#34;-----------------------------------------------------------&amp;#34;&lt;/span>
+git clone https://github.com/zsh-users/zsh-autosuggestions &lt;span style="color:#e6db74">${&lt;/span>ZSH_CUSTOM&lt;span style="color:#66d9ef">:-&lt;/span>~/.oh-my-zsh/custom&lt;span style="color:#e6db74">}&lt;/span>/plugins/zsh-autosuggestions
+echo &lt;span style="color:#e6db74">&amp;#34;===========================================================&amp;#34;&lt;/span>
+echo &lt;span style="color:#e6db74">&amp;#34; cloning zsh-zsh-nvm &amp;#34;&lt;/span>
+echo &lt;span style="color:#e6db74">&amp;#34;-----------------------------------------------------------&amp;#34;&lt;/span>
+git clone https://github.com/lukechilds/zsh-nvm &lt;span style="color:#e6db74">${&lt;/span>ZSH_CUSTOM&lt;span style="color:#66d9ef">:-&lt;/span>~/.oh-my-zsh/custom&lt;span style="color:#e6db74">}&lt;/span>/plugins/zsh-nvm
+echo &lt;span style="color:#e6db74">&amp;#34;===========================================================&amp;#34;&lt;/span>
+echo &lt;span style="color:#e6db74">&amp;#34; Import zshrc &amp;#34;&lt;/span>
+echo &lt;span style="color:#e6db74">&amp;#34;-----------------------------------------------------------&amp;#34;&lt;/span>
 cat .zshrc &amp;gt; $HOME/.zshrc
-}
+&lt;span style="color:#f92672">}&lt;/span>
 zshrc
-&lt;/code>&lt;/pre>&lt;p>&amp;ldquo;Adding&amp;rdquo; these plugins is just cloning them into the custom plugins directory. Just pay attention to the destination and make sure you are using the ZSH_CUSTOM variable so they end up in the right place.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&amp;ldquo;Adding&amp;rdquo; these plugins is just cloning them into the custom plugins directory. Just pay attention to the destination and make sure you are using the ZSH_CUSTOM variable so they end up in the right place.&lt;/p>
 &lt;p>The last thing we do in that script is overwrite the &amp;ldquo;.zshrc&amp;rdquo; file in the HOME directory with the contents of the one from our dotfiles repo. Remember, when when Codespaces detects a script file in your dotfiles repo, it copies the whole thing to &amp;ldquo;/workspaces/.codespaces/.persistedshare/dotfiles&amp;rdquo;. So it&amp;rsquo;s on YOU to copy those dotfiles to the right place with your script file.&lt;/p>
 &lt;h3 id="step-5-mark-the-install-script-as-executable-with-git">Step 5. Mark the install script as executable with git&lt;/h3>
 &lt;p>Now you need to tell &lt;em>git&lt;/em> that this file is executable. I figured this out just last week after getting &amp;ldquo;file is not executable&amp;rdquo; over and over and Googling my fingers off. You need to &lt;em>git add&lt;/em> the &amp;ldquo;install.sh&amp;rdquo; as executable. If you&amp;rsquo;ve already added it, remove it with &lt;code>git rm --cached install.sh&lt;/code>.&lt;/p>
-&lt;pre tabindex="0">&lt;code>git add install.sh --chmod=+x
-&lt;/code>&lt;/pre>&lt;p>You can also mark the file as executable with &lt;code>git update-index --chmod=+x install.sh&lt;/code>, but if you do that, every time you change the script file the executable bit will get flipped off and you&amp;rsquo;ll have to run that command again and you will forget and get stuck in a cycle of &amp;ldquo;file is not executable&amp;rdquo; and you will subconsciously blame me and I don&amp;rsquo;t need that on my conscience.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">git add install.sh --chmod&lt;span style="color:#f92672">=&lt;/span>+x
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can also mark the file as executable with &lt;code>git update-index --chmod=+x install.sh&lt;/code>, but if you do that, every time you change the script file the executable bit will get flipped off and you&amp;rsquo;ll have to run that command again and you will forget and get stuck in a cycle of &amp;ldquo;file is not executable&amp;rdquo; and you will subconsciously blame me and I don&amp;rsquo;t need that on my conscience.&lt;/p>
 &lt;blockquote>
 &lt;p>NOTE: After you add the install.sh with the +x (executable) bit turned on and commit, git may still show that install.sh file as having changes. Reject those changes because you&amp;rsquo;ll just be flipping the bit back. It&amp;rsquo;s tedious. I know.&lt;/p>
 &lt;/blockquote>
@@ -62,11 +63,14 @@ zshrc
 &lt;p>If you already have a Codespace, doing a rebuild should pull in your dotfiles. If you change your dotfiles, rebuilding your Codespace will pull in those changes as well.&lt;/p>
 &lt;h2 id="step-6-make-sure-the-right-shell-is-being-loaded">Step 6: Make sure the right shell is being loaded&lt;/h2>
 &lt;p>By default, Codespaces load &amp;ldquo;oh-my-bash&amp;rdquo;, which is kind of like &amp;ldquo;oh-my-zsh&amp;rdquo;, but not at all &amp;ldquo;oh-my-zsh&amp;rdquo;. You need to tell your Codespace to load zsh as your terminal. Thanks to &lt;a href="https://twitter.com/brettsky">@brettsky on Twitter&lt;/a> for pointing out that the easiest way to that is to add the following to your VS Code settings (&lt;kbd>Cmd/Ctrl&lt;/kbd> + &lt;kbd>,&lt;/kbd>)&amp;hellip;&lt;/p>
-&lt;pre tabindex="0">&lt;code>&amp;quot;terminal.integrated.defaultProfile.linux&amp;quot;: &amp;quot;zsh&amp;quot;
-&lt;/code>&lt;/pre>&lt;blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#e6db74">&amp;#34;terminal.integrated.defaultProfile.linux&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;zsh&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>If you don&amp;rsquo;t do this, your zsh shell just won&amp;rsquo;t be loaded and it will look like your dotfiles are doing nothing.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="take-your-custom-environment-with-you">Take your custom environment with you&lt;/h2>
+&lt;h3 id="making-it-work-with-remote-containers">Making it work with Remote-Containers&lt;/h3>
+&lt;p>The [Remote-Containers extension for VS Code](&amp;ldquo;dotfiles.repository&amp;rdquo;: &amp;ldquo;&lt;a href="https://github.com/burkeholland/dotfiles%22">https://github.com/burkeholland/dotfiles&amp;quot;&lt;/a>,) uses virtually the same technology and configuration as Codespaces. With Remote-Containers, you are essentially hosting your own Codespace. With Remote-Containers, you can still use this exact same setup, but you need to change one setting in VS Code to tell Remote-Containers where your dotfiles repo is&amp;hellip;&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#e6db74">&amp;#34;dotfiles.repository&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;https://github.com/burkeholland/dotfiles&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="take-your-custom-environment-with-you">Take your custom environment with you&lt;/h2>
 &lt;p>Having your dotfiles automatically installed basically lets you configure every Codespace automatically so you always get the environment that you know and love. It&amp;rsquo;s also only specific to you, so someone who forks your repo won&amp;rsquo;t get your terminal. Even though they would be better off if they did and we both know it.&lt;/p></description></item><item><title>Converting Cosmos DB Timestamps to JavaScript Dates</title><link>https://burkeholland.github.io/posts/azure/azurecosmosdb-dates/</link><pubDate>Thu, 05 Aug 2021 10:34:40 -0500</pubDate><guid>https://burkeholland.github.io/posts/azure/azurecosmosdb-dates/</guid><description>&lt;p>Cosmos DB automactially adds a timestamp field called &amp;ldquo;_ts&amp;rdquo;. everytime a document is &lt;strong>created&lt;/strong> or &lt;strong>updated&lt;/strong>. And it looks like this&amp;hellip;&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#f92672">&amp;#34;_ts&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">1628083065&lt;/span>
