@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<div class="mt-5">
+  {% for post in paginator.posts %}
+  <div class="mt-6 mb-6">
+    <a href="{{ post.url }}">
+      <p class="is-size-5 has-text-weight-bold mb-2">{{ post.title | strip_html }}</p>
+    </a>
+    <p>{{ post.content | markdownify | strip_html | truncatewords: 50 }}</p>
+  </div>
+  {% endfor %}
+</div>
+{% include pagination.html %}

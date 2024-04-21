@@ -1,0 +1,7 @@
+@import "manni.css";
+
+html,
+body {
+    max-width: 720px;
+    margin: auto;
+}
