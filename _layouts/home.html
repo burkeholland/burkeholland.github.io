@@ -6,9 +6,10 @@ layout: default
   {% for post in paginator.posts %}
   <div class="mt-6 mb-6">
     <a href="{{ post.url }}">
-      <p class="is-size-5 has-text-weight-bold mb-2">{{ post.title | strip_html }}</p>
+      <p class="is-size-5 has-text-weight-bold">{{ post.title | strip_html }}</p>
     </a>
-    <p>{{ post.content | markdownify | strip_html | truncatewords: 50 }}</p>
+    <p class="is-size-7">{{ post.date | date: "%B %d, %Y" }}</p> <!-- Add this line for the date -->
+    <p class="mt-4">{{ post.content | markdownify | strip_html | truncatewords: 50 }}</p>
   </div>
   {% endfor %}
 </div>
