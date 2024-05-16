@@ -25,7 +25,7 @@ This is where I would like to argue that Prompt Engineering is, therefore, not a
 
 Unfortunately, Upon checking with the Oxford Dictionary, it's clear that the word "engineering" is a bit of a catch-all. It can mean anything from "the application of science and mathematics by which the properties of matter and the sources of energy in nature are made useful to people" to "the design and manufacture of complex products" to "the action of working artfully to bring something about". Whoever got that last definition put in there pulled a fast one with "artfully". 
 
-![screenshot of engineering definition](/assets/engine)
+![screenshot of engineering definition](/assets/engineering-definition.png)
 
 We might describe LLM output as "arftfull". That could be one way of saying it. It's not stochastic, it's art!  
 
