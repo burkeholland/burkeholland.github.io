@@ -2,7 +2,7 @@
 layout: post
 date: 2024-05-16 04:14:00 +0000
 title: "Prompt Negotiation"
-permalink: "prompt-negotiation"
+permalink: "blog/prompt-negotiation"
 ---
 
 Since the birth of ChatGPT, we've been fascinated by this new idea of "Prompt Engineering". Much has been written on this subject with multiple Prompt Engineering tutorial sites springing up and countless videos on the subject. I'm guilty of [making them myself](https://youtu.be/hh1nOX14TyY?feature=shared).
