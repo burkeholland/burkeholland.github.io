@@ -21,11 +21,12 @@ I don't know what your struggle is. There is a good chance I wouldn't understand
 
 Both you and I have the option to set the burden down and just leave it right where it falls - along the side of the road. But we cannot do that on our own because we don't know how to take the weight off. We cannot find the mechanism to release it. And in a way, we don't know how to live without it, so there is a good chance we would go back out to find it so we can pick it right back up again.
 
-The history of humanity is a desperate cosmic search for help. A cry to the void for something bigger than ourselves that rescue us from ourselves. When people talk about a "god shaped hole in every heart", this is what they mean. 
 
-Life is a series of things that we simply cannot control. The sickness, the betrayal, the failure, the constant rejection, the disgrace and the shame. Despite the articles that tell you how to avoid cancer, you have little control over whether or not you die young. Despite how good a partner you are, you have little control over whether the love of your life decides they prefer someone else. Despite all the podcasts that tell you to get to the gym and get your life in order, you have no actual control over whether or not you spend your life alone with an ache in your heart that makes it hard to even breathe.
+Life is a series of things that we simply cannot control. The sickness, the betrayal, the failure, the constant rejection, the disgrace and the shame. Despite the articles that tell you how to avoid cancer, you have little control over whether or not you die young. Despite how good a partner you are, you have little control over whether the love of your life decides after some time that you are not the love of theirs. Despite all the podcasts that tell you to get to the gym and get your life in order, you have no actual control over whether or not you spend your life alone with an ache in your heart that makes it hard to breathe.
+
+The history of humanity is a desperate cosmic search for help. A cry to the void for something bigger than ourselves to rescue us from ourselves. When people talk about a "god shaped hole in the heart", this is what they mean.
 
 In Collosians, Paul says to "Set your mind on things above, not earthly things." And in the very next sentence he says, "because you have **died** and your life is now hidden with Christ in God."
 
-The problem is that my eyes are set on earthly things. But its all I have ever known. How can I set my mind on something I have never seen or held? This is the puzzle that we must solve. We have to die so that we can live.
+What does that mean? Your life is hidden away with Christ in God? Not this life. This life is happening right now and it's uncomfortable _at best_. It's more likely he's referring to the life of your soul, because you are not your body. And in fact, you are not your mind. Just like you can't control whether or not your body gets sick, you cannot control whether or not your mind torments you. 
 
