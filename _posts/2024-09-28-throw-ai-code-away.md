@@ -11,7 +11,7 @@ We could argue that we already have no lack of poorly written, fragile code base
 
 That feels a bit like a race to the bottom though. We should aspire to impove our craft, not find the lowest tolerable position for the quality.
 
-In his article titled, "It's hard to write code for computers, but it's even harder to write code for humans", Erik Bernhardsson says this about code written for other developers like SDK's and API's...
+In [his article](https://erikbern.com/2024/09/27/its-hard-to-write-code-for-humans.html) titled, "It's hard to write code for computers, but it's even harder to write code for humans", Erik Bernhardsson says this about code written for other developers like SDK's and API's...
 
 > Writing this code is much harder, because you're not just telling a computer what to do, you're also grappling with another user's mental model of your code. Now it's equal part computer science and psychology of reasoning, or something. How do you get that person to understand your code?
 
