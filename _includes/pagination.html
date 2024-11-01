@@ -1,14 +1,14 @@
-<div class="columns">
+<div class="columns is-mobile mb-4">
     <div class="column">
         {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}">
+        <a href="{{ paginator.previous_page_path }}" class="has-text-black">
             &larr; Previous Page
         </a>
         {% endif %}
     </div>
     <div class="column has-text-right">
         {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}">Next Page &rarr;</a>
+        <a href="{{ paginator.next_page_path }}" class="has-text-black">Next Page &rarr;</a>
         {% endif %}
     </div>
 </div>
