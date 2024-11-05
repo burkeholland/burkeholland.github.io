@@ -10,7 +10,7 @@ I've had a lot of blogs over the years. I think I started on Wordpress (as one d
 
 Markdown is _probably_ the best way to compose prose. We don't need editors to bold and italicize things for us. Remember Windows Live Writer?
 
-![Windows Live Writer screenshot](../assets/windows-live-writer.png)
+![Windows Live Writer screenshot](/assets/windows-live-writer.png)
 
 We just need something to convert our Markdown to HTML. Static site generators are great at this. There's many to choose from, but when picking one for a blog, I chose Jekyll. Not because I'm super into Ruby or because I think it's somehow the best static site generator. It's simply because GitHub makes it so easy to delpoy a Jekyll site on GitHub Pages.
 
@@ -24,7 +24,7 @@ The only downside to setting up Jekyll is having to fool with Ruby, but I get ar
 
 Of course, you don't want to have to build and deploy your site everytime you want to write a blog post. But you don't have to. GitHub offers an in browser editing experience on any repo by pressing the "." key. This opens VS Code in the browser with your repo as the backing "file system". Also called a "virtual file system" in VS Code. 
 
-![Writing this blog in VS Code](../assets/blog-in-vscode.png)
+![Writing this blog in VS Code](/assets/blog-in-vscode.png)
 
 This means that I can compose a blog post in VS Code using Markdown with full preview all while in my browser. No code checkout required. Which means my iPad is perfectly (almost) suited for writing blog posts. File system access on an iPad is still a horendous experience so uploading images isn't the most fun you can have on a Tuesday.
 
