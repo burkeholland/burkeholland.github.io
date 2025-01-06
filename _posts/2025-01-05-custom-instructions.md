@@ -22,7 +22,6 @@ You can add the "global instructions" that I'm about to give you by going to you
 
 ```json
 "github.copilot.chat.codeGeneration.instructions": [
-    // custom instructions will go here
     { "text": "this is an example of a custom instruction" }
 ]
 ```
@@ -41,7 +40,7 @@ Copilot tries to mitigate a lot of this for you with its sytem prompt, but you c
 
 This isn't bullet proof. LLM's seem so hell bent on answering you at all costs that often I find this instruction is just ignored. But on the occasions that it works, it's a nice surprise.
 
-![Copilot asking for missing context](../assets/missing-context.png)
+![Copilot asking for missing context](/assets/missing-context.png)
 
 ## Provide file names
 
