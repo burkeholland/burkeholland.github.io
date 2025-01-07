@@ -12,11 +12,11 @@ Prompt engineering - or should I say ["Prompt Negotiation"](./2024-04-21-prompt-
 
 [Custom Instructions](https://code.visualstudio.com/docs/copilot/copilot-customization) are exactly that - custom prompts that get sent to the model with every request. 
 
-You can define these at a project level or at an editor level. Often these are demonstrated as specific project level instructions such as a command like `prefer fetch over axios`. 
+You can define these at a project level or at an editor level. Often these are demonstrated as specific project level instructions such as a command like `prefer fetch over axios`. These project specifc custom instructions are quite powerful and can be checked in and shared. You can create a custom instructions file for your project by adding a `.github/gopilot-instructions.md` file, or by adding a [file attribute to the instructions settings](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-settings). You can have multiple of these file attributes which means you can have multiple different instructions files.
 
-These very specific types of instructions are helpful, but not nearly as helpful as global prompt engineering "hacks" that you can add to your VS Code user settings to apply to all chat interactions.
+These very specific types of project instructions are super helpful with getting better help from your AI pair progammer. But it's less obvious what you can/should do with the more global, editor level instructions.
 
-These more generic prompt engineering "best practices" will help you avoid pitfalls and get better code from the LLM.
+I've been working heavily with GitHub Copilot for the past several months, and I've added 4 custom instructions that I've found greatly increase my productivity with GitHub Copilot. These are more generic prompt engineering "best practices" will help you avoid pitfalls and get better code from the LLM.
 
 You can add the "global instructions" that I'm about to give you by going to your User Settings (JSON) file and adding keys like so...
 
@@ -50,13 +50,11 @@ I've noticed that Copilot will sometimes give me back several blocks of code, bu
 
 If you are working in theoretical space where you aren't talking about specific project files, Copilot will provide made up file names for the code snippets. This is fine because it's a detail that doesn't matter in that context.
 
-## Avoid public code
+## Write modular code
 
->"Avoid generating code verbatim from public code examples. Always modify public code so that it is different enough from the original so as not to be confused as being copied."
+>"Always break code up into modules and components so that it can be easily reused across the project."
 
-If your Copilot is provided by your company like mine is, it is likely subject to restrctictions such as the dreaded "The response matched public code" error message. This is unfortunate because a lot of times I want to see how a thing has been done by others. That error message from Copilot sends me to Stack Overflow or GitHub and generally just irratates me to no end.
-
-This prompt doesn't eliminate the public code filtering entirely, but my soft measuring shows that it reduces it by about 50%. I have no data to back that up - it's only a gut feel. Anecdotes and all that.
+I tend to write a lot of frontend code, which is all about components these days. I've found that Copilot will often try and do too much in a single file when it should ideally break out UI code into separate components. AI's are fairly good at organization, so if you ask it to break things out into components, Copilot will do an impressive job of suggesting the right places to decouple. I've found this prompt works quite well in non-UI code as well. If I ask for a change in an API, this prompt helps Copilot break out services, repositories, etc.
 
 ## Code quality incentives
 
@@ -64,7 +62,7 @@ This prompt doesn't eliminate the public code filtering entirely, but my soft me
 
 This prompt comes almost verbatim from Max Wolf's ["Can LLM's write better code"](https://minimaxir.com/2025/01/write-better-code/). In this post, Max decribes trying to get LLM's to write better by code iterating on the same piece of code with the prompt, "write better code". He finds that the above prompt combined with Chain of Thought produces very nice results - specifically when used with Claude. He uses the very last line to incentivize the LLM to improve it's answers in iteration. In other words, if the LLM returns a bad answer, your next response should inform the LLM that it has been fined. In theory, this makes the LLM write better code because it has an incentive to do so when it otherwise might keep on returning bogus answers.
 
-Note that chain of thought is already present in the system prompt for Copilot.
+Chain of thought is when you tell the model to "slow down and go one step at a time". You don't need to tell Copilot to do this because that is already part of the system prompt.
 
 ## The model matters more than the prompt
 
@@ -74,9 +72,9 @@ While these prompts will help you get better results from Copilot, in my experie
 
 **Claude**: Harder problems and solutions requiring creative thinking. This would be when you aren't sure how something should be implemented, it requires multiple changes in multiple files, etc. Claude is also exponentially better at helping with design tasks than GPT-4o seems to be in my experience
 
-**o1**: Implementation plans, brainstorming and docs writing. You can think of o1 as your pair PM more than your pair programmer.
+**o1**: Implementation plans, brainstorming and docs writing. My friend [Martin Woodward](https://bsky.app/profile/martin.social) finds that o1 is particularly good with tricky bugs and performance optimizations.
 
-**Gemini**: I've not found this model particularly useful yet. 
+**Gemini**: Not widely available yet. I'm using this one more and watching it closely to see where it shines. I have high hopes.
 
 ## Living instructions
 
