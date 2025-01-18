@@ -2,22 +2,19 @@
 layout: default
 ---
 
-<div class="mt-5">
-  {% for post in paginator.posts %}
-
-  <div class="mb-6">
-    <a href="{{ post.url }}">
-      <div class="card">
-        <div class="card-content">
-          <p class="is-size-5 has-text-weight-bold">{{ post.title | strip_html }}</p>
-          <div class="">
-            <p class="is-size-7">{{ post.date | date: "%B %d, %Y" }}</p> <!-- Add this line for the date -->
-            <p class="mt-4">{{ post.content | markdownify | strip_html | truncatewords: 50 }}</p>
-          </div>
-        </div>
-      </div>
-    </a>
+<div class="w-full">
+  <div class="space-y-8">
+    {% for post in paginator.posts %}
+    <article class="bg-white/10 border border-white/10 rounded-2xl p-8 transition-transform hover:-translate-y-1">
+      <a href="{{ post.url }}" class="block">
+        <h2 class="text-2xl text-neon-cyan mb-4 transition-colors hover:text-neon-pink">{{ post.title | strip_html }}
+        </h2>
+        <p class="text-neon-cyan mb-4">{{ post.date | date: "%B %d, %Y" }}</p>
+        <p class="text-white/90 leading-relaxed">{{ post.content | markdownify | strip_html | truncatewords: 50 }}</p>
+      </a>
+    </article>
+    {% endfor %}
   </div>
-  {% endfor %}
+
+  {% include pagination.html %}
 </div>
-{% include pagination.html %}

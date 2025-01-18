@@ -11,14 +11,40 @@
     {% endif %}
   </title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.0/css/bulma.css">
-  <link rel="stylesheet" href="/assets/css/custom.css">
-
-  <!-- Favicon
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ " /assets/favicon-32x32.png" | relative_url }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ " /assets/favicon-16x16.png" | relative_url }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ " /assets/apple-touch-icon.png" | relative_url }}"> -->
-
-  <!-- RSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'neon-pink': '#F06BF2',
+            'deep-purple': '#532473',
+            'bright-purple': '#7630D9',
+            'deep-blue': '#04588C',
+            'neon-cyan': '#79F2E6',
+          },
+          width: {
+            'sidebar': '300px'
+          },
+          typography: {
+            invert: {
+              css: {
+                '--tw-prose-body': 'rgba(255, 255, 255, 0.9)',
+                '--tw-prose-headings': 'var(--neon-cyan)',
+                '--tw-prose-links': 'var(--neon-cyan)',
+                '--tw-prose-code': 'var(--neon-cyan)',
+                '--tw-prose-quotes': 'rgba(255, 255, 255, 0.7)',
+              }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .backdrop-blur { backdrop-filter: blur(10px); }
+    }
+  </style>
   {% feed_meta %}
 </head>
