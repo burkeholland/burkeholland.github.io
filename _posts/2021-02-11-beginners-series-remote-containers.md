@@ -6,7 +6,7 @@ categories: posts
 permalink: /posts/beginners-series-remote-containers/
 ---
 
-> "Knowledge isn't free. You have to pay attention."
+> Knowledge isn't free. You have to pay attention.
 
 Ok, but all "play on words" aside, knowledge **is** free. That's the key contribution of the internet, isn't it? That all knowledge is now essentially free? And this is kind of a recent development. It used to cost quite a bit to learn the skills that will make you successful. I mean, there is still a [700 billion dollar industry](https://nces.ed.gov/programs/coe/indicator_cud.asp#:~:text=In%202017%E2%80%9318%2C%20total%20revenues,at%20private%20for%2Dprofit%20institutions.) built on selling you knowledge.
 
