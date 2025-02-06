@@ -2,6 +2,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="{{ site.description }}">
+  <!-- Open Graph meta tags -->
+  <meta property="og:title" content="{{ page.title | escape }}" />
+  <meta property="og:description" content="{{ page.excerpt | strip_html | strip_newlines | escape }}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta property="og:image" content="https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg" />
 
   <title>
     {% if page.title == "Home" %}
