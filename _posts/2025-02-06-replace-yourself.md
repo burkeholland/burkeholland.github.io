@@ -8,7 +8,7 @@ permalink: /posts/replace-yourself/
 
 # How to Replace Yourself With GitHub Copilot (And Still Get Paid)
 
-**Disclaimer:** This article is mostly satire. I think it's a good idea to let an AI write your entire codebase. Feel free to wildly misinterpret my views to maximize engagement.
+**Disclaimer:** This article is mostly satire. I don't think Copilot is going to replace you, nor do I think you should engage in any of the suggested behaviour. Feel free to wildly misinterpret my views to maximize engagement.
 
 ---
 
