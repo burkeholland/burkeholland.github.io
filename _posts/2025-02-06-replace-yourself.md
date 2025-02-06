@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to Replace Yourself with GitHub Copilot (And Still Get Paid)"
-date: 2025-02-08 07:41:00 +0000
+date: 2025-02-06 07:41:00 +0000
 categories: posts
 permalink: /posts/replace-yourself/
 ---
