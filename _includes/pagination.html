@@ -1,6 +1,6 @@
 <nav class="flex justify-between mt-8 gap-4" role="navigation" aria-label="pagination">
     {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}"
+    <a href="{{ paginator.next_page_path }}"
         class="px-4 py-2 bg-white/10 border border-white/10 rounded-lg text-neon-cyan hover:bg-neon-pink hover:text-white transition-colors">&larr;
         Previos</a>
     {% else %}
@@ -9,7 +9,7 @@
     {% endif %}
 
     {% if paginator.next_page %}
-    <a href="{{ paginator.previous_page_path }}"
+    <a href="{{ paginator.next_page_path }}"
         class="px-4 py-2 bg-white/10 border border-white/10 rounded-lg text-neon-cyan hover:bg-neon-pink hover:text-white transition-colors">Next
         &rarr;</a>
     {% else %}
