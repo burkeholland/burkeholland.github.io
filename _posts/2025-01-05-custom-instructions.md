@@ -30,7 +30,7 @@ Ok - let's do it.
 
 ## Ask for missing context
 
->"Avoid making assumptions. If you need additional context to accurately answer the user, ask the user for the missing information. Be specific about which context you need."
+>Avoid making assumptions. If you need additional context to accurately answer the user, ask the user for the missing information. Be specific about which context you need.
 
 The achilles heal of LLM's is that they are designed to provide a response no matter what. It's [the paperclip problem](https://cepr.org/voxeu/columns/ai-and-paperclip-problem) applied to LLM's. If you design a system to provide an answer, it is going to do that at all costs. This is why we get hallucinations. 
 
@@ -44,7 +44,7 @@ This isn't bullet proof. LLM's seem so hell bent on answering you at all costs t
 
 ## Provide file names
 
->"Always provide the name of the file in your response so the user knows where the code goes."
+>Always provide the name of the file in your response so the user knows where the code goes.
 
 I've noticed that Copilot will sometimes give me back several blocks of code, but won't mention where they belong. I then have to figure out which files it is referring to which takes an extra cycle. This prompt forces the LLM to always provide the file name. 
 
@@ -52,13 +52,13 @@ If you are working in theoretical space where you aren't talking about specific 
 
 ## Write modular code
 
->"Always break code up into modules and components so that it can be easily reused across the project."
+>Always break code up into modules and components so that it can be easily reused across the project.
 
 I tend to write a lot of frontend code, which is all about components these days. I've found that Copilot will often try and do too much in a single file when it should ideally break out UI code into separate components. AI's are fairly good at organization, so if you ask it to break things out into components, Copilot will do an impressive job of suggesting the right places to decouple. I've found this prompt works quite well in non-UI code as well. If I ask for a change in an API, this prompt helps Copilot break out services, repositories, etc.
 
 ## Code quality incentives
 
-> "All code you write MUST be fully optimized. 'Fully optimized' includes maximizing algorithmic big-O efficiency for memory and runtime, following proper style conventions for the code, language (e.g. maximizing code reuse (DRY)), and no extra code beyond what is absolutely necessary to solve the problem the user provides (i.e. no technical debt). If the code is not fully optimized, you will be fined $100."
+> All code you write MUST be fully optimized. 'Fully optimized' includes maximizing algorithmic big-O efficiency for memory and runtime, following proper style conventions for the code, language (e.g. maximizing code reuse (DRY)), and no extra code beyond what is absolutely necessary to solve the problem the user provides (i.e. no technical debt). If the code is not fully optimized, you will be fined $100.
 
 This prompt comes almost verbatim from Max Wolf's ["Can LLM's write better code"](https://minimaxir.com/2025/01/write-better-code/). In this post, Max decribes trying to get LLM's to write better by code iterating on the same piece of code with the prompt, "write better code". He finds that the above prompt combined with Chain of Thought produces very nice results - specifically when used with Claude. He uses the very last line to incentivize the LLM to improve it's answers in iteration. In other words, if the LLM returns a bad answer, your next response should inform the LLM that it has been fined. In theory, this makes the LLM write better code because it has an incentive to do so when it otherwise might keep on returning bogus answers.
 
