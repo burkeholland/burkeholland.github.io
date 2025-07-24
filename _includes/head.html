@@ -52,8 +52,31 @@
       .backdrop-blur { backdrop-filter: blur(10px); }
     }
     @layer base {
-      body {
+      html, body {
         @apply overflow-x-hidden;
+        width: 100%;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      /* Ensure code blocks don't cause horizontal overflow */
+      pre, code {
+        @apply max-w-full overflow-x-auto;
+        word-wrap: break-word;
+      }
+      /* Ensure images and iframes are responsive */
+      img, iframe, video {
+        @apply max-w-full h-auto;
+      }
+      /* Prevent transforms from causing overflow on mobile */
+      @media (max-width: 768px) {
+        * {
+          transform: none !important;
+        }
+        /* Remove hover transforms on mobile */
+        *:hover {
+          transform: none !important;
+        }
       }
     }
   </style>

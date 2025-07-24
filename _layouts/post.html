@@ -11,14 +11,15 @@ layout: default
   <div class="prose prose-lg prose-invert max-w-none lg:prose-xl
               prose-headings:text-neon-cyan prose-headings:font-bold
               prose-p:text-white/90 prose-p:leading-relaxed
-              prose-a:text-neon-cyan prose-a:no-underline hover:prose-a:text-neon-pink
+              prose-a:text-neon-cyan prose-a:no-underline hover:prose-a:text-neon-pink prose-a:break-words
               prose-blockquote:border-l-neon-pink prose-blockquote:border-l-4 prose-blockquote:text-white/70
               prose-strong:text-white
-              prose-code:text-neon-cyan
-              prose-pre:bg-black/20 prose-pre:border prose-pre:border-white/10
+              prose-code:text-neon-cyan prose-code:text-sm prose-code:break-words
+              prose-pre:bg-black/20 prose-pre:border prose-pre:border-white/10 prose-pre:overflow-x-auto prose-pre:max-w-full
               prose-ul:text-white/90 prose-li:text-white/90
-              prose-img:rounded-lg
-              prose-hr:border-neon-cyan">
+              prose-img:rounded-lg prose-img:max-w-full prose-img:h-auto
+              prose-hr:border-neon-cyan
+              overflow-hidden">
     {{ content }}
   </div>
 </article>

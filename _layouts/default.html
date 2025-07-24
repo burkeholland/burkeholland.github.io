@@ -17,9 +17,9 @@
   <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg" />
 
 <body class="min-h-screen bg-gradient-to-br from-deep-purple to-deep-blue text-white overflow-x-hidden">
-  <div class="relative max-w-7xl mx-auto lg:grid lg:grid-cols-[300px_1fr]">
+  <div class="relative max-w-7xl mx-auto lg:grid lg:grid-cols-[300px_1fr] min-h-screen w-full">
     <aside
-      class="sticky top-0 w-full h-auto lg:h-screen z-50 bg-white/10 backdrop-blur border-b lg:border-r border-white/10">
+      class="sticky top-0 w-full h-auto lg:h-screen z-50 bg-white/10 backdrop-blur border-b lg:border-r border-white/10 shrink-0">
       <div class="p-4 lg:p-8">
         <div class="relative flex items-center lg:block">
           <button class="lg:hidden absolute left-0 p-2 hover:bg-white/5 rounded" aria-label="Toggle menu">
@@ -29,7 +29,7 @@
           </button>
           <div class="flex flex-row lg:flex-col items-center gap-4 mx-auto lg:mx-0">
             <img src="https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg" alt="Profile Photo"
-              class="w-16 h-16 lg:w-[150px] lg:h-[150px] rounded-full border-2 lg:border-3 border-neon-cyan shadow-[0_0_20px_rgba(121,242,230,0.3)]">
+              class="w-16 h-16 lg:w-[150px] lg:h-[150px] rounded-full border-2 lg:border-3 border-neon-cyan shadow-[0_0_20px_rgba(121,242,230,0.3)] flex-shrink-0">
             <div class="text-center">
               <h1 class="text-lg lg:text-xl bg-gradient-to-r from-neon-pink to-neon-cyan bg-clip-text text-transparent">
                 Burke Holland</h1>
@@ -39,16 +39,16 @@
         </div>
         <nav class="hidden lg:block mt-8 space-y-4" id="nav-menu">
           <a href="/"
-            class="block px-4 py-2 text-neon-cyan hover:bg-white/5 rounded-lg transition-all hover:translate-x-2">Blog</a>
+            class="block px-4 py-2 text-neon-cyan hover:bg-white/5 rounded-lg transition-all lg:hover:translate-x-2">Blog</a>
           <a href="/about"
-            class="block px-4 py-2 text-neon-cyan hover:bg-white/5 rounded-lg transition-all hover:translate-x-2">About</a>
+            class="block px-4 py-2 text-neon-cyan hover:bg-white/5 rounded-lg transition-all lg:hover:translate-x-2">About</a>
           <a href="/projects"
-            class="block px-4 py-2 text-neon-cyan hover:bg-white/5 rounded-lg transition-all hover:translate-x-2">Projects</a>
+            class="block px-4 py-2 text-neon-cyan hover:bg-white/5 rounded-lg transition-all lg:hover:translate-x-2">Projects</a>
         </nav>
       </div>
     </aside>
 
-    <main class="w-full p-4 lg:p-6 lg:col-start-2 lg:max-w-4xl mx-auto relative z-10">
+    <main class="w-full min-w-0 p-4 lg:p-6 lg:col-start-2 lg:max-w-4xl mx-auto relative z-10">
       {{ content }}
     </main>
   </div>
