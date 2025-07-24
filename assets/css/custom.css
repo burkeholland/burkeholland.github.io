@@ -1,10 +1,7 @@
 @import "manni.css";
 
-html,
-body {
-    max-width: 720px;
-    margin: auto;
-}
+
+/* Remove global max-width for mobile friendliness. Constrain main content in layout instead. */
 
 .highlight {
     margin-bottom: 20px;
