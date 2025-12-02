@@ -1,19 +1,31 @@
-<nav class="flex justify-between mt-8 gap-4" role="navigation" aria-label="pagination">
+<nav class="flex justify-center mt-12 gap-2" role="navigation" aria-label="pagination">
     {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path }}"
-        class="px-4 py-2 bg-white/10 border border-white/10 rounded-lg text-neon-cyan hover:bg-neon-pink hover:text-white transition-colors">&larr;
-        Previous</a>
-    {% else %}
-    <span class="px-4 py-2 bg-white/10 border border-white/10 rounded-lg opacity-50 cursor-not-allowed">&larr;
-        Previous</span>
+        class="px-4 py-2 text-sm font-sans font-medium text-frost-600 hover:bg-frost-100 rounded-lg flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        Previous
+    </a>
     {% endif %}
+
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+        <span class="px-4 py-2 text-sm font-sans font-medium text-white bg-frost-800 rounded-lg">{{ page }}</span>
+      {% elsif page == 1 %}
+        <a href="/" class="px-4 py-2 text-sm font-sans font-medium text-frost-600 hover:bg-frost-100 rounded-lg">{{ page }}</a>
+      {% else %}
+        <a href="/page{{ page }}/" class="px-4 py-2 text-sm font-sans font-medium text-frost-600 hover:bg-frost-100 rounded-lg">{{ page }}</a>
+      {% endif %}
+    {% endfor %}
 
     {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path }}"
-        class="px-4 py-2 bg-white/10 border border-white/10 rounded-lg text-neon-cyan hover:bg-neon-pink hover:text-white transition-colors">Next
-        &rarr;</a>
-    {% else %}
-    <span class="px-4 py-2 bg-white/10 border border-white/10 rounded-lg opacity-50 cursor-not-allowed">Next
-        &rarr;</span>
+        class="px-4 py-2 text-sm font-sans font-medium text-frost-600 hover:bg-frost-100 rounded-lg flex items-center gap-1">
+        Next
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+    </a>
     {% endif %}
 </nav>
