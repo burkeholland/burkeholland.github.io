@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Midnight Library - Burke Holland</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'midnight': {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            },
+          },
+          fontFamily: {
+            'serif': ['Lora', 'Georgia', 'serif'],
+            'sans': ['Roboto', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Light mode */
+    :root {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #f1f5f9;
+      --bg-card: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --accent: #3b82f6;
+      --border: #e2e8f0;
+    }
+    
+    /* Dark mode - preferred */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-primary: #020617;
+        --bg-secondary: #0f172a;
+        --bg-card: #1e293b;
+        --text-primary: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        --text-muted: #94a3b8;
+        --accent: #60a5fa;
+        --border: #334155;
+      }
+    }
+    
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    
+    .bg-secondary {
+      background-color: var(--bg-secondary);
+    }
+    
+    .bg-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+    }
+    
+    .text-secondary {
+      color: var(--text-secondary);
+    }
+    
+    .text-muted {
+      color: var(--text-muted);
+    }
+    
+    .accent {
+      color: var(--accent);
+    }
+    
+    .border-custom {
+      border-color: var(--border);
+    }
+    
+    .hover-accent:hover {
+      color: var(--accent);
+    }
+    
+    .hover-lift {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="min-h-screen">
+    
+    <!-- Header -->
+    <header class="bg-secondary border-b border-custom">
+      <div class="max-w-5xl mx-auto px-6 py-16">
+        
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
+          
+          <div class="flex-shrink-0">
+            <img 
+              src="https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg" 
+              alt="Burke Holland" 
+              class="w-28 h-28 rounded-lg border-2 border-custom"
+            >
+          </div>
+          
+          <div class="flex-1 text-center md:text-left">
+            <h1 class="font-serif text-5xl md:text-6xl font-bold mb-4">
+              Burke Holland
+            </h1>
+            
+            <p class="text-secondary text-xl font-sans mb-8 max-w-2xl">
+              Developer advocate exploring software development, AI tools, and the future of coding.
+            </p>
+            
+            <nav class="flex flex-wrap justify-center md:justify-start gap-6 font-sans font-medium">
+              <a href="/" class="accent font-bold">Blog</a>
+              <a href="/about" class="text-muted hover-accent transition-colors">About</a>
+              <a href="/projects" class="text-muted hover-accent transition-colors">Projects</a>
+              <a href="/contact" class="text-muted hover-accent transition-colors">Contact</a>
+            </nav>
+          </div>
+          
+        </div>
+        
+      </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-6 py-16">
+      
+      <!-- Featured Post -->
+      <article class="bg-card rounded-xl p-10 md:p-12 mb-12 hover-lift">
+        
+        <div class="flex items-center gap-3 text-muted text-sm font-sans uppercase tracking-wide mb-6">
+          <div class="w-1 h-6 accent" style="background-color: var(--accent);"></div>
+          <span>Featured Post</span>
+        </div>
+        
+        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-5">
+          <a href="#" class="hover-accent transition-colors">Building Better Developer Tools</a>
+        </h2>
+        
+        <div class="flex items-center gap-4 text-muted text-sm font-sans mb-6">
+          <time>January 15, 2026</time>
+          <span>•</span>
+          <span>5 min read</span>
+          <span>•</span>
+          <span>Development</span>
+        </div>
+        
+        <p class="text-secondary text-lg font-sans leading-relaxed mb-8">
+          After years of working with developers, I've learned that the best tools are the ones that get out of your way. They don't force you into a particular workflow, they enhance the one you already have. Here's what I've discovered about creating tools that developers actually want to use.
+        </p>
+        
+        <a href="#" class="inline-flex items-center gap-2 accent font-sans font-bold hover:underline">
+          Read full article
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+        
+      </article>
+      
+      <!-- Recent Posts -->
+      <h3 class="font-serif text-3xl font-bold mb-8">Recent Articles</h3>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <article class="bg-card rounded-xl p-8 hover-lift">
+          <time class="text-muted text-xs font-sans uppercase tracking-wide">January 8, 2026</time>
+          <h4 class="font-serif text-2xl font-bold mt-4 mb-4">
+            <a href="#" class="hover-accent transition-colors">The State of AI Coding Assistants</a>
+          </h4>
+          <p class="text-secondary font-sans leading-relaxed mb-4">
+            We're at an interesting inflection point with AI-powered coding tools. The technology has moved beyond novelty into genuine productivity gains.
+          </p>
+          <a href="#" class="text-muted text-sm font-sans hover-accent hover:underline">Continue reading →</a>
+        </article>
+        
+        <article class="bg-card rounded-xl p-8 hover-lift">
+          <time class="text-muted text-xs font-sans uppercase tracking-wide">December 28, 2025</time>
+          <h4 class="font-serif text-2xl font-bold mt-4 mb-4">
+            <a href="#" class="hover-accent transition-colors">Why VS Code Extensions Matter</a>
+          </h4>
+          <p class="text-secondary font-sans leading-relaxed mb-4">
+            The extensibility of VS Code is what makes it such a powerful tool. But with thousands of extensions available, how do you find the ones that matter?
+          </p>
+          <a href="#" class="text-muted text-sm font-sans hover-accent hover:underline">Continue reading →</a>
+        </article>
+        
+        <article class="bg-card rounded-xl p-8 hover-lift">
+          <time class="text-muted text-xs font-sans uppercase tracking-wide">December 15, 2025</time>
+          <h4 class="font-serif text-2xl font-bold mt-4 mb-4">
+            <a href="#" class="hover-accent transition-colors">Modern Web Development in 2026</a>
+          </h4>
+          <p class="text-secondary font-sans leading-relaxed mb-4">
+            The web development landscape continues to evolve. Here are the trends and technologies I'm watching as we move into the new year.
+          </p>
+          <a href="#" class="text-muted text-sm font-sans hover-accent hover:underline">Continue reading →</a>
+        </article>
+        
+        <article class="bg-card rounded-xl p-8 hover-lift">
+          <time class="text-muted text-xs font-sans uppercase tracking-wide">December 1, 2025</time>
+          <h4 class="font-serif text-2xl font-bold mt-4 mb-4">
+            <a href="#" class="hover-accent transition-colors">Nashville Tech Scene</a>
+          </h4>
+          <p class="text-secondary font-sans leading-relaxed mb-4">
+            Living in Nashville has taught me that community matters more than we often give it credit for. Here's how location shapes our work.
+          </p>
+          <a href="#" class="text-muted text-sm font-sans hover-accent hover:underline">Continue reading →</a>
+        </article>
+        
+      </div>
+      
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-secondary border-t border-custom mt-16">
+      <div class="max-w-5xl mx-auto px-6 py-12">
+        
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+          
+          <div class="text-center md:text-left">
+            <p class="text-secondary font-sans text-sm mb-2">
+              © 2026 Burke Holland
+            </p>
+            <p class="text-muted font-sans text-xs">
+              Nashville, Tennessee
+            </p>
+          </div>
+          
+          <div class="flex gap-6 font-sans text-sm">
+            <a href="https://twitter.com/burkeholland" class="text-muted hover-accent transition-colors">Twitter</a>
+            <a href="https://github.com/burkeholland" class="text-muted hover-accent transition-colors">GitHub</a>
+            <a href="https://bsky.app/profile/burkeholland.bsky.social" class="text-muted hover-accent transition-colors">Bluesky</a>
+          </div>
+          
+        </div>
+        
+      </div>
+    </footer>
+    
+  </div>
+  
+</body>
+</html>

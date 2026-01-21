@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notebook - Burke Holland</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'mono': ['"IBM Plex Mono"', 'monospace'],
+            'sans': ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Light mode */
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --border: #000000;
+      --highlight: #ffff00;
+      --muted: #666666;
+    }
+    
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --text: #ffffff;
+        --border: #ffffff;
+        --highlight: #ffff00;
+        --muted: #999999;
+      }
+    }
+    
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Mono", monospace;
+    }
+    
+    .highlight {
+      background-color: var(--highlight);
+      color: #000000;
+    }
+    
+    .border-custom {
+      border-color: var(--border);
+    }
+    
+    .text-muted {
+      color: var(--muted);
+    }
+    
+    a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 2px solid var(--border);
+      transition: all 0.2s;
+    }
+    
+    a:hover {
+      background-color: var(--highlight);
+      color: #000000;
+    }
+    
+    .box {
+      border: 2px solid var(--border);
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="max-w-4xl mx-auto p-6 md:p-12">
+    
+    <!-- Header -->
+    <header class="box mb-8">
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        
+        <img 
+          src="https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg" 
+          alt="Burke Holland" 
+          class="w-24 h-24 border-2 border-custom"
+        >
+        
+        <div class="flex-1">
+          <h1 class="text-4xl md:text-5xl font-bold mb-2">BURKE_HOLLAND</h1>
+          <p class="text-lg mb-6">
+            [ <span class="highlight px-1">DEVELOPER_ADVOCATE</span> ]<br>
+            [ SOFTWARE_AND_AI ]
+          </p>
+          
+          <nav class="flex flex-wrap gap-4 text-sm font-bold">
+            <a href="/">[BLOG]</a>
+            <a href="/about">[ABOUT]</a>
+            <a href="/projects">[PROJECTS]</a>
+          </nav>
+        </div>
+        
+      </div>
+    </header>
+    
+    <!-- Main -->
+    <main>
+      
+      <!-- Featured -->
+      <article class="box mb-8">
+        <div class="text-sm mb-4">
+          <span class="highlight px-2 py-1">* FEATURED_POST</span>
+        </div>
+        
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          <a href="#">BUILDING_BETTER_DEVELOPER_TOOLS</a>
+        </h2>
+        
+        <div class="text-muted text-sm mb-6">
+          [2026-01-15] [5_MIN_READ]
+        </div>
+        
+        <p class="text-lg mb-6 font-sans leading-relaxed">
+          After years of working with developers, I've learned that the best tools are the ones that get out of your way. They don't force you into a particular workflow, they enhance the one you already have.
+        </p>
+        
+        <div class="text-sm font-bold">
+          <a href="#">→ READ_MORE</a>
+        </div>
+      </article>
+      
+      <!-- Posts List -->
+      <div class="space-y-6">
+        
+        <article class="box">
+          <div class="text-muted text-xs mb-2">[2026-01-08]</div>
+          <h3 class="text-xl md:text-2xl font-bold mb-3">
+            <a href="#">THE_STATE_OF_AI_CODING_ASSISTANTS</a>
+          </h3>
+          <p class="font-sans">
+            We're at an interesting inflection point with AI-powered coding tools. The technology has moved beyond novelty into genuine productivity gains.
+          </p>
+        </article>
+        
+        <article class="box">
+          <div class="text-muted text-xs mb-2">[2025-12-28]</div>
+          <h3 class="text-xl md:text-2xl font-bold mb-3">
+            <a href="#">WHY_VS_CODE_EXTENSIONS_MATTER</a>
+          </h3>
+          <p class="font-sans">
+            The extensibility of VS Code is what makes it such a powerful tool. But with thousands of extensions available, how do you find the ones that matter?
+          </p>
+        </article>
+        
+        <article class="box">
+          <div class="text-muted text-xs mb-2">[2025-12-15]</div>
+          <h3 class="text-xl md:text-2xl font-bold mb-3">
+            <a href="#">MODERN_WEB_DEVELOPMENT_IN_2026</a>
+          </h3>
+          <p class="font-sans">
+            The web development landscape continues to evolve. Here are the trends and technologies I'm watching as we move into the new year.
+          </p>
+        </article>
+        
+        <article class="box">
+          <div class="text-muted text-xs mb-2">[2025-12-01]</div>
+          <h3 class="text-xl md:text-2xl font-bold mb-3">
+            <a href="#">NASHVILLE_TECH_SCENE</a>
+          </h3>
+          <p class="font-sans">
+            Living in Nashville has taught me that community matters more than we often give it credit for. Here's how location shapes our work.
+          </p>
+        </article>
+        
+      </div>
+      
+    </main>
+    
+    <!-- Footer -->
+    <footer class="box mt-8">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-sm">
+        <div>
+          &copy;_2026_BURKE_HOLLAND<br class="md:hidden">
+          <span class="text-muted">[NASHVILLE_TN]</span>
+        </div>
+        <div class="flex gap-4 font-bold">
+          <a href="https://twitter.com/burkeholland">[TWITTER]</a>
+          <a href="https://github.com/burkeholland">[GITHUB]</a>
+          <a href="https://bsky.app/profile/burkeholland.bsky.social">[BLUESKY]</a>
+        </div>
+      </div>
+    </footer>
+    
+  </div>
+  
+</body>
+</html>

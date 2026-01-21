@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cozy Evening - Burke Holland</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'evening': {
+              50: '#fef7f3',
+              100: '#fdeee5',
+              200: '#fad6c4',
+              300: '#f5b897',
+              400: '#ee8f5e',
+              500: '#e67439',
+              600: '#d25a1f',
+              700: '#ae4618',
+              800: '#8c3916',
+              900: '#6f2f14',
+            },
+          },
+          fontFamily: {
+            'serif': ['Merriweather', 'Georgia', 'serif'],
+            'sans': ['"Work Sans"', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Light mode */
+    :root {
+      --bg-primary: #fef7f3;
+      --bg-card: #ffffff;
+      --text-primary: #6f2f14;
+      --text-secondary: #8c3916;
+      --text-muted: #ae4618;
+      --accent: #e67439;
+      --border: #fad6c4;
+      --shadow: rgba(230, 116, 57, 0.1);
+    }
+    
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-primary: #2b1810;
+        --bg-card: #3d2418;
+        --text-primary: #fdeee5;
+        --text-secondary: #fad6c4;
+        --text-muted: #f5b897;
+        --accent: #ee8f5e;
+        --border: #6f2f14;
+        --shadow: rgba(238, 143, 94, 0.15);
+      }
+    }
+    
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 6px var(--shadow);
+    }
+    
+    .text-secondary {
+      color: var(--text-secondary);
+    }
+    
+    .text-muted {
+      color: var(--text-muted);
+    }
+    
+    .accent {
+      color: var(--accent);
+    }
+    
+    .hover-accent:hover {
+      color: var(--accent);
+    }
+    
+    .border-accent {
+      border-color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="min-h-screen">
+    
+    <!-- Header -->
+    <header class="card mb-8">
+      <div class="max-w-5xl mx-auto px-8 py-12">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+          
+          <div class="relative">
+            <div class="absolute -inset-2 opacity-50 blur-lg" style="background: linear-gradient(135deg, var(--accent), transparent);"></div>
+            <img 
+              src="https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg" 
+              alt="Burke Holland" 
+              class="relative w-32 h-32 rounded-full object-cover"
+            >
+          </div>
+          
+          <div class="flex-1 text-center md:text-left">
+            <h1 class="font-serif text-5xl md:text-6xl font-black mb-3">Burke Holland</h1>
+            <p class="text-secondary text-xl font-sans mb-6">Mid-brain takes on software and AI.</p>
+            
+            <nav class="flex flex-wrap justify-center md:justify-start gap-6 font-sans font-medium">
+              <a href="/" class="accent border-b-2 border-accent pb-1">Blog</a>
+              <a href="/about" class="hover-accent transition-colors">About</a>
+              <a href="/projects" class="hover-accent transition-colors">Projects</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-8 pb-16">
+      
+      <!-- Featured Post -->
+      <article class="card p-10 mb-8">
+        <div class="flex items-center gap-3 text-muted text-sm font-sans mb-4">
+          <span>Featured</span>
+          <span>•</span>
+          <time>January 15, 2026</time>
+        </div>
+        
+        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-5">
+          <a href="#" class="hover-accent transition-colors">Building Better Developer Tools</a>
+        </h2>
+        
+        <p class="text-secondary text-lg leading-relaxed mb-6">
+          After years of working with developers, I've learned that the best tools are the ones that get out of your way. They don't force you into a particular workflow, they enhance the one you already have. Here's what I've discovered about creating tools that developers actually want to use.
+        </p>
+        
+        <a href="#" class="inline-flex items-center gap-2 accent font-sans font-semibold hover:underline">
+          Read full article
+          <span>→</span>
+        </a>
+      </article>
+      
+      <!-- Recent Posts Grid -->
+      <div class="grid md:grid-cols-2 gap-6">
+        
+        <article class="card p-8">
+          <time class="text-muted text-sm font-sans">January 8, 2026</time>
+          <h3 class="font-serif text-2xl font-bold mt-3 mb-3">
+            <a href="#" class="hover-accent transition-colors">The State of AI Coding Assistants</a>
+          </h3>
+          <p class="text-secondary">
+            We're at an interesting inflection point with AI-powered coding tools. The technology has moved beyond novelty into genuine productivity gains.
+          </p>
+        </article>
+        
+        <article class="card p-8">
+          <time class="text-muted text-sm font-sans">December 28, 2025</time>
+          <h3 class="font-serif text-2xl font-bold mt-3 mb-3">
+            <a href="#" class="hover-accent transition-colors">Why VS Code Extensions Matter</a>
+          </h3>
+          <p class="text-secondary">
+            The extensibility of VS Code is what makes it such a powerful tool. But with thousands of extensions available, how do you find the ones that matter?
+          </p>
+        </article>
+        
+        <article class="card p-8">
+          <time class="text-muted text-sm font-sans">December 15, 2025</time>
+          <h3 class="font-serif text-2xl font-bold mt-3 mb-3">
+            <a href="#" class="hover-accent transition-colors">Modern Web Development in 2026</a>
+          </h3>
+          <p class="text-secondary">
+            The web development landscape continues to evolve. Here are the trends and technologies I'm watching as we move into the new year.
+          </p>
+        </article>
+        
+        <article class="card p-8">
+          <time class="text-muted text-sm font-sans">December 1, 2025</time>
+          <h3 class="font-serif text-2xl font-bold mt-3 mb-3">
+            <a href="#" class="hover-accent transition-colors">Lessons from Nashville</a>
+          </h3>
+          <p class="text-secondary">
+            Living in Nashville has taught me that community matters more than we often give it credit for. Here's how location shapes our work.
+          </p>
+        </article>
+        
+      </div>
+      
+    </main>
+    
+    <!-- Footer -->
+    <footer class="card mt-8">
+      <div class="max-w-5xl mx-auto px-8 py-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-sans">
+          <div class="text-muted">© 2026 Burke Holland • Nashville, TN</div>
+          <div class="flex gap-6">
+            <a href="https://twitter.com/burkeholland" class="hover-accent transition-colors">Twitter</a>
+            <a href="https://github.com/burkeholland" class="hover-accent transition-colors">GitHub</a>
+            <a href="https://bsky.app/profile/burkeholland.bsky.social" class="hover-accent transition-colors">Bluesky</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  </div>
+  
+</body>
+</html>

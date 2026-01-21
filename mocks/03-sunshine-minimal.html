@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunshine Minimal - Burke Holland</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'sun': {
+              50: '#fefce8',
+              100: '#fef9c3',
+              200: '#fef08a',
+              300: '#fde047',
+              400: '#facc15',
+              500: '#eab308',
+              600: '#ca8a04',
+              700: '#a16207',
+              800: '#854d0e',
+              900: '#713f12',
+            },
+          },
+          fontFamily: {
+            'display': ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Light mode */
+    :root {
+      --bg-primary: #ffffff;
+      --bg-accent: #fefce8;
+      --text-primary: #0a0a0a;
+      --text-secondary: #525252;
+      --text-muted: #737373;
+      --accent: #facc15;
+      --accent-dark: #ca8a04;
+      --border: #e5e5e5;
+    }
+    
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-primary: #0a0a0a;
+        --bg-accent: #1f1f00;
+        --text-primary: #fafafa;
+        --text-secondary: #d4d4d4;
+        --text-muted: #a3a3a3;
+        --accent: #fde047;
+        --accent-dark: #facc15;
+        --border: #262626;
+      }
+    }
+    
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    
+    .bg-accent {
+      background-color: var(--bg-accent);
+    }
+    
+    .text-secondary {
+      color: var(--text-secondary);
+    }
+    
+    .text-muted {
+      color: var(--text-muted);
+    }
+    
+    .accent {
+      background-color: var(--accent);
+      color: #0a0a0a;
+    }
+    
+    .accent-text {
+      color: var(--accent-dark);
+    }
+    
+    .border-custom {
+      border-color: var(--border);
+    }
+    
+    .hover-accent:hover {
+      color: var(--accent-dark);
+    }
+    
+    .highlight {
+      background-color: var(--accent);
+      color: #0a0a0a;
+      padding: 0.1em 0.4em;
+      border-radius: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="min-h-screen max-w-5xl mx-auto px-6 py-12">
+    
+    <!-- Header -->
+    <header class="mb-20">
+      <div class="flex items-center gap-6 mb-12">
+        <img 
+          src="https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg" 
+          alt="Burke Holland" 
+          class="w-20 h-20 rounded-full border-4 border-custom"
+        >
+        <div>
+          <h1 class="font-display text-4xl font-bold mb-1">Burke Holland</h1>
+          <p class="text-muted font-sans">Software & AI</p>
+        </div>
+      </div>
+      
+      <nav class="flex gap-8 font-display text-sm font-medium">
+        <a href="/" class="hover-accent transition-colors">Home</a>
+        <a href="/about" class="hover-accent transition-colors">About</a>
+        <a href="/projects" class="hover-accent transition-colors">Projects</a>
+        <a href="/contact" class="hover-accent transition-colors">Contact</a>
+      </nav>
+    </header>
+    
+    <!-- Intro -->
+    <section class="mb-20">
+      <h2 class="font-display text-6xl font-bold leading-tight mb-6">
+        Mid-brain takes on<br>
+        <span class="highlight">software and AI</span>
+      </h2>
+      <p class="text-secondary text-xl font-sans max-w-2xl">
+        Developer advocate, tool builder, and perpetual learner sharing thoughts from Nashville.
+      </p>
+    </section>
+    
+    <!-- Latest Posts -->
+    <section>
+      <h3 class="font-display text-sm font-medium uppercase tracking-wider text-muted mb-8">Latest Writing</h3>
+      
+      <div class="space-y-12">
+        
+        <article class="border-l-4 accent pl-6">
+          <time class="text-muted text-sm font-sans">January 15, 2026</time>
+          <h4 class="font-display text-3xl font-bold mt-2 mb-3">
+            <a href="#" class="hover-accent transition-colors">Building Better Developer Tools</a>
+          </h4>
+          <p class="text-secondary font-sans leading-relaxed mb-4">
+            After years of working with developers, I've learned that the best tools are the ones that get out of your way. They don't force you into a particular workflow, they enhance the one you already have.
+          </p>
+          <a href="#" class="accent-text font-sans text-sm font-medium hover:underline">Read more →</a>
+        </article>
+        
+        <article class="border-l-4 border-custom pl-6">
+          <time class="text-muted text-sm font-sans">January 8, 2026</time>
+          <h4 class="font-display text-3xl font-bold mt-2 mb-3">
+            <a href="#" class="hover-accent transition-colors">The State of AI Coding Assistants</a>
+          </h4>
+          <p class="text-secondary font-sans leading-relaxed mb-4">
+            We're at an interesting inflection point with AI-powered coding tools. The technology has moved beyond novelty into genuine productivity gains, but we're still figuring out the best practices.
+          </p>
+          <a href="#" class="accent-text font-sans text-sm font-medium hover:underline">Read more →</a>
+        </article>
+        
+        <article class="border-l-4 border-custom pl-6">
+          <time class="text-muted text-sm font-sans">December 28, 2025</time>
+          <h4 class="font-display text-3xl font-bold mt-2 mb-3">
+            <a href="#" class="hover-accent transition-colors">Why VS Code Extensions Matter</a>
+          </h4>
+          <p class="text-secondary font-sans leading-relaxed mb-4">
+            The extensibility of VS Code is what makes it such a powerful tool. But with thousands of extensions available, how do you find the ones that actually matter?
+          </p>
+          <a href="#" class="accent-text font-sans text-sm font-medium hover:underline">Read more →</a>
+        </article>
+        
+        <article class="border-l-4 border-custom pl-6">
+          <time class="text-muted text-sm font-sans">December 15, 2025</time>
+          <h4 class="font-display text-3xl font-bold mt-2 mb-3">
+            <a href="#" class="hover-accent transition-colors">Modern Web Development in 2026</a>
+          </h4>
+          <p class="text-secondary font-sans leading-relaxed mb-4">
+            The web development landscape continues to evolve. Here are the trends and technologies I'm watching as we move into the new year.
+          </p>
+          <a href="#" class="accent-text font-sans text-sm font-medium hover:underline">Read more →</a>
+        </article>
+        
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="mt-24 pt-12 border-t-2 border-custom">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="text-muted font-sans text-sm">
+          © 2026 Burke Holland
+        </div>
+        <div class="flex gap-6 font-sans text-sm">
+          <a href="https://twitter.com/burkeholland" class="hover-accent transition-colors">Twitter</a>
+          <a href="https://github.com/burkeholland" class="hover-accent transition-colors">GitHub</a>
+          <a href="https://bsky.app/profile/burkeholland.bsky.social" class="hover-accent transition-colors">Bluesky</a>
+        </div>
+      </div>
+    </footer>
+    
+  </div>
+  
+</body>
+</html>

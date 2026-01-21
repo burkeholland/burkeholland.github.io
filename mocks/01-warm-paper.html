@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warm Paper - Burke Holland</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'paper': {
+              50: '#fdfcfb',
+              100: '#faf7f3',
+              200: '#f5efe6',
+              300: '#ede3d4',
+              400: '#ddc9b0',
+              500: '#c5a882',
+              600: '#a88a66',
+              700: '#8b6f4d',
+              800: '#6d5739',
+              900: '#4a3a27',
+            },
+          },
+          fontFamily: {
+            'serif': ['"Crimson Pro"', 'Georgia', 'serif'],
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Light mode (default) */
+    :root {
+      --bg-primary: #fdfcfb;
+      --bg-secondary: #faf7f3;
+      --text-primary: #4a3a27;
+      --text-secondary: #6d5739;
+      --text-muted: #8b6f4d;
+      --accent: #c5a882;
+      --border: #ede3d4;
+    }
+    
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-primary: #2d2419;
+        --bg-secondary: #3d3126;
+        --text-primary: #f5efe6;
+        --text-secondary: #ddc9b0;
+        --text-muted: #c5a882;
+        --accent: #ddc9b0;
+        --border: #4a3a27;
+      }
+    }
+    
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    
+    .bg-secondary {
+      background-color: var(--bg-secondary);
+    }
+    
+    .text-secondary {
+      color: var(--text-secondary);
+    }
+    
+    .text-muted {
+      color: var(--text-muted);
+    }
+    
+    .border-custom {
+      border-color: var(--border);
+    }
+    
+    .accent {
+      color: var(--accent);
+    }
+    
+    .hover-accent:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="max-w-3xl mx-auto px-6 py-16">
+    
+    <!-- Header -->
+    <header class="border-b-2 border-custom pb-8 mb-12">
+      <div class="flex items-start gap-8">
+        <img 
+          src="https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg" 
+          alt="Burke Holland" 
+          class="w-24 h-24 rounded-full"
+        >
+        <div class="flex-1">
+          <h1 class="font-serif text-5xl font-bold mb-2">Burke Holland</h1>
+          <p class="text-secondary text-lg mb-6">Mid-brain takes on software and AI.</p>
+          
+          <nav class="flex gap-6 font-sans text-sm font-medium">
+            <a href="/" class="hover-accent transition-colors">Writing</a>
+            <a href="/about" class="hover-accent transition-colors">About</a>
+            <a href="/projects" class="hover-accent transition-colors">Projects</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+      
+      <!-- Featured Article -->
+      <article class="mb-16 pb-16 border-b border-custom">
+        <div class="text-muted text-sm font-sans mb-3">January 15, 2026</div>
+        <h2 class="font-serif text-4xl font-semibold mb-4">
+          <a href="#" class="hover-accent transition-colors">Building Better Developer Tools</a>
+        </h2>
+        <p class="text-secondary text-lg leading-relaxed mb-6">
+          After years of working with developers, I've learned that the best tools are the ones that get out of your way. They don't force you into a particular workflow, they enhance the one you already have. Here's what I've discovered about creating tools that developers actually want to use.
+        </p>
+        <a href="#" class="accent text-sm font-sans font-medium hover:underline">Continue reading →</a>
+      </article>
+      
+      <!-- Blog Posts -->
+      <div class="space-y-12">
+        
+        <article>
+          <div class="text-muted text-sm font-sans mb-2">January 8, 2026</div>
+          <h3 class="font-serif text-2xl font-semibold mb-3">
+            <a href="#" class="hover-accent transition-colors">The State of AI Coding Assistants</a>
+          </h3>
+          <p class="text-secondary leading-relaxed">
+            We're at an interesting inflection point with AI-powered coding tools. The technology has moved beyond novelty into genuine productivity gains, but we're still figuring out the best practices.
+          </p>
+        </article>
+        
+        <article>
+          <div class="text-muted text-sm font-sans mb-2">December 28, 2025</div>
+          <h3 class="font-serif text-2xl font-semibold mb-3">
+            <a href="#" class="hover-accent transition-colors">Why VS Code Extensions Matter</a>
+          </h3>
+          <p class="text-secondary leading-relaxed">
+            The extensibility of VS Code is what makes it such a powerful tool. But with thousands of extensions available, how do you find the ones that actually matter?
+          </p>
+        </article>
+        
+        <article>
+          <div class="text-muted text-sm font-sans mb-2">December 15, 2025</div>
+          <h3 class="font-serif text-2xl font-semibold mb-3">
+            <a href="#" class="hover-accent transition-colors">Modern Web Development in 2026</a>
+          </h3>
+          <p class="text-secondary leading-relaxed">
+            The web development landscape continues to evolve. Here are the trends and technologies I'm watching as we move into the new year.
+          </p>
+        </article>
+        
+      </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="mt-20 pt-8 border-t border-custom">
+      <div class="flex items-center justify-between text-sm">
+        <div class="text-muted font-sans">© 2026 Burke Holland</div>
+        <div class="flex gap-4">
+          <a href="https://twitter.com/burkeholland" class="text-muted hover-accent transition-colors">Twitter</a>
+          <a href="https://github.com/burkeholland" class="text-muted hover-accent transition-colors">GitHub</a>
+          <a href="https://bsky.app/profile/burkeholland.bsky.social" class="text-muted hover-accent transition-colors">Bluesky</a>
+        </div>
+      </div>
+    </footer>
+    
+  </div>
+  
+</body>
+</html>
