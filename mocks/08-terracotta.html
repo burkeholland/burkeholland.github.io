@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terracotta - Burke Holland</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Karla:wght@400;600&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'terra': {
+              50: '#fef7f3',
+              100: '#fdeee5',
+              200: '#fbdac7',
+              300: '#f7b89e',
+              400: '#f29066',
+              500: '#eb6e3d',
+              600: '#d8532a',
+              700: '#b33f21',
+              800: '#8f3520',
+              900: '#74301f',
+            },
+          },
+          fontFamily: {
+            'serif': ['Cormorant', 'Georgia', 'serif'],
+            'sans': ['Karla', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Light mode */
+    :root {
+      --bg-primary: #fef7f3;
+      --bg-secondary: #fdeee5;
+      --bg-accent: #fbdac7;
+      --text-primary: #74301f;
+      --text-secondary: #8f3520;
+      --text-muted: #b33f21;
+      --accent: #eb6e3d;
+      --border: #f7b89e;
+    }
+    
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-primary: #2d1410;
+        --bg-secondary: #3d1f18;
+        --bg-accent: #4d2a20;
+        --text-primary: #fdeee5;
+        --text-secondary: #fbdac7;
+        --text-muted: #f7b89e;
+        --accent: #f29066;
+        --border: #8f3520;
+      }
+    }
+    
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    
+    .bg-secondary {
+      background-color: var(--bg-secondary);
+    }
+    
+    .bg-accent {
+      background-color: var(--bg-accent);
+    }
+    
+    .text-secondary {
+      color: var(--text-secondary);
+    }
+    
+    .text-muted {
+      color: var(--text-muted);
+    }
+    
+    .accent {
+      color: var(--accent);
+    }
+    
+    .border-custom {
+      border-color: var(--border);
+    }
+    
+    .hover-accent:hover {
+      color: var(--accent);
+    }
+    
+    .decorative-line {
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      height: 2px;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="min-h-screen">
+    
+    <!-- Decorative top -->
+    <div class="decorative-line"></div>
+    
+    <!-- Header -->
+    <header class="max-w-4xl mx-auto px-6 py-20">
+      
+      <div class="text-center mb-12">
+        <div class="flex justify-center mb-8">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-accent rounded-full opacity-20"></div>
+            <img 
+              src="https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg" 
+              alt="Burke Holland" 
+              class="relative w-32 h-32 rounded-full border-4 border-custom"
+            >
+          </div>
+        </div>
+        
+        <h1 class="font-serif text-7xl font-bold mb-5">
+          Burke Holland
+        </h1>
+        
+        <div class="decorative-line w-24 mx-auto mb-6"></div>
+        
+        <p class="text-secondary text-xl font-sans max-w-2xl mx-auto mb-8">
+          Thoughts on software, AI, and the art of building tools that matter.
+        </p>
+        
+        <nav class="flex justify-center gap-8 font-sans font-semibold">
+          <a href="/" class="accent underline decoration-2 underline-offset-4">Writing</a>
+          <a href="/about" class="text-muted hover-accent transition-colors">About</a>
+          <a href="/projects" class="text-muted hover-accent transition-colors">Work</a>
+        </nav>
+      </div>
+      
+    </header>
+    
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 pb-20">
+      
+      <!-- Featured -->
+      <article class="bg-secondary rounded-3xl p-10 md:p-12 mb-16">
+        
+        <div class="flex items-center justify-center gap-3 text-muted text-sm font-sans mb-6">
+          <span>✦</span>
+          <span>Featured Article</span>
+          <span>✦</span>
+        </div>
+        
+        <h2 class="font-serif text-5xl md:text-6xl font-bold text-center mb-6">
+          <a href="#" class="hover-accent transition-colors">Building Better Developer Tools</a>
+        </h2>
+        
+        <div class="text-center text-muted text-sm font-sans mb-8">
+          <time>January 15, 2026</time> • 5 minutes
+        </div>
+        
+        <p class="text-secondary text-xl font-sans leading-relaxed text-center max-w-3xl mx-auto mb-8">
+          After years of working with developers, I've learned that the best tools are the ones that get out of your way. They don't force you into a particular workflow, they enhance the one you already have.
+        </p>
+        
+        <div class="text-center">
+          <a href="#" class="inline-block accent font-sans font-bold underline decoration-2 underline-offset-4 hover:no-underline">
+            Read the full article →
+          </a>
+        </div>
+        
+      </article>
+      
+      <!-- Posts List -->
+      <div class="space-y-12">
+        
+        <article class="border-b-2 border-custom pb-10">
+          <time class="text-muted text-sm font-sans">January 8, 2026</time>
+          <h3 class="font-serif text-3xl md:text-4xl font-bold mt-3 mb-4">
+            <a href="#" class="hover-accent transition-colors">The State of AI Coding Assistants</a>
+          </h3>
+          <p class="text-secondary text-lg font-sans leading-relaxed">
+            We're at an interesting inflection point with AI-powered coding tools. The technology has moved beyond novelty into genuine productivity gains, but we're still figuring out the best practices.
+          </p>
+        </article>
+        
+        <article class="border-b-2 border-custom pb-10">
+          <time class="text-muted text-sm font-sans">December 28, 2025</time>
+          <h3 class="font-serif text-3xl md:text-4xl font-bold mt-3 mb-4">
+            <a href="#" class="hover-accent transition-colors">Why VS Code Extensions Matter</a>
+          </h3>
+          <p class="text-secondary text-lg font-sans leading-relaxed">
+            The extensibility of VS Code is what makes it such a powerful tool. But with thousands of extensions available, how do you find the ones that actually matter?
+          </p>
+        </article>
+        
+        <article class="border-b-2 border-custom pb-10">
+          <time class="text-muted text-sm font-sans">December 15, 2025</time>
+          <h3 class="font-serif text-3xl md:text-4xl font-bold mt-3 mb-4">
+            <a href="#" class="hover-accent transition-colors">Modern Web Development in 2026</a>
+          </h3>
+          <p class="text-secondary text-lg font-sans leading-relaxed">
+            The web development landscape continues to evolve. Here are the trends and technologies I'm watching as we move into the new year.
+          </p>
+        </article>
+        
+        <article class="pb-10">
+          <time class="text-muted text-sm font-sans">December 1, 2025</time>
+          <h3 class="font-serif text-3xl md:text-4xl font-bold mt-3 mb-4">
+            <a href="#" class="hover-accent transition-colors">The Nashville Effect</a>
+          </h3>
+          <p class="text-secondary text-lg font-sans leading-relaxed">
+            Living in Nashville has taught me that community matters more than we often give it credit for. Here's how location shapes our work and creative process.
+          </p>
+        </article>
+        
+      </div>
+      
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-secondary border-t-2 border-custom">
+      <div class="max-w-4xl mx-auto px-6 py-12">
+        
+        <div class="decorative-line w-32 mx-auto mb-8"></div>
+        
+        <div class="text-center mb-6">
+          <div class="flex justify-center gap-8 font-sans font-semibold mb-6">
+            <a href="https://twitter.com/burkeholland" class="text-muted hover-accent transition-colors">Twitter</a>
+            <a href="https://github.com/burkeholland" class="text-muted hover-accent transition-colors">GitHub</a>
+            <a href="https://bsky.app/profile/burkeholland.bsky.social" class="text-muted hover-accent transition-colors">Bluesky</a>
+          </div>
+          
+          <p class="text-muted text-sm font-sans">
+            © 2026 Burke Holland • Nashville, Tennessee
+          </p>
+        </div>
+        
+        <div class="decorative-line w-32 mx-auto"></div>
+        
+      </div>
+    </footer>
+    
+  </div>
+  
+</body>
+</html>

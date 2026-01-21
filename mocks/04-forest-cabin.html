@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forest Cabin - Burke Holland</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'forest': {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+            },
+            'wood': {
+              50: '#faf8f5',
+              100: '#f5f0e8',
+              200: '#e8dcc8',
+              300: '#d4c0a0',
+              400: '#b89968',
+              500: '#9d7d4a',
+              600: '#7d6239',
+              700: '#5e4a2c',
+              800: '#4a3a23',
+              900: '#362b19',
+            },
+          },
+          fontFamily: {
+            'serif': ['Bitter', 'Georgia', 'serif'],
+            'sans': ['Lato', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Light mode */
+    :root {
+      --bg-primary: #faf8f5;
+      --bg-secondary: #f5f0e8;
+      --text-primary: #362b19;
+      --text-secondary: #5e4a2c;
+      --text-muted: #7d6239;
+      --accent: #16a34a;
+      --accent-light: #22c55e;
+      --border: #e8dcc8;
+    }
+    
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-primary: #1a1611;
+        --bg-secondary: #2a231a;
+        --text-primary: #f5f0e8;
+        --text-secondary: #e8dcc8;
+        --text-muted: #d4c0a0;
+        --accent: #22c55e;
+        --accent-light: #4ade80;
+        --border: #4a3a23;
+      }
+    }
+    
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    
+    .bg-secondary {
+      background-color: var(--bg-secondary);
+    }
+    
+    .text-secondary {
+      color: var(--text-secondary);
+    }
+    
+    .text-muted {
+      color: var(--text-muted);
+    }
+    
+    .accent {
+      color: var(--accent);
+    }
+    
+    .accent-bg {
+      background-color: var(--accent);
+    }
+    
+    .border-custom {
+      border-color: var(--border);
+    }
+    
+    .hover-accent:hover {
+      color: var(--accent);
+    }
+    
+    .nature-pattern {
+      background-image: 
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          var(--bg-secondary) 10px,
+          var(--bg-secondary) 11px
+        );
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="min-h-screen">
+    
+    <!-- Header -->
+    <header class="bg-secondary border-b border-custom">
+      <div class="max-w-4xl mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          
+          <div class="relative">
+            <div class="absolute inset-0 rounded-full" style="background: var(--accent); opacity: 0.2; filter: blur(20px);"></div>
+            <img 
+              src="https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg" 
+              alt="Burke Holland" 
+              class="relative w-28 h-28 rounded-full border-4 border-custom"
+            >
+          </div>
+          
+          <div class="flex-1 text-center md:text-left">
+            <h1 class="font-serif text-5xl font-bold mb-3">Burke Holland</h1>
+            <p class="text-secondary text-lg font-sans mb-6">
+              Writing about code from the woods of Nashville
+            </p>
+            
+            <nav class="flex flex-wrap justify-center md:justify-start gap-1 font-sans text-sm font-bold">
+              <a href="/" class="px-4 py-2 accent-bg text-white rounded">Blog</a>
+              <a href="/about" class="px-4 py-2 hover-accent transition-colors rounded">About</a>
+              <a href="/projects" class="px-4 py-2 hover-accent transition-colors rounded">Projects</a>
+            </nav>
+          </div>
+          
+        </div>
+      </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 py-16">
+      
+      <!-- Featured -->
+      <div class="bg-secondary border border-custom rounded-lg p-8 mb-12">
+        <div class="flex items-center gap-2 text-muted text-xs font-sans uppercase tracking-wide mb-4">
+          <span class="w-2 h-2 rounded-full accent-bg"></span>
+          <span>Featured Post</span>
+        </div>
+        
+        <h2 class="font-serif text-4xl font-bold mb-4">
+          <a href="#" class="hover-accent transition-colors">Building Better Developer Tools</a>
+        </h2>
+        
+        <div class="flex items-center gap-3 text-muted text-sm font-sans mb-6">
+          <time>January 15, 2026</time>
+          <span>•</span>
+          <span>5 min read</span>
+        </div>
+        
+        <p class="text-secondary text-lg leading-relaxed mb-6">
+          After years of working with developers, I've learned that the best tools are the ones that get out of your way. They don't force you into a particular workflow, they enhance the one you already have. Here's what I've discovered about creating tools that developers actually want to use.
+        </p>
+        
+        <a href="#" class="inline-flex items-center gap-2 accent font-sans font-bold text-sm hover:underline">
+          Continue reading
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+      
+      <!-- Recent Posts -->
+      <h3 class="font-serif text-2xl font-bold mb-8">Recent Posts</h3>
+      
+      <div class="space-y-8">
+        
+        <article class="border-l-4 pl-6" style="border-color: var(--accent);">
+          <time class="text-muted text-sm font-sans">January 8, 2026</time>
+          <h4 class="font-serif text-2xl font-semibold mt-2 mb-3">
+            <a href="#" class="hover-accent transition-colors">The State of AI Coding Assistants</a>
+          </h4>
+          <p class="text-secondary leading-relaxed">
+            We're at an interesting inflection point with AI-powered coding tools. The technology has moved beyond novelty into genuine productivity gains.
+          </p>
+        </article>
+        
+        <article class="border-l-4 border-custom pl-6">
+          <time class="text-muted text-sm font-sans">December 28, 2025</time>
+          <h4 class="font-serif text-2xl font-semibold mt-2 mb-3">
+            <a href="#" class="hover-accent transition-colors">Why VS Code Extensions Matter</a>
+          </h4>
+          <p class="text-secondary leading-relaxed">
+            The extensibility of VS Code is what makes it such a powerful tool. But with thousands of extensions available, how do you find the ones that matter?
+          </p>
+        </article>
+        
+        <article class="border-l-4 border-custom pl-6">
+          <time class="text-muted text-sm font-sans">December 15, 2025</time>
+          <h4 class="font-serif text-2xl font-semibold mt-2 mb-3">
+            <a href="#" class="hover-accent transition-colors">Modern Web Development in 2026</a>
+          </h4>
+          <p class="text-secondary leading-relaxed">
+            The web development landscape continues to evolve. Here are the trends and technologies I'm watching as we move into the new year.
+          </p>
+        </article>
+        
+      </div>
+      
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-secondary border-t border-custom mt-16">
+      <div class="max-w-4xl mx-auto px-6 py-10">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+          
+          <div class="text-center md:text-left">
+            <p class="text-muted font-sans text-sm mb-2">© 2026 Burke Holland</p>
+            <p class="text-muted font-sans text-xs">Built with care in Nashville</p>
+          </div>
+          
+          <div class="flex gap-6">
+            <a href="https://twitter.com/burkeholland" class="text-muted hover-accent transition-colors" aria-label="Twitter">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="https://github.com/burkeholland" class="text-muted hover-accent transition-colors" aria-label="GitHub">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+            <a href="https://bsky.app/profile/burkeholland.bsky.social" class="text-muted hover-accent transition-colors" aria-label="Bluesky">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 01-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/>
+              </svg>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+    
+  </div>
+  
+</body>
+</html>

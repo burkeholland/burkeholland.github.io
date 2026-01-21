@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campfire - Burke Holland</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@500;700;900&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ember': {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+              800: '#9a3412',
+              900: '#7c2d12',
+            },
+          },
+          fontFamily: {
+            'serif': ['Vollkorn', 'Georgia', 'serif'],
+            'sans': ['Outfit', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Light mode */
+    :root {
+      --bg-primary: #fff7ed;
+      --bg-secondary: #ffedd5;
+      --bg-glow: #fed7aa;
+      --text-primary: #7c2d12;
+      --text-secondary: #9a3412;
+      --text-muted: #c2410c;
+      --accent: #f97316;
+      --accent-bright: #fb923c;
+      --border: #fdba74;
+    }
+    
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-primary: #1c0a05;
+        --bg-secondary: #2d1408;
+        --bg-glow: #3d1f0c;
+        --text-primary: #ffedd5;
+        --text-secondary: #fed7aa;
+        --text-muted: #fdba74;
+        --accent: #fb923c;
+        --accent-bright: #fdba74;
+        --border: #9a3412;
+      }
+    }
+    
+    body {
+      background: radial-gradient(circle at top, var(--bg-secondary), var(--bg-primary));
+      min-height: 100vh;
+      color: var(--text-primary);
+    }
+    
+    .bg-glow {
+      background-color: var(--bg-glow);
+    }
+    
+    .text-secondary {
+      color: var(--text-secondary);
+    }
+    
+    .text-muted {
+      color: var(--text-muted);
+    }
+    
+    .accent {
+      color: var(--accent);
+    }
+    
+    .accent-bright {
+      color: var(--accent-bright);
+    }
+    
+    .border-custom {
+      border-color: var(--border);
+    }
+    
+    .hover-glow:hover {
+      box-shadow: 0 0 40px rgba(251, 146, 60, 0.3);
+      transform: scale(1.02);
+      transition: all 0.3s ease;
+    }
+    
+    .flame-glow {
+      box-shadow: 0 0 60px rgba(251, 146, 60, 0.4);
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="max-w-5xl mx-auto px-6 py-16">
+    
+    <!-- Header -->
+    <header class="text-center mb-20">
+      
+      <div class="flex justify-center mb-10">
+        <div class="relative">
+          <div class="absolute -inset-6 rounded-full blur-2xl opacity-60" style="background: var(--accent);"></div>
+          <img 
+            src="https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg" 
+            alt="Burke Holland" 
+            class="relative w-32 h-32 rounded-full border-4 border-custom flame-glow"
+          >
+        </div>
+      </div>
+      
+      <h1 class="font-serif text-6xl md:text-7xl font-black mb-6">
+        Burke Holland
+      </h1>
+      
+      <p class="text-secondary text-2xl font-sans max-w-2xl mx-auto mb-10">
+        Stories from around the developer campfire
+      </p>
+      
+      <nav class="flex flex-wrap justify-center gap-8 font-sans font-semibold text-lg">
+        <a href="/" class="accent-bright hover:underline underline-offset-4">Stories</a>
+        <a href="/about" class="text-muted hover:accent-bright hover:underline underline-offset-4 transition-colors">About</a>
+        <a href="/projects" class="text-muted hover:accent-bright hover:underline underline-offset-4 transition-colors">Work</a>
+      </nav>
+      
+    </header>
+    
+    <!-- Featured Story -->
+    <article class="bg-glow rounded-3xl p-10 md:p-14 mb-16 hover-glow">
+      
+      <div class="text-center mb-8">
+        <div class="inline-flex items-center gap-2 text-muted text-sm font-sans uppercase tracking-widest">
+          <span>🔥</span>
+          <span>Tonight's Feature</span>
+          <span>🔥</span>
+        </div>
+      </div>
+      
+      <h2 class="font-serif text-5xl md:text-6xl font-black text-center mb-6">
+        <a href="#" class="accent hover:accent-bright transition-colors">
+          Building Better Developer Tools
+        </a>
+      </h2>
+      
+      <div class="text-center text-muted font-sans text-sm mb-8">
+        January 15, 2026 • Around the fire for 5 minutes
+      </div>
+      
+      <p class="text-secondary text-xl font-sans leading-relaxed text-center max-w-3xl mx-auto mb-10">
+        After years of working with developers, I've learned that the best tools are the ones that get out of your way. They don't force you into a particular workflow, they enhance the one you already have. Here's what I've discovered about creating tools that developers actually want to use.
+      </p>
+      
+      <div class="text-center">
+        <a href="#" class="inline-flex items-center gap-3 accent-bright font-sans font-bold text-lg hover:underline underline-offset-4">
+          Join the conversation
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+      
+    </article>
+    
+    <!-- Recent Stories -->
+    <div class="mb-16">
+      <h3 class="font-serif text-4xl font-bold text-center mb-12">More Stories</h3>
+      
+      <div class="space-y-10">
+        
+        <article class="bg-glow rounded-2xl p-8 md:p-10 hover-glow">
+          <time class="text-muted text-sm font-sans">January 8, 2026</time>
+          <h4 class="font-serif text-3xl font-bold mt-3 mb-4">
+            <a href="#" class="accent hover:accent-bright transition-colors">
+              The State of AI Coding Assistants
+            </a>
+          </h4>
+          <p class="text-secondary text-lg font-sans leading-relaxed">
+            We're at an interesting inflection point with AI-powered coding tools. The technology has moved beyond novelty into genuine productivity gains, but we're still figuring out the best practices.
+          </p>
+        </article>
+        
+        <article class="bg-glow rounded-2xl p-8 md:p-10 hover-glow">
+          <time class="text-muted text-sm font-sans">December 28, 2025</time>
+          <h4 class="font-serif text-3xl font-bold mt-3 mb-4">
+            <a href="#" class="accent hover:accent-bright transition-colors">
+              Why VS Code Extensions Matter
+            </a>
+          </h4>
+          <p class="text-secondary text-lg font-sans leading-relaxed">
+            The extensibility of VS Code is what makes it such a powerful tool. But with thousands of extensions available, how do you find the ones that actually matter?
+          </p>
+        </article>
+        
+        <article class="bg-glow rounded-2xl p-8 md:p-10 hover-glow">
+          <time class="text-muted text-sm font-sans">December 15, 2025</time>
+          <h4 class="font-serif text-3xl font-bold mt-3 mb-4">
+            <a href="#" class="accent hover:accent-bright transition-colors">
+              Modern Web Development in 2026
+            </a>
+          </h4>
+          <p class="text-secondary text-lg font-sans leading-relaxed">
+            The web development landscape continues to evolve. Here are the trends and technologies I'm watching as we move into the new year.
+          </p>
+        </article>
+        
+        <article class="bg-glow rounded-2xl p-8 md:p-10 hover-glow">
+          <time class="text-muted text-sm font-sans">December 1, 2025</time>
+          <h4 class="font-serif text-3xl font-bold mt-3 mb-4">
+            <a href="#" class="accent hover:accent-bright transition-colors">
+              Gathered Around the Nashville Fire
+            </a>
+          </h4>
+          <p class="text-secondary text-lg font-sans leading-relaxed">
+            Living in Nashville has taught me that community matters more than we often give it credit for. Here's how location shapes our work and the conversations we have.
+          </p>
+        </article>
+        
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="text-center pt-16 pb-12">
+      
+      <div class="mb-8">
+        <div class="text-4xl mb-4">🔥</div>
+        <p class="text-muted font-sans text-sm mb-4">
+          Keep the conversation going
+        </p>
+        <div class="flex justify-center gap-8 font-sans font-semibold">
+          <a href="https://twitter.com/burkeholland" class="text-muted hover:accent-bright transition-colors">Twitter</a>
+          <a href="https://github.com/burkeholland" class="text-muted hover:accent-bright transition-colors">GitHub</a>
+          <a href="https://bsky.app/profile/burkeholland.bsky.social" class="text-muted hover:accent-bright transition-colors">Bluesky</a>
+        </div>
+      </div>
+      
+      <div class="border-t-2 border-custom pt-8">
+        <p class="text-muted font-sans text-sm">
+          © 2026 Burke Holland • Sharing stories from Nashville
+        </p>
+      </div>
+      
+    </footer>
+    
+  </div>
+  
+</body>
+</html>

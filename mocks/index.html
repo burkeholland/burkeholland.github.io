@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Mocks - Burke Holland Website Redesign</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+      padding: 40px 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #111;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 40px;
+    }
+    
+    .intro {
+      background: #f8f9fa;
+      padding: 20px;
+      border-left: 4px solid #007bff;
+      margin-bottom: 40px;
+    }
+    
+    .intro h2 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    
+    .intro ul {
+      margin-left: 20px;
+      color: #555;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+    
+    .card {
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      background: white;
+    }
+    
+    .card:hover {
+      border-color: #007bff;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #111;
+    }
+    
+    .card .theme {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+    
+    .card p {
+      color: #666;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+    
+    .card .features {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    
+    .card .features li {
+      padding: 4px 0;
+      color: #555;
+      font-size: 0.9rem;
+    }
+    
+    .card .features li:before {
+      content: "✓ ";
+      color: #28a745;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    
+    .card a {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    
+    .card a:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <h1>Website Redesign Mockups</h1>
+    <p class="subtitle">10 unique homepage designs for burkeholland.github.io</p>
+    
+    <div class="intro">
+      <h2>Design Principles</h2>
+      <ul>
+        <li>Warm and approachable aesthetic (no AI-looking designs)</li>
+        <li>Full support for both light and dark modes</li>
+        <li>No purple gradients or typical AI color schemes</li>
+        <li>Focus on readability and personality</li>
+        <li>Unique typography and color palettes for each design</li>
+      </ul>
+    </div>
+    
+    <div class="grid">
+      
+      <div class="card">
+        <span class="theme">Editorial</span>
+        <h3>01. Warm Paper</h3>
+        <p>Classic editorial layout with cream and beige tones inspired by print magazines.</p>
+        <ul class="features">
+          <li>Crimson Pro serif font</li>
+          <li>Paper-like texture colors</li>
+          <li>Traditional blog layout</li>
+        </ul>
+        <a href="01-warm-paper.html">View Mock →</a>
+      </div>
+      
+      <div class="card">
+        <span class="theme">Intimate</span>
+        <h3>02. Cozy Evening</h3>
+        <p>Warm oranges and browns creating an inviting, comfortable atmosphere.</p>
+        <ul class="features">
+          <li>Merriweather serif</li>
+          <li>Card-based layout</li>
+          <li>Soft shadows and glows</li>
+        </ul>
+        <a href="02-cozy-evening.html">View Mock →</a>
+      </div>
+      
+      <div class="card">
+        <span class="theme">Bright</span>
+        <h3>03. Sunshine Minimal</h3>
+        <p>Clean and modern with yellow highlights for energy and optimism.</p>
+        <ul class="features">
+          <li>Space Grotesk display font</li>
+          <li>High contrast design</li>
+          <li>Highlighted text elements</li>
+        </ul>
+        <a href="03-sunshine-minimal.html">View Mock →</a>
+      </div>
+      
+      <div class="card">
+        <span class="theme">Natural</span>
+        <h3>04. Forest Cabin</h3>
+        <p>Nature-inspired greens and wood tones for an organic, grounded feel.</p>
+        <ul class="features">
+          <li>Bitter serif font</li>
+          <li>Green accent colors</li>
+          <li>Earthy wood palette</li>
+        </ul>
+        <a href="04-forest-cabin.html">View Mock →</a>
+      </div>
+      
+      <div class="card">
+        <span class="theme">Brutalist</span>
+        <h3>05. Notebook</h3>
+        <p>Bold black and white design with yellow highlights and monospace typography.</p>
+        <ul class="features">
+          <li>IBM Plex Mono</li>
+          <li>High contrast borders</li>
+          <li>Code-inspired aesthetic</li>
+        </ul>
+        <a href="05-notebook.html">View Mock →</a>
+      </div>
+      
+      <div class="card">
+        <span class="theme">Comfortable</span>
+        <h3>06. Coffee Shop</h3>
+        <p>Browns and tans creating a welcoming café atmosphere.</p>
+        <ul class="features">
+          <li>Playfair Display serif</li>
+          <li>Rounded corners</li>
+          <li>Warm brown palette</li>
+        </ul>
+        <a href="06-coffee-shop.html">View Mock →</a>
+      </div>
+      
+      <div class="card">
+        <span class="theme">Elegant</span>
+        <h3>07. Twilight</h3>
+        <p>Deep blues and indigos with subtle glows for an evening aesthetic.</p>
+        <ul class="features">
+          <li>Libre Baskerville serif</li>
+          <li>Gradient backgrounds</li>
+          <li>Glow effects</li>
+        </ul>
+        <a href="07-twilight.html">View Mock →</a>
+      </div>
+      
+      <div class="card">
+        <span class="theme">Mediterranean</span>
+        <h3>08. Terracotta</h3>
+        <p>Clay and earth tones with a warm, Mediterranean-inspired palette.</p>
+        <ul class="features">
+          <li>Cormorant serif</li>
+          <li>Decorative lines</li>
+          <li>Warm terracotta colors</li>
+        </ul>
+        <a href="08-terracotta.html">View Mock →</a>
+      </div>
+      
+      <div class="card">
+        <span class="theme">Dark Focus</span>
+        <h3>09. Midnight Library</h3>
+        <p>Dark mode-first design with deep navy and charcoal tones.</p>
+        <ul class="features">
+          <li>Lora serif font</li>
+          <li>Card elevations</li>
+          <li>Dark-optimized colors</li>
+        </ul>
+        <a href="09-midnight-library.html">View Mock →</a>
+      </div>
+      
+      <div class="card">
+        <span class="theme">Storytelling</span>
+        <h3>10. Campfire</h3>
+        <p>Orange and amber glow creating a warm, storytelling atmosphere.</p>
+        <ul class="features">
+          <li>Vollkorn serif</li>
+          <li>Radial gradients</li>
+          <li>Fire-inspired effects</li>
+        </ul>
+        <a href="10-campfire.html">View Mock →</a>
+      </div>
+      
+    </div>
+  </div>
+  
+</body>
+</html>
