@@ -52,21 +52,19 @@
         extend: {
           colors: {
             'frost': {
-              50: '#f9fafb',
-              100: '#f0f9ff',
-              200: '#e0f2fe',
-              300: '#bae6fd',
-              400: '#7dd3fc',
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
               500: '#64748b',
               600: '#475569',
               700: '#334155',
               800: '#1e293b',
-              900: '#111827',
-              950: '#030712',
+              900: '#0f172a',
+              950: '#020617',
             },
             'accent': '#0ea5e9',
-            'coral': '#ff7f50',
-            'lime': '#84cc16',
           },
           fontFamily: {
             'serif': ['"Inter"', 'system-ui', 'sans-serif'],
@@ -89,8 +87,7 @@
     .frost-card {
       background: linear-gradient(135deg, 
         rgba(255, 255, 255, 0.95) 0%, 
-        rgba(240, 249, 255, 0.9) 50%,
-        rgba(246, 255, 248, 0.85) 100%);
+        rgba(241, 245, 249, 0.9) 100%);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.8);
       box-shadow: 
@@ -120,7 +117,7 @@
       top: 0;
       bottom: 0;
       width: 3px;
-      background: #ff7f50;
+      background: linear-gradient(180deg, #0ea5e9 0%, #38bdf8 50%, #0ea5e9 100%);
       border-radius: 2px;
     }
     
@@ -136,7 +133,7 @@
     }
     
     .prose code {
-      color: #ff7f50 !important;
+      color: #0ea5e9 !important;
     }
 
     /* Smooth transitions */
