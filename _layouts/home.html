@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+<div class="w-full">
+  <!-- Featured post (first post) -->
+  {% assign first_post = paginator.posts | first %}
+  {% if paginator.page == 1 and first_post %}
+  <section class="mb-16">
+    <a href="{{ first_post.url }}" class="block frost-card rounded-2xl p-8 lg:p-10 relative overflow-hidden group cursor-pointer">
+      <div class="absolute top-4 right-4">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium bg-coral/10 text-coral rounded-full">
+          <span class="w-1.5 h-1.5 bg-coral rounded-full animate-pulse"></span>
+          Latest
+        </span>
+      </div>
+      
+      <span class="text-sm font-mono text-coral tracking-wide uppercase font-semibold">Featured</span>
+      
+      <h2 class="mt-4 font-serif text-3xl lg:text-4xl text-frost-900 group-hover:text-coral transition-colors leading-tight">
+        {{ first_post.title | strip_html }}
+      </h2>
+      
+      <p class="mt-4 text-frost-600 font-sans text-lg leading-relaxed max-w-3xl">
+        {{ first_post.content | markdownify | strip_html | truncatewords: 40 }}
+      </p>
+      
+      <div class="mt-6 flex items-center gap-4">
+        <time class="text-sm font-sans text-frost-400">{{ first_post.date | date: "%B %d, %Y" }}</time>
+      </div>
+    </a>
+  </section>
+  {% endif %}
+
+  <!-- Recent posts -->
+  <section>
+    <div class="flex items-center gap-4 mb-8">
+      <h2 class="font-serif text-2xl text-frost-800">{% if paginator.page == 1 %}Recent Posts{% else %}All Posts{% endif %}</h2>
+      <div class="flex-1 h-px bg-gradient-to-r from-frost-200 to-transparent"></div>
+    </div>
+    
+    <div class="grid gap-6">
+      {% for post in paginator.posts %}
+      {% if paginator.page == 1 and forloop.first %}
+        {% continue %}
+      {% endif %}
+      <article class="frost-card rounded-xl p-6 group cursor-pointer">
+        <a href="{{ post.url }}" class="flex flex-col lg:flex-row lg:items-center gap-4">
+          <div class="flex-1">
+            <h3 class="font-serif text-xl lg:text-2xl text-frost-800 group-hover:text-coral transition-colors">
+              {{ post.title | strip_html }}
+            </h3>
+            <p class="mt-2 text-frost-500 font-sans line-clamp-2">
+              {{ post.content | markdownify | strip_html | truncatewords: 25 }}
+            </p>
+          </div>
+          <time class="text-sm font-mono text-frost-400 lg:text-right whitespace-nowrap">{{ post.date | date: "%b %d, %Y" }}</time>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  {% include pagination.html %}
+</div>

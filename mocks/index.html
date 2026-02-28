@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burke Holland - Winter Theme Preview</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'frost': {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            },
+            'ice': '#e0f2fe',
+            'snow': '#fafafa',
+            'pine': '#166534',
+            'berry': '#be185d',
+            'ember': '#ea580c',
+          },
+          fontFamily: {
+            'serif': ['"Instrument Serif"', 'Georgia', 'serif'],
+            'sans': ['"DM Sans"', 'system-ui', 'sans-serif'],
+            'mono': ['"JetBrains Mono"', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Snowflake animation */
+    @keyframes snowfall {
+      0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(100vh) translateX(20px) rotate(360deg); opacity: 0; }
+    }
+    
+    .snowflake {
+      position: fixed;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 1rem;
+      pointer-events: none;
+      z-index: 1;
+      animation: snowfall linear infinite;
+    }
+    
+    /* Crisp text rendering */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    
+    /* Subtle frost effect on cards */
+    .frost-card {
+      background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(241, 245, 249, 0.9) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -2px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
+    
+    .frost-card:hover {
+      box-shadow: 
+        0 10px 15px -3px rgba(0, 0, 0, 0.08),
+        0 4px 6px -4px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Pine tree silhouette decoration */
+    .pine-decoration::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200'%3E%3Cpath fill='%23166534' fill-opacity='0.08' d='M0,200 L60,200 L30,140 L50,140 L20,80 L40,80 L10,20 L-20,80 L0,80 L-30,140 L-10,140 L-40,200 Z M100,200 L140,200 L120,160 L135,160 L115,120 L130,120 L110,80 L90,120 L105,120 L85,160 L100,160 L80,200 Z M200,200 L280,200 L240,120 L270,120 L230,40 L190,120 L220,120 L180,200 Z M350,200 L410,200 L380,140 L400,140 L370,80 L390,80 L360,20 L330,80 L350,80 L320,140 L340,140 L310,200 Z M480,200 L540,200 L510,150 L530,150 L500,100 L520,100 L490,50 L460,100 L480,100 L450,150 L470,150 L440,200 Z M600,200 L680,200 L640,120 L670,120 L630,40 L590,120 L620,120 L580,200 Z M750,200 L810,200 L780,140 L800,140 L770,80 L790,80 L760,20 L730,80 L750,80 L720,140 L740,140 L710,200 Z M900,200 L960,200 L930,150 L950,150 L920,100 L940,100 L910,50 L880,100 L900,100 L870,150 L890,150 L860,200 Z M1020,200 L1080,200 L1050,140 L1070,140 L1040,80 L1060,80 L1030,20 L1000,80 L1020,80 L990,140 L1010,140 L980,200 Z M1150,200 L1230,200 L1190,120 L1220,120 L1180,40 L1140,120 L1170,120 L1130,200 Z M1300,200 L1360,200 L1330,140 L1350,140 L1320,80 L1340,80 L1310,20 L1280,80 L1300,80 L1270,140 L1290,140 L1260,200 Z M1400,200 L1440,200 L1440,100 L1420,140 L1440,140 L1440,200 Z'/%3E%3C/svg%3E") repeat-x bottom;
+      pointer-events: none;
+    }
+    
+    /* Quote styling */
+    .winter-quote {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .winter-quote::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, #166534 0%, #22c55e 50%, #166534 100%);
+      border-radius: 2px;
+    }
+    
+    /* Smooth transitions */
+    * {
+      transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.3s ease;
+    }
+    
+    /* Code block styling */
+    .code-frost {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-b from-frost-100 via-frost-50 to-white relative overflow-x-hidden">
+  
+  <!-- Subtle snowflakes (decorative) -->
+  <div id="snow-container" class="fixed inset-0 pointer-events-none overflow-hidden z-0"></div>
+  
+  <!-- Main container -->
+  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <header class="py-12 lg:py-16">
+      <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+        
+        <!-- Profile -->
+        <div class="flex flex-col items-center lg:items-start">
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-pine via-emerald-400 to-pine rounded-full opacity-30 group-hover:opacity-50 blur transition-opacity"></div>
+            <img 
+              src="https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg" 
+              alt="Burke Holland" 
+              class="relative w-28 h-28 lg:w-36 lg:h-36 rounded-full object-cover border-4 border-white shadow-lg"
+            >
+          </div>
+        </div>
+        
+        <!-- Title and nav -->
+        <div class="flex-1 text-center lg:text-left">
+          <h1 class="font-serif text-5xl lg:text-6xl text-frost-900 tracking-tight">
+            Burke Holland
+          </h1>
+          <p class="mt-3 text-lg text-frost-500 font-sans max-w-lg">
+            Writing about software, AI, and the craft of building things that work.
+          </p>
+          
+          <!-- Navigation -->
+          <nav class="mt-8 flex flex-wrap justify-center lg:justify-start gap-2">
+            <a href="#" class="px-5 py-2.5 font-sans text-sm font-medium text-frost-700 bg-white rounded-full shadow-sm hover:shadow-md hover:text-pine border border-frost-200 hover:border-pine/30">
+              Blog
+            </a>
+            <a href="#" class="px-5 py-2.5 font-sans text-sm font-medium text-frost-600 hover:text-frost-900 rounded-full hover:bg-frost-100">
+              About
+            </a>
+            <a href="#" class="px-5 py-2.5 font-sans text-sm font-medium text-frost-600 hover:text-frost-900 rounded-full hover:bg-frost-100">
+              Projects
+            </a>
+          </nav>
+        </div>
+        
+        <!-- Decorative element -->
+        <div class="hidden lg:block">
+          <div class="text-6xl opacity-20 select-none" aria-hidden="true">❄</div>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Main content -->
+    <main class="pb-20">
+      
+      <!-- Featured post -->
+      <section class="mb-16">
+        <div class="frost-card rounded-2xl p-8 lg:p-10 relative overflow-hidden group cursor-pointer">
+          <div class="absolute top-4 right-4">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium bg-pine/10 text-pine rounded-full">
+              <span class="w-1.5 h-1.5 bg-pine rounded-full animate-pulse"></span>
+              Latest
+            </span>
+          </div>
+          
+          <span class="text-sm font-mono text-frost-400 tracking-wide uppercase">Featured</span>
+          
+          <h2 class="mt-4 font-serif text-3xl lg:text-4xl text-frost-900 group-hover:text-pine transition-colors leading-tight">
+            Beast Mode 3.1: Leveraging Claude for Maximum Productivity
+          </h2>
+          
+          <p class="mt-4 text-frost-600 font-sans text-lg leading-relaxed max-w-3xl">
+            An exploration of how to get the most out of Claude's capabilities when tackling complex software projects. From prompt engineering to workflow optimization.
+          </p>
+          
+          <div class="mt-6 flex items-center gap-4">
+            <time class="text-sm font-sans text-frost-400">July 23, 2025</time>
+            <span class="text-frost-300">·</span>
+            <span class="text-sm font-sans text-frost-400">8 min read</span>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Posts grid -->
+      <section>
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="font-serif text-2xl text-frost-800">Recent Posts</h2>
+          <div class="flex-1 h-px bg-gradient-to-r from-frost-200 to-transparent"></div>
+        </div>
+        
+        <div class="grid gap-6">
+          
+          <!-- Post card 1 -->
+          <article class="frost-card rounded-xl p-6 group cursor-pointer">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+              <div class="flex-1">
+                <h3 class="font-serif text-xl lg:text-2xl text-frost-800 group-hover:text-pine transition-colors">
+                  Replace Yourself With AI (Before Someone Else Does)
+                </h3>
+                <p class="mt-2 text-frost-500 font-sans line-clamp-2">
+                  The uncomfortable truth about AI in software development and why embracing it is better than fighting it.
+                </p>
+              </div>
+              <time class="text-sm font-mono text-frost-400 lg:text-right whitespace-nowrap">Feb 6, 2025</time>
+            </div>
+          </article>
+          
+          <!-- Post card 2 -->
+          <article class="frost-card rounded-xl p-6 group cursor-pointer">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+              <div class="flex-1">
+                <h3 class="font-serif text-xl lg:text-2xl text-frost-800 group-hover:text-pine transition-colors">
+                  Custom Instructions: The Secret Weapon for Better AI Assistance
+                </h3>
+                <p class="mt-2 text-frost-500 font-sans line-clamp-2">
+                  How to craft effective custom instructions that make your AI coding assistant actually useful.
+                </p>
+              </div>
+              <time class="text-sm font-mono text-frost-400 lg:text-right whitespace-nowrap">Jan 5, 2025</time>
+            </div>
+          </article>
+          
+          <!-- Post card 3 -->
+          <article class="frost-card rounded-xl p-6 group cursor-pointer">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+              <div class="flex-1">
+                <h3 class="font-serif text-xl lg:text-2xl text-frost-800 group-hover:text-pine transition-colors">
+                  The Best Blog Setup for Developers in 2024
+                </h3>
+                <p class="mt-2 text-frost-500 font-sans line-clamp-2">
+                  After years of trying different platforms, here's what I've settled on and why it works.
+                </p>
+              </div>
+              <time class="text-sm font-mono text-frost-400 lg:text-right whitespace-nowrap">Nov 2, 2024</time>
+            </div>
+          </article>
+          
+          <!-- Post card 4 -->
+          <article class="frost-card rounded-xl p-6 group cursor-pointer">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+              <div class="flex-1">
+                <h3 class="font-serif text-xl lg:text-2xl text-frost-800 group-hover:text-pine transition-colors">
+                  Throw Your AI-Generated Code Away
+                </h3>
+                <p class="mt-2 text-frost-500 font-sans line-clamp-2">
+                  Why the code AI generates isn't precious and treating it as disposable makes you more productive.
+                </p>
+              </div>
+              <time class="text-sm font-mono text-frost-400 lg:text-right whitespace-nowrap">Sep 28, 2024</time>
+            </div>
+          </article>
+          
+          <!-- Post card 5 -->
+          <article class="frost-card rounded-xl p-6 group cursor-pointer">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+              <div class="flex-1">
+                <h3 class="font-serif text-xl lg:text-2xl text-frost-800 group-hover:text-pine transition-colors">
+                  Success vs Significance: What Really Matters
+                </h3>
+                <p class="mt-2 text-frost-500 font-sans line-clamp-2">
+                  A reflection on career priorities and finding meaning beyond metrics.
+                </p>
+              </div>
+              <time class="text-sm font-mono text-frost-400 lg:text-right whitespace-nowrap">Sep 8, 2024</time>
+            </div>
+          </article>
+          
+        </div>
+        
+        <!-- Pagination -->
+        <div class="mt-12 flex justify-center gap-2">
+          <span class="px-4 py-2 text-sm font-sans font-medium text-white bg-frost-800 rounded-lg">1</span>
+          <a href="#" class="px-4 py-2 text-sm font-sans font-medium text-frost-600 hover:bg-frost-100 rounded-lg">2</a>
+          <a href="#" class="px-4 py-2 text-sm font-sans font-medium text-frost-600 hover:bg-frost-100 rounded-lg">3</a>
+          <span class="px-2 py-2 text-frost-400">...</span>
+          <a href="#" class="px-4 py-2 text-sm font-sans font-medium text-frost-600 hover:bg-frost-100 rounded-lg">6</a>
+          <a href="#" class="px-4 py-2 text-sm font-sans text-frost-600 hover:bg-frost-100 rounded-lg flex items-center gap-1">
+            Next
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </section>
+      
+    </main>
+    
+    <!-- Footer -->
+    <footer class="py-12 border-t border-frost-200 pine-decoration relative">
+      <div class="text-center relative z-10">
+        <p class="font-sans text-frost-500 text-sm">
+          © 2025 Burke Holland · Built with Jekyll & ❄️
+        </p>
+        <div class="mt-4 flex justify-center gap-6">
+          <a href="#" class="text-frost-400 hover:text-frost-600 transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-frost-400 hover:text-frost-600 transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+          <a href="#" class="text-frost-400 hover:text-frost-600 transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.995 17.176c-.198.47-.932.86-1.397.962-.462.1-.848.144-2.44-.524-2.038-.854-3.327-2.95-3.427-3.086-.1-.137-.812-1.085-.812-2.07 0-.985.513-1.47.695-1.67.182-.2.398-.25.531-.25.133 0 .266 0 .382.006.123.006.287-.047.45.342.162.39.55 1.34.598 1.438.05.1.082.215.016.344-.066.13-.1.21-.198.322-.1.113-.21.252-.298.338-.1.1-.203.206-.087.405.116.2.516.852 1.107 1.38.76.68 1.4.89 1.6.99.2.1.316.082.432-.05.116-.13.498-.578.63-.777.133-.2.266-.166.449-.1.182.067 1.163.55 1.362.65.2.1.332.15.382.232.05.082.05.48-.148.95z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+    
+  </div>
+  
+  <script>
+    // Create subtle snowflakes
+    function createSnowflakes() {
+      const container = document.getElementById('snow-container');
+      const snowflakeChars = ['❄', '❅', '❆', '•'];
+      
+      for (let i = 0; i < 20; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.className = 'snowflake';
+        snowflake.innerHTML = snowflakeChars[Math.floor(Math.random() * snowflakeChars.length)];
+        snowflake.style.left = Math.random() * 100 + 'vw';
+        snowflake.style.animationDuration = (Math.random() * 10 + 15) + 's';
+        snowflake.style.animationDelay = (Math.random() * 15) + 's';
+        snowflake.style.fontSize = (Math.random() * 0.8 + 0.5) + 'rem';
+        snowflake.style.opacity = Math.random() * 0.3 + 0.1;
+        container.appendChild(snowflake);
+      }
+    }
+    
+    // Only create snowflakes if user prefers motion
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      createSnowflakes();
+    }
+  </script>
+  
+</body>
+</html>
