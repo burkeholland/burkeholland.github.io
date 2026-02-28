@@ -6,7 +6,7 @@ categories: posts
 permalink: /posts/nobody-knows-how-to-build-a-cathedral/
 ---
 
-## We don't build cathedrals anymore
+We don't build cathedrals anymore.
 
 Do we even know how?
 
