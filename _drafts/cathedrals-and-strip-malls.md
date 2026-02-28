@@ -9,19 +9,19 @@ permalink: /posts/dont-forget-how-to-build-cathedrals/
 ## We don't build cathedrals anymore
 
 ![The Sagrada Família in Barcelona](/assets/images/sagrada-familia.jpg)
-*The Sagrada Família in Barcelona—under construction since 1882. Photo by Bernard Gagnon, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)*
+*The Sagrada Família in Barcelona-under construction since 1882. Photo by Bernard Gagnon, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)*
 
 Do we even know how?
 
-Think about the great cathedrals of Europe. Notre-Dame took nearly 200 years to complete. The Sagrada Família in Barcelona has been under construction since 1882 and _still_ isn't finished. These weren't just buildings—they were generational projects. Craftsmen spent their entire careers perfecting a single rose window or buttress, knowing they'd never see the finished structure.
+Think about the great cathedrals of Europe. Notre-Dame took nearly 200 years to complete. The Sagrada Família in Barcelona has been under construction since 1882 and _still_ isn't finished. These weren't just buildings-they were generational projects. Craftsmen spent their entire careers perfecting a single rose window or buttress, knowing they'd never see the finished structure.
 
 ![Notre-Dame Cathedral at sunrise, Paris](/assets/images/notre-dame.jpg)
-*Notre-Dame de Paris — nearly 200 years to build. Photo: [Daniel Vorndran](https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Notre-Dame_de_Paris,_20_March_2014.jpg), CC BY-SA*
+*Notre-Dame de Paris - nearly 200 years to build. Photo: [Daniel Vorndran](https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Notre-Dame_de_Paris,_20_March_2014.jpg), CC BY-SA*
 
 ![Sagrada Família, Barcelona](/assets/images/sagrada-familia.jpg)
-*The Sagrada Família — under construction since 1882 and still not finished. Photo: [Canaan](https://commons.wikimedia.org/wiki/File:Sagrada_Familia_8-12-21_(1).jpg), CC BY-SA*
+*The Sagrada Família - under construction since 1882 and still not finished. Photo: [Canaan](https://commons.wikimedia.org/wiki/File:Sagrada_Familia_8-12-21_(1).jpg), CC BY-SA*
 
-Today? Churches meet in schools. Strip malls. Metal buildings with industrial carpet and folding chairs. Those are the structures we have now. And I'm not trying to be a snob about it—there's nothing wrong with meeting in a school gym. But we've lost something in the process. We've traded **craftsmanship** for **convenience**.
+Today? Churches meet in schools. Strip malls. Metal buildings with industrial carpet and folding chairs. Those are the structures we have now. And I'm not trying to be a snob about it-there's nothing wrong with meeting in a school gym. But we've lost something in the process. We've traded **craftsmanship** for **convenience**.
 
 We don't build houses like cathedrals anymore, either. Even in wealthy areas, it's just faster to throw them up quickly. Three months and you've got a house. Sure, it's a house. But it's not the kind where every piece of trim was hand-cut, every window frame precisely fitted, every decision deliberate.
 
@@ -29,13 +29,13 @@ The same thing is happening with software.
 
 ## The age of handcrafted websites
 
-There was a time—not that long ago—when you could tell someone spent _months_ building a website. Sites like **Smashing Magazine** and **CSS-Tricks** weren't just informative, they were _beautiful_. Every interaction was considered. Every animation served a purpose. You could feel the care that went into them.
+There was a time-not that long ago-when you could tell someone spent _months_ building a website. Sites like **Smashing Magazine** and **CSS-Tricks** weren't just informative, they were _beautiful_. Every interaction was considered. Every animation served a purpose. You could feel the care that went into them.
 
-Or think about apps like **Things** on Mac. Or **Tweetbot** before Twitter killed third-party clients. These weren't just functional—they had personality. Soul. Someone sat down and obsessed over every pixel, every transition, every micro-interaction.
+Or think about apps like **Things** on Mac. Or **Tweetbot** before Twitter killed third-party clients. These weren't just functional-they had personality. Soul. Someone sat down and obsessed over every pixel, every transition, every micro-interaction.
 
 Those were our cathedrals.
 
-But now? When AI designs a website, you get one of two things: a purple gradient with glassmorphism, or something that looks like it was ripped directly from Twitter—color bar on the left, cards everywhere, way too much white space.
+But now? When AI designs a website, you get one of two things: a purple gradient with glassmorphism, or something that looks like it was ripped directly from Twitter-color bar on the left, cards everywhere, way too much white space.
 
 AIs are **derivative**. They have to be. They can only remix what they've seen before. They don't have taste, or vision, or the ability to say "you know what would be _weird_ but also kind of amazing?" They optimize for the average, for what works, for what's been done before.
 
@@ -43,15 +43,15 @@ We're standing up software in hours instead of months. But we're not building ca
 
 ## The trade-off we're making
 
-Look, I get it. Speed matters. It used to take a year to build a house—now you can do it in three months. It used to take months to build a decent web app—now you can do it in a weekend.
+Look, I get it. Speed matters. It used to take a year to build a house-now you can do it in three months. It used to take months to build a decent web app-now you can do it in a weekend.
 
-And yes, some of that is **better tools**. We invented power saws, nail guns, pneumatic framing nailers—tools that should have made houses _better_. And they could have. You can do things with a power saw that would take weeks by hand. But that's not what happened. Instead of using those tools to build _more carefully_, we used them to build _more quickly_. The tools didn't make the houses worse. They made building fast enough that worse became _good enough_.
+And yes, some of that is **better tools**. We invented power saws, nail guns, pneumatic framing nailers-tools that should have made houses _better_. And they could have. You can do things with a power saw that would take weeks by hand. But that's not what happened. Instead of using those tools to build _more carefully_, we used them to build _more quickly_. The tools didn't make the houses worse. They made building fast enough that worse became _good enough_.
 
-Software followed the same arc. We got frameworks, component libraries, build systems that handle the tedious parts. Those are genuinely better tools. But the more powerful the tools get, the faster we throw things together—and the more willing we are to sacrifice quality. It's like some law of nature: the easier it becomes to build something well, the less likely we are to bother.
+Software followed the same arc. We got frameworks, component libraries, build systems that handle the tedious parts. Those are genuinely better tools. But the more powerful the tools get, the faster we throw things together-and the more willing we are to sacrifice quality. It's like some law of nature: the easier it becomes to build something well, the less likely we are to bother.
 
 The tools don't degrade quality. They degrade the **incentive** for quality.
 
-And now we've got the most powerful tool we've ever had—AI—and we're using it to build the **cheapest, simplest structures** to get the job done. Because we can. Because it's _efficient_. Because nobody wants to wait a year for a website when they can have one tomorrow.
+And now we've got the most powerful tool we've ever had-AI-and we're using it to build the **cheapest, simplest structures** to get the job done. Because we can. Because it's _efficient_. Because nobody wants to wait a year for a website when they can have one tomorrow.
 
 Are we really better off?
 
@@ -63,7 +63,7 @@ No. Because they're forgettable. Disposable. Interchangeable.
 
 ## What we're sacrificing
 
-AI makes it easy to build software. _Really_ easy. And that's not a bad thing—I've built apps in hours that would have taken me weeks before. I'm not standing here pretending I'm above it.
+AI makes it easy to build software. _Really_ easy. And that's not a bad thing-I've built apps in hours that would have taken me weeks before. I'm not standing here pretending I'm above it.
 
 But we need to be careful. Because the more we optimize for speed and efficiency, the more we're going to see the **lowest tolerable quality** become the norm. Not the lowest _possible_ quality, but the lowest _tolerable_. The point where something works just well enough that nobody complains.
 
