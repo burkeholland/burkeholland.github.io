@@ -18,6 +18,12 @@ Do we even know how?
 
 Think about the great cathedrals of Europe. Notre-Dame took nearly 200 years to complete. The Sagrada Família in Barcelona has been under construction since 1882 and _still_ isn't finished. These weren't just buildings—they were generational projects. Craftsmen spent their entire careers perfecting a single rose window or buttress, knowing they'd never see the finished structure.
 
+![Notre-Dame Cathedral at sunrise, Paris](/assets/images/notre-dame.jpg)
+*Notre-Dame de Paris — nearly 200 years to build. Photo: [Daniel Vorndran](https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Notre-Dame_de_Paris,_20_March_2014.jpg), CC BY-SA*
+
+![Sagrada Família, Barcelona](/assets/images/sagrada-familia.jpg)
+*The Sagrada Família — under construction since 1882 and still not finished. Photo: [Canaan](https://commons.wikimedia.org/wiki/File:Sagrada_Familia_8-12-21_(1).jpg), CC BY-SA*
+
 Today? Churches meet in schools. Strip malls. Metal buildings with industrial carpet and folding chairs. Those are the structures we have now. And I'm not trying to be a snob about it—there's nothing wrong with meeting in a school gym. But we've lost something in the process. We've traded **craftsmanship** for **convenience**.
 
 The same thing is happening with software.
