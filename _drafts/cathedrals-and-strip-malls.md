@@ -1,16 +1,10 @@
 ---
 layout: post
-title: "Cathedrals and Strip Malls"
+title: "Don't Forget How to Build Cathedrals"
 date: 2026-02-28 16:43:00 +0000
 categories: posts
-permalink: /posts/cathedrals-and-strip-malls/
+permalink: /posts/dont-forget-how-to-build-cathedrals/
 ---
-
-There used to be a house on the corner of the town square where I live. _Used_ to be. 
-
-It was gorgeous—one of those Victorian beauties with ornate woodwork, a wraparound porch, and details that made you slow down when you drove past. The kind of house that somebody spent _years_ building. The kind where every piece of trim was hand-cut, every window frame precisely fitted, every decision deliberate.
-
-Most of the old houses in our area looked like this. At least the ones built when people had money and time. But even in wealthy areas today, we don't build houses like that anymore. It's just faster to throw them up quickly. Three months and you've got a house. Sure, it's a house. But it's not _that_ house.
 
 ## We don't build cathedrals anymore
 
@@ -28,6 +22,8 @@ Think about the great cathedrals of Europe. Notre-Dame took nearly 200 years to 
 *The Sagrada Família — under construction since 1882 and still not finished. Photo: [Canaan](https://commons.wikimedia.org/wiki/File:Sagrada_Familia_8-12-21_(1).jpg), CC BY-SA*
 
 Today? Churches meet in schools. Strip malls. Metal buildings with industrial carpet and folding chairs. Those are the structures we have now. And I'm not trying to be a snob about it—there's nothing wrong with meeting in a school gym. But we've lost something in the process. We've traded **craftsmanship** for **convenience**.
+
+We don't build houses like cathedrals anymore, either. Even in wealthy areas, it's just faster to throw them up quickly. Three months and you've got a house. Sure, it's a house. But it's not the kind where every piece of trim was hand-cut, every window frame precisely fitted, every decision deliberate.
 
 The same thing is happening with software.
 
