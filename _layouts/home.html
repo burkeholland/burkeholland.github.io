@@ -9,13 +9,13 @@ layout: default
   <section class="mb-16">
     <a href="{{ first_post.url }}" class="block frost-card rounded-2xl p-8 lg:p-10 relative overflow-hidden group cursor-pointer">
       <div class="absolute top-4 right-4">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium bg-coral/10 text-coral rounded-full">
-          <span class="w-1.5 h-1.5 bg-coral rounded-full animate-pulse"></span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-white rounded-full" style="background: linear-gradient(to right, #ff7f50, #0ea5e9, #84cc16);">
+          <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
           Latest
         </span>
       </div>
       
-      <span class="text-sm font-mono text-frost-400 tracking-wide uppercase">Featured</span>
+      <span class="text-sm font-mono tracking-wide uppercase gradient-badge font-semibold">Featured</span>
       
       <h2 class="mt-4 font-serif text-3xl lg:text-4xl text-frost-900 group-hover:text-coral transition-colors leading-tight">
         {{ first_post.title | strip_html }}
@@ -36,7 +36,7 @@ layout: default
   <section>
     <div class="flex items-center gap-4 mb-8">
       <h2 class="font-serif text-2xl text-frost-800">{% if paginator.page == 1 %}Recent Posts{% else %}All Posts{% endif %}</h2>
-      <div class="flex-1 h-px bg-gradient-to-r from-coral/30 via-accent/20 to-transparent"></div>
+      <div class="flex-1 h-px" style="background: linear-gradient(to right, #ff7f50, #0ea5e9, #84cc16, transparent);"></div>
     </div>
     
     <div class="grid gap-6">
