@@ -15,9 +15,6 @@ Think about the great cathedrals of Europe. Notre-Dame took nearly 200 years to 
 ![Notre-Dame Cathedral at sunrise, Paris](/assets/images/notre-dame.jpg)
 *Notre-Dame de Paris - nearly 200 years to build. Photo: [Daniel Vorndran](https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Notre-Dame_de_Paris,_20_March_2014.jpg), CC BY-SA*
 
-![Sagrada Família, Barcelona](/assets/images/sagrada-familia.jpg)
-*The Sagrada Família - under construction since 1882 and still not finished. Photo: [Canaan](https://commons.wikimedia.org/wiki/File:Sagrada_Familia_8-12-21_(1).jpg), CC BY-SA*
-
 Today? Churches meet in schools. Strip malls. Metal buildings with industrial carpet and folding chairs. Those are the structures we have now. And I'm not trying to be a snob about it - there's nothing wrong with meeting in a school gym. But we've lost something in the process. We've traded **craftsmanship** for **convenience**.
 
 We don't build houses like cathedrals anymore, either. Even in wealthy areas, it's just faster to throw them up quickly. Three months and you've got a house. Sure, it's a house. But it's not the kind where every piece of trim was hand-cut, every window frame precisely fitted, every decision deliberate.
