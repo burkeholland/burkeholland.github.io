@@ -40,11 +40,13 @@ We're standing up software in hours instead of months. But we're not building ca
 
 Look, I get it. Speed matters. It used to take a year to build a house—now you can do it in three months. It used to take months to build a decent web app—now you can do it in a weekend.
 
-And yes, some of that is **better tools**. We have frameworks, component libraries, build systems that handle the tedious parts. That's progress.
+And yes, some of that is **better tools**. We invented power saws, nail guns, pneumatic framing nailers—tools that should have made houses _better_. And they could have. You can do things with a power saw that would take weeks by hand. But that's not what happened. Instead of using those tools to build _more carefully_, we used them to build _more quickly_. The tools didn't make the houses worse. They made building fast enough that worse became _good enough_.
 
-But the other part? We've just lowered the quality bar.
+Software followed the same arc. We got frameworks, component libraries, build systems that handle the tedious parts. Those are genuinely better tools. But the more powerful the tools get, the faster we throw things together—and the more willing we are to sacrifice quality. It's like some law of nature: the easier it becomes to build something well, the less likely we are to bother.
 
-We're building the **cheapest, simplest structures** to get the job done. And we're doing it because we can. Because it's _efficient_. Because nobody wants to wait a year for a website when they can have one tomorrow.
+The tools don't degrade quality. They degrade the **incentive** for quality.
+
+And now we've got the most powerful tool we've ever had—AI—and we're using it to build the **cheapest, simplest structures** to get the job done. Because we can. Because it's _efficient_. Because nobody wants to wait a year for a website when they can have one tomorrow.
 
 Are we really better off?
 
@@ -72,4 +74,4 @@ And absolutely nothing worth remembering.
 
 ---
 
-_This post was written by a human and edited for spelling, grammar by Haiku 4.5_
+_This post was dictated by a human and edited by Claude Sonnet 4.6_
