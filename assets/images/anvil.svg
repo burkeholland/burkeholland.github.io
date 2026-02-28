@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="anvil-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#334155"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  <!-- Anvil body -->
+  <path d="M30 58 L42 58 L42 48 L34 38 L86 38 L78 48 L90 48 L90 58 L90 68 L78 68 L78 78 L42 78 L42 68 L30 68 Z" fill="url(#anvil-grad)"/>
+  <!-- Horn -->
+  <path d="M86 38 L98 44 L98 52 L90 48 L86 38" fill="url(#anvil-grad)"/>
+  <!-- Base -->
+  <rect x="36" y="78" width="48" height="6" rx="1" fill="url(#anvil-grad)"/>
+  <!-- Highlight -->
+  <path d="M44 42 L82 42 L76 48 L44 48 Z" fill="#475569" opacity="0.5"/>
+</svg>

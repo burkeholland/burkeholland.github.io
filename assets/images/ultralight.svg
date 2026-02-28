@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <circle cx="60" cy="60" r="56" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  <!-- Prism -->
+  <polygon points="60,28 88,80 32,80" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Light ray in -->
+  <line x1="22" y1="52" x2="48" y2="58" stroke="#94a3b8" stroke-width="2.5"/>
+  <!-- Refracted rays out -->
+  <line x1="76" y1="48" x2="100" y2="36" stroke="#ef4444" stroke-width="2" opacity="0.8"/>
+  <line x1="78" y1="52" x2="100" y2="46" stroke="#f97316" stroke-width="2" opacity="0.8"/>
+  <line x1="79" y1="56" x2="100" y2="56" stroke="#eab308" stroke-width="2" opacity="0.8"/>
+  <line x1="78" y1="60" x2="100" y2="66" stroke="#22c55e" stroke-width="2" opacity="0.8"/>
+  <line x1="76" y1="64" x2="100" y2="76" stroke="#3b82f6" stroke-width="2" opacity="0.8"/>
+  <line x1="74" y1="68" x2="98" y2="86" stroke="#8b5cf6" stroke-width="2" opacity="0.8"/>
+</svg>
