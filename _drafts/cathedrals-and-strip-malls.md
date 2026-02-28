@@ -14,6 +14,9 @@ Most of the old houses in our area looked like this. At least the ones built whe
 
 ## We don't build cathedrals anymore
 
+![The Sagrada Família in Barcelona](/assets/images/sagrada-familia.jpg)
+*The Sagrada Família in Barcelona—under construction since 1882. Photo by Bernard Gagnon, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)*
+
 Do we even know how?
 
 Think about the great cathedrals of Europe. Notre-Dame took nearly 200 years to complete. The Sagrada Família in Barcelona has been under construction since 1882 and _still_ isn't finished. These weren't just buildings—they were generational projects. Craftsmen spent their entire careers perfecting a single rose window or buttress, knowing they'd never see the finished structure.
