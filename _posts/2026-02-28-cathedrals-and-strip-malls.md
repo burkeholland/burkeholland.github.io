@@ -57,9 +57,9 @@ Are we really better off?
 
 Yes, it's a house. Yes, it's a church. Yes, it's a functioning web application. But it's devoid of **personality**. It lacks **soul**. There's no culture, no craft, no evidence that anyone cared beyond "does it work?"
 
-I mean, a church in a strip mall _works_. People show up. They sing songs and hear sermons and go home. But does anyone _love_ it? Does anyone drive past one and think "wow, that's beautiful"? Do people take photos in front of them?
+I mean, a church in a strip mall _works_. People show up, they worship, they find community. They might even love their church deeply. But nobody loves the _building_. Nobody drives past and thinks "wow, that's beautiful." Nobody takes photos in front of the beige stucco and the generic signage. The love is despite the aesthetics, not because of them.
 
-No. Because they're forgettable. Disposable. Interchangeable.
+That's the bar we're setting. Functional. Tolerable. Good enough.
 
 ## What we're sacrificing
 
