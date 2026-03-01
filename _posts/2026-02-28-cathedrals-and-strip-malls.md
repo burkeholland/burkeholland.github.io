@@ -55,9 +55,9 @@ And now we've got the most powerful tool we've ever had-AI-and we're using it to
 
 Are we really better off?
 
-Yes, it's a house. Yes, it's a store. Yes, it's a functioning web application. But it's devoid of **personality**. It lacks **soul**. There's no culture, no craft, no evidence that anyone cared beyond "does it work?"
+Yes, it's a house. Yes, it's a church. Yes, it's a functioning web application. But it's devoid of **personality**. It lacks **soul**. There's no culture, no craft, no evidence that anyone cared beyond "does it work?"
 
-I mean, strip malls _work_. They're functional. You can buy things there. But does anyone _love_ a strip mall? Does anyone drive past one and think "wow, that's beautiful"? Do people take photos in front of them?
+I mean, a church in a strip mall _works_. People show up. They sing songs and hear sermons and go home. But does anyone _love_ it? Does anyone drive past one and think "wow, that's beautiful"? Do people take photos in front of them?
 
 No. Because they're forgettable. Disposable. Interchangeable.
 
