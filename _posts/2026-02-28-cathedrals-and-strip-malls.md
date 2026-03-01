@@ -3,7 +3,7 @@ layout: post
 title: "Nothing Worth Remembering"
 date: 2026-02-28 16:43:00 +0000
 categories: posts
-permalink: /posts/nobody-knows-how-to-build-a-cathedral/
+permalink: /posts/nothing-worth-remembering/
 ---
 
 ## We don't build cathedrals anymore
