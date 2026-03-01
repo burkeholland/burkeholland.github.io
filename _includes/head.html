@@ -41,107 +41,393 @@
     {% endif %}
   </title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'frost': {
-              50: '#f9fafb',
-              100: '#f0f9ff',
-              200: '#e0f2fe',
-              300: '#bae6fd',
-              400: '#7dd3fc',
-              500: '#4b5563',
-              600: '#475569',
-              700: '#334155',
-              800: '#1e293b',
-              900: '#111827',
-              950: '#030712',
-            },
-            'accent': '#0ea5e9',
-            'coral': '#ff7f50',
-          },
-          fontFamily: {
-            'serif': ['"Inter"', 'system-ui', 'sans-serif'],
-            'sans': ['"DM Sans"', 'system-ui', 'sans-serif'],
-            'mono': ['"JetBrains Mono"', 'monospace'],
-          },
-        }
-      }
-    }
-  </script>
   <style>
-    /* Crisp text rendering */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fff;
+      color: rgba(0, 0, 0, 0.88);
+      line-height: 1.8;
+      font-size: 18px;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
     }
-    
-    /* Card effect */
-    .frost-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 
-        0 4px 6px -1px rgba(0, 0, 0, 0.05),
-        0 2px 4px -2px rgba(0, 0, 0, 0.05),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    .masthead {
+      border-top: 4px solid rgba(0, 0, 0, 0.88);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.88);
+      padding: 24px 40px;
+      text-align: center;
     }
-    
-    .frost-card:hover {
-      box-shadow: 
-        0 10px 15px -3px rgba(0, 0, 0, 0.08),
-        0 4px 6px -4px rgba(0, 0, 0, 0.05),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    .site-title {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+      color: rgba(0, 0, 0, 0.88);
+      text-decoration: none;
+    }
+    .site-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .site-tagline {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.56);
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      padding-top: 16px;
+      border-top: 1px solid #eee;
+      margin-top: 16px;
+    }
+    .main-nav a {
+      color: rgba(0, 0, 0, 0.88);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .main-nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+    .lead-story {
+      border-bottom: 3px double rgba(0, 0, 0, 0.88);
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+    }
+    .lead-meta {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.56);
+      margin-bottom: 16px;
+    }
+    .lead-title {
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 24px;
+      letter-spacing: -2px;
+      max-width: 900px;
+      color: rgba(0, 0, 0, 0.88);
+      text-decoration: none;
+    }
+    .lead-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .lead-title a:hover {
+      color: rgba(0, 0, 0, 0.65);
+    }
+    .lead-excerpt {
+      font-size: 22px;
+      line-height: 1.6;
+      color: rgba(0, 0, 0, 0.72);
+      max-width: 800px;
+      margin-bottom: 24px;
+    }
+    .byline {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.56);
+      font-style: italic;
+    }
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.88);
+      padding-bottom: 48px;
+      margin-bottom: 48px;
+    }
+    .column {
+      border-left: 1px solid #eee;
+      padding-left: 20px;
+    }
+    .column:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+    .column-meta {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.56);
+      margin-bottom: 12px;
+    }
+    .column h3 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .column h3 a {
+      color: rgba(0, 0, 0, 0.88);
+      text-decoration: none;
+    }
+    .column h3 a:hover {
+      color: rgba(0, 0, 0, 0.65);
+    }
+    .column p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(0, 0, 0, 0.72);
+      margin-bottom: 16px;
+    }
+    .column .read-link {
+      font-size: 13px;
+      color: rgba(0, 0, 0, 0.88);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .column .read-link:hover {
+      text-decoration: underline;
+    }
+    .below-fold {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 48px;
+    }
+    .recent-posts article {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 32px;
+      margin-bottom: 32px;
+    }
+    .recent-posts article:last-child {
+      border-bottom: none;
+    }
+    .recent-posts .post-date {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.56);
+      margin-bottom: 8px;
+    }
+    .recent-posts h4 {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .recent-posts h4 a {
+      color: rgba(0, 0, 0, 0.88);
+      text-decoration: none;
+    }
+    .recent-posts h4 a:hover {
+      color: rgba(0, 0, 0, 0.65);
+    }
+    .recent-posts p {
+      font-size: 15px;
+      color: rgba(0, 0, 0, 0.72);
+      line-height: 1.6;
+    }
+    .sidebar {
+      border-left: 3px solid rgba(0, 0, 0, 0.88);
+      padding-left: 32px;
+    }
+    .sidebar-section {
+      margin-bottom: 40px;
+    }
+    .sidebar-title {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.88);
+    }
+    .sidebar-item {
+      margin-bottom: 20px;
+    }
+    .sidebar-item .title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .sidebar-item .title a {
+      color: rgba(0, 0, 0, 0.88);
+      text-decoration: none;
+    }
+    .sidebar-item .title a:hover {
+      text-decoration: underline;
+    }
+    .sidebar-item .meta {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.56);
+    }
+    footer {
+      border-top: 3px double rgba(0, 0, 0, 0.88);
+      margin-top: 60px;
+      padding: 32px 0;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(0, 0, 0, 0.56);
+    }
+    .footer-links {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+    .footer-links a {
+      color: rgba(0, 0, 0, 0.56);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .footer-links a:hover {
+      color: rgba(0, 0, 0, 0.88);
     }
 
-    /* Quote styling */
-    .prose blockquote {
-      position: relative;
-      padding-left: 1.5rem;
-      border-left: none !important;
+    /* Post article styles */
+    article.post-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
-    
-    .prose blockquote::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: linear-gradient(180deg, #ff7f50 0%, #ff7f50 100%);
-      border-radius: 2px;
+    article.post-content header {
+      border-bottom: 3px double rgba(0, 0, 0, 0.88);
+      padding-bottom: 30px;
+      margin-bottom: 40px;
     }
-    
-    /* Code block styling - readable syntax highlighting */
-    .prose pre {
-      background: #1e293b !important;
-      border: 1px solid rgba(148, 163, 184, 0.2);
-      border-radius: 0.75rem;
+    article.post-content h1 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
     }
-    
-    .prose pre code {
-      color: #e2e8f0 !important;
+    article.post-content .post-meta {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.56);
+      font-style: italic;
     }
-    
-    .prose code {
-      color: #ff7f50 !important;
+    article.post-content .post-body {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    article.post-content .post-body h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    article.post-content .post-body h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    article.post-content .post-body p {
+      margin-bottom: 24px;
+      color: rgba(0, 0, 0, 0.72);
+    }
+    article.post-content .post-body blockquote {
+      border-left: 3px solid rgba(0, 0, 0, 0.88);
+      padding-left: 20px;
+      margin: 32px 0;
+      font-style: italic;
+      color: rgba(0, 0, 0, 0.65);
+    }
+    article.post-content .post-body code {
+      background: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 16px;
+    }
+    article.post-content .post-body pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 32px 0;
+    }
+    article.post-content .post-body pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+    article.post-content .post-body ul, 
+    article.post-content .post-body ol {
+      margin: 24px 0;
+      padding-left: 32px;
+    }
+    article.post-content .post-body li {
+      margin-bottom: 8px;
+      color: rgba(0, 0, 0, 0.72);
+    }
+    article.post-content .post-body a {
+      color: rgba(0, 0, 0, 0.88);
+      text-decoration: underline;
+    }
+    article.post-content .post-body a:hover {
+      color: rgba(0, 0, 0, 0.65);
+    }
+    article.post-content .post-body img {
+      max-width: 100%;
+      height: auto;
+      margin: 32px 0;
+      border-radius: 4px;
     }
 
-    /* Smooth transitions */
-    a, button {
-      transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.3s ease;
+    /* Responsive */
+    @media (max-width: 768px) {
+      .masthead {
+        padding: 20px;
+      }
+      .site-title {
+        font-size: 32px;
+      }
+      .main-nav {
+        gap: 16px;
+      }
+      .container {
+        padding: 40px 20px;
+      }
+      .lead-title {
+        font-size: 36px;
+      }
+      .lead-excerpt {
+        font-size: 18px;
+      }
+      .columns {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .column {
+        border-left: none;
+        padding-left: 0;
+      }
+      .below-fold {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        border-left: none;
+        border-top: 3px solid rgba(0, 0, 0, 0.88);
+        padding-left: 0;
+        padding-top: 32px;
+      }
+      article.post-content h1 {
+        font-size: 32px;
+      }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqB7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
   {% feed_meta %}
 </head>

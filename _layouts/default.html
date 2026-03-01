@@ -3,164 +3,29 @@
 
 {% include head.html %}
 
-<body class="min-h-screen bg-gradient-to-b from-white via-[#f0f9ff] to-[#f6fff8] relative overflow-x-hidden font-sans">
-  
-  <!-- Main container -->
-  <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- Header -->
-    <header class="py-12 lg:py-16">
-      <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8">
-        
-        <!-- Profile -->
-        <div class="flex flex-col items-center lg:items-start">
-          <a href="/" class="relative group">
-            <div class="absolute -inset-1 bg-coral rounded-full opacity-20 group-hover:opacity-35 blur transition-opacity"></div>
-            <img 
-              src="https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg" 
-              alt="Burke Holland" 
-              class="relative w-28 h-28 lg:w-36 lg:h-36 rounded-full object-cover border-4 border-white shadow-lg"
-            >
-          </a>
-        </div>
-        
-        <!-- Title and nav -->
-        <div class="flex-1 text-center lg:text-left">
-          <h1 class="font-serif text-5xl lg:text-6xl text-frost-900 tracking-tight">
-            <a href="/" class="hover:text-coral transition-colors">Burke Holland</a>
-          </h1>
-          <p class="mt-3 text-lg text-frost-500 font-sans max-w-lg">
-            Mid-brain takes on software and AI.
-          </p>
-          
-          <!-- Navigation -->
-          <nav class="mt-8 flex flex-wrap justify-center lg:justify-start gap-2">
-            <a href="/" class="px-5 py-2.5 font-sans text-sm font-medium text-frost-600 hover:text-frost-900 rounded-full hover:bg-frost-100">
-              Blog
-            </a>
-            <a href="/about" class="px-5 py-2.5 font-sans text-sm font-medium text-frost-600 hover:text-frost-900 rounded-full hover:bg-frost-100">
-              About
-            </a>
-            <a href="/projects" class="px-5 py-2.5 font-sans text-sm font-medium text-frost-600 hover:text-frost-900 rounded-full hover:bg-frost-100">
-              Projects
-            </a>
-          </nav>
-        </div>
-      </div>
-    </header>
+<body>
+  <header class="masthead">
+    <div class="site-title"><a href="/">Burke Holland</a></div>
+    <div class="site-tagline">Mid-brain takes on software and AI</div>
+    <nav class="main-nav">
+      <a href="/">Blog</a>
+      <a href="/about">About</a>
+      <a href="/projects">Projects</a>
+    </nav>
+  </header>
 
-    <main class="pb-20">
-      {{ content }}
-    </main>
-    
-    <!-- Footer -->
-    <footer class="py-12 border-t border-frost-200 relative">
-      <div class="text-center relative z-10">
-        <p class="font-sans text-frost-500 text-sm">
-          © 2026 Burke Holland · Built with Jekyll
-        </p>
-        <div class="mt-4 flex justify-center gap-6">
-          <a href="https://twitter.com/burkeholland" class="text-frost-400 hover:text-frost-600 transition-colors" aria-label="Twitter">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </a>
-          <a href="https://github.com/burkeholland" class="text-frost-400 hover:text-frost-600 transition-colors" aria-label="GitHub">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
-            </svg>
-          </a>
-          <a href="https://bsky.app/profile/burkeholland.bsky.social" class="text-frost-400 hover:text-frost-600 transition-colors" aria-label="Bluesky">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 01-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </footer>
-    
+  <div class="container">
+    {{ content }}
   </div>
 
-  <script>
-    // Create subtle snowflakes
-    function createSnowflakes() {
-      const container = document.getElementById('snow-container');
-      const snowflakeChars = ['❄', '❅', '❆', '•'];
-      
-      for (let i = 0; i < 20; i++) {
-        const snowflake = document.createElement('div');
-        snowflake.className = 'snowflake';
-        snowflake.innerHTML = snowflakeChars[Math.floor(Math.random() * snowflakeChars.length)];
-        snowflake.style.left = Math.random() * 100 + 'vw';
-        snowflake.style.animationDuration = (Math.random() * 10 + 15) + 's';
-        snowflake.style.animationDelay = (Math.random() * 15) + 's';
-        snowflake.style.fontSize = (Math.random() * 0.8 + 0.5) + 'rem';
-        snowflake.style.opacity = Math.random() * 0.3 + 0.1;
-        container.appendChild(snowflake);
-      }
-    }
-    
-    // Only create snowflakes if user prefers motion
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      createSnowflakes();
-    }
-
-    // Create Christmas lights
-    function createLights() {
-      const container = document.getElementById('christmas-lights');
-      const width = window.innerWidth;
-      const lightCount = Math.floor(width / 30); // One light every 30px
-      
-      // Clear existing lights (except wire)
-      const wire = container.querySelector('.light-wire');
-      container.innerHTML = '';
-      container.appendChild(wire);
-
-      // Wire geometry
-      // Wire is positioned from -10px to width+10px
-      const wireWidth = width + 20;
-      const wireHeight = 40; // height of the wire element
-      const rx = wireWidth / 2;
-      const ry = wireHeight / 2;
-      
-      // Calculate spacing
-      // padding is 20px on each side
-      const availableWidth = width - 40;
-      const step = availableWidth / (lightCount - 1);
-
-      for (let i = 0; i < lightCount; i++) {
-        const light = document.createElement('div');
-        light.className = 'light-bulb';
-        
-        // Calculate horizontal position relative to the wire start
-        // Light i is at 20px + i*step
-        // Wire starts at -10px
-        const xPos = 20 + (i * step);
-        const xRel = xPos + 10;
-        
-        // Ellipse equation for the bottom arc:
-        // y = ry + ry * sqrt(1 - ((x - rx)/rx)^2)
-        // This gives y relative to the top of the .light-wire element
-        const term = (xRel - rx) / rx;
-        const clampedTerm = Math.max(-1, Math.min(1, term));
-        const yWire = ry + ry * Math.sqrt(1 - clampedTerm * clampedTerm);
-        
-        // .light-wire is at top: -25px relative to container
-        // So y relative to container is yWire - 25
-        const yAbs = yWire - 25;
-        
-        // Apply margin-top to position the bulb
-        light.style.marginTop = `${yAbs}px`;
-        
-        container.appendChild(light);
-      }
-    }
-    
-    createLights();
-    window.addEventListener('resize', () => {
-      createLights();
-    });
-  </script>
+  <footer>
+    <div>© 2026 Burke Holland · Built with Jekyll</div>
+    <div class="footer-links">
+      <a href="https://twitter.com/burkeholland">Twitter</a>
+      <a href="https://github.com/burkeholland">GitHub</a>
+      <a href="https://bsky.app/profile/burkeholland.bsky.social">Bluesky</a>
+    </div>
+  </footer>
 </body>
 
 </html>
