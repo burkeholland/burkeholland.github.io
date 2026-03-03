@@ -4,7 +4,7 @@ title: "We've Never Left Orbit"
 date: 2026-03-03 19:23:00 +0000
 categories: posts
 permalink: /posts/weve-never-left-orbit/
-published: false
+published: true
 ---
 
 The astronauts who circled the moon in 1968 could still see Earth. They were farther from home than anyone had ever been, but when they looked back, there it was - blue and white and impossibly fragile against the black. They knew the math. They knew the trajectory would bring them home. But they'd never actually _been_ that far before. Beyond low Earth orbit, past the point where you could fix things if they went wrong.
