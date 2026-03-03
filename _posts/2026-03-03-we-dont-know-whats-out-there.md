@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "We've Never Left Orbit"
+title: "We Don't Know What's Out There"
 date: 2026-03-03 19:23:00 +0000
 categories: posts
-permalink: /posts/weve-never-left-orbit/
+permalink: /posts/we-dont-know-whats-out-there/
 published: true
 ---
 
