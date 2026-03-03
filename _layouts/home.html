@@ -6,56 +6,52 @@ layout: default
   <!-- Featured post (first post) -->
   {% assign first_post = paginator.posts | first %}
   {% if paginator.page == 1 and first_post %}
-  <section class="mb-16">
-    <a href="{{ first_post.url }}" class="block frost-card rounded-2xl p-8 lg:p-10 relative overflow-hidden group cursor-pointer">
-      <div class="absolute top-4 right-4">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium bg-coral/10 text-coral rounded-full">
-          <span class="w-1.5 h-1.5 bg-coral rounded-full animate-pulse"></span>
-          Latest
-        </span>
+  <section class="mb-12">
+    <div class="bg-secondary border border-custom rounded-lg p-8">
+      <div class="flex items-center gap-2 text-muted text-xs font-sans uppercase tracking-wide mb-4">
+        <span class="w-2 h-2 rounded-full accent-bg"></span>
+        <span>Featured Post</span>
       </div>
       
-      <span class="text-sm font-mono text-coral tracking-wide uppercase font-semibold">Featured</span>
-      
-      <h2 class="mt-4 font-serif text-3xl lg:text-4xl text-frost-900 group-hover:text-coral transition-colors leading-tight">
-        {{ first_post.title | strip_html }}
+      <h2 class="font-serif text-4xl font-bold mb-4">
+        <a href="{{ first_post.url }}" class="hover-accent transition-colors">{{ first_post.title | strip_html }}</a>
       </h2>
       
-      <p class="mt-4 text-frost-600 font-sans text-lg leading-relaxed max-w-3xl">
+      <div class="flex items-center gap-3 text-muted text-sm font-sans mb-6">
+        <time>{{ first_post.date | date: "%B %d, %Y" }}</time>
+      </div>
+      
+      <p class="text-secondary text-lg leading-relaxed mb-6">
         {{ first_post.content | markdownify | strip_html | truncatewords: 40 }}
       </p>
       
-      <div class="mt-6 flex items-center gap-4">
-        <time class="text-sm font-sans text-frost-400">{{ first_post.date | date: "%B %d, %Y" }}</time>
-      </div>
-    </a>
+      <a href="{{ first_post.url }}" class="inline-flex items-center gap-2 accent font-sans font-bold text-sm hover:underline">
+        Continue reading
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
   </section>
   {% endif %}
 
   <!-- Recent posts -->
   <section>
-    <div class="flex items-center gap-4 mb-8">
-      <h2 class="font-serif text-2xl text-frost-800">{% if paginator.page == 1 %}Recent Posts{% else %}All Posts{% endif %}</h2>
-      <div class="flex-1 h-px bg-gradient-to-r from-frost-200 to-transparent"></div>
-    </div>
+    <h3 class="font-serif text-2xl font-bold mb-8">{% if paginator.page == 1 %}Recent Posts{% else %}All Posts{% endif %}</h3>
     
-    <div class="grid gap-6">
+    <div class="space-y-8">
       {% for post in paginator.posts %}
       {% if paginator.page == 1 and forloop.first %}
         {% continue %}
       {% endif %}
-      <article class="frost-card rounded-xl p-6 group cursor-pointer">
-        <a href="{{ post.url }}" class="flex flex-col lg:flex-row lg:items-center gap-4">
-          <div class="flex-1">
-            <h3 class="font-serif text-xl lg:text-2xl text-frost-800 group-hover:text-coral transition-colors">
-              {{ post.title | strip_html }}
-            </h3>
-            <p class="mt-2 text-frost-500 font-sans line-clamp-2">
-              {{ post.content | markdownify | strip_html | truncatewords: 25 }}
-            </p>
-          </div>
-          <time class="text-sm font-mono text-frost-400 lg:text-right whitespace-nowrap">{{ post.date | date: "%b %d, %Y" }}</time>
-        </a>
+      <article class="border-l-4 pl-6 {% if forloop.first and paginator.page != 1 %}accent{% else %}border-custom{% endif %}" {% if forloop.first and paginator.page != 1 %}style="border-color: var(--accent);"{% endif %}>
+        <time class="text-muted text-sm font-sans">{{ post.date | date: "%B %d, %Y" }}</time>
+        <h4 class="font-serif text-2xl font-semibold mt-2 mb-3">
+          <a href="{{ post.url }}" class="hover-accent transition-colors">{{ post.title | strip_html }}</a>
+        </h4>
+        <p class="text-secondary leading-relaxed">
+          {{ post.content | markdownify | strip_html | truncatewords: 25 }}
+        </p>
       </article>
       {% endfor %}
     </div>

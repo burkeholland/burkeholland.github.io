@@ -43,7 +43,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script>
@@ -51,25 +51,49 @@
       theme: {
         extend: {
           colors: {
-            'frost': {
-              50: '#f9fafb',
-              100: '#f0f9ff',
-              200: '#e0f2fe',
-              300: '#bae6fd',
-              400: '#7dd3fc',
-              500: '#4b5563',
-              600: '#475569',
-              700: '#334155',
-              800: '#1e293b',
-              900: '#111827',
-              950: '#030712',
+            'forest': {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
             },
-            'accent': '#0ea5e9',
-            'coral': '#ff7f50',
+            'wood': {
+              50: '#faf8f5',
+              100: '#f5f0e8',
+              200: '#e8dcc8',
+              300: '#d4c0a0',
+              400: '#b89968',
+              500: '#9d7d4a',
+              600: '#7d6239',
+              700: '#5e4a2c',
+              800: '#4a3a23',
+              900: '#362b19',
+            },
+            'frost': {
+              50: '#faf8f5',
+              100: '#f5f0e8',
+              200: '#e8dcc8',
+              300: '#d4c0a0',
+              400: '#b89968',
+              500: '#7d6239',
+              600: '#5e4a2c',
+              700: '#5e4a2c',
+              800: '#4a3a23',
+              900: '#362b19',
+              950: '#362b19',
+            },
+            'accent': '#16a34a',
+            'coral': '#16a34a',
           },
           fontFamily: {
-            'serif': ['"Inter"', 'system-ui', 'sans-serif'],
-            'sans': ['"DM Sans"', 'system-ui', 'sans-serif'],
+            'serif': ['Bitter', 'Georgia', 'serif'],
+            'sans': ['Lato', 'system-ui', 'sans-serif'],
             'mono': ['"JetBrains Mono"', 'monospace'],
           },
         }
@@ -84,22 +108,78 @@
       text-rendering: optimizeLegibility;
     }
     
+    /* Light mode */
+    :root {
+      --bg-primary: #faf8f5;
+      --bg-secondary: #f5f0e8;
+      --text-primary: #362b19;
+      --text-secondary: #5e4a2c;
+      --text-muted: #7d6239;
+      --accent: #16a34a;
+      --accent-light: #22c55e;
+      --border: #e8dcc8;
+    }
+    
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-primary: #1a1611;
+        --bg-secondary: #2a231a;
+        --text-primary: #f5f0e8;
+        --text-secondary: #e8dcc8;
+        --text-muted: #d4c0a0;
+        --accent: #22c55e;
+        --accent-light: #4ade80;
+        --border: #4a3a23;
+      }
+    }
+    
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    
+    .bg-secondary {
+      background-color: var(--bg-secondary);
+    }
+    
+    .text-secondary {
+      color: var(--text-secondary);
+    }
+    
+    .text-muted {
+      color: var(--text-muted);
+    }
+    
+    .accent {
+      color: var(--accent);
+    }
+    
+    .accent-bg {
+      background-color: var(--accent);
+    }
+    
+    .border-custom {
+      border-color: var(--border);
+    }
+    
+    .hover-accent:hover {
+      color: var(--accent);
+    }
+    
     /* Card effect */
     .frost-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.8);
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border);
       box-shadow: 
         0 4px 6px -1px rgba(0, 0, 0, 0.05),
-        0 2px 4px -2px rgba(0, 0, 0, 0.05),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        0 2px 4px -2px rgba(0, 0, 0, 0.05);
     }
     
     .frost-card:hover {
       box-shadow: 
         0 10px 15px -3px rgba(0, 0, 0, 0.08),
-        0 4px 6px -4px rgba(0, 0, 0, 0.05),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        0 4px 6px -4px rgba(0, 0, 0, 0.05);
     }
 
     /* Quote styling */
@@ -116,11 +196,11 @@
       top: 0;
       bottom: 0;
       width: 3px;
-      background: linear-gradient(180deg, #ff7f50 0%, #ff7f50 100%);
+      background: linear-gradient(180deg, var(--accent) 0%, var(--accent) 100%);
       border-radius: 2px;
     }
     
-    /* Code block styling - readable syntax highlighting */
+    /* Code block styling */
     .prose pre {
       background: #1e293b !important;
       border: 1px solid rgba(148, 163, 184, 0.2);
@@ -132,7 +212,7 @@
     }
     
     .prose code {
-      color: #ff7f50 !important;
+      color: var(--accent) !important;
     }
 
     /* Smooth transitions */

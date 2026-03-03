@@ -1,7 +1,7 @@
 <nav class="flex justify-center mt-12 gap-2" role="navigation" aria-label="pagination">
     {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path }}"
-        class="px-4 py-2 text-sm font-sans font-medium text-frost-600 hover:bg-frost-100 rounded-lg flex items-center gap-1">
+        class="px-4 py-2 text-sm font-sans font-medium hover-accent transition-colors rounded-lg flex items-center gap-1 border border-custom">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
         </svg>
@@ -11,17 +11,17 @@
 
     {% for page in (1..paginator.total_pages) %}
       {% if page == paginator.page %}
-        <span class="px-4 py-2 text-sm font-sans font-medium text-white bg-frost-800 rounded-lg">{{ page }}</span>
+        <span class="px-4 py-2 text-sm font-sans font-medium text-white accent-bg rounded-lg">{{ page }}</span>
       {% elsif page == 1 %}
-        <a href="/" class="px-4 py-2 text-sm font-sans font-medium text-frost-600 hover:bg-frost-100 rounded-lg">{{ page }}</a>
+        <a href="/" class="px-4 py-2 text-sm font-sans font-medium hover-accent transition-colors rounded-lg border border-custom">{{ page }}</a>
       {% else %}
-        <a href="/page{{ page }}/" class="px-4 py-2 text-sm font-sans font-medium text-frost-600 hover:bg-frost-100 rounded-lg">{{ page }}</a>
+        <a href="/page{{ page }}/" class="px-4 py-2 text-sm font-sans font-medium hover-accent transition-colors rounded-lg border border-custom">{{ page }}</a>
       {% endif %}
     {% endfor %}
 
     {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path }}"
-        class="px-4 py-2 text-sm font-sans font-medium text-frost-600 hover:bg-frost-100 rounded-lg flex items-center gap-1">
+        class="px-4 py-2 text-sm font-sans font-medium hover-accent transition-colors rounded-lg flex items-center gap-1 border border-custom">
         Next
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
