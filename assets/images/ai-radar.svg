@@ -19,21 +19,21 @@
   <line x1="400" y1="420" x2="400.00" y2="120.00" stroke="#d0d0d0" stroke-width="0.5"/>
   <text x="400.00" y="110.00" text-anchor="middle" font-size="11" fill="#555555">Management</text>
 
-  <!-- Business & finance (1) -->
+  <!-- Business &amp; finance (1) -->
   <line x1="400" y1="420" x2="484.52" y2="132.15" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="487.34" y="125.56" text-anchor="start" font-size="11" fill="#555555">Business & finance</text>
+  <text x="487.34" y="125.56" text-anchor="start" font-size="11" fill="#555555">Business &amp; finance</text>
 
-  <!-- Computer & math (2) -->
+  <!-- Computer &amp; math (2) -->
   <line x1="400" y1="420" x2="562.19" y2="167.62" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="567.60" y="162.21" text-anchor="start" font-size="11" fill="#555555">Computer & math</text>
+  <text x="567.60" y="162.21" text-anchor="start" font-size="11" fill="#555555">Computer &amp; math</text>
 
-  <!-- Architecture & engineering (3) -->
+  <!-- Architecture &amp; engineering (3) -->
   <line x1="400" y1="420" x2="626.72" y2="223.54" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="634.28" y="220.99" text-anchor="start" font-size="11" fill="#555555">Architecture & engineering</text>
+  <text x="634.28" y="220.99" text-anchor="start" font-size="11" fill="#555555">Architecture &amp; engineering</text>
 
-  <!-- Life & social sciences (4) -->
+  <!-- Life &amp; social sciences (4) -->
   <line x1="400" y1="420" x2="672.89" y2="295.38" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="681.99" y="294.22" text-anchor="start" font-size="11" fill="#555555">Life & social sciences</text>
+  <text x="681.99" y="294.22" text-anchor="start" font-size="11" fill="#555555">Life &amp; social sciences</text>
 
   <!-- Social services (5) -->
   <line x1="400" y1="420" x2="696.95" y2="377.31" stroke="#d0d0d0" stroke-width="0.5"/>
@@ -43,13 +43,13 @@
   <line x1="400" y1="420" x2="696.95" y2="462.69" stroke="#d0d0d0" stroke-width="0.5"/>
   <text x="706.84" y="465.12" text-anchor="start" font-size="11" fill="#555555">Legal</text>
 
-  <!-- Education & library (7) -->
+  <!-- Education &amp; library (7) -->
   <line x1="400" y1="420" x2="672.89" y2="544.62" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="681.99" y="548.78" text-anchor="start" font-size="11" fill="#555555">Education & library</text>
+  <text x="681.99" y="548.78" text-anchor="start" font-size="11" fill="#555555">Education &amp; library</text>
 
-  <!-- Arts & media (8) -->
+  <!-- Arts &amp; media (8) -->
   <line x1="400" y1="420" x2="626.72" y2="616.46" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="634.28" y="622.01" text-anchor="start" font-size="11" fill="#555555">Arts & media</text>
+  <text x="634.28" y="622.01" text-anchor="start" font-size="11" fill="#555555">Arts &amp; media</text>
 
   <!-- Healthcare practitioners (9) -->
   <line x1="400" y1="420" x2="562.19" y2="672.38" stroke="#d0d0d0" stroke-width="0.5"/>
@@ -63,9 +63,9 @@
   <line x1="400" y1="420" x2="400.00" y2="720.00" stroke="#d0d0d0" stroke-width="0.5"/>
   <text x="400.00" y="730.00" text-anchor="middle" font-size="11" fill="#555555">Protective service</text>
 
-  <!-- Food & serving (12) -->
+  <!-- Food &amp; serving (12) -->
   <line x1="400" y1="420" x2="315.48" y2="707.85" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="312.66" y="714.44" text-anchor="end" font-size="11" fill="#555555">Food & serving</text>
+  <text x="312.66" y="714.44" text-anchor="end" font-size="11" fill="#555555">Food &amp; serving</text>
 
   <!-- Grounds maintenance (13) -->
   <line x1="400" y1="420" x2="237.81" y2="672.38" stroke="#d0d0d0" stroke-width="0.5"/>
@@ -79,9 +79,9 @@
   <line x1="400" y1="420" x2="127.11" y2="544.62" stroke="#d0d0d0" stroke-width="0.5"/>
   <text x="118.01" y="547.78" text-anchor="end" font-size="11" fill="#555555">Sales</text>
 
-  <!-- Office & admin (16) -->
+  <!-- Office &amp; admin (16) -->
   <line x1="400" y1="420" x2="103.05" y2="462.69" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="93.16" y="465.12" text-anchor="end" font-size="11" fill="#555555">Office & admin</text>
+  <text x="93.16" y="465.12" text-anchor="end" font-size="11" fill="#555555">Office &amp; admin</text>
 
   <!-- Agriculture (17) -->
   <line x1="400" y1="420" x2="103.05" y2="377.31" stroke="#d0d0d0" stroke-width="0.5"/>
@@ -91,9 +91,9 @@
   <line x1="400" y1="420" x2="127.11" y2="295.38" stroke="#d0d0d0" stroke-width="0.5"/>
   <text x="118.01" y="294.22" text-anchor="end" font-size="11" fill="#555555">Construction</text>
 
-  <!-- Installation & repair (19) -->
+  <!-- Installation &amp; repair (19) -->
   <line x1="400" y1="420" x2="173.28" y2="223.54" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="165.72" y="219.99" text-anchor="end" font-size="11" fill="#555555">Installation & repair</text>
+  <text x="165.72" y="219.99" text-anchor="end" font-size="11" fill="#555555">Installation &amp; repair</text>
 
   <!-- Production (20) -->
   <line x1="400" y1="420" x2="237.81" y2="167.62" stroke="#d0d0d0" stroke-width="0.5"/>
