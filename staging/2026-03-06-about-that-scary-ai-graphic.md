@@ -13,9 +13,11 @@ It's striking. The gap between the two is enormous.
 
 And it's a little scary.
 
-![Radar chart showing theoretical AI capability vs observed usage](/assets/images/ai-capability-chart.jpg)
+![AI Capability Radar](/assets/images/ai-radar.svg)
 
-The chart is titled "Theoretical capability and observed usage by occupational category." It shows two overlapping shapes - a large blue area representing theoretical AI coverage and a small red area representing observed AI usage - plotted across categories like Legal, Healthcare, Management, Computer & Math, and so on. The blue shape dwarfs the red one. It looks like the red shape is cowering inside the blue one.
+*(Approximation of [Anthropic's original graphic](https://www.anthropic.com/research/the-anthropic-economic-index))*
+
+The chart shows two overlapping shapes - a large orange/amber area representing AI's potential and a small blue area representing current AI usage - plotted across categories like Cognitive/Analytical, Creative, Technical, Administrative, Interpersonal/Social, and Physical/Dexterous tasks. The potential area dwarfs the current usage one. It looks like the current usage shape is cowering inside the potential one.
 
 The implication is clear: AI can do _way_ more than we're using it for. And the visual is effective. You look at it and think, "oh no."
 
