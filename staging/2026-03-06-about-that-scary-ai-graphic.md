@@ -13,9 +13,9 @@ It's striking. The gap between the two is enormous.
 
 And it's a little scary.
 
-![AI Capability Radar](/assets/images/ai-radar.svg)
+![AI capability chart](/assets/images/ai-capability-chart.jpg)
 
-*(Approximation of [Anthropic's original graphic](https://www.anthropic.com/research/the-anthropic-economic-index))*
+*([Source: Original research article](https://www.anthropic.com/research/the-anthropic-economic-index))*
 
 The chart shows two overlapping shapes - a large orange/amber area representing AI's potential and a small blue area representing current AI usage - plotted across categories like Cognitive/Analytical, Creative, Technical, Administrative, Interpersonal/Social, and Physical/Dexterous tasks. The potential area dwarfs the current usage one. It looks like the current usage shape is cowering inside the potential one.
 
