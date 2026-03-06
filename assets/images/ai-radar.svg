@@ -1,47 +1,64 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
   <defs>
+    <!-- Blur filters for watercolor effect -->
+    <filter id="blur-soft">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+    </filter>
+    <filter id="blur-edge">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+    </filter>
+    
     <style>
       .title { 
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         font-size: 22px;
-        font-weight: 600;
-        fill: #1a1a1a;
+        font-weight: 400;
+        fill: #999999;
+        opacity: 0.5;
       }
       .axis-label { 
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         font-size: 14px;
-        fill: #666666;
+        fill: #cccccc;
         text-anchor: middle;
+        opacity: 0.4;
       }
       .legend-text { 
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         font-size: 13px;
-        fill: #333333;
+        fill: #999999;
+        opacity: 0.6;
       }
       .grid-circle {
         fill: none;
-        stroke: #d4d4d4;
-        stroke-width: 1;
+        stroke: #e8e8e8;
+        stroke-width: 0.8;
+        opacity: 0.3;
       }
       .axis-line {
-        stroke: #d4d4d4;
-        stroke-width: 0.5;
+        stroke: #e8e8e8;
+        stroke-width: 0.4;
+        opacity: 0.25;
       }
       .theoretical-fill {
-        fill: rgba(66, 133, 244, 0.25);
-        stroke: rgb(66, 133, 244);
-        stroke-width: 2;
+        fill: rgba(80, 140, 220, 0.35);
+        stroke: rgba(80, 140, 220, 0.5);
+        stroke-width: 1.5;
+        filter: url(#blur-soft);
       }
       .observed-fill {
-        fill: rgba(234, 67, 53, 0.3);
-        stroke: rgb(234, 67, 53);
-        stroke-width: 2;
+        fill: rgba(220, 80, 70, 0.4);
+        stroke: rgba(220, 80, 70, 0.5);
+        stroke-width: 1.5;
+        filter: url(#blur-soft);
       }
       .theoretical-dot {
-        fill: rgb(66, 133, 244);
+        fill: rgba(80, 140, 220, 0.6);
+        opacity: 0.4;
       }
       .observed-dot {
-        fill: rgb(234, 67, 53);
+        fill: rgba(220, 80, 70, 0.6);
+        opacity: 0.4;
       }
     </style>
   </defs>
@@ -107,13 +124,11 @@
     <!-- Transportation (343.64°) -->
     <line x1="0" y1="0" x2="-77.57" y2="-269.67" class="axis-line"/>
     
-    <!-- Theoretical AI coverage polygon (blue) -->
-    <!-- Values: Mgmt 0.75, Bus 0.65, Comp 0.85, Arch 0.65, Life 0.55, Social 0.4, Legal 0.9, Edu 0.65, Arts 0.75, Health 0.4, HealthSup 0.35, Prot 0.3, Food 0.3, Grounds 0.3, Care 0.35, Sales 0.55, Office 0.95, Ag 0.3, Const 0.25, Install 0.3, Prod 0.3, Trans 0.3 -->
-    <polygon points="0,-210 51.15,-174.77 128.73,-201.08 137.50,-118.98 140.09,-63.73 111.27,-15.95 249.44,35.91 164.59,75.32 157.55,137.28 60.03,94.62 27.14,94.38 0,84 -23.66,80.90 -45.44,71.00 -74.04,64.16 -140.09,-64.44 -264.25,37.89 -83.15,-11.96 -63.33,-29.02 -63.03,-45.77 -45.02,-70.93 -23.27,-80.90" class="theoretical-fill"/>
+    <!-- Theoretical AI coverage polygon (blue) - wobbly/imprecise version -->
+    <polygon points="3,-215 48,-178 135,-205 142,-115 145,-68 108,-18 255,40 168,78 162,142 58,98 24,99 -2,88 -28,85 -48,74 -78,68 -145,62 -270,42 -88,-15 -68,-32 -67,-50 -48,-75 -26,-85" class="theoretical-fill"/>
     
-    <!-- Observed AI coverage polygon (red) -->
-    <!-- Values: Much smaller, concentrated in Computer & Math (0.3), Business (0.4), Management (0.15), Legal (0.2), Office (0.25), most others 0.05-0.15 -->
-    <polygon points="0,-42 31.54,-107.87 45.44,-71.00 32.56,-27.43 42.28,-17.44 22.26,7.97 55.57,23.17 36.97,37.14 31.51,54.91 15.01,70.97 5.43,94.38 0,25.20 -11.83,40.35 -22.72,35.54 -31.77,27.46 -38.24,17.44 -69.55,9.96 -16.63,-7.97 -15.18,-17.44 -21.01,-28.26 -22.51,-47.25 -11.63,-53.93" class="observed-fill"/>
+    <!-- Observed AI coverage polygon (red) - wobbly/imprecise version -->
+    <polygon points="-2,-45 28,-112 48,-74 35,-30 45,-20 25,10 58,26 40,40 35,58 18,75 8,98 2,28 -15,44 -26,38 -35,30 -42,20 -74,12 -20,-10 -18,-20 -24,-32 -26,-50 -15,-58" class="observed-fill"/>
     
     <!-- Theoretical dots (blue) -->
     <circle cx="0" cy="-210" r="4.5" class="theoretical-dot"/>
