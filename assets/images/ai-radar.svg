@@ -17,91 +17,91 @@
   <!-- Axes and labels -->
   <!-- Management (0) -->
   <line x1="400" y1="420" x2="400.00" y2="120.00" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="400.00" y="110.00" text-anchor="middle" font-size="11" fill="#555555">Management</text>
+  
 
   <!-- Business &amp; finance (1) -->
   <line x1="400" y1="420" x2="484.52" y2="132.15" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="487.34" y="125.56" text-anchor="start" font-size="11" fill="#555555">Business &amp; finance</text>
+  
 
   <!-- Computer &amp; math (2) -->
   <line x1="400" y1="420" x2="562.19" y2="167.62" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="567.60" y="162.21" text-anchor="start" font-size="11" fill="#555555">Computer &amp; math</text>
+  
 
   <!-- Architecture &amp; engineering (3) -->
   <line x1="400" y1="420" x2="626.72" y2="223.54" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="634.28" y="220.99" text-anchor="start" font-size="11" fill="#555555">Architecture &amp; engineering</text>
+  
 
   <!-- Life &amp; social sciences (4) -->
   <line x1="400" y1="420" x2="672.89" y2="295.38" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="681.99" y="294.22" text-anchor="start" font-size="11" fill="#555555">Life &amp; social sciences</text>
+  
 
   <!-- Social services (5) -->
   <line x1="400" y1="420" x2="696.95" y2="377.31" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="706.84" y="378.88" text-anchor="start" font-size="11" fill="#555555">Social services</text>
+  
 
   <!-- Legal (6) -->
   <line x1="400" y1="420" x2="696.95" y2="462.69" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="706.84" y="465.12" text-anchor="start" font-size="11" fill="#555555">Legal</text>
+  
 
   <!-- Education &amp; library (7) -->
   <line x1="400" y1="420" x2="672.89" y2="544.62" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="681.99" y="548.78" text-anchor="start" font-size="11" fill="#555555">Education &amp; library</text>
+  
 
   <!-- Arts &amp; media (8) -->
   <line x1="400" y1="420" x2="626.72" y2="616.46" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="634.28" y="622.01" text-anchor="start" font-size="11" fill="#555555">Arts &amp; media</text>
+  
 
   <!-- Healthcare practitioners (9) -->
   <line x1="400" y1="420" x2="562.19" y2="672.38" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="567.60" y="678.79" text-anchor="start" font-size="11" fill="#555555">Healthcare practitioners</text>
+  
 
   <!-- Healthcare support (10) -->
   <line x1="400" y1="420" x2="484.52" y2="707.85" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="487.34" y="714.44" text-anchor="start" font-size="11" fill="#555555">Healthcare support</text>
+  
 
   <!-- Protective service (11) -->
   <line x1="400" y1="420" x2="400.00" y2="720.00" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="400.00" y="730.00" text-anchor="middle" font-size="11" fill="#555555">Protective service</text>
+  
 
   <!-- Food &amp; serving (12) -->
   <line x1="400" y1="420" x2="315.48" y2="707.85" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="312.66" y="714.44" text-anchor="end" font-size="11" fill="#555555">Food &amp; serving</text>
+  
 
   <!-- Grounds maintenance (13) -->
   <line x1="400" y1="420" x2="237.81" y2="672.38" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="232.40" y="678.79" text-anchor="end" font-size="11" fill="#555555">Grounds maintenance</text>
+  
 
   <!-- Personal care (14) -->
   <line x1="400" y1="420" x2="173.28" y2="616.46" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="165.72" y="620.01" text-anchor="end" font-size="11" fill="#555555">Personal care</text>
+  
 
   <!-- Sales (15) -->
   <line x1="400" y1="420" x2="127.11" y2="544.62" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="118.01" y="547.78" text-anchor="end" font-size="11" fill="#555555">Sales</text>
+  
 
   <!-- Office &amp; admin (16) -->
   <line x1="400" y1="420" x2="103.05" y2="462.69" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="93.16" y="465.12" text-anchor="end" font-size="11" fill="#555555">Office &amp; admin</text>
+  
 
   <!-- Agriculture (17) -->
   <line x1="400" y1="420" x2="103.05" y2="377.31" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="93.16" y="378.88" text-anchor="end" font-size="11" fill="#555555">Agriculture</text>
+  
 
   <!-- Construction (18) -->
   <line x1="400" y1="420" x2="127.11" y2="295.38" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="118.01" y="294.22" text-anchor="end" font-size="11" fill="#555555">Construction</text>
+  
 
   <!-- Installation &amp; repair (19) -->
   <line x1="400" y1="420" x2="173.28" y2="223.54" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="165.72" y="219.99" text-anchor="end" font-size="11" fill="#555555">Installation &amp; repair</text>
+  
 
   <!-- Production (20) -->
   <line x1="400" y1="420" x2="237.81" y2="167.62" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="232.40" y="162.21" text-anchor="end" font-size="11" fill="#555555">Production</text>
+  
 
   <!-- Transportation (21) -->
   <line x1="400" y1="420" x2="315.48" y2="132.15" stroke="#d0d0d0" stroke-width="0.5"/>
-  <text x="312.66" y="125.56" text-anchor="end" font-size="11" fill="#555555">Transportation</text>
+  
   
   <!-- Blue polygon (Theoretical AI coverage) -->
   <polygon points="400.00,204.00 457.47,224.26 526.51,223.15 540.57,298.20 541.90,355.20 512.84,403.78 661.31,457.57 558.28,492.28 524.70,528.05 461.63,515.90 427.05,512.11 400.00,504.00 381.41,483.33 370.81,465.43 350.12,463.22 277.20,476.08 126.81,459.28 334.67,410.61 350.88,397.57 350.12,376.78 364.32,364.48 376.33,339.40" 
@@ -113,8 +113,8 @@
   
   <!-- Legend -->
   <circle cx="620" cy="760" r="6" fill="rgba(66, 133, 244, 0.7)"/>
-  <text x="635" y="765" font-size="12" fill="#555555">Theoretical AI coverage</text>
+  
   
   <circle cx="620" cy="780" r="6" fill="rgba(219, 68, 55, 0.7)"/>
-  <text x="635" y="785" font-size="12" fill="#555555">Observed AI coverage</text>
+  
 </svg>
