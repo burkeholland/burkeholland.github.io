@@ -1,215 +1,120 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
   <defs>
-    <!-- Blur filters for watercolor effect -->
-    <filter id="blur-soft">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="4"/>
     </filter>
-    <filter id="blur-edge">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
-    </filter>
-    
-    <style>
-      .title { 
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        font-size: 22px;
-        font-weight: 400;
-        fill: #999999;
-        opacity: 0.5;
-      }
-      .axis-label { 
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        font-size: 14px;
-        fill: #cccccc;
-        text-anchor: middle;
-        opacity: 0.4;
-      }
-      .legend-text { 
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        font-size: 13px;
-        fill: #999999;
-        opacity: 0.6;
-      }
-      .grid-circle {
-        fill: none;
-        stroke: #e8e8e8;
-        stroke-width: 0.8;
-        opacity: 0.3;
-      }
-      .axis-line {
-        stroke: #e8e8e8;
-        stroke-width: 0.4;
-        opacity: 0.25;
-      }
-      .theoretical-fill {
-        fill: rgba(80, 140, 220, 0.35);
-        stroke: rgba(80, 140, 220, 0.5);
-        stroke-width: 1.5;
-        filter: url(#blur-soft);
-      }
-      .observed-fill {
-        fill: rgba(220, 80, 70, 0.4);
-        stroke: rgba(220, 80, 70, 0.5);
-        stroke-width: 1.5;
-        filter: url(#blur-soft);
-      }
-      .theoretical-dot {
-        fill: rgba(80, 140, 220, 0.6);
-        opacity: 0.4;
-      }
-      .observed-dot {
-        fill: rgba(220, 80, 70, 0.6);
-        opacity: 0.4;
-      }
-    </style>
   </defs>
   
-  <!-- Background -->
-  <rect width="1000" height="1000" fill="#fafafa"/>
+  <!-- White background -->
+  <rect width="800" height="800" fill="white"/>
   
-  <!-- Title -->
-  <text x="500" y="60" class="title" text-anchor="middle">
-    Theoretical capability and observed usage by occupational category
-  </text>
+  <!-- Concentric circles (0.4, 0.6, 0.8, 1.0) -->
+  <circle cx="400" cy="420" r="120" fill="none" stroke="#e0e0e0" stroke-width="0.5"/>
+  <circle cx="400" cy="420" r="180" fill="none" stroke="#e0e0e0" stroke-width="0.5"/>
+  <circle cx="400" cy="420" r="240" fill="none" stroke="#e0e0e0" stroke-width="0.5"/>
+  <circle cx="400" cy="420" r="300" fill="none" stroke="#e0e0e0" stroke-width="0.5"/>
   
-  <g transform="translate(500, 500)">
-    <!-- Grid circles (0.4, 0.6, 0.8, 1.0 scale, radius 280) -->
-    <circle cx="0" cy="0" r="112" class="grid-circle"/>
-    <circle cx="0" cy="0" r="168" class="grid-circle"/>
-    <circle cx="0" cy="0" r="224" class="grid-circle"/>
-    <circle cx="0" cy="0" r="280" class="grid-circle"/>
-    
-    <!-- 22 axis lines radiating from center -->
-    <!-- Management (0°) -->
-    <line x1="0" y1="0" x2="0" y2="-280" class="axis-line"/>
-    <!-- Business & finance (16.36°) -->
-    <line x1="0" y1="0" x2="78.86" y2="-269.67" class="axis-line"/>
-    <!-- Computer & math (32.73°) -->
-    <line x1="0" y1="0" x2="151.45" y2="-236.56" class="axis-line"/>
-    <!-- Architecture & engineering (49.09°) -->
-    <line x1="0" y1="0" x2="211.54" y2="-183.04" class="axis-line"/>
-    <!-- Life & social sciences (65.45°) -->
-    <line x1="0" y1="0" x2="254.71" y2="-115.88" class="axis-line"/>
-    <!-- Social services (81.82°) -->
-    <line x1="0" y1="0" x2="278.17" y2="-39.88" class="axis-line"/>
-    <!-- Legal (98.18°) -->
-    <line x1="0" y1="0" x2="277.16" y2="39.88" class="axis-line"/>
-    <!-- Education & library (114.55°) -->
-    <line x1="0" y1="0" x2="253.22" y2="115.88" class="axis-line"/>
-    <!-- Arts & media (130.91°) -->
-    <line x1="0" y1="0" x2="210.07" y2="183.04" class="axis-line"/>
-    <!-- Healthcare practitioners (147.27°) -->
-    <line x1="0" y1="0" x2="150.08" y2="236.56" class="axis-line"/>
-    <!-- Healthcare support (163.64°) -->
-    <line x1="0" y1="0" x2="77.57" y2="269.67" class="axis-line"/>
-    <!-- Protective service (180°) -->
-    <line x1="0" y1="0" x2="0" y2="280" class="axis-line"/>
-    <!-- Food & serving (196.36°) -->
-    <line x1="0" y1="0" x2="-78.86" y2="269.67" class="axis-line"/>
-    <!-- Grounds maintenance (212.73°) -->
-    <line x1="0" y1="0" x2="-151.45" y2="236.56" class="axis-line"/>
-    <!-- Personal care (229.09°) -->
-    <line x1="0" y1="0" x2="-211.54" y2="183.04" class="axis-line"/>
-    <!-- Sales (245.45°) -->
-    <line x1="0" y1="0" x2="-254.71" y2="115.88" class="axis-line"/>
-    <!-- Office & admin (261.82°) -->
-    <line x1="0" y1="0" x2="-278.17" y2="39.88" class="axis-line"/>
-    <!-- Agriculture (278.18°) -->
-    <line x1="0" y1="0" x2="-277.16" y2="-39.88" class="axis-line"/>
-    <!-- Construction (294.55°) -->
-    <line x1="0" y1="0" x2="-253.22" y2="-115.88" class="axis-line"/>
-    <!-- Installation & repair (310.91°) -->
-    <line x1="0" y1="0" x2="-210.07" y2="-183.04" class="axis-line"/>
-    <!-- Production (327.27°) -->
-    <line x1="0" y1="0" x2="-150.08" y2="-236.56" class="axis-line"/>
-    <!-- Transportation (343.64°) -->
-    <line x1="0" y1="0" x2="-77.57" y2="-269.67" class="axis-line"/>
-    
-    <!-- Theoretical AI coverage polygon (blue) - extracted from actual data -->
-    <polygon points="0.00,-272.72 20.12,-68.51 151.38,-235.55 192.78,-167.04 212.67,-97.12 24.39,-3.51 243.89,35.07 25.98,11.86 191.08,165.57 24.37,37.92 30.53,103.97 0.00,112.00 -14.75,50.24 -2.88,4.48 -5.29,4.58 -29.80,13.61 -110.03,15.82 -51.55,-7.41 -46.35,-21.17 -38.30,-33.19 -20.28,-31.56 -12.23,-41.64" class="theoretical-fill"/>
-    
-    <!-- Observed AI coverage polygon (red) - extracted from actual data -->
-    <polygon points="0.00,-32.76 19.72,-67.16 51.32,-79.85 24.34,-21.09 16.05,-7.33 12.75,-1.83 22.45,3.23 16.05,7.33 47.82,41.44 23.62,36.75 8.52,29.02 0.00,23.52 -5.52,18.81 -2.12,3.30 -1.90,1.65 -2.04,0.93 -2.22,0.32 -2.22,-0.32 -2.04,-0.93 -1.90,-1.65 -2.12,-3.30 -2.13,-7.25" class="observed-fill"/>
-    
-    <!-- Theoretical dots (blue) - extracted from actual data -->
-    <circle cx="0.00" cy="-272.72" r="4.5" class="theoretical-dot"/>
-    <circle cx="20.12" cy="-68.51" r="4.5" class="theoretical-dot"/>
-    <circle cx="151.38" cy="-235.55" r="4.5" class="theoretical-dot"/>
-    <circle cx="192.78" cy="-167.04" r="4.5" class="theoretical-dot"/>
-    <circle cx="212.67" cy="-97.12" r="4.5" class="theoretical-dot"/>
-    <circle cx="24.39" cy="-3.51" r="4.5" class="theoretical-dot"/>
-    <circle cx="243.89" cy="35.07" r="4.5" class="theoretical-dot"/>
-    <circle cx="25.98" cy="11.86" r="4.5" class="theoretical-dot"/>
-    <circle cx="191.08" cy="165.57" r="4.5" class="theoretical-dot"/>
-    <circle cx="24.37" cy="37.92" r="4.5" class="theoretical-dot"/>
-    <circle cx="30.53" cy="103.97" r="4.5" class="theoretical-dot"/>
-    <circle cx="0.00" cy="112.00" r="4.5" class="theoretical-dot"/>
-    <circle cx="-14.75" cy="50.24" r="4.5" class="theoretical-dot"/>
-    <circle cx="-2.88" cy="4.48" r="4.5" class="theoretical-dot"/>
-    <circle cx="-5.29" cy="4.58" r="4.5" class="theoretical-dot"/>
-    <circle cx="-29.80" cy="13.61" r="4.5" class="theoretical-dot"/>
-    <circle cx="-110.03" cy="15.82" r="4.5" class="theoretical-dot"/>
-    <circle cx="-51.55" cy="-7.41" r="4.5" class="theoretical-dot"/>
-    <circle cx="-46.35" cy="-21.17" r="4.5" class="theoretical-dot"/>
-    <circle cx="-38.30" cy="-33.19" r="4.5" class="theoretical-dot"/>
-    <circle cx="-20.28" cy="-31.56" r="4.5" class="theoretical-dot"/>
-    <circle cx="-12.23" cy="-41.64" r="4.5" class="theoretical-dot"/>
-    
-    <!-- Observed dots (red) - extracted from actual data -->
-    <circle cx="0.00" cy="-32.76" r="4.5" class="observed-dot"/>
-    <circle cx="19.72" cy="-67.16" r="4.5" class="observed-dot"/>
-    <circle cx="51.32" cy="-79.85" r="4.5" class="observed-dot"/>
-    <circle cx="24.34" cy="-21.09" r="4.5" class="observed-dot"/>
-    <circle cx="16.05" cy="-7.33" r="4.5" class="observed-dot"/>
-    <circle cx="12.75" cy="-1.83" r="4.5" class="observed-dot"/>
-    <circle cx="22.45" cy="3.23" r="4.5" class="observed-dot"/>
-    <circle cx="16.05" cy="7.33" r="4.5" class="observed-dot"/>
-    <circle cx="47.82" cy="41.44" r="4.5" class="observed-dot"/>
-    <circle cx="23.62" cy="36.75" r="4.5" class="observed-dot"/>
-    <circle cx="8.52" cy="29.02" r="4.5" class="observed-dot"/>
-    <circle cx="0.00" cy="23.52" r="4.5" class="observed-dot"/>
-    <circle cx="-5.52" cy="18.81" r="4.5" class="observed-dot"/>
-    <circle cx="-2.12" cy="3.30" r="4.5" class="observed-dot"/>
-    <circle cx="-1.90" cy="1.65" r="4.5" class="observed-dot"/>
-    <circle cx="-2.04" cy="0.93" r="4.5" class="observed-dot"/>
-    <circle cx="-2.22" cy="0.32" r="4.5" class="observed-dot"/>
-    <circle cx="-2.22" cy="-0.32" r="4.5" class="observed-dot"/>
-    <circle cx="-2.04" cy="-0.93" r="4.5" class="observed-dot"/>
-    <circle cx="-1.90" cy="-1.65" r="4.5" class="observed-dot"/>
-    <circle cx="-2.12" cy="-3.30" r="4.5" class="observed-dot"/>
-    <circle cx="-2.13" cy="-7.25" r="4.5" class="observed-dot"/>
-    
-    <!-- Axis labels -->
-    <text x="0" y="-305" class="axis-label">Management</text>
-    <text x="100" y="-300" class="axis-label">Business &amp; finance</text>
-    <text x="185" y="-260" class="axis-label">Computer &amp; math</text>
-    <text x="265" y="-200" class="axis-label" text-anchor="start">Architecture &amp; engineering</text>
-    <text x="300" y="-120" class="axis-label" text-anchor="start">Life &amp; social sciences</text>
-    <text x="315" y="-35" class="axis-label" text-anchor="start">Social services</text>
-    <text x="315" y="50" class="axis-label" text-anchor="start">Legal</text>
-    <text x="300" y="135" class="axis-label" text-anchor="start">Education &amp; library</text>
-    <text x="265" y="220" class="axis-label" text-anchor="start">Arts &amp; media</text>
-    <text x="185" y="280" class="axis-label" text-anchor="start">Healthcare practitioners</text>
-    <text x="100" y="320" class="axis-label">Healthcare support</text>
-    <text x="0" y="330" class="axis-label">Protective service</text>
-    <text x="-100" y="320" class="axis-label">Food &amp; serving</text>
-    <text x="-185" y="280" class="axis-label" text-anchor="end">Grounds maintenance</text>
-    <text x="-265" y="220" class="axis-label" text-anchor="end">Personal care</text>
-    <text x="-300" y="135" class="axis-label" text-anchor="end">Sales</text>
-    <text x="-315" y="50" class="axis-label" text-anchor="end">Office &amp; admin</text>
-    <text x="-315" y="-35" class="axis-label" text-anchor="end">Agriculture</text>
-    <text x="-300" y="-120" class="axis-label" text-anchor="end">Construction</text>
-    <text x="-265" y="-200" class="axis-label" text-anchor="end">Installation &amp; repair</text>
-    <text x="-185" y="-260" class="axis-label">Production</text>
-    <text x="-100" y="-300" class="axis-label">Transportation</text>
-  </g>
+  <!-- Axes and labels -->
+  <!-- Management (0) -->
+  <line x1="400" y1="420" x2="400.00" y2="120.00" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="400.00" y="110.00" text-anchor="middle" font-size="11" fill="#555555">Management</text>
+
+  <!-- Business & finance (1) -->
+  <line x1="400" y1="420" x2="484.52" y2="132.15" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="487.34" y="125.56" text-anchor="start" font-size="11" fill="#555555">Business & finance</text>
+
+  <!-- Computer & math (2) -->
+  <line x1="400" y1="420" x2="562.19" y2="167.62" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="567.60" y="162.21" text-anchor="start" font-size="11" fill="#555555">Computer & math</text>
+
+  <!-- Architecture & engineering (3) -->
+  <line x1="400" y1="420" x2="626.72" y2="223.54" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="634.28" y="220.99" text-anchor="start" font-size="11" fill="#555555">Architecture & engineering</text>
+
+  <!-- Life & social sciences (4) -->
+  <line x1="400" y1="420" x2="672.89" y2="295.38" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="681.99" y="294.22" text-anchor="start" font-size="11" fill="#555555">Life & social sciences</text>
+
+  <!-- Social services (5) -->
+  <line x1="400" y1="420" x2="696.95" y2="377.31" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="706.84" y="378.88" text-anchor="start" font-size="11" fill="#555555">Social services</text>
+
+  <!-- Legal (6) -->
+  <line x1="400" y1="420" x2="696.95" y2="462.69" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="706.84" y="465.12" text-anchor="start" font-size="11" fill="#555555">Legal</text>
+
+  <!-- Education & library (7) -->
+  <line x1="400" y1="420" x2="672.89" y2="544.62" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="681.99" y="548.78" text-anchor="start" font-size="11" fill="#555555">Education & library</text>
+
+  <!-- Arts & media (8) -->
+  <line x1="400" y1="420" x2="626.72" y2="616.46" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="634.28" y="622.01" text-anchor="start" font-size="11" fill="#555555">Arts & media</text>
+
+  <!-- Healthcare practitioners (9) -->
+  <line x1="400" y1="420" x2="562.19" y2="672.38" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="567.60" y="678.79" text-anchor="start" font-size="11" fill="#555555">Healthcare practitioners</text>
+
+  <!-- Healthcare support (10) -->
+  <line x1="400" y1="420" x2="484.52" y2="707.85" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="487.34" y="714.44" text-anchor="start" font-size="11" fill="#555555">Healthcare support</text>
+
+  <!-- Protective service (11) -->
+  <line x1="400" y1="420" x2="400.00" y2="720.00" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="400.00" y="730.00" text-anchor="middle" font-size="11" fill="#555555">Protective service</text>
+
+  <!-- Food & serving (12) -->
+  <line x1="400" y1="420" x2="315.48" y2="707.85" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="312.66" y="714.44" text-anchor="end" font-size="11" fill="#555555">Food & serving</text>
+
+  <!-- Grounds maintenance (13) -->
+  <line x1="400" y1="420" x2="237.81" y2="672.38" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="232.40" y="678.79" text-anchor="end" font-size="11" fill="#555555">Grounds maintenance</text>
+
+  <!-- Personal care (14) -->
+  <line x1="400" y1="420" x2="173.28" y2="616.46" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="165.72" y="620.01" text-anchor="end" font-size="11" fill="#555555">Personal care</text>
+
+  <!-- Sales (15) -->
+  <line x1="400" y1="420" x2="127.11" y2="544.62" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="118.01" y="547.78" text-anchor="end" font-size="11" fill="#555555">Sales</text>
+
+  <!-- Office & admin (16) -->
+  <line x1="400" y1="420" x2="103.05" y2="462.69" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="93.16" y="465.12" text-anchor="end" font-size="11" fill="#555555">Office & admin</text>
+
+  <!-- Agriculture (17) -->
+  <line x1="400" y1="420" x2="103.05" y2="377.31" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="93.16" y="378.88" text-anchor="end" font-size="11" fill="#555555">Agriculture</text>
+
+  <!-- Construction (18) -->
+  <line x1="400" y1="420" x2="127.11" y2="295.38" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="118.01" y="294.22" text-anchor="end" font-size="11" fill="#555555">Construction</text>
+
+  <!-- Installation & repair (19) -->
+  <line x1="400" y1="420" x2="173.28" y2="223.54" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="165.72" y="219.99" text-anchor="end" font-size="11" fill="#555555">Installation & repair</text>
+
+  <!-- Production (20) -->
+  <line x1="400" y1="420" x2="237.81" y2="167.62" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="232.40" y="162.21" text-anchor="end" font-size="11" fill="#555555">Production</text>
+
+  <!-- Transportation (21) -->
+  <line x1="400" y1="420" x2="315.48" y2="132.15" stroke="#d0d0d0" stroke-width="0.5"/>
+  <text x="312.66" y="125.56" text-anchor="end" font-size="11" fill="#555555">Transportation</text>
+  
+  <!-- Blue polygon (Theoretical AI coverage) -->
+  <polygon points="400.00,204.00 457.47,224.26 526.51,223.15 540.57,298.20 541.90,355.20 512.84,403.78 661.31,457.57 558.28,492.28 524.70,528.05 461.63,515.90 427.05,512.11 400.00,504.00 381.41,483.33 370.81,465.43 350.12,463.22 277.20,476.08 126.81,459.28 334.67,410.61 350.88,397.57 350.12,376.78 364.32,364.48 376.33,339.40" 
+           fill="rgba(66, 133, 244, 0.35)" stroke="#4285f4" stroke-width="1.5" filter="url(#blur)"/>
+  
+  <!-- Red polygon (Observed AI coverage) -->
+  <polygon points="400.00,384.00 423.67,339.40 451.90,339.24 427.21,396.43 427.29,407.54 423.76,416.58 444.54,426.40 432.75,434.95 440.81,455.36 412.98,440.19 405.07,437.27 400.00,438.00 394.93,437.27 393.51,430.10 386.40,431.79 367.25,434.95 346.55,427.69 385.15,417.87 386.36,413.77 386.40,408.21 387.02,399.81 393.24,396.97" 
+           fill="rgba(219, 68, 55, 0.4)" stroke="#db4437" stroke-width="1.5" filter="url(#blur)"/>
   
   <!-- Legend -->
-  <g transform="translate(720, 920)">
-    <circle cx="0" cy="0" r="5" class="theoretical-dot"/>
-    <text x="15" y="5" class="legend-text">Theoretical AI coverage</text>
-  </g>
-  <g transform="translate(720, 950)">
-    <circle cx="0" cy="0" r="5" class="observed-dot"/>
-    <text x="15" y="5" class="legend-text">Observed AI coverage</text>
-  </g>
+  <circle cx="620" cy="760" r="6" fill="rgba(66, 133, 244, 0.7)"/>
+  <text x="635" y="765" font-size="12" fill="#555555">Theoretical AI coverage</text>
+  
+  <circle cx="620" cy="780" r="6" fill="rgba(219, 68, 55, 0.7)"/>
+  <text x="635" y="785" font-size="12" fill="#555555">Observed AI coverage</text>
 </svg>
