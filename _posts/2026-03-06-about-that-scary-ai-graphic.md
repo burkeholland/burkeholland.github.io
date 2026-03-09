@@ -19,7 +19,7 @@ And it's a little scary.
 
 *([Source: Original research article](https://www.anthropic.com/research/labor-market-impacts))*
 
-The chart shows two overlapping shapes - a large orange/amber area representing AI's potential and a small blue area representing current AI usage - plotted across categories like Cognitive/Analytical, Creative, Technical, Administrative, Interpersonal/Social, and Physical/Dexterous tasks. The potential area dwarfs the current usage one. It looks like the current usage shape is cowering inside the potential one.
+The chart shows two overlapping shapes - a large blue area representing AI's potential and a small orange/amber area representing current AI usage - plotted across categories like Cognitive/Analytical, Creative, Technical, Administrative, Interpersonal/Social, and Physical/Dexterous tasks. The potential area dwarfs the current usage one. It looks like the current usage shape is cowering inside the potential one.
 
 The implication is clear: AI can do _way_ more than we're using it for. And the visual is effective. You look at it and think, "oh no."
 
