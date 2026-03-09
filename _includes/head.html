@@ -21,7 +21,23 @@
   <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
   <meta property="og:url" content="{{ page.url | absolute_url }}" />
   <meta property="og:site_name" content="{{ site.title }}" />
-  <meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg{% endif %}" />
+  {%- capture og_image -%}
+    {%- if page.image -%}
+      {{ page.image | absolute_url }}
+    {%- elsif page.content contains '<img' -%}
+      {%- assign _img_parts = page.content | split: '<img' -%}
+      {%- assign _src_parts = _img_parts[1] | split: 'src="' -%}
+      {%- if _src_parts.size > 1 -%}
+        {%- assign _first_img = _src_parts[1] | split: '"' | first -%}
+        {%- if _first_img contains '://' -%}{{ _first_img }}{%- else -%}{{ _first_img | absolute_url }}{%- endif -%}
+      {%- else -%}
+        https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg
+      {%- endif -%}
+    {%- else -%}
+      https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg
+    {%- endif -%}
+  {%- endcapture -%}
+  <meta property="og:image" content="{{ og_image | strip }}" />
   <meta property="og:image:width" content="400" />
   <meta property="og:image:height" content="400" />
   
@@ -31,7 +47,7 @@
   <meta name="twitter:creator" content="@{{ site.twitter_username }}" />
   <meta name="twitter:title" content="{{ page.title | default: site.title | escape }}" />
   <meta name="twitter:description" content="{{ page_description | escape }}" />
-  <meta name="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}https://pbs.twimg.com/profile_images/1876393154099740672/7iLAPmhD_400x400.jpg{% endif %}" />
+  <meta name="twitter:image" content="{{ og_image | strip }}" />
 
   <title>
     {% if page.title == "Home" %}
