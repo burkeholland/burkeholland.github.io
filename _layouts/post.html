@@ -6,8 +6,26 @@ layout: default
   <header class="post-header">
     <time>{{ page.date | date: "%B %-d, %Y" }}</time>
     <h1>{{ page.title }}</h1>
+    <div class="post-header-sprig" aria-hidden="true">
+      <svg width="120" height="28" viewBox="0 0 120 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="14" x2="46" y2="14" stroke="#e4e4dc" stroke-width="1"/>
+        <line x1="74" y1="14" x2="120" y2="14" stroke="#e4e4dc" stroke-width="1"/>
+        <!-- stem -->
+        <line x1="60" y1="22" x2="60" y2="6" stroke="#8db06e" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- left leaf -->
+        <path d="M60 16 Q52 10 50 14 Q54 18 60 16Z" fill="#8db06e" opacity="0.7"/>
+        <!-- right leaf -->
+        <path d="M60 12 Q68 6 70 10 Q66 14 60 12Z" fill="#8db06e" opacity="0.7"/>
+        <!-- small blossom -->
+        <circle cx="60" cy="6" r="2.5" fill="#ff9fb5" opacity="0.8"/>
+        <circle cx="60" cy="6" r="1.2" fill="#ff7f9e"/>
+      </svg>
+    </div>
   </header>
   <div class="prose prose-lg max-w-none">
     {{ content }}
+  </div>
+  <div class="post-footer-nav">
+    <a href="/" class="back-link"><span aria-hidden="true">←</span> All posts</a>
   </div>
 </div>
