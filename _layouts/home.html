@@ -4,11 +4,8 @@ layout: default
 
 <section class="hero">
   <div class="site-container">
-    <h1 class="hero-headline">
-      Writing about code, the web,<br>
-      and <span class="gradient-text">things that matter.</span>
-    </h1>
-    <p class="hero-subtitle">Hi, I'm Burke. I write about technology, AI, and life. I'm glad you're here.</p>
+    <h1 class="hero-headline">Hi, I'm Burke</h1>
+    <p class="hero-subtitle">Writing about code, the web, and things that matter.</p>
   </div>
 </section>
 
@@ -16,8 +13,7 @@ layout: default
   <div class="posts-grid">
     {% for post in paginator.posts %}
     <article class="post-card">
-      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.6rem;">
-        <span class="gradient-border-pill"><span class="gradient-text">ARTICLE</span></span>
+      <div style="display:flex; align-items:center; justify-content:flex-end; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.6rem;">
         <span class="post-card-date">{{ post.date | date: "%B %-d, %Y" }}</span>
       </div>
       <h2 class="post-card-title">
