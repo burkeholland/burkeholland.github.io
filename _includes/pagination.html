@@ -1,31 +1,19 @@
-<nav class="flex justify-center mt-12 gap-2" role="navigation" aria-label="pagination">
+<nav class="pagination" role="navigation" aria-label="pagination">
     {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}"
-        class="px-4 py-2 text-sm font-sans font-medium text-frost-600 hover:bg-frost-100 rounded-lg flex items-center gap-1">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-        </svg>
-        Previous
-    </a>
+    <a href="{{ paginator.previous_page_path }}">&larr; Previous</a>
     {% endif %}
 
     {% for page in (1..paginator.total_pages) %}
       {% if page == paginator.page %}
-        <span class="px-4 py-2 text-sm font-sans font-medium text-white bg-frost-800 rounded-lg">{{ page }}</span>
+        <span class="current">{{ page }}</span>
       {% elsif page == 1 %}
-        <a href="/" class="px-4 py-2 text-sm font-sans font-medium text-frost-600 hover:bg-frost-100 rounded-lg">{{ page }}</a>
+        <a href="/">{{ page }}</a>
       {% else %}
-        <a href="/page{{ page }}/" class="px-4 py-2 text-sm font-sans font-medium text-frost-600 hover:bg-frost-100 rounded-lg">{{ page }}</a>
+        <a href="/page{{ page }}/">{{ page }}</a>
       {% endif %}
     {% endfor %}
 
     {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}"
-        class="px-4 py-2 text-sm font-sans font-medium text-frost-600 hover:bg-frost-100 rounded-lg flex items-center gap-1">
-        Next
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-        </svg>
-    </a>
+    <a href="{{ paginator.next_page_path }}">Next &rarr;</a>
     {% endif %}
 </nav>

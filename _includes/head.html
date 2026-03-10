@@ -59,7 +59,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script>
@@ -67,97 +67,260 @@
       theme: {
         extend: {
           colors: {
-            'frost': {
-              50: '#f9fafb',
-              100: '#f0f9ff',
-              200: '#e0f2fe',
-              300: '#bae6fd',
-              400: '#7dd3fc',
-              500: '#4b5563',
-              600: '#475569',
-              700: '#334155',
-              800: '#1e293b',
-              900: '#111827',
-              950: '#030712',
-            },
             'accent': '#0ea5e9',
             'coral': '#ff7f50',
           },
           fontFamily: {
-            'serif': ['"Inter"', 'system-ui', 'sans-serif'],
-            'sans': ['"DM Sans"', 'system-ui', 'sans-serif'],
-            'mono': ['"JetBrains Mono"', 'monospace'],
+            'serif': ['"Playfair Display"', 'Georgia', 'serif'],
+            'sans': ['"Source Serif 4"', 'Georgia', 'serif'],
+            'mono': ['"Source Serif 4"', 'Georgia', 'serif'],
           },
         }
       }
     }
   </script>
   <style>
-    /* Crisp text rendering */
+    * { box-sizing: border-box; }
+
     body {
+      margin: 0;
+      padding: 0;
+      background: #fafaf7;
+      color: #2e2e2a;
+      font-family: 'Source Serif 4', Georgia, serif;
+      min-height: 100vh;
+      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-    }
-    
-    /* Card effect */
-    .frost-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 
-        0 4px 6px -1px rgba(0, 0, 0, 0.05),
-        0 2px 4px -2px rgba(0, 0, 0, 0.05),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    }
-    
-    .frost-card:hover {
-      box-shadow: 
-        0 10px 15px -3px rgba(0, 0, 0, 0.08),
-        0 4px 6px -4px rgba(0, 0, 0, 0.05),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
     }
 
-    /* Quote styling */
-    .prose blockquote {
+    /* Sky gradient */
+    .sky {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 10vh;
+      background: linear-gradient(180deg, #daeef8 0%, #eef6fb 30%, #fafaf7 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Clouds */
+    .clouds {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 10vh;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    /* Birds */
+    .birds-svg {
+      position: fixed;
+      top: 4vh; left: 0;
+      width: 100%; height: 50px;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.5;
+    }
+
+    /* Grass horizon */
+    .grass {
+      position: fixed;
+      bottom: 0; left: 0;
+      width: 100%; height: 60px;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.7;
+    }
+
+    /* Content wrapper */
+    .content-wrap {
       position: relative;
-      padding-left: 1.5rem;
-      border-left: none !important;
+      z-index: 3;
+      padding-top: 6vh;
     }
-    
-    .prose blockquote::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: linear-gradient(180deg, #ff7f50 0%, #ff7f50 100%);
-      border-radius: 2px;
+
+    /* Site header */
+    .site-header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      background: rgba(250, 250, 247, 0.92);
     }
-    
-    /* Code block styling - readable syntax highlighting */
+    .site-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #2e2e2a;
+      letter-spacing: -0.5px;
+      margin: 0;
+    }
+    .site-header h1 span {
+      color: #0ea5e9;
+    }
+    .site-header nav {
+      margin-top: 0.7rem;
+      font-family: 'Source Serif 4', serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: lowercase;
+    }
+    .site-header nav a {
+      color: #8a8a80;
+      text-decoration: none;
+      margin: 0 1.2rem;
+      transition: color 0.2s;
+    }
+    .site-header nav a:hover { color: #0ea5e9; }
+
+    /* Intro / bio */
+    .intro {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 2rem;
+      text-align: center;
+      font-style: italic;
+      color: #7a7a70;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      background: rgba(250, 250, 247, 0.92);
+    }
+
+    /* Post listing */
+    .posts {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 0 1.5rem 8rem;
+      background: rgba(250, 250, 247, 0.92);
+    }
+
+    .post-item {
+      padding: 2rem 0;
+      border-bottom: 1px solid #e4e4dc;
+    }
+    .post-item:last-child {
+      border-bottom: none;
+    }
+    .post-item .date {
+      font-size: 0.8rem;
+      color: #0ea5e9;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+      font-family: 'Source Serif 4', serif;
+    }
+    .post-item h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #2e2e2a;
+      margin: 0 0 0.5rem;
+      line-height: 1.3;
+    }
+    .post-item h2 a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .post-item h2 a:hover { color: #ff7f50; }
+    .post-item p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #5a5a52;
+    }
+
+    /* Post article page */
+    .post-article {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 0 1.5rem 8rem;
+      background: rgba(250, 250, 247, 0.92);
+    }
+    .post-header {
+      text-align: center;
+      padding: 2rem 0 2rem;
+    }
+    .post-header time {
+      display: block;
+      font-size: 0.8rem;
+      color: #0ea5e9;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-family: 'Source Serif 4', serif;
+    }
+    .post-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #2e2e2a;
+      line-height: 1.25;
+      margin: 0.75rem 0 0;
+      letter-spacing: -0.5px;
+    }
+
+    /* Site footer */
+    .site-footer {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      padding: 1.5rem 1rem 6rem;
+      font-size: 0.8rem;
+      color: #b0b0a8;
+      background: rgba(250, 250, 247, 0.92);
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e4e4dc;
+    }
+    .pagination a, .pagination span {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.85rem;
+      font-family: 'Source Serif 4', serif;
+      color: #8a8a80;
+      text-decoration: none;
+      border: 1px solid #e4e4dc;
+      border-radius: 4px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .pagination a:hover { color: #0ea5e9; border-color: #0ea5e9; }
+    .pagination span.current { color: #2e2e2a; border-color: #2e2e2a; font-weight: 600; }
+
+    /* Prose (post content) overrides */
+    .prose {
+      color: #5a5a52;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+      font-family: 'Playfair Display', serif;
+      color: #2e2e2a;
+    }
+    .prose a { color: #ff7f50; }
+    .prose blockquote {
+      border-left-color: #0ea5e9;
+      color: #7a7a70;
+      font-style: italic;
+    }
+    .prose code { color: #ff7f50 !important; }
     .prose pre {
       background: #1e293b !important;
-      border: 1px solid rgba(148, 163, 184, 0.2);
       border-radius: 0.75rem;
     }
-    
-    .prose pre code {
-      color: #e2e8f0 !important;
-    }
-    
-    .prose code {
-      color: #ff7f50 !important;
-    }
+    .prose pre code { color: #e2e8f0 !important; }
+    .prose img { border-radius: 0.5rem; max-width: 100%; }
+    .prose hr { border-color: #e4e4dc; }
 
-    /* Smooth transitions */
     a, button {
-      transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.3s ease;
+      transition: color 0.2s ease;
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqB7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
   {% feed_meta %}
 </head>
