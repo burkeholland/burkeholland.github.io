@@ -5,73 +5,30 @@
 
 <body>
 
-  <!-- Sky gradient -->
-  <div class="sky"></div>
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a href="/" class="site-logo">Burke Knows Words<span class="gradient-text">.</span></a>
+      <ul class="site-nav-links">
+        <li><a href="/">home</a></li>
+        <li><a href="/about">about</a></li>
+        <li><a href="/projects">projects</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <!-- Wispy clouds -->
-  <svg class="clouds" viewBox="0 0 1400 300" preserveAspectRatio="xMidYMid slice">
-    <ellipse cx="250" cy="80" rx="120" ry="30" fill="#fff" opacity="0.35"/>
-    <ellipse cx="290" cy="75" rx="80" ry="25" fill="#fff" opacity="0.25"/>
-    <ellipse cx="800" cy="60" rx="100" ry="22" fill="#fff" opacity="0.3"/>
-    <ellipse cx="840" cy="55" rx="60" ry="18" fill="#fff" opacity="0.2"/>
-    <ellipse cx="1150" cy="90" rx="90" ry="20" fill="#fff" opacity="0.25"/>
-  </svg>
+  <main>
+    {{ content }}
+  </main>
 
-  <!-- Birds near horizon -->
-  <svg class="birds-svg" viewBox="0 0 1400 80" preserveAspectRatio="xMidYMid slice">
-    <g fill="none" stroke="#6a8fa0" stroke-width="1.5" stroke-linecap="round" opacity="0.35">
-      <path d="M350 40 Q356 33 362 40 M362 40 Q368 33 374 40"/>
-      <path d="M620 30 Q625 24 630 30 M630 30 Q635 24 640 30"/>
-      <path d="M780 45 Q785 39 790 45 M790 45 Q795 39 800 45"/>
-      <path d="M950 35 Q954 30 958 35 M958 35 Q962 30 966 35"/>
-      <path d="M1100 42 Q1104 37 1108 42 M1108 42 Q1112 37 1116 42"/>
-    </g>
-  </svg>
-
-  <!-- Grass at bottom -->
-  <svg class="grass" viewBox="0 0 1400 90" preserveAspectRatio="xMidYMax slice">
-    <path d="M0 50 Q100 30 200 45 Q350 20 500 40 Q650 25 800 42 Q950 28 1100 38 Q1250 22 1400 45 L1400 90 L0 90Z" fill="#b5c9a1" opacity="0.5"/>
-    <path d="M0 60 Q150 42 300 55 Q450 38 600 52 Q750 40 900 55 Q1050 42 1200 50 Q1350 38 1400 55 L1400 90 L0 90Z" fill="#8db06e"/>
-    <path d="M0 72 Q100 62 200 70 Q350 60 500 68 Q650 58 800 68 Q950 60 1100 66 Q1250 58 1400 68 L1400 90 L0 90Z" fill="#6a9050"/>
-    <g stroke="#5a7d44" stroke-width="1" opacity="0.4">
-      <line x1="50" y1="72" x2="48" y2="62"/>
-      <line x1="53" y1="72" x2="56" y2="60"/>
-      <line x1="200" y1="68" x2="198" y2="56"/>
-      <line x1="204" y1="68" x2="207" y2="58"/>
-      <line x1="400" y1="66" x2="397" y2="54"/>
-      <line x1="600" y1="64" x2="603" y2="52"/>
-      <line x1="800" y1="66" x2="797" y2="56"/>
-      <line x1="1000" y1="64" x2="1003" y2="54"/>
-      <line x1="1200" y1="66" x2="1197" y2="56"/>
-    </g>
-  </svg>
-
-  <div class="content-wrap">
-
-    <header class="site-header">
-      <h1><a href="/" style="color:inherit;text-decoration:none;">Burke Knows <span>Words</span></a></h1>
-      <nav>
-        <a href="/">home</a>
-        <a href="/about">about</a>
-        <a href="/projects">projects</a>
-      </nav>
-    </header>
-
-    <main>
-      {{ content }}
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-social">
-        <a href="https://twitter.com/burkeholland" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://bsky.app/profile/burkeholland.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky"><i class="fa-brands fa-bluesky"></i></a>
-        <a href="https://github.com/burkeholland" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/burkeholland/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      </div>
-      <div class="footer-copy">&copy; {{ 'now' | date: "%Y" }} Burke Holland &middot; Written somewhere under a wide open sky.</div>
-    </footer>
-
-  </div>
+  <footer class="site-footer">
+    <div class="footer-social">
+      <a href="https://twitter.com/burkeholland" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://bsky.app/profile/burkeholland.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky"><i class="fa-brands fa-bluesky"></i></a>
+      <a href="https://github.com/burkeholland" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/burkeholland/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copy">&copy; {{ 'now' | date: "%Y" }} Burke Holland &middot; Writing about code, the web, and things that matter.</div>
+  </footer>
 
 </body>
 </html>
