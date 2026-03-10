@@ -321,6 +321,87 @@
     a, button {
       transition: color 0.2s ease;
     }
+
+    /* ── Mobile (≤ 480px) ── */
+    @media (max-width: 480px) {
+      .site-header {
+        padding: 1.25rem 1rem 0.75rem;
+      }
+      .site-header h1 {
+        font-size: 1.75rem;
+      }
+      .site-header nav {
+        font-size: 0.82rem;
+      }
+      .site-header nav a {
+        margin: 0 0.55rem;
+      }
+
+      .intro {
+        padding: 1rem 1.25rem 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      .posts {
+        padding: 0 1rem 5rem;
+      }
+      .post-item {
+        padding: 1.5rem 0;
+      }
+      .post-item h2 {
+        font-size: 1.25rem;
+      }
+
+      .post-article {
+        padding: 0 1rem 5rem;
+      }
+      .post-header {
+        padding: 1.5rem 0 1.5rem;
+      }
+      .post-header h1 {
+        font-size: 1.6rem;
+        letter-spacing: -0.3px;
+      }
+
+      .prose {
+        font-size: 1rem;
+      }
+
+      .site-footer {
+        padding: 1.25rem 1rem 4.5rem;
+      }
+
+      .pagination a,
+      .pagination span {
+        padding: 0.35rem 0.65rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    /* ── Tablet (481px – 768px) ── */
+    @media (min-width: 481px) and (max-width: 768px) {
+      .site-header h1 {
+        font-size: 2.2rem;
+      }
+      .site-header nav a {
+        margin: 0 0.85rem;
+      }
+
+      .posts,
+      .post-article {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        padding-bottom: 6rem;
+      }
+
+      .post-header h1 {
+        font-size: 2rem;
+      }
+
+      .site-footer {
+        padding-bottom: 5rem;
+      }
+    }
   </style>
   {% feed_meta %}
 </head>
