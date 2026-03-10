@@ -60,6 +60,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
 
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script>
@@ -376,6 +377,127 @@
         padding: 0.35rem 0.65rem;
         font-size: 0.8rem;
       }
+    }
+
+    /* ── Page content (About, Projects, etc.) ── */
+    .page-content {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 8rem;
+      background: rgba(250, 250, 247, 0.92);
+    }
+    .page-content > h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #2e2e2a;
+      margin: 0 0 1.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    /* Project cards */
+    .project-card {
+      border: 1px solid #e4e4dc;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      background: rgba(255, 255, 255, 0.6);
+    }
+    .project-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2e2e2a;
+      margin: 0 0 0.5rem;
+    }
+    .project-card p {
+      color: #5a5a52;
+      font-family: 'Source Serif 4', serif;
+      line-height: 1.7;
+      margin: 0 0 1rem;
+      font-size: 1rem;
+    }
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.85rem;
+      font-family: 'Source Serif 4', serif;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .project-link-primary {
+      color: #0ea5e9;
+      background: rgba(14, 165, 233, 0.08);
+    }
+    .project-link-primary:hover { background: rgba(14, 165, 233, 0.15); }
+    .project-link-secondary {
+      color: #5a5a52;
+      background: #f0f0ec;
+    }
+    .project-link-secondary:hover { background: #e4e4dc; }
+
+    /* Projects page heading divider */
+    .page-heading {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .page-heading h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #2e2e2a;
+      margin: 0;
+      letter-spacing: -0.5px;
+      white-space: nowrap;
+    }
+    .page-heading-rule {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, #e4e4dc, transparent);
+    }
+
+    /* Connect list (About page) */
+    .connect-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+    }
+    .connect-list li { padding: 0.35rem 0; }
+    .connect-list a {
+      color: #0ea5e9;
+      text-decoration: none;
+      font-family: 'Source Serif 4', serif;
+      font-size: 1rem;
+    }
+    .connect-list a:hover { color: #ff7f50; }
+    .connect-list i { width: 1.2em; }
+
+    /* Disclaimer (About page) */
+    .disclaimer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e4e4dc;
+      color: #b0b0a8;
+      font-size: 0.82rem;
+      font-style: italic;
+      font-family: 'Source Serif 4', serif;
+    }
+    .disclaimer p { margin: 0 0 0.2rem; }
+
+    @media (max-width: 480px) {
+      .page-content { padding: 1.5rem 1rem 5rem; }
+      .page-content > h1,
+      .page-heading h1 { font-size: 1.8rem; }
+      .project-card { padding: 1.25rem; }
     }
 
     /* ── Tablet (481px – 768px) ── */
