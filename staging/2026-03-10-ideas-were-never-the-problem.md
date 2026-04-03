@@ -7,15 +7,15 @@ permalink: /posts/ideas-were-never-the-problem/
 preview: true
 ---
 
-<div style="text-align: center; margin-bottom: 2rem;">
-  <img src="/assets/images/ideas-were-never-the-problem.jpg" alt="An open gate revealing a vast landscape" style="max-width: 100%; height: auto;">
-</div>
-
 I have a friend -- had a friend, we've lost touch -- who had a new app idea every single time we got together. Every coffee, every happy hour, every time we ended up standing in a parking lot way too long after an event because neither of us wanted to be the one to end the conversation. He'd lean in and say "okay, I've been thinking about this thing" and off we'd go.
 
 I'm embarrassed to admit this, but I used to dismiss most of them. Not out loud. I'd nod and ask questions and say "yeah, that's interesting." But in my head I was doing the developer math: how long would that take, how complicated is the backend, who would actually use this. And I'd arrive at the same conclusion every time: not worth it.
 
 The thing is, I don't actually know if those ideas were good or not. Because none of them ever got built. And I was, more often than not, the person standing between the idea and the code. Developers have been the default arbiter of what gets built -- not because we're the smartest people in the room, but because we're the ones who knew how to do the building. That's changing.
+
+<div style="text-align: center; margin-bottom: 2rem;">
+  <img src="/assets/images/ideas-were-never-the-problem.jpg" alt="An open gate revealing a vast landscape" style="max-width: 100%; height: auto;">
+</div>
 
 ## The GarageBand Moment
 

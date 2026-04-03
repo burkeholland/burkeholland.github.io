@@ -7,7 +7,7 @@ permalink: /staging/
 <div class="max-w-4xl mx-auto px-4 py-12">
   <h1 class="text-4xl font-bold mb-8">Staging</h1>
   
-  {% assign staging_posts = site.pages | where_exp: "p", "p.path contains 'staging/'" | where: "preview", true %}
+  {% assign staging_posts = site.pages | where_exp: "p", "p.path contains 'staging/' and p.preview == true" %}
   
   {% if staging_posts.size > 0 %}
     <div class="space-y-8">
