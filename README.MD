@@ -1,5 +1,5 @@
-# My Blog
+# burkeholland.github.io
 
-Source code in the gh-pages branch.
+The entire site is in the [gh-pages](https://github.com/burkeholland/burkeholland.github.io/tree/gh-pages) branch.
 
 https://burkeholland.github.io
