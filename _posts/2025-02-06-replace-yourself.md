@@ -1,5 +1,6 @@
 ---
 layout: post
+image: assets/images/banners/replace-yourself.jpg
 title: "How to Replace Yourself with GitHub Copilot (And Still Get Paid)"
 date: 2025-02-06 07:41:00 +0000
 categories: posts

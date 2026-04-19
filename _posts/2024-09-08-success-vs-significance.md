@@ -1,5 +1,6 @@
 ---
 layout: post
+image: assets/images/banners/success-vs-significance.jpg
 date: 2024-09-08 12:27:00 +0000
 title: "Success vs Significance"
 permalink: "blog/success-vs-significance"

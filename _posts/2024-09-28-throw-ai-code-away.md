@@ -1,5 +1,6 @@
 ---
 layout: post
+image: assets/images/banners/throw-ai-code-away.jpg
 date: 2024-09-26 08:38:00 +0000
 title: "Throw that AI code away"
 permalink: "blog/throw-ai-code-away"

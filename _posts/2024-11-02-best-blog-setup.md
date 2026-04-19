@@ -1,5 +1,6 @@
 ---
 layout: post
+image: assets/images/banners/gh-pages-best-blog.jpg
 title: "The best possible blog host is...GitHub Pages?"
 date: 2024-11-02 10:30:17 +0000
 categories: posts

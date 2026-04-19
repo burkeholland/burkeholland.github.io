@@ -1,5 +1,6 @@
 ---
 layout: post
+image: assets/images/banners/custom-instructions.jpg
 title: "Essential custom instructions for GitHub Copilot"
 date: 2025-01-05 11:58:00 +0000
 categories: posts
