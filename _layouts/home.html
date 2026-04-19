@@ -13,6 +13,11 @@ layout: default
   <div class="posts-grid">
     {% for post in paginator.posts %}
     <article class="post-card">
+      {% if post.image %}
+      <a href="{{ post.url }}" class="post-card-image-link">
+        <img src="{{ post.image | relative_url }}" alt="{{ post.title | strip_html }}" class="post-card-image" loading="lazy">
+      </a>
+      {% endif %}
       <div style="display:flex; align-items:center; justify-content:flex-end; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.6rem;">
         <span class="post-card-date">{{ post.date | date: "%B %-d, %Y" }}</span>
       </div>

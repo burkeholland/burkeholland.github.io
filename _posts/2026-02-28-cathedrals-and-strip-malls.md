@@ -1,5 +1,6 @@
 ---
 layout: post
+image: assets/images/banners/cathedrals-and-strip-malls.jpg
 title: "Nothing Worth Remembering"
 date: 2026-02-28 16:43:00 +0000
 categories: posts

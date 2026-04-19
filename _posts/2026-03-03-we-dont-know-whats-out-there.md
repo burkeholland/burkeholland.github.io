@@ -1,5 +1,6 @@
 ---
 layout: post
+image: assets/images/banners/we-dont-know-whats-out-there.jpg
 title: "We Don't Know What's Out There"
 date: 2026-03-03 19:23:00 +0000
 categories: posts

@@ -261,6 +261,38 @@
     }
     .post-card-cta:hover { opacity: 0.88; color: #ffffff; }
 
+    /* Post card banner images */
+    .post-card-image-link {
+      display: block;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .post-card-image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1200 / 630;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .post-card-image-link:hover .post-card-image {
+      transform: scale(1.02);
+    }
+
+    /* Post page banner */
+    .post-banner {
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .post-banner-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+
     /* ── Post article ── */
     .post-article-wrap {
       max-width: 720px;
