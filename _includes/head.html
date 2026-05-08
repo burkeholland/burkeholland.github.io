@@ -59,7 +59,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
 
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
@@ -68,13 +68,13 @@
       theme: {
         extend: {
           colors: {
-            'brand-orange': '#f97316',
-            'brand-teal':   '#14b8a6',
-            'brand-green':  '#22c55e',
+            'brand-orange': '#ff7f50',
+            'brand-teal':   '#0ea5e9',
+            'brand-green':  '#84cc16',
           },
           fontFamily: {
-            'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-            'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+            'sans': ['DM Sans', 'system-ui', '-apple-system', 'sans-serif'],
+            'mono': ['IBM Plex Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
           },
         }
       }
@@ -84,9 +84,12 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: #f0f4f8;
+      background:
+        radial-gradient(circle at 72% 10%, rgba(14, 165, 233, 0.14), transparent 32rem),
+        radial-gradient(circle at 12% 18%, rgba(255, 127, 80, 0.12), transparent 30rem),
+        linear-gradient(135deg, #ffffff 0%, #f0f9ff 56%, #f6fff8 100%);
       color: #0f172a;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -101,10 +104,13 @@
 
     /* ── Color utilities ── */
     .gradient-text {
-      color: #29c5b0;
+      background: linear-gradient(to right, #ff7f50, #0ea5e9, #84cc16);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
     .gradient-bg {
-      background: #ff7f40;
+      background: linear-gradient(to right, #ff7f50, #0ea5e9, #84cc16);
     }
     .gradient-border-pill {
       display: inline-block;
@@ -124,14 +130,16 @@
 
     /* ── Navbar ── */
     .site-nav {
-      background: #ffffff;
-      border-bottom: 1px solid #e2e8f0;
+      background: rgba(255, 255, 255, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.65);
       position: sticky;
       top: 0;
       z-index: 50;
+      backdrop-filter: blur(14px) saturate(1.5);
+      box-shadow: 0 8px 40px rgba(15, 23, 42, 0.06);
     }
     .site-nav-inner {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
       padding: 0 2rem;
       display: flex;
@@ -154,7 +162,7 @@
     }
     .site-nav-links a {
       font-size: 0.9rem;
-      font-weight: 500;
+      font-weight: 700;
       color: #64748b;
       text-decoration: none;
       transition: color 0.2s;
@@ -163,7 +171,7 @@
 
     /* ── Site container ── */
     .site-container {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
       padding: 0 2rem;
     }
@@ -191,6 +199,141 @@
     }
 
     /* ── Post cards ── */
+    /* ── Letter homepage ── */
+    .letter-hero {
+      padding: 4.5rem 0 2.75rem;
+    }
+    .letter-layout {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .home-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin: 0 0 1.35rem;
+      color: #475569;
+      font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .home-eyebrow::before {
+      content: "";
+      width: 2.3rem;
+      height: 0.5rem;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 0.25rem 50%, #ff7f50 0 0.25rem, transparent 0.28rem),
+        radial-gradient(circle at 1.15rem 50%, #0ea5e9 0 0.25rem, transparent 0.28rem),
+        radial-gradient(circle at 2.05rem 50%, #84cc16 0 0.25rem, transparent 0.28rem);
+      flex: 0 0 2.3rem;
+    }
+    .letter-headline {
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 6.25rem);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.075em;
+      color: #0f172a;
+    }
+    .letter-tagline {
+      max-width: 520px;
+      margin: 1.1rem 0 0;
+      color: #475569;
+      font-size: clamp(1.08rem, 1.8vw, 1.35rem);
+      line-height: 1.65;
+    }
+    .letter-body {
+      margin-top: 2.15rem;
+      padding: clamp(1.75rem, 4vw, 2.65rem);
+      border: 1px solid rgba(255, 255, 255, 0.62);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 20px 70px rgba(15, 23, 42, 0.08);
+      backdrop-filter: blur(8px) saturate(1.35);
+    }
+    .letter-body p {
+      color: #475569;
+      font-size: clamp(1.05rem, 1.7vw, 1.18rem);
+      line-height: 1.88;
+      margin-bottom: 1.15rem;
+    }
+    .letter-body p:last-child {
+      margin-bottom: 0;
+    }
+    .latest-letter {
+      padding: 1rem 0 5.5rem;
+    }
+    .latest-letter-heading {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 0 1rem;
+      color: #94a3b8;
+      font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .latest-letter-heading::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, #e2e8f0, transparent);
+    }
+    .letter-posts {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1.6rem;
+    }
+    .letter-post {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.25rem;
+      align-items: center;
+      padding: 1.05rem 0;
+      border-top: 1px solid rgba(226, 232, 240, 0.92);
+      color: inherit;
+      text-decoration: none;
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+    .letter-post:hover {
+      border-top-color: rgba(14, 165, 233, 0.4);
+      transform: translateY(-2px);
+    }
+    .letter-post-title {
+      display: block;
+      color: #0f172a;
+      font-size: clamp(1.2rem, 2.4vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+    .letter-post-excerpt {
+      display: block;
+      max-width: 660px;
+      margin-top: 0.45rem;
+      color: #64748b;
+      font-size: 0.96rem;
+      line-height: 1.65;
+    }
+    .letter-post-meta {
+      color: #94a3b8;
+      font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .letter-post:hover .letter-post-title {
+      color: #0ea5e9;
+    }
+
     .posts-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -231,7 +374,7 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .post-card-title a:hover { color: #14b8a6; }
+    .post-card-title a:hover { color: #0ea5e9; }
     .post-card-excerpt {
       font-size: 0.95rem;
       color: #475569;
@@ -253,7 +396,7 @@
       font-weight: 600;
       padding: 0.45rem 1.2rem;
       border-radius: 9999px;
-      background: #ff7f40;
+      background: linear-gradient(to right, #ff7f50, #0ea5e9, #84cc16);
       color: #ffffff;
       text-decoration: none;
       transition: opacity 0.2s;
@@ -347,10 +490,10 @@
       font-weight: 700;
       letter-spacing: -0.025em;
     }
-    .prose a { color: #5b9cf6; }
-    .prose a:hover { color: #3b82f6; }
-    .prose blockquote { border-left-color: #29c5b0; color: #64748b; }
-    .prose code { color: #f97316 !important; }
+    .prose a { color: #0ea5e9; }
+    .prose a:hover { color: #0284c7; }
+    .prose blockquote { border-left-color: #ff7f50; color: #64748b; }
+    .prose code { color: #ff7f50 !important; }
     .prose pre { background: #1e293b !important; border-radius: 12px; }
     .prose pre code { color: #e2e8f0 !important; }
     .prose img { border-radius: 12px; max-width: 100%; }
@@ -376,7 +519,7 @@
       transition: color 0.2s ease, transform 0.2s ease;
       display: inline-block;
     }
-    .footer-social a:hover { color: #14b8a6; transform: translateY(-2px); }
+    .footer-social a:hover { color: #0ea5e9; transform: translateY(-2px); }
     .footer-copy { font-size: 0.8rem; color: #94a3b8; }
 
     /* ── Pagination ── */
@@ -398,7 +541,7 @@
       background: #ffffff;
       transition: all 0.2s;
     }
-    .pagination a:hover { color: #14b8a6; border-color: #14b8a6; }
+    .pagination a:hover { color: #0ea5e9; border-color: #0ea5e9; }
     .pagination span.current { color: #0f172a; border-color: #0f172a; font-weight: 700; }
 
     /* ── Page content (About, Projects) ── */
@@ -468,7 +611,7 @@
       transition: opacity 0.2s;
     }
     .project-link-primary {
-      background: #ff7f40;
+      background: linear-gradient(to right, #ff7f50, #0ea5e9, #84cc16);
       color: #ffffff !important;
     }
     .project-link-primary:hover { opacity: 0.88; }
@@ -483,12 +626,12 @@
     .connect-list { list-style: none; padding: 0; margin: 0 0 1.5rem; }
     .connect-list li { padding: 0.35rem 0; }
     .connect-list a {
-      color: #14b8a6;
+      color: #0ea5e9;
       text-decoration: none;
       font-size: 1rem;
       font-weight: 500;
     }
-    .connect-list a:hover { color: #0d9488; }
+    .connect-list a:hover { color: #0284c7; }
     .connect-list i { width: 1.2em; }
 
     /* ── Disclaimer (About) ── */
@@ -508,6 +651,12 @@
       .site-nav-links { gap: 1rem; }
       .site-logo { font-size: 0.95rem; }
       .hero { padding: 3rem 1rem 2.5rem; }
+      .letter-hero { padding: 3rem 0 1.75rem; }
+      .letter-layout { padding: 0 1rem; }
+      .letter-headline { font-size: clamp(2.8rem, 16vw, 4.25rem); }
+      .letter-body { margin-top: 1.5rem; border-radius: 14px; }
+      .letter-post { grid-template-columns: 1fr; gap: 0.6rem; }
+      .letter-post-meta { white-space: normal; }
       .posts-grid { padding-left: 0; padding-right: 0; padding-bottom: 4rem; }
       .post-card { padding: 1.5rem; border-radius: 12px; }
       .post-article-wrap { padding: 2rem 1rem 4rem; }
