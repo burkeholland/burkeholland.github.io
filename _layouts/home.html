@@ -2,31 +2,30 @@
 layout: default
 ---
 
-<section class="letter-hero">
-  <div class="letter-layout">
-    <p style="margin-bottom: 1.5rem"><a href="https://github.com/features/copilot" target="_blank" rel="noopener">
-      <img src="https://img.shields.io/badge/-Built%20with%20Copilot-ffffff?style=flat&logo=githubcopilot&logoColor=333333" alt="Built with Copilot">
-    </a></p>
-    <h1 class="letter-headline">Hi, I'm <span class="gradient-text">Burke</span>.</h1>
-    <p class="letter-tagline">I'm glad you're here.</p>
-  </div>
-</section>
+<div class="container container-sm" style="padding-top: var(--space-8); padding-bottom: var(--space-8);">
+  <div class="stack">
+    <header>
+      <h1 class="t-display" style="margin-bottom: var(--space-3);">Burke Holland</h1>
+      <p class="text-body" style="color: var(--text-muted); max-width: 480px;">Mid brain takes on the world of software development. Writing about AI-powered coding, developer tools, and things that may or may not work.</p>
+    </header>
 
-<section class="latest-letter">
-  <div class="letter-layout">
-    <div class="latest-letter-heading">Latest notes</div>
-    <div class="letter-posts">
-      {% for post in paginator.posts %}
-      <a class="letter-post" href="{{ post.url | relative_url }}">
-        <span>
-          <span class="letter-post-title">{{ post.title | strip_html }}</span>
-          <span class="letter-post-excerpt">{{ post.content | markdownify | strip_html | truncatewords: 24 }}</span>
-        </span>
-        <span class="letter-post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-      </a>
-      {% endfor %}
-    </div>
+    <section>
+      <div class="divider-label" style="margin-bottom: var(--space-4);">
+        <span>Recent posts</span>
+      </div>
+      <div>
+        {% for post in paginator.posts %}
+        <a class="post-item" href="{{ post.url | relative_url }}">
+          <div>
+            <div class="post-item-title">{{ post.title | strip_html }}</div>
+            <div class="post-item-excerpt">{{ post.content | markdownify | strip_html | truncatewords: 20 }}</div>
+          </div>
+          <span class="post-item-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        </a>
+        {% endfor %}
+      </div>
 
-    {% include pagination.html %}
+      {% include pagination.html %}
+    </section>
   </div>
-</section>
+</div>

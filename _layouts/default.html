@@ -5,14 +5,14 @@
 
 <body>
 
-  <nav class="site-nav">
-    <div class="site-nav-inner">
-      <a href="/" class="site-logo">Burke Knows Words<span style="color:#29c5b0">.</span></a>
-      <ul class="site-nav-links">
-        <li><a href="/">home</a></li>
-        <li><a href="/about">about</a></li>
-        <li><a href="/projects">projects</a></li>
-      </ul>
+  <nav class="navbar">
+    <div class="nav-inner container">
+      <a href="/" class="nav-logo">burke<span style="color: var(--coral);">.</span></a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">writing</a>
+        <a href="/about" class="nav-link">about</a>
+        <a href="/projects" class="nav-link">projects</a>
+      </div>
     </div>
   </nav>
 
@@ -21,13 +21,15 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-social">
-      <a href="https://twitter.com/burkeholland" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-      <a href="https://bsky.app/profile/burkeholland.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky"><i class="fa-brands fa-bluesky"></i></a>
-      <a href="https://github.com/burkeholland" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/burkeholland/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; {{ 'now' | date: "%Y" }} Burke Holland</span>
+      <div class="footer-links">
+        <a href="https://twitter.com/burkeholland" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://bsky.app/profile/burkeholland.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky</a>
+        <a href="https://github.com/burkeholland" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/burkeholland/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
     </div>
-    <div class="footer-copy">&copy; {{ 'now' | date: "%Y" }} Burke Holland</div>
   </footer>
 
 </body>

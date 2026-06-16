@@ -4,216 +4,78 @@ title: Projects
 permalink: /projects/
 ---
 
-<style>
-  .projects-table-head {
-    display: grid;
-    grid-template-columns: 200px 1fr 100px;
-    gap: 24px;
-    padding: 8px 12px;
-    border-bottom: 1px solid #e2e8f0;
-    margin-bottom: 2px;
-  }
-  .projects-table-head span {
-    font-size: 10.5px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #94a3b8;
-  }
-  .project-row {
-    display: grid;
-    grid-template-columns: 200px 1fr 100px;
-    gap: 24px;
-    align-items: baseline;
-    padding: 13px 12px;
-    border-bottom: 1px solid #e2e8f0;
-    text-decoration: none;
-    color: inherit;
-    border-radius: 6px;
-    transition: background 0.1s;
-  }
-  .project-row:hover { background: #f1f5f9; }
-  .project-row:last-child { border-bottom: none; }
-  .row-name {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-  }
-  .row-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-  .row-name-text {
-    font-size: 14px;
-    font-weight: 600;
-    color: #0f172a;
-    letter-spacing: -0.01em;
-  }
-  .row-desc {
-    font-size: 13px;
-    color: #64748b;
-    line-height: 1.5;
-  }
-  .row-tag {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: #94a3b8;
-    text-transform: uppercase;
-    text-align: right;
-  }
-  .copilot-badge {
-    height: 14px;
-    vertical-align: middle;
-    flex-shrink: 0;
-    opacity: 0.9;
-  }
-  .row-name { flex-wrap: wrap; gap: 6px; }
-  .projects-section-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #ff7f40;
-    padding: 24px 12px 8px;
-  }
-  @media (max-width: 600px) {
-    .projects-table-head { display: none; }
-    .project-row {
-      grid-template-columns: 1fr;
-      gap: 4px;
-    }
-    .row-tag { text-align: left; }
-  }
-</style>
+<div class="page-wrap" style="max-width: 860px;">
+  <h1 class="page-title">Projects</h1>
 
-<div class="page-content">
-  <div class="page-heading">
-    <h1>Projects</h1>
-    <div class="page-heading-rule"></div>
-  </div>
-
-  <div class="projects-table-head">
-    <span>Name</span>
-    <span>Description</span>
-    <span style="text-align:right">Type</span>
-  </div>
-
-  <div class="projects-section-label">AI &amp; Agents</div>
+  <div class="projects-section-label">AI & Agents</div>
 
   <a href="/posts/beast-mode-3-1/" class="project-row">
-    <div class="row-name">
-      <span class="row-dot" style="background:#ff7f40"></span>
-      <span class="row-name-text">Beast Mode</span>
-    </div>
-    <div class="row-desc">Highly opinionated agentic coding assistant for VS Code. Todo lists, deep planning, recursive web research. Built for GPT-4.1.</div>
-    <div class="row-tag">VS Code</div>
+    <span class="row-name">Beast Mode</span>
+    <span class="row-desc">Highly opinionated agentic coding assistant for VS Code. Todo lists, deep planning, recursive web research.</span>
+    <span class="row-tag">VS Code</span>
   </a>
 
   <a href="https://ytmcp.com" target="_blank" class="project-row">
-    <div class="row-name">
-      <span class="row-dot" style="background:#0f172a"></span>
-      <span class="row-name-text">YouTube MCP</span>
-      <img class="copilot-badge" src="https://img.shields.io/badge/-Built%20with%20Copilot-ffffff?style=flat&logo=githubcopilot&logoColor=333333" alt="Built with Copilot">
-    </div>
-    <div class="row-desc">MCP server connecting your AI to YouTube — search, transcripts, comments, playlists, trending.</div>
-    <div class="row-tag">MCP</div>
+    <span class="row-name">YouTube MCP</span>
+    <span class="row-desc">MCP server connecting your AI to YouTube — search, transcripts, comments, playlists, trending.</span>
+    <span class="row-tag">MCP</span>
   </a>
 
   <a href="https://burkeholland.github.io/anvil/" target="_blank" class="project-row">
-    <div class="row-name">
-      <span class="row-dot" style="background:#4A5E7A"></span>
-      <span class="row-name-text">Anvil</span>
-      <img class="copilot-badge" src="https://img.shields.io/badge/-Built%20with%20Copilot-ffffff?style=flat&logo=githubcopilot&logoColor=333333" alt="Built with Copilot">
-    </div>
-    <div class="row-desc">Evidence-first coding agent for GitHub Copilot CLI. Verifies before presenting, adversarial multi-model review.</div>
-    <div class="row-tag">Copilot</div>
+    <span class="row-name">Anvil</span>
+    <span class="row-desc">Evidence-first coding agent for GitHub Copilot CLI. Verifies before presenting, adversarial multi-model review.</span>
+    <span class="row-tag">Copilot</span>
   </a>
 
   <a href="https://burkeholland.github.io/ultralight/" target="_blank" class="project-row">
-    <div class="row-name">
-      <span class="row-dot" style="background:#D4A96A"></span>
-      <span class="row-name-text">Ultralight</span>
-      <img class="copilot-badge" src="https://img.shields.io/badge/-Built%20with%20Copilot-ffffff?style=flat&logo=githubcopilot&logoColor=333333" alt="Built with Copilot">
-    </div>
-    <div class="row-desc">Multi-agent orchestration for VS Code. Right model for every task — Sonnet orchestrates, Codex codes, Gemini designs.</div>
-    <div class="row-tag">VS Code</div>
+    <span class="row-name">Ultralight</span>
+    <span class="row-desc">Multi-agent orchestration for VS Code. Right model for every task — Sonnet orchestrates, Codex codes, Gemini designs.</span>
+    <span class="row-tag">VS Code</span>
   </a>
 
   <a href="https://burkeholland.github.io/max" target="_blank" class="project-row">
-    <div class="row-name">
-      <span class="row-dot" style="background:#0f172a"></span>
-      <span class="row-name-text">Max</span>
-      <img class="copilot-badge" src="https://img.shields.io/badge/-Built%20with%20Copilot-ffffff?style=flat&logo=githubcopilot&logoColor=333333" alt="Built with Copilot">
-    </div>
-    <div class="row-desc">An always-on personal AI assistant that runs 24/7 on your machine.</div>
-    <div class="row-tag">AI</div>
+    <span class="row-name">Max</span>
+    <span class="row-desc">An always-on personal AI assistant that runs 24/7 on your machine.</span>
+    <span class="row-tag">AI</span>
   </a>
 
   <a href="https://burkeholland.github.io/cpm" target="_blank" class="project-row">
-    <div class="row-name">
-      <span class="row-dot" style="background:#6B7FD7"></span>
-      <span class="row-name-text">cpm</span>
-      <img class="copilot-badge" src="https://img.shields.io/badge/-Built%20with%20Copilot-ffffff?style=flat&logo=githubcopilot&logoColor=333333" alt="Built with Copilot">
-    </div>
-    <div class="row-desc">Switch GitHub Copilot CLI models in one command. Interactive picker for BYOK providers — sets your env vars and launches Copilot.</div>
-    <div class="row-tag">Copilot</div>
+    <span class="row-name">cpm</span>
+    <span class="row-desc">Switch GitHub Copilot CLI models in one command. Interactive picker for BYOK providers.</span>
+    <span class="row-tag">Copilot</span>
   </a>
 
   <a href="https://burkeholland.github.io/cpt" target="_blank" class="project-row">
-    <div class="row-name">
-      <span class="row-dot" style="background:#10B981"></span>
-      <span class="row-name-text">cpt</span>
-      <img class="copilot-badge" src="https://img.shields.io/badge/-Built%20with%20Copilot-ffffff?style=flat&logo=githubcopilot&logoColor=333333" alt="Built with Copilot">
-    </div>
-    <div class="row-desc">Add Copilot chat to any terminal. Press Ctrl+K for AI command suggestions in zsh, bash, fish, or PowerShell.</div>
-    <div class="row-tag">Copilot</div>
+    <span class="row-name">cpt</span>
+    <span class="row-desc">Add Copilot chat to any terminal. Press Ctrl+K for AI command suggestions in zsh, bash, fish, or PowerShell.</span>
+    <span class="row-tag">Copilot</span>
   </a>
 
-  <div class="projects-section-label">Apps &amp; Tools</div>
+  <div class="projects-section-label">Apps & Tools</div>
 
   <a href="https://burkeholland.github.io/resize-me/" target="_blank" class="project-row">
-    <div class="row-name">
-      <span class="row-dot" style="background:#7A9E8E"></span>
-      <span class="row-name-text">ResizeMe</span>
-      <img class="copilot-badge" src="https://img.shields.io/badge/-Built%20with%20Copilot-ffffff?style=flat&logo=githubcopilot&logoColor=333333" alt="Built with Copilot">
-    </div>
-    <div class="row-desc">The missing window resizer for Windows. Global hotkeys, custom presets, system tray. Built with Fluent Design.</div>
-    <div class="row-tag">Windows</div>
+    <span class="row-name">ResizeMe</span>
+    <span class="row-desc">The missing window resizer for Windows. Global hotkeys, custom presets, system tray.</span>
+    <span class="row-tag">Windows</span>
   </a>
 
   <a href="https://burkeholland.github.io/paperwalls-mac/" target="_blank" class="project-row">
-    <div class="row-name">
-      <span class="row-dot" style="background:#38BDF8"></span>
-      <span class="row-name-text">PaperWalls Mac</span>
-      <img class="copilot-badge" src="https://img.shields.io/badge/-Built%20with%20Copilot-ffffff?style=flat&logo=githubcopilot&logoColor=333333" alt="Built with Copilot">
-    </div>
-    <div class="row-desc">Native macOS app for browsing, favoriting, rotating, and setting wallpapers from the Paper collection.</div>
-    <div class="row-tag">macOS</div>
+    <span class="row-name">PaperWalls Mac</span>
+    <span class="row-desc">Native macOS app for browsing, favoriting, rotating, and setting wallpapers from the Paper collection.</span>
+    <span class="row-tag">macOS</span>
   </a>
 
   <div class="projects-section-label">Design</div>
 
   <a href="https://burkeholland.github.io/paper" target="_blank" class="project-row">
-    <div class="row-name">
-      <span class="row-dot" style="background:#F97066"></span>
-      <span class="row-name-text">Paper</span>
-      <img class="copilot-badge" src="https://img.shields.io/badge/-Built%20with%20Copilot-ffffff?style=flat&logo=githubcopilot&logoColor=333333" alt="Built with Copilot">
-    </div>
-    <div class="row-desc">4K wallpapers in a flat design aesthetic. Generated by Max, free to download. New theme packs added regularly.</div>
-    <div class="row-tag">Wallpapers</div>
+    <span class="row-name">Paper</span>
+    <span class="row-desc">4K wallpapers in a flat design aesthetic. Generated by Max, free to download.</span>
+    <span class="row-tag">Wallpapers</span>
   </a>
 
   <a href="https://marketplace.visualstudio.com/items?itemName=burkeholland.postrboard" target="_blank" class="project-row">
-    <div class="row-name">
-      <span class="row-dot" style="background:#C45C3A"></span>
-      <span class="row-name-text">Postrboard Theme</span>
-      <img class="copilot-badge" src="https://img.shields.io/badge/-Built%20with%20Copilot-ffffff?style=flat&logo=githubcopilot&logoColor=333333" alt="Built with Copilot">
-    </div>
-    <div class="row-desc">VS Code color theme inspired by the warm, tactile aesthetic of a corkboard. Easy on the eyes, colorful, readable.</div>
-    <div class="row-tag">Theme</div>
+    <span class="row-name">Postrboard Theme</span>
+    <span class="row-desc">VS Code color theme inspired by the warm, tactile aesthetic of a corkboard. Easy on the eyes, colorful, readable.</span>
+    <span class="row-tag">Theme</span>
   </a>
-
 </div>

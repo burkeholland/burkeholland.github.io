@@ -1,19 +1,19 @@
 <nav class="pagination" role="navigation" aria-label="pagination">
     {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}">&larr; Previous</a>
+    <a class="page-link" href="{{ paginator.previous_page_path }}">&larr;</a>
     {% endif %}
 
     {% for page in (1..paginator.total_pages) %}
       {% if page == paginator.page %}
-        <span class="current">{{ page }}</span>
+        <span class="page-link is-active">{{ page }}</span>
       {% elsif page == 1 %}
-        <a href="/">{{ page }}</a>
+        <a class="page-link" href="/">{{ page }}</a>
       {% else %}
-        <a href="/page{{ page }}/">{{ page }}</a>
+        <a class="page-link" href="/page{{ page }}/">{{ page }}</a>
       {% endif %}
     {% endfor %}
 
     {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}">Next &rarr;</a>
+    <a class="page-link" href="{{ paginator.next_page_path }}">&rarr;</a>
     {% endif %}
 </nav>
