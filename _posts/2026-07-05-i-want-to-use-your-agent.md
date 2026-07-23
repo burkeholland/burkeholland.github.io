@@ -1,14 +1,15 @@
 ---
 layout: post
-title: "I Want To Use Your Agent"
-date: 2026-07-05 12:00:00 +0000
-categories: posts
+title: I Want To Use Your Agent
+date: "2026-07-05 12:00:00 +0000"
 permalink: /posts/i-want-to-use-your-agent/
+categories: posts
+published: false
 ---
 
 Rhys Sullivan recently wrote a piece called ["i don't want to use your agent"](https://x.com/RhysSullivan/status/2070989582850793947) where he argues that developers don't want to hand control to someone else's opaque AI. He's right about that. But I've been running an experiment this week where I'm trying to do everything with agents, and I've arrived at the exact opposite conclusion.
 
-I definitely want to use your agent.
+**I definitely want to use your agent.**
 
 Or rather, I want my agent to use your agent.
 
@@ -19,7 +20,6 @@ Because if my agent is going to have to use your product or service, I'm the one
 We've got to make it easier for agents to be productive. That means we all need to be building the best possible agents for our own domain.
 
 Think about it. Why should we all spend time training our agents to do the exact same thing when everyone could just focus on making the best possible agent for their product or service? Create the expert once and all of us can use it.
-
 ## Agents > API's
 
 Ideally, all my agent should have to know how to do is authenticate. And hoepfully that's done with Oauth via MCP and handled by my harness.
@@ -31,7 +31,6 @@ But an MCP server that's backed by a real agent with domain expertise? One that 
 The best example I can think of today is Microsoft WorkIQ. Instead of you having to configure your agent with authorization and knowledge of the Microsoft Graph, you just ask WorkIQ. It's an agent that exposes itself via MCP. Your agent doesn't need to know anything about Microsoft's API. All you have to do is auth the MCP server and then your agent can ask WorkIQ for whatever emails, chats, meetings, or transcripts you might need. WorkIQ figures out the Graph calls. You don't.
 
 That's the model. Not "here's my API as an MCP server." It's "here's my agent as an MCP server."
-
 ## HOWEVER
 
 Nobody wants to give away free AI.
@@ -51,7 +50,6 @@ But if agents are going to do real work for average users, this is not going to 
 The average user is not going to download skills and configure MCP servers and go to developer portals to download access tokens and secrets and store them in .env files in their home directory.
 
 This is the whole reason that heavy AI use is really restricted to just developers at the moment. And it's likely going to stay there until we figure this out.
-
 ## The price is too high
 
 What we need more than anything is for calling an AI to be as cheap as calling an API. Right now, every agent interaction has a meter running. Every token costs money. That cost gets passed to someone, and usually it's the person least equipped to deal with it: the end user.
@@ -59,9 +57,10 @@ What we need more than anything is for calling an AI to be as cheap as calling a
 If intelligence becomes cheap enough to be unmetered, everything changes. Domain experts can build the definitive agent for their product once. They can expose it freely. Other agents can call it without anyone worrying about who's footing the bill. The whole ecosystem of agents talking to agents becomes viable because the marginal cost of one more conversation approaches zero. 
 
 We're not there yet. But that's the future that actually works. Not a world where every developer hand-rolls their own janky integration to every service. A world where the people who know the product best build the agent, and the rest of us just use it.
-
 ## So what needs to happen
 
 Three things. First, compute costs need to come down. We seem to be headed in the opposite direction as subsidies end, but OSS models are promising. Every 10x drop in inference cost unlocks a new tier of agent interactions that can happen without anyone thinking about the bill. Second, agent builders need to stop shipping MCP wrappers and start shipping actual intelligent agents that know their domain. Third, we need auth and discovery standards so agents can find and trust each other without a human wiring everything together.
 
 We don't have all of this solved yet. But the direction is clear. Move the onus off the user. Build the expert once. Let the agents talk.
+<figure data-wlw-image="" data-align="center" data-border="rounded" data-shadow="true" data-crop="square" style="margin-left:auto;margin-right:auto;max-width:720px"><img src="/assets/posts/1784838842912-WIN_20260615_10_49_49_Pro.jpg" alt="" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;box-shadow:0 8px 24px rgba(15,23,42,.24)"></figure>
+<figure data-wlw-image="" data-align="center" data-border="none" data-shadow="false" data-crop="none" style="margin-left:auto;margin-right:auto;max-width:720px"><img src="/assets/posts/1784838860891-WIN_20260615_10_45_45_Pro.jpg" alt="" style="width:100%;height:auto;;"></figure>
