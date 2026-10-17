@@ -4,6 +4,7 @@ title: "Cosmos CRUD"
 date: 2020-02-02
 categories: posts
 permalink: /posts/cosmos-crud/
+dept: cloud
 ---
 
 [Cosmos DB JavaScript SDK](https://docs.microsoft.com/azure/cosmos-db/sql-api-nodejs-application?WT.mc_id=personal-blog-buhollan) is clean - I like it. But I feel like I always end up forgetting how to CRUD.

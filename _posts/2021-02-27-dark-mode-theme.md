@@ -4,6 +4,7 @@ title: "How to use 'Dark Mode' in VS Code"
 date: 2021-02-27
 catogories: posts
 permalink: /posts/vscode/dark-mode-theme/
+dept: tools
 ---
 
 After my post on [how to auto-switch your theme based on the time of day](http://localhost:1313/posts/vscode/auto-switch-themes/), a few readers pointed out that VS Code "does this automatically". In other words, you don't need the extension that I recommended to do this.

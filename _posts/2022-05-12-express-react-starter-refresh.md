@@ -4,6 +4,7 @@ title: "Running Express and React in the same project"
 date: 2022-05-12
 categories: posts
 permalink: /posts/express-react-starter-refresh
+dept: javascript
 ---
 
 All of us have, at some point, stood in front of a mirror looking into our own soul and asked the question that every JavaScript developer is destined to ask before they die - "How do you run Express and React in the same project"?

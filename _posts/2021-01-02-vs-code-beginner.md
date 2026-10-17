@@ -4,6 +4,7 @@ title:  "VS Code for the complete beginner"
 date:   2021-01-02 06:00:00 +0000
 categories: posts
 published: false
+dept: tools
 ---
 
 In this post, I want to help you get started with Visual Studio Code (also called VS Code) if you are a complete beginner. No skill is required here. You don't even have to know how to code. 

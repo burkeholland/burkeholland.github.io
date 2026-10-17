@@ -4,6 +4,7 @@ title: "The Urlist — An application study in Serverless and Azure"
 date: 2019-05-04 8:47:17 +0000
 categories: posts
 permalink: /posts/the-urlist/
+dept: cloud
 ---
 
 Today we are pleased to announce that we ([Burke Holland](https://twitter.com/burkeholland) and [Cecil Phillip](https://twitter.com/cecilphillip)) are releasing a project called “The Urlist”. You can access it starting today at [theurlist.com](https://theurlist.com).

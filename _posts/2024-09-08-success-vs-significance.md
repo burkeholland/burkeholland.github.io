@@ -4,6 +4,7 @@ image: assets/images/banners/success-vs-significance.jpg
 date: 2024-09-08 12:27:00 +0000
 title: "Success vs Significance"
 permalink: "blog/success-vs-significance"
+dept: life
 ---
 
 My father passed away suddently in April of 2021 almost to the day of his 76th birthday. An otherwise healthy man, he was sitting in the back yard reading and journaling as he often did when began to feel unwell. Returning to the house, he sat down in the living room with my mother in a set of recliners that sit next to each other to google his symptoms. When my mother asked if he was feeling dizzy, he said "The diziness just set in", and then his heart just stopped. He died right there in the chair next to my mother.

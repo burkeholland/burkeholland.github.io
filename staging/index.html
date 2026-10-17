@@ -1,0 +1,24 @@
+---
+layout: default
+title: Staging
+permalink: /staging/
+---
+{%- assign staging_posts = site.pages | where_exp: "p", "p.path contains 'staging/'" | where: "preview", true %}
+<h1 class="line center big">ON HOLD</h1>
+<div class="line center">DRAFTS AWAITING PICKUP</div>
+<div class="line center muted">STAFF ONLY</div>
+<div class="line"><hr class="rule"></div>
+{%- if staging_posts.size > 0 %}
+{%- for post in staging_posts %}
+<div class="line"><a class="item" href="{{ post.url | relative_url }}">
+  <div class="row"><span class="name">{{ post.title | escape }}</span><span>HOLD</span></div>
+  <div class="sub">{% if post.date %}{{ post.date | date: "%Y/%m/%d" }} · {% endif %}PREVIEW</div>
+</a></div>
+{%- endfor %}
+{%- else %}
+<div class="line center">NOTHING ON HOLD.</div>
+{%- endif %}
+<div class="line"><hr class="rule"></div>
+<div class="line"><div class="row"><span>ITEMS ON HOLD</span><span>{{ staging_posts.size }}</span></div></div>
+{% include barcode.html code="STAGING" %}
+<div class="line center muted">NOT FOR SALE</div>

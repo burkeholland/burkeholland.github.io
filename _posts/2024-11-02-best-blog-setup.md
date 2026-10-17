@@ -5,6 +5,7 @@ title: "The best possible blog host is...GitHub Pages?"
 date: 2024-11-02 10:30:17 +0000
 categories: posts
 permalink: /posts/gh-pages-best-blog/
+dept: tools
 ---
 
 I've had a lot of blogs over the years. I think I started on Wordpress (as one does) and then moved to Tumblr (yes, that happened) and then to my own site, then to Medium when that was the thing to do and now I'm coming to you from GitHub Pages. Having seen a lot of...stuff...I can tell you that GitHub Pages/Jekyll is all you need. Let me make my case.

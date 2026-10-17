@@ -4,6 +4,7 @@ image: assets/images/banners/throw-ai-code-away.jpg
 date: 2024-09-26 08:38:00 +0000
 title: "Throw that AI code away"
 permalink: "blog/throw-ai-code-away"
+dept: ai
 ---
 
 There's a lot of debate these days on whether or not AI generated code is a good thing. People are quite worried about the volume of code being written by AI right now, and how that's going to affect us all in this field down the road. Most developers don't get to work on new projects - they maintain and build on existing ones. What will it be like to maintain these things when most of that code is written by AI?

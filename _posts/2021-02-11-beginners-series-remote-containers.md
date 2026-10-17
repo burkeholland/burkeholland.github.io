@@ -4,6 +4,7 @@ title: "Beginner's series to Dev Containers free video course"
 date: 2021-02-11
 categories: posts
 permalink: /posts/beginners-series-remote-containers/
+dept: tools
 ---
 
 > Knowledge isn't free. You have to pay attention.

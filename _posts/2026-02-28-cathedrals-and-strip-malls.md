@@ -5,6 +5,7 @@ title: "Nothing Worth Remembering"
 date: 2026-02-28 16:43:00 +0000
 categories: posts
 permalink: /posts/nothing-worth-remembering/
+dept: ai
 ---
 
 We don't build cathedrals anymore. Do we even know how?

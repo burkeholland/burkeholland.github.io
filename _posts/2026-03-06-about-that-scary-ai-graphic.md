@@ -5,6 +5,7 @@ title: "About That Scary AI Graphic That's Been Going Around"
 date: 2026-03-06 12:18:00 +0000
 categories: posts
 permalink: /posts/about-that-scary-ai-graphic/
+dept: ai
 published: true
 ---
 

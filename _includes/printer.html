@@ -1,0 +1,25 @@
+{%- assign key = "" -%}
+{%- if page.url == "/" or page.collection == "posts" -%}{%- assign key = "posts" -%}{%- endif -%}
+{%- if page.url == "/projects/" -%}{%- assign key = "projects" -%}{%- endif -%}
+{%- if page.url == "/about/" -%}{%- assign key = "about" -%}{%- endif -%}
+<header class="printer" id="printer">
+  <div class="lid">
+    <div class="cover">
+      <a class="badge" href="{{ '/' | relative_url }}" aria-label="Burke Holland - home"><b>BH-80</b><small>THERMAL RECEIPT PRINTER</small></a>
+      <div class="vent" aria-hidden="true"></div>
+    </div>
+  </div>
+  <div class="panel">
+    <nav class="keys" aria-label="Site">
+      <a href="{{ '/' | relative_url }}"{% if key == "posts" %} class="on"{% endif %}{% if page.url == "/" %} aria-current="page"{% endif %}>POSTS</a>
+      <a href="{{ '/projects/' | relative_url }}"{% if key == "projects" %} class="on" aria-current="page"{% endif %}>PROJECTS</a>
+      <a href="{{ '/about/' | relative_url }}"{% if key == "about" %} class="on" aria-current="page"{% endif %}>ABOUT</a>
+    </nav>
+    <div class="lamps" aria-hidden="true">
+      <span class="lamp"><i class="on"></i>POWER</span>
+      <span class="lamp"><i id="led"></i>DATA</span>
+      <span class="lamp"><i></i>PAPER</span>
+    </div>
+  </div>
+  <div class="mouth" aria-hidden="true"></div>
+</header>

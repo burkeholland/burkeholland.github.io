@@ -4,6 +4,7 @@ title: "GSAP, Webpack and invalid tweens"
 date: 2019-11-27
 categories: posts
 permalink: /posts/invalid-tween/
+dept: javascript
 ---
 
 Before I forget, I wanted to document for posterity how I lost about 4 hours yesterday to gsap/webpack issue.

@@ -2,75 +2,48 @@
 
 ## Project Overview
 
-This is a Jekyll-based personal blog deployed via GitHub Pages. The site uses a modern theming system with Tailwind CSS loaded via CDN and features multiple switchable themes.
+Jekyll blog deployed with GitHub Pages from the `gh-pages` branch. The whole site is designed as a thermal receipt printer (the "BH-80"): a printer header with three keys (POSTS, PROJECTS, ABOUT) and one paper receipt per page. Lines "print" one at a time, images are dithered like thermal print, and moving to another page tears the receipt off and prints a new one.
 
 ## Architecture
 
-### Jekyll Structure
-- **`_posts/`** - Published blog posts (format: `YYYY-MM-DD-slug.md`)
-- **`_drafts/`** - Unpublished posts (same format, not date-dependent)
-- **`_layouts/`** - Page templates (`default.html`, `home.html`, `post.html`)
-- **`_includes/`** - Reusable partials (`head.html`, `pagination.html`, `youtubePlayer.html`)
-- **`assets/`** - Static files (images, CSS)
-- **`_site/`** - Generated output (do not edit directly)
+- **`_layouts/default.html`** - every page: `head.html`, the SVG thermal filter, the printer header, and `<main id="feed"><article class="paper" data-receipt>`.
+- **`_layouts/home.html`** - the posts receipt (all posts grouped by year, read times, totals).
+- **`_layouts/post.html`** - a single post receipt (item number, dept, read time, body, newer/older links).
+- **`about.html`, `projects.html`, `404.html`, `staging/index.html`** - the other receipts.
+- **`_data/projects.yml`** - the projects list. Add a project here, not in the HTML.
+- **`_includes/`** - `head.html` (meta/OG tags), `printer.html` (header + keys), `thermal-filter.html`, `barcode.html`, `center.html`, `youtubePlayer.html`.
+- **`assets/css/receipt.css`** - all styles. No Tailwind, no frameworks.
+- **`assets/js/printer.js`** - printing, tear-off page transitions (fetches the next page and swaps the `.paper`), image tap-to-reveal, REPRINT.
 
-### Theming System
-The site uses CSS custom properties for theming, defined in `assets/css/themes.css`. Themes are applied via body classes (e.g., `theme-neon-glass`, `theme-terminal`). The theme switcher logic is in [_includes/head.html](_includes/head.html) and persists selection to localStorage.
+## Receipt markup rules
 
-Key theme variables:
-- `--bg-color`, `--text-color`, `--accent-color`
-- `--font-main`, `--font-header`, `--font-mono`
-
-### Styling Approach
-- **Tailwind CSS** via CDN with typography and aspect-ratio plugins
-- Custom Tailwind config in [_includes/head.html](_includes/head.html) extends theme colors and fonts
-- Prose classes handle blog post typography: `prose prose-lg prose-invert`
-- Neon color utilities: `text-neon-cyan`, `text-neon-pink`, `bg-white/10`
+- Anything that should print line by line gets the class `line`. In post bodies (`.body`), JS adds `line` to every direct child, so Markdown needs nothing special.
+- Lines are only hidden when JS runs (`html.js`), so the site still reads fine without JS.
+- Helpers: `.center`, `.big`, `.muted`, `.small`, `.row` (left/right columns), `.dept` (section heading), `.item` (clickable row), `<hr class="rule">` (dashed divider), `{% include barcode.html code="..." %}`.
+- `[data-now]` and `[data-order]` get filled with the reader's current time and an order number.
 
 ## Blog Post Conventions
 
-### Front Matter (required)
 ```yaml
 ---
-layout: post
 title: "Post Title"
 date: YYYY-MM-DD HH:MM:SS +0000
 categories: posts
 permalink: /posts/slug-name/
+dept: ai   # ai, tools, cloud, javascript or life - printed on the receipt
 ---
 ```
 
-### Embedding Content
-- **YouTube videos**: `{% include youtubePlayer.html id="VIDEO_ID" %}`
-- **Images**: Store in `/assets/` and reference as `/assets/image-name.png`
+- `layout: post` is applied automatically by `defaults` in `_config.yml`.
+- Never change an existing post's `permalink` - old URLs must keep working.
+- Read time is computed from word count (200 words per minute).
+- Optional `image:` front matter prints as the first image and is used for social cards.
+- YouTube: `{% include youtubePlayer.html id="VIDEO_ID" %}`. Images live in `/assets/`.
 
 ## Development Commands
 
 ```bash
-# Install dependencies
 bundle install
-
-# Run local server with drafts visible
-bundle exec jekyll serve --drafts
-
-# Build for production
+bundle exec jekyll serve
 bundle exec jekyll build
 ```
-
-## Key Conventions
-
-1. **Post URLs** use `/posts/slug-name/` permalink format (not the default Jekyll date-based URLs)
-2. **Pagination** is configured for 5 posts per page via `jekyll-paginate`
-3. **Code highlighting** uses Rouge with Kramdown markdown processor
-4. **Responsive design** disables CSS transforms on mobile (see `head.html` media queries)
-
-## API Directory
-
-The `/api/` folder contains scaffolding for Azure Functions but is currently empty/unused. Ignore for most tasks.
-
-## When Writing Posts
-
-- Use descriptive, kebab-case slugs in the permalink
-- Keep images optimized and stored in `/assets/`
-- Test locally with `--drafts` flag before publishing
-- Move posts from `_drafts/` to `_posts/` with correct date prefix to publish

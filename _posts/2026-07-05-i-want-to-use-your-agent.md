@@ -5,6 +5,7 @@ date: "2026-07-05 12:00:00 +0000"
 permalink: /posts/i-want-to-use-your-agent/
 categories: posts
 published: false
+dept: ai
 ---
 
 Rhys Sullivan recently wrote a piece called ["i don't want to use your agent"](https://x.com/RhysSullivan/status/2070989582850793947) where he argues that developers don't want to hand control to someone else's opaque AI. He's right about that. But I've been running an experiment this week where I'm trying to do everything with agents, and I've arrived at the exact opposite conclusion.

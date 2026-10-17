@@ -4,6 +4,7 @@ title: "Trimming expenses on The Urlist with Azure Cosmos DB Free Tier"
 date: 2020-03-17
 categories: posts
 permalink: /posts/cosmos-free-tier/
+dept: cloud
 ---
 
 <summary>

@@ -4,6 +4,7 @@ title: "How to create a Reminder on Apple Watch without creating a Reminder"
 date: 2020-01-29 14:34:39 +0000
 categories: posts
 permalink: /posts/apple-watch-reminders/
+dept: life
 ---
  
  I have an Apple Watch (**not** cellular), and I love it. Not just because it lets everyone know that I’m better than them, but also for it’s ability to sync and store all of my audio to be used offline. I can download my music (including Apple Music), podcasts and [now even Audible books](https://www.audible.com/ep/apple) to my Watch and take it all with me when I exercise. This means I don’t have to strap my iPhone to arm like giant medievil shield. I can’t understate how much I enjoy this feature of the watch. If all the thing could do was play my music, podcasts and audio books without requiring a connection, it would still be worth the price.
