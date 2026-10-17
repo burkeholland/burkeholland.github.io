@@ -2,18 +2,18 @@
 
 ## Project Overview
 
-Jekyll blog deployed with GitHub Pages from the `gh-pages` branch. The whole site is designed as a thermal receipt printer (the "BH-80"): a printer header with three keys (POSTS, PROJECTS, ABOUT) and one paper receipt per page. Lines "print" one at a time, images are dithered like thermal print, and moving to another page tears the receipt off and prints a new one.
+Jekyll blog deployed with GitHub Pages from the `gh-pages` branch. The whole site is designed as a thermal receipt printer (the "BH-80"): a printer header with three keys (POSTS, PROJECTS, ABOUT) and one paper receipt per page. Lines "print" one at a time, images are full color photos stapled onto the slip, and moving to another page tears the receipt off and prints a new one.
 
 ## Architecture
 
-- **`_layouts/default.html`** - every page: `head.html`, the SVG thermal filter, the printer header, and `<main id="feed"><article class="paper" data-receipt>`.
+- **`_layouts/default.html`** - every page: `head.html`, the printer header, and `<main id="feed"><article class="paper" data-receipt>`.
 - **`_layouts/home.html`** - the posts receipt (all posts grouped by year, read times, totals).
 - **`_layouts/post.html`** - a single post receipt (item number, dept, read time, body, newer/older links).
 - **`about.html`, `projects.html`, `404.html`, `staging/index.html`** - the other receipts.
 - **`_data/projects.yml`** - the projects list. Add a project here, not in the HTML.
-- **`_includes/`** - `head.html` (meta/OG tags), `printer.html` (header + keys), `thermal-filter.html`, `barcode.html`, `center.html`, `youtubePlayer.html`.
+- **`_includes/`** - `head.html` (meta/OG tags), `printer.html` (header + keys), `barcode.html`, `center.html`, `youtubePlayer.html`.
 - **`assets/css/receipt.css`** - all styles. No Tailwind, no frameworks.
-- **`assets/js/printer.js`** - printing, tear-off page transitions (fetches the next page and swaps the `.paper`), image tap-to-reveal, REPRINT.
+- **`assets/js/printer.js`** - printing, tear-off page transitions (fetches the next page and swaps the `.paper`), stapling post images (wraps each `.body img` in `span.photo`), REPRINT.
 
 ## Receipt markup rules
 

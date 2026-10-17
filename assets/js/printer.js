@@ -9,6 +9,7 @@
 
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const pad = n => String(n).padStart(2, '0');
+  const tilts = ['-1.4deg', '1.1deg', '-0.8deg', '1.5deg', '-1.1deg'];
   const pathOf = u => u.pathname + u.search;
   const cache = new Map();
   let job = 0;
@@ -37,9 +38,22 @@
     });
   }
 
+  // Every post image becomes a photo stapled onto the slip, each at its own slight angle.
+  function staple(paper) {
+    paper.querySelectorAll('.body img').forEach((img, i) => {
+      if (img.parentElement.classList.contains('photo')) return;
+      const photo = document.createElement('span');
+      photo.className = 'photo';
+      photo.style.setProperty('--tilt', tilts[i % tilts.length]);
+      img.replaceWith(photo);
+      photo.append(img);
+    });
+  }
+
   function prepare(paper) {
     paper.tabIndex = -1;
     paper.querySelectorAll('.body > *').forEach(el => el.classList.add('line'));
+    staple(paper);
     stamp(paper);
     barcodes(paper);
   }
@@ -180,12 +194,6 @@
   };
   document.addEventListener('mouseover', warm);
   document.addEventListener('touchstart', warm, { passive: true });
-
-  // Tap a printed image to see the original, tap again to put it back.
-  feed.addEventListener('click', e => {
-    const img = e.target.closest && e.target.closest('.body img');
-    if (img && !img.closest('a')) img.classList.toggle('raw');
-  });
 
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   addEventListener('popstate', () => {
