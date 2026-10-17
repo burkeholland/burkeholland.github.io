@@ -30,7 +30,6 @@ github_username:  burkeholland
 # Build settings
 plugins:
   - jekyll-feed
-  - jekyll-paginate
 
 
 markdown: kramdown
@@ -41,15 +40,21 @@ sass:
   sass_dir: _sass
   style: compressed
 
-# Permalinks
-paginate: 5
-
 # Links to social media
 social:
   email: burkeholland@gmail.com
   github: https://github.com/burkeholland
   twitter: https://twitter.com/burkeholland
   linkedin: https://ba.linkedin.com/in/burkeholland
+
+# Every post uses the receipt layout. dept is the receipt "department" (ai, tools, cloud, javascript, life).
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      dept: misc
 
 # Exclude from processing.
 # The following items will not be processed, by default.

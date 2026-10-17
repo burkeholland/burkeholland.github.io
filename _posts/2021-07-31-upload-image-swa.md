@@ -4,6 +4,7 @@ title:  "Upload an Image to Azure Storage with Static Web Apps"
 date:   2021-07-31 09:30:16 +0000
 categories: posts
 permalink: /posts/azure/upload-image-swa/
+dept: cloud
 ---
 
 One of the great advantages to [Azure Static Web Apps](https://docs.microsoft.com/azure/static-web-apps/?WT.mc_id=devcloud-0000-buhollan) _should be_ the ability to easily integrate with other Azure services. I've been working on a [sample blog project](https://github.com/burkeholland/fresh-blog) a la the old Ruby on Rails tutorial, and I wanted to add the ability to upload an image to a blog.

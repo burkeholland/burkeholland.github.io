@@ -4,6 +4,7 @@ title: "Professional quality audio with the Blue Yeti, GarageBand and Screenflow
 date: 2020-03-18
 categories: posts
 permalink: /posts/audio-how-to/
+dept: life
 ---
 
 One of the best things you can do to improve the quality of your screencasts, is improve the quality of your audio.

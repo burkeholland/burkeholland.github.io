@@ -1,0 +1,51 @@
+# Projects receipt (/projects/). Each section prints as a department; urls with :// open in a new tab.
+- dept: AI & Agents
+  items:
+    - name: Beast Mode
+      tag: VS Code
+      desc: Highly opinionated agentic coding assistant for VS Code. Todo lists, deep planning, recursive web research.
+      url: /posts/beast-mode-3-1/
+    - name: YouTube MCP
+      tag: MCP
+      desc: MCP server connecting your AI to YouTube. Search, transcripts, comments, playlists, trending.
+      url: https://ytmcp.com
+    - name: Anvil
+      tag: Copilot
+      desc: Evidence-first coding agent for GitHub Copilot CLI. Verifies before presenting, adversarial multi-model review.
+      url: https://burkeholland.github.io/anvil/
+    - name: Ultralight
+      tag: VS Code
+      desc: Multi-agent orchestration for VS Code. Right model for every task.
+      url: https://burkeholland.github.io/ultralight/
+    - name: Max
+      tag: AI
+      desc: An always-on personal AI assistant that runs 24/7 on your machine.
+      url: https://burkeholland.github.io/max
+    - name: cpm
+      tag: Copilot
+      desc: Switch GitHub Copilot CLI models in one command.
+      url: https://burkeholland.github.io/cpm
+    - name: cpt
+      tag: Copilot
+      desc: Add Copilot chat to any terminal. Ctrl+K for AI command suggestions.
+      url: https://burkeholland.github.io/cpt
+- dept: Apps & Tools
+  items:
+    - name: ResizeMe
+      tag: Windows
+      desc: The missing window resizer for Windows. Global hotkeys, custom presets, system tray.
+      url: https://burkeholland.github.io/resize-me/
+    - name: PaperWalls Mac
+      tag: macOS
+      desc: Native macOS app for browsing and setting wallpapers from the Paper collection.
+      url: https://burkeholland.github.io/paperwalls-mac/
+- dept: Design
+  items:
+    - name: Paper
+      tag: Wallpapers
+      desc: 4K wallpapers in a flat design aesthetic. Free to download.
+      url: https://burkeholland.github.io/paper
+    - name: Postrboard Theme
+      tag: Theme
+      desc: VS Code color theme inspired by the warm, tactile look of a corkboard.
+      url: https://marketplace.visualstudio.com/items?itemName=burkeholland.postrboard

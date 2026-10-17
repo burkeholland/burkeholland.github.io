@@ -5,6 +5,7 @@ title: "We Don't Know What's Out There"
 date: 2026-03-03 19:23:00 +0000
 categories: posts
 permalink: /posts/we-dont-know-whats-out-there/
+dept: ai
 published: true
 ---
 

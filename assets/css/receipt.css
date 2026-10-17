@@ -1,0 +1,268 @@
+/* BH-80 thermal receipt theme. Ported from the approved prototype. */
+  :root {
+    --paper: #fbfaf6;
+    --ink: #1d1b18;
+    --desk: #2b2a27;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: 700; }
+  body {
+    background: var(--desk);
+    background-image: radial-gradient(ellipse at 50% 0%, #4a4741 0%, var(--desk) 60%);
+    background-attachment: fixed;
+    min-height: 100dvh;
+    font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    color: var(--ink);
+    padding: 0 12px 80px;
+    overflow-x: hidden;
+  }
+
+  /* ---------- The printer ---------- */
+  /* The cover scrolls away; the control panel and paper slot stay pinned. */
+  .printer {
+    --lid: 58px;
+    position: sticky; top: calc(-1 * var(--lid)); z-index: 5;
+    max-width: 420px; margin: 14px auto 0;
+    border-radius: 20px 20px 10px 10px;
+    background: linear-gradient(#2e2c29, #1d1c1a 55%, #151413);
+    box-shadow:
+      0 22px 30px -10px rgba(0,0,0,.7),
+      0 3px 0 #0b0a09,
+      inset 0 1px 0 rgba(255,255,255,.09),
+      inset 1px 0 0 rgba(255,255,255,.03), inset -1px 0 0 rgba(255,255,255,.03);
+  }
+  .printer.jolt { animation: jolt .25s ease-out; }
+  @keyframes jolt { 30% { transform: translateY(3px); } 60% { transform: translateY(-1px); } }
+
+  .lid { height: var(--lid); padding: 8px 8px 0; }
+  .cover {
+    height: 100%;
+    display: flex; align-items: center; gap: 12px;
+    padding: 0 16px;
+    border-radius: 14px 14px 4px 4px;
+    background:
+      radial-gradient(ellipse 80% 120% at 50% -20%, rgba(255,255,255,.07), transparent 70%),
+      linear-gradient(#3a3834, #2c2b28);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 #0c0b0a, 0 2px 0 rgba(255,255,255,.04);
+  }
+  .badge { display: flex; flex-direction: column; line-height: 1; margin-right: auto; text-decoration: none; }
+  .badge b {
+    font-size: 15px; font-weight: 700; letter-spacing: .14em; color: #22211e;
+    text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 -1px 0 rgba(0,0,0,.5);
+  }
+  .badge small { font-size: 7px; letter-spacing: .22em; color: #7a756b; margin-top: 4px; }
+  .vent {
+    width: 76px; height: 18px; border-radius: 3px;
+    background: repeating-linear-gradient(90deg, #121110 0 3px, transparent 3px 7px);
+    box-shadow: 0 1px 0 rgba(255,255,255,.05);
+    opacity: .9;
+  }
+
+  .panel { display: flex; align-items: center; gap: 10px; padding: 11px 14px 10px; }
+  .keys { display: flex; gap: 7px; }
+  .keys a {
+    display: block;
+    font-size: 10.5px; font-weight: 700; letter-spacing: .1em;
+    color: #e4dfd3; text-decoration: none;
+    padding: 7px 10px 6px;
+    border-radius: 8px;
+    background: linear-gradient(#55524c, #403e3a);
+    box-shadow: 0 3px 0 #0a0a09, 0 4px 6px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.16);
+    transition: transform .08s, box-shadow .08s, background .15s, color .15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .keys a:hover { color: #fff; }
+  .keys a:active, .keys a.on {
+    transform: translateY(3px);
+    background: linear-gradient(#3e3c38, #4a4844);
+    box-shadow: 0 0 0 #0a0a09, inset 0 2px 4px rgba(0,0,0,.55);
+    color: #fff;
+  }
+  .keys a:focus-visible { outline: 2px solid #3df07a; outline-offset: 3px; }
+  .lamps { display: flex; gap: 9px; margin-left: auto; }
+  .lamp {
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    font-size: 6.5px; letter-spacing: .1em; color: #7a756b;
+  }
+  .lamp i {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #2a2926; box-shadow: inset 0 1px 1px rgba(0,0,0,.7), 0 1px 0 rgba(255,255,255,.06);
+  }
+  .lamp .on { background: #3df07a; box-shadow: 0 0 7px #3df07a; }
+  .lamp .busy { background: #ffb02e; box-shadow: 0 0 7px #ffb02e; animation: blink .18s steps(2) infinite; }
+  @keyframes blink { 50% { opacity: .25; } }
+
+  /* Paper exit: a dark slot with a serrated metal tear bar that bites the top of the receipt. */
+  .mouth { position: relative; height: 14px; margin: 0 10px; }
+  .mouth::before {
+    content: ""; position: absolute; inset: 0 0 4px;
+    background: #050505; border-radius: 5px 5px 0 0;
+    box-shadow: inset 0 3px 4px rgba(0,0,0,.9), 0 -1px 0 rgba(0,0,0,.5);
+  }
+  .mouth::after {
+    content: ""; position: absolute; left: 4px; right: 4px; bottom: -6px; height: 10px;
+    background:
+      linear-gradient(#e2dfd8, #9d9a93) 0 0 / 100% 4px no-repeat,
+      linear-gradient(135deg, #a9a69f 50%, transparent 50%) 0 4px / 8px 6px repeat-x,
+      linear-gradient(225deg, #a9a69f 50%, transparent 50%) 0 4px / 8px 6px repeat-x;
+    filter: drop-shadow(0 2px 1px rgba(0,0,0,.35));
+  }
+
+  /* ---------- Paper ---------- */
+  .paper {
+    position: relative;
+    width: calc(100% - 28px);
+    max-width: 380px;
+    margin: -4px auto 0;
+    background: var(--paper);
+    background-image:
+      linear-gradient(rgba(0,0,0,.14), transparent 22px),
+      linear-gradient(90deg, rgba(0,0,0,.04), transparent 6%, transparent 94%, rgba(0,0,0,.04));
+    padding: 34px 24px 28px;
+    font-size: 13px;
+    line-height: 1.55;
+    box-shadow: 0 30px 50px rgba(0,0,0,.4);
+    animation: feed 1s cubic-bezier(.3,.7,.2,1) backwards;
+  }
+  @keyframes feed { from { transform: translateY(-60px); clip-path: inset(0 0 100% 0); } to { transform: none; clip-path: inset(0); } }
+  .paper::after, .paper.falling::before {
+    content: ""; position: absolute; left: 0; right: 0; height: 10px;
+  }
+  .paper::after {
+    bottom: -10px;
+    background:
+      linear-gradient(135deg, var(--paper) 50%, transparent 50%) 0 0 / 12px 10px repeat-x,
+      linear-gradient(225deg, var(--paper) 50%, transparent 50%) 0 0 / 12px 10px repeat-x;
+  }
+  .paper.falling::before {
+    top: -10px;
+    background:
+      linear-gradient(45deg, var(--paper) 50%, transparent 50%) 0 0 / 12px 10px repeat-x,
+      linear-gradient(315deg, var(--paper) 50%, transparent 50%) 0 0 / 12px 10px repeat-x;
+  }
+  .paper.falling {
+    position: fixed; z-index: 4; margin: 0;
+    animation: fall .75s cubic-bezier(.5,0,.75,0) forwards;
+    pointer-events: none;
+  }
+  @keyframes fall {
+    0% { transform: none; }
+    15% { transform: translateY(-6px) rotate(-.6deg); }
+    100% { transform: translate(40px, 120vh) rotate(9deg); }
+  }
+
+  .center { text-align: center; }
+  .big { font-size: 22px; font-weight: 700; letter-spacing: .04em; line-height: 1.2; }
+  .rule { border: 0; border-top: 1px dashed var(--ink); margin: 14px 0; opacity: .7; }
+  .row { display: flex; justify-content: space-between; gap: 12px; }
+  .row > :first-child { min-width: 0; }
+  .row > :last-child { text-align: right; flex: none; }
+  .muted { opacity: .55; }
+  .small { font-size: 11px; }
+  .dept { text-align: center; margin: 18px 0 8px; font-weight: 700; letter-spacing: .1em; }
+  .paper a { color: inherit; }
+  .item {
+    display: block; text-decoration: none;
+    padding: 6px 4px; margin: 0 -4px;
+    border-radius: 2px;
+  }
+  .item:hover, .item:focus-visible { background: var(--ink); color: var(--paper); outline: none; }
+  .item .name { text-transform: uppercase; }
+  .item .sub { font-size: 11px; opacity: .6; }
+  .item .desc { font-size: 11.5px; opacity: .75; margin-top: 2px; }
+  .total { font-size: 18px; font-weight: 700; }
+  .title { font-size: 20px; font-weight: 700; line-height: 1.25; text-transform: uppercase; text-wrap: balance; }
+  .sig { margin-top: 26px; border-top: 1px solid var(--ink); padding-top: 4px; }
+  .barcode { display: block; margin: 18px auto 6px; width: 100%; height: 56px; }
+  .btn-row { display: flex; justify-content: space-between; gap: 8px; }
+  .btn-row a { text-decoration: none; padding: 4px 6px; margin: 0 -6px; border-radius: 2px; }
+  .btn-row a:hover { background: var(--ink); color: var(--paper); }
+
+  /* ---------- Printed lines ---------- */
+  /* Lines only hide when JS is running, so the page is fully readable without it. */
+  .js .line { opacity: 0; filter: blur(1.5px); }
+  .js .line.printed { animation: ink .35s ease-out forwards; }
+  .js .line.instant { animation: none; opacity: 1; filter: none; }
+  .js .line.instant img { animation: none; }
+  @keyframes ink {
+    0% { opacity: 0; filter: blur(1.5px); transform: translateY(-3px); }
+    60% { opacity: .9; filter: blur(.3px); }
+    100% { opacity: 1; filter: none; transform: none; }
+  }
+
+  /* ---------- Post body ---------- */
+  .body { font-size: 13.5px; line-height: 1.7; overflow-wrap: anywhere; }
+  .body > * + * { margin-top: 1em; }
+  .body h1, .body h2, .body h3, .body h4 {
+    font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+    margin-top: 2em;
+  }
+  .body h2::before { content: "## "; opacity: .4; }
+  .body h3::before { content: "### "; opacity: .4; }
+  .body a { text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .body strong { font-weight: 700; }
+  .body ul, .body ol { padding-left: 1.6em; }
+  .body ul { list-style: none; }
+  .body ul > li::before { content: "-"; position: absolute; margin-left: -1.3em; }
+  .body li + li { margin-top: .35em; }
+  .body blockquote { border-left: 2px solid var(--ink); padding-left: 12px; font-style: italic; }
+  .body code { font: inherit; font-size: .92em; background: rgba(0,0,0,.06); padding: 0 3px; border-radius: 2px; }
+  .body pre {
+    border: 1px dashed var(--ink); padding: 10px 12px; overflow-x: auto;
+    font-size: 11.5px; line-height: 1.55;
+  }
+  .body pre code { background: none; padding: 0; font-size: inherit; }
+  .body hr { border: 0; border-top: 1px dashed var(--ink); opacity: .7; }
+  .body table { font-size: 11px; border-collapse: collapse; width: 100%; display: block; overflow-x: auto; }
+  .body td, .body th { border-bottom: 1px dashed rgba(0,0,0,.3); padding: 4px 6px; text-align: left; }
+  .body img { display: block; width: 100%; height: auto; filter: url(#thermal); cursor: zoom-in; }
+  .body img.raw { filter: none; cursor: zoom-out; }
+  .body iframe, .body video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 0; filter: grayscale(1) contrast(1.1); }
+  .body p:has(> img:only-child) { margin-left: -8px; margin-right: -8px; }
+  .js .line.printed img { animation: scan 1.4s steps(36) both; }
+  @keyframes scan { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0); } }
+  .body .yt {
+    display: block; text-align: center; text-decoration: none; font-weight: 700; letter-spacing: .08em;
+    border: 1px solid var(--ink); padding: 14px;
+  }
+  .body .yt:hover { background: var(--ink); color: var(--paper); }
+
+  button.reprint {
+    display: block; margin: 40px auto 0;
+    font: inherit; font-size: 12px; letter-spacing: .1em;
+    color: #d9d4c7; background: none; border: 1px solid #5a564e; border-radius: 999px;
+    padding: 10px 18px; cursor: pointer;
+  }
+  @media (min-width: 700px) {
+    .paper { max-width: 500px; font-size: 15px; padding: 44px 38px 34px; }
+    .body { font-size: 15.5px; }
+    .printer { max-width: 570px; }
+    .keys a { font-size: 11.5px; padding: 8px 13px 7px; }
+    .badge b { font-size: 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .paper, .printer.jolt, .js .line.printed, .js .line.printed img { animation: none; }
+    .paper.falling { display: none; }
+    .js .line { opacity: 1; filter: none; }
+  }
+/* ---------- Site additions ---------- */
+.paper:focus { outline: none; }
+button.reprint[hidden] { display: none; }
+.body center { display: block; }
+.body .cta {
+  display: block; text-align: center; text-decoration: none; font-weight: 700; letter-spacing: .08em;
+  border: 1px solid var(--ink); padding: 14px;
+}
+.body .cta:hover { background: var(--ink); color: var(--paper); }
+.body .footnotes { font-size: .85em; }
+/* Rouge code: no colors on a thermal printer, just weight and slant. */
+.body .highlight .c, .body .highlight .c1, .body .highlight .cm, .body .highlight .cs, .body .highlight .cd { font-style: italic; opacity: .6; }
+.body .highlight .k, .body .highlight .kd, .body .highlight .kn, .body .highlight .kr, .body .highlight .kt, .body .highlight .kc, .body .highlight .nt { font-weight: 700; }
+.body .highlight .s, .body .highlight .s1, .body .highlight .s2 { font-style: italic; }
+@media print {
+  body { background: #fff; padding: 0; }
+  .printer, button.reprint { display: none; }
+  .paper { box-shadow: none; animation: none; width: auto; max-width: none; margin: 0; }
+  .paper::after { display: none; }
+  .js .line { opacity: 1; filter: none; animation: none; }
+}

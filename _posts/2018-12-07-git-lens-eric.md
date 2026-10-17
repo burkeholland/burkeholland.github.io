@@ -4,6 +4,7 @@ title: "GitLens with Eric Amodio"
 date: 2018-12-07
 categories: posts
 permalink: /posts/git-lens-eric/
+dept: tools
 ---
 
 There are only two kinds of people in the world: those who are utterly confused by Git, and those who refuse to admit it.

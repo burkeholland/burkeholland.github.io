@@ -4,6 +4,7 @@ title: "Selecting the first item from an array"
 date: 2019-11-17
 categories: posts
 permalink: /posts/select-one-javascript/
+dept: javascript
 ---
 
 Sometimes, in life, you just want one of something. Not two. Never two. Just one. Like a toothbrush. Or a flu shot. Or a pug. Dear god, trust me, you do not want more than one pug. It’s like a choir of snoring with flatulance on backup vocals.

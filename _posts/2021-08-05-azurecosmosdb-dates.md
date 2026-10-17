@@ -4,6 +4,7 @@ title: "Converting Cosmos DB Timestamps to JavaScript Dates"
 date: 2021-08-05 10:34:40 +0000
 categories: posts
 permalink: /posts/azure/azurecosmosdb-dates/
+dept: cloud
 ---
 
 Cosmos DB automactially adds a timestamp field called "\_ts". everytime a document is **created** or **updated**. And it looks like this...

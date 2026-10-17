@@ -1,23 +1,33 @@
 ---
 layout: default
 ---
-
-<div class="post-article-wrap">
-  <a href="/" class="post-article-back">← All posts</a>
-  <div class="post-article-meta">
-    <span class="gradient-border-pill gradient-border-pill-bg"><span class="gradient-text">ARTICLE</span></span>
-    <h1 class="post-article-title">{{ page.title }}</h1>
-    <div class="post-article-date">{{ page.date | date: "%B %-d, %Y" }}</div>
-  </div>
-  {% if page.image %}
-  <div class="post-banner">
-    <img src="{{ page.image | relative_url }}" alt="{{ page.title | strip_html }}" class="post-banner-image">
-  </div>
-  {% endif %}
-  <div class="prose prose-lg max-w-none">
-    {{ content }}
-  </div>
-  <div class="post-footer-nav">
-    <a href="/" class="post-article-back">← All posts</a>
-  </div>
+{%- assign idx = 0 -%}
+{%- for p in site.posts -%}{%- if p.url == page.url -%}{%- assign idx = forloop.rindex -%}{%- endif -%}{%- endfor -%}
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign mins = words | divided_by: 200.0 | ceil -%}
+{%- if mins < 1 -%}{%- assign mins = 1 -%}{%- endif %}
+<div class="line center big">BURKE HOLLAND</div>
+<div class="line center">MID BRAIN TAKES ON SOFTWARE</div>
+<div class="line center muted">NASHVILLE, TN · EST. 2018</div>
+<div class="line"><hr class="rule"></div>
+{%- if idx > 0 %}
+<div class="line"><div class="row"><span>ITEM {% if idx < 10 %}0{% endif %}{{ idx }} OF {{ site.posts.size }}</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y/%m/%d" }}</time></div></div>
+{%- else %}
+<div class="line"><div class="row"><span>ITEM ON HOLD</span><span>{% if page.date %}{{ page.date | date: "%Y/%m/%d" }}{% else %}DRAFT{% endif %}</span></div></div>
+{%- endif %}
+<div class="line"><div class="row"><span>DEPT</span><span>{{ page.dept | default: "misc" | upcase }}</span></div></div>
+<div class="line"><div class="row"><span>READ TIME</span><span>{{ mins }}:00</span></div></div>
+<div class="line"><hr class="rule"></div>
+<h1 class="line title">{{ page.title | escape }}</h1>
+<div class="line"><hr class="rule"></div>
+<div class="body">
+{%- if page.image %}
+<p><img src="{{ page.image | relative_url }}" alt="{{ page.title | strip_html | escape }}"></p>
+{%- endif %}
+{{ content }}
 </div>
+<div class="line"><hr class="rule"></div>
+<div class="line center">*** END OF ITEM ***</div>
+<div class="line"><div class="btn-row">{% if page.next %}<a href="{{ page.next.url | relative_url }}">&lt; NEWER</a>{% else %}<span></span>{% endif %}<a href="{{ '/' | relative_url }}">ALL POSTS</a>{% if page.previous %}<a href="{{ page.previous.url | relative_url }}">OLDER &gt;</a>{% else %}<span></span>{% endif %}</div></div>
+{% include barcode.html code=page.url %}
+<div class="line center muted small">KEEP THIS RECEIPT FOR YOUR RECORDS</div>

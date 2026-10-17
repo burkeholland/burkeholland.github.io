@@ -1,32 +1,46 @@
 ---
 layout: default
 ---
-
-<section class="letter-hero">
-  <div class="letter-layout">
-    <p style="margin-bottom: 1.5rem"><a href="https://github.com/features/copilot" target="_blank" rel="noopener">
-      <img src="https://img.shields.io/badge/-Built%20with%20Copilot-ffffff?style=flat&logo=githubcopilot&logoColor=333333" alt="Built with Copilot">
-    </a></p>
-    <h1 class="letter-headline">Hi, I'm <span class="gradient-text">Burke</span>.</h1>
-    <p class="letter-tagline">I'm glad you're here.</p>
-  </div>
-</section>
-
-<section class="latest-letter">
-  <div class="letter-layout">
-    <div class="latest-letter-heading">Latest notes</div>
-    <div class="letter-posts">
-      {% for post in paginator.posts %}
-      <a class="letter-post" href="{{ post.url | relative_url }}">
-        <span>
-          <span class="letter-post-title">{{ post.title | strip_html }}</span>
-          <span class="letter-post-excerpt">{{ post.content | markdownify | strip_html | truncatewords: 24 }}</span>
-        </span>
-        <span class="letter-post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-      </a>
-      {% endfor %}
-    </div>
-
-    {% include pagination.html %}
-  </div>
-</section>
+{%- assign total = 0 -%}
+{%- for post in site.posts -%}
+{%- assign words = post.content | strip_html | number_of_words -%}
+{%- assign mins = words | divided_by: 200.0 | ceil -%}
+{%- if mins < 1 -%}{%- assign mins = 1 -%}{%- endif -%}
+{%- assign total = total | plus: mins -%}
+{%- endfor %}
+<h1 class="line center big">BURKE HOLLAND</h1>
+<div class="line center">MID BRAIN TAKES ON SOFTWARE</div>
+<div class="line center muted">NASHVILLE, TN · EST. 2018</div>
+<div class="line"><hr class="rule"></div>
+<div class="line"><div class="row"><span>ORDER #<span data-order>{{ site.time | date: "%s" | slice: -6, 6 }}</span></span><span data-now>{{ site.time | date: "%m/%d/%Y %H:%M" }}</span></div></div>
+<div class="line"><div class="row"><span>CASHIER: BURKE</span><span>REG 01</span></div></div>
+<div class="line"><hr class="rule"></div>
+{%- assign year = "" -%}
+{%- for post in site.posts -%}
+{%- assign y = post.date | date: "%Y" -%}
+{%- if y != year -%}
+{%- assign year = y %}
+<h2 class="line dept">*** {{ y }} ***</h2>
+{%- endif -%}
+{%- assign words = post.content | strip_html | number_of_words -%}
+{%- assign mins = words | divided_by: 200.0 | ceil -%}
+{%- if mins < 1 -%}{%- assign mins = 1 -%}{%- endif %}
+<div class="line"><a class="item" href="{{ post.url | relative_url }}">
+  <div class="row"><span class="name">{{ post.title | escape }}</span><span>{{ mins }}:00</span></div>
+  <div class="sub">{{ post.date | date: "%Y/%m/%d" }} · QTY 1 · {{ post.dept | default: "misc" | upcase }}</div>
+</a></div>
+{%- endfor %}
+<div class="line"><hr class="rule"></div>
+<div class="line"><div class="row"><span>ITEMS</span><span>{{ site.posts.size }}</span></div></div>
+<div class="line"><div class="row"><span>SUBTOTAL</span><span>{{ total }} MIN</span></div></div>
+<div class="line"><div class="row"><span>OPINIONS</span><span>INCLUDED</span></div></div>
+<div class="line"><div class="row"><span>HYPE</span><span>0.00</span></div></div>
+<div class="line"><hr class="rule"></div>
+<div class="line total"><div class="row"><span>TOTAL</span><span>{{ total }} MIN</span></div></div>
+<div class="line muted"><div class="row"><span>PAID WITH</span><span>ATTENTION</span></div></div>
+<div class="line"><hr class="rule"></div>
+<div class="line center big">THANK YOU FOR READING</div>
+<div class="line center">VIEWS ARE MY OWN<br>I AM FREQUENTLY WRONG<br>NO IDEA WHAT I AM DOING</div>
+{% include barcode.html code="BURKEHOLLAND" %}
+<div class="line center muted">NO REFUNDS</div>
+<div class="line center small"><a href="{{ '/feed.xml' | relative_url }}">FREE REFILLS: RSS</a></div>

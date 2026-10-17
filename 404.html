@@ -1,25 +1,16 @@
 ---
 permalink: /404.html
 layout: default
+title: Not Found
 ---
-
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<h1 class="line center big">*** VOID ***</h1>
+<div class="line center">TRANSACTION CANCELLED</div>
+<div class="line"><hr class="rule"></div>
+<div class="line"><div class="row"><span>ERROR</span><span>404</span></div></div>
+<div class="line"><div class="row"><span>ITEM</span><span>NOT FOUND</span></div></div>
+<div class="line"><div class="row"><span>PRINTED</span><span data-now>{{ site.time | date: "%m/%d/%Y %H:%M" }}</span></div></div>
+<div class="line"><hr class="rule"></div>
+<div class="line center">THE PAGE YOU WANTED<br>IS NOT ON THIS RECEIPT.</div>
+<div class="line"><div class="btn-row"><span></span><a href="{{ '/' | relative_url }}">BACK TO ALL POSTS</a><span></span></div></div>
+{% include barcode.html code="VOID" %}
+<div class="line center muted">NO SALE</div>

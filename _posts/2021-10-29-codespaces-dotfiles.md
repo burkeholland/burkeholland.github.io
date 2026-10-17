@@ -4,6 +4,7 @@ title: "How to add your dotfiles to GitHub Codespaces"
 date: 2021-10-29
 categories: posts
 permalink: /posts/codespaces-dotfiles
+dept: tools
 ---
 
 One of the first things you are gonna realize after you get started with Codespaces, is that you desperately want your own custom environment setup that you enjoy locally to somehow magically be in Codespaces as well. You can do that using a "dotfiles" repo, and in this post, we're going to look at how to setup a dotfiles repo, and what quirks you need to be aware of to use it with Codespaces.

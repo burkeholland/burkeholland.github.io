@@ -4,6 +4,7 @@ title: "The 3 Laws of Serverless"
 date: 2020-01-13
 categories: posts
 permalink: /posts/laws-of-serverless/
+dept: cloud
 ---
 
 A wise man once said this about Serverless…

@@ -4,6 +4,7 @@ title: "Using Azure Logic Apps to auto-print sales orders"
 date: 2021-02-08
 categories: posts
 permalink: /posts/low-code-value/
+dept: cloud
 ---
 
 No / Low Code tools (NoLow - I just coined that) have been the holy grail of software since I got into programming. I remain optimistic, but skeptical in regards to the idea that some day anyone will be able to build apps. 

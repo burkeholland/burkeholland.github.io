@@ -1,0 +1,14 @@
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <!-- Thermal print look: grayscale, add grain, then snap every pixel to ink or paper. -->
+    <filter id="thermal" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
+      <feColorMatrix type="matrix" values="0.3 0.59 0.11 0 0  0.3 0.59 0.11 0 0  0.3 0.59 0.11 0 0  0 0 0 1 0" result="gray"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="4" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0 1" result="grain"/>
+      <feComposite in="gray" in2="grain" operator="arithmetic" k1="0" k2="1.15" k3="0.9" k4="-0.5" result="mix"/>
+      <feComponentTransfer in="mix">
+        <feFuncR type="discrete" tableValues="0.114 0.984"/>
+        <feFuncG type="discrete" tableValues="0.106 0.980"/>
+        <feFuncB type="discrete" tableValues="0.094 0.965"/>
+      </feComponentTransfer>
+    </filter>
+  </svg>

@@ -5,6 +5,7 @@ title: "Essential custom instructions for GitHub Copilot"
 date: 2025-01-05 11:58:00 +0000
 categories: posts
 permalink: /posts/essential-custom-instructions/
+dept: ai
 ---
 
 Prompt engineering - or should I say ["Prompt Negotiation"](./2024-04-21-prompt-engineering.md) - is (currently) an important part of productivity with AI. Your success working with tools like GitHub Copilot is gonna be directly related to how well you prompt it. GitHub Copilot does try to handle as much of the prompt engineering for you behind the scenes as it can, but just like all your passive agressive relationships, you need to tell it what you want instead of expecting it to just know. It's not a mind reader. You need to give it Custom Instructions. 
