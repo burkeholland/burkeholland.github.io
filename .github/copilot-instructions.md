@@ -10,7 +10,7 @@ Jekyll blog deployed with GitHub Pages from the `gh-pages` branch. The whole sit
 - **`_layouts/home.html`** - the posts receipt (all posts grouped by year, read times, totals).
 - **`_layouts/post.html`** - a single post receipt (item number, dept, read time, body, newer/older links).
 - **`about.html`, `projects.html`, `404.html`, `staging/index.html`** - the other receipts.
-- **`_data/projects.yml`** - the projects list. Add a project here, not in the HTML.
+- **`_data/projects.yml`** - the projects list. Add a project here, not in the HTML. Windows apps link to their Microsoft Store entry (`https://apps.microsoft.com/detail/<productId>`, lowercase id) unless they are not published there.
 - **`_includes/`** - `head.html` (meta/OG tags), `printer.html` (header + keys), `barcode.html`, `center.html`, `youtubePlayer.html`.
 - **`assets/css/receipt.css`** - all styles. No Tailwind, no frameworks.
 - **`assets/js/printer.js`** - printing, tear-off page transitions (fetches the next page and swaps the `.paper`), stapling post images (wraps each `.body img` in `span.photo`), REPRINT.
