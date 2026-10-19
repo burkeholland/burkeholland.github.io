@@ -34,7 +34,23 @@
     - name: ResizeMe
       tag: Windows
       desc: The missing window resizer for Windows. Global hotkeys, custom presets, system tray.
-      url: https://burkeholland.github.io/resize-me/
+      url: https://apps.microsoft.com/detail/9nrt1r6v13rw
+    - name: ShareMe
+      tag: Windows
+      desc: Send photos, files and text between a Windows PC and an iPhone browser over your own network. No phone app, no account.
+      url: https://apps.microsoft.com/detail/9nnrdqsdzbr0
+    - name: MirrorMe
+      tag: Windows
+      desc: Mirror an iPhone to your Windows 11 PC, or cast your desktop to an AirPlay display. Tray controls and optional PIN pairing.
+      url: https://apps.microsoft.com/detail/9p13s05nfnvz
+    - name: TranscribeMe
+      tag: Windows
+      desc: Turn video and audio files into text on your PC with a local Whisper model. No account, no cloud upload.
+      url: https://apps.microsoft.com/detail/9p2d7b9qqkb9
+    - name: ConvertMe
+      tag: Windows
+      desc: Convert images, audio and video on your own PC. Nothing is uploaded and it works with the network cable unplugged.
+      url: https://apps.microsoft.com/detail/9nln3m6sv4br
     - name: PaperWalls Mac
       tag: macOS
       desc: Native macOS app for browsing and setting wallpapers from the Paper collection.
